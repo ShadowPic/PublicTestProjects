@@ -1,20 +1,21 @@
 # Introduction
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+TODO: Trying to figure out how best to do SSIS Package unit testing. 
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+There are 3 projects in the solution.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## isp1
+An example SQL 2017 database which is consumed by the SSIS Package.  Build and deploy this to a local or an Azure db instance.
+
+## ssisDBTest
+SSIS DB tool project which contains 2 SSIS packag definitions.  One package will read allow the rows of a table and insert a record count into another table.  The other SSIS package calls the first one and contains the text 'test' to indicate it's a unit test.
+
+If the second SSIS package runs without errors then the unit test is said to have 'passed'.
+
+## SSISDevOpsPowerShell
+These are PowerShell Scripts which have been partially validated which can deploy SSIS Packages to an Azure Data Factory for processing.
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+All contributions are welcome.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Darren Rich
