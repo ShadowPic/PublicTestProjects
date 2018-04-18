@@ -125,6 +125,28 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Show how anyone can write new tests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BDDCoffeeSite")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AboutPage")]
+        public virtual void ShowHowAnyoneCanWriteNewTests()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Show how anyone can write new tests", new string[] {
+                        "AboutPage"});
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 20
+ testRunner.Given("I want to show how to write tests", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+ testRunner.When("I set the Site Url to https://drcoffee.azurewebsites.net", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+ testRunner.And("I go to the relative url of /about.jsp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.Then("I can verify the text \'Its a coffee shop\' is on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -64,5 +64,17 @@ namespace SpecFlowTests
             Assert.IsTrue(webDriver.Current.PageSource.Contains(p0));
         }
 
+        [Then(@"I can verify the text '(.*)' is on the page")]
+        public void ThenICanVerifyTheTextIsOnThePage(string p0)
+        {
+            Assert.IsTrue(webDriver.Current.PageSource.Contains(p0));
+        }
+
+        [Given(@"I want to show how to write tests")]
+        public void GivenIWantToShowHowToWriteTests()
+        {
+           
+        }
+
     }
 }

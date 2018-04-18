@@ -14,3 +14,10 @@ Scenario: Verify Cappuccino is available
 	When I set the Site Url to https://drcoffee.azurewebsites.net
 	And I go to the relative url of /
 	Then the coffee type Cappuccino is found
+
+@AboutPage
+Scenario: Show how anyone can write new tests
+	Given I want to show how to write tests
+	When I set the Site Url to https://drcoffee.azurewebsites.net
+	And I go to the relative url of /about.jsp
+	Then I can verify the text 'Its a coffee shop' is on the page
