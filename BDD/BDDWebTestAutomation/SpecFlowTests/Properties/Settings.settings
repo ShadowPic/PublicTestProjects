@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SpecFlowTests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BrowserConfig" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">IE</Value>
+    </Setting>
+    <Setting Name="seleniumBaseUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:5179</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
