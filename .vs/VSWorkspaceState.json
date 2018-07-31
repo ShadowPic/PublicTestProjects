@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SSIS Unit Testing"
+    "\\BDD",
+    "\\BDD\\BDDWebTestAutomation"
   ],
-  "SelectedNode": "\\SSIS Unit Testing\\ssisDBTest.sln",
+  "SelectedNode": "\\BDD\\BDDWebTestAutomation\\BDDWebTestAutomation.sln",
   "PreviewInSolutionExplorer": false
 }
