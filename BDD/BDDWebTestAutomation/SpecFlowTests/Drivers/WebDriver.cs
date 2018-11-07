@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.PhantomJS;
 using OpenQA.Selenium.Support.UI;
 
 namespace SpecFlowTests.Drivers
@@ -60,6 +61,9 @@ namespace SpecFlowTests.Drivers
                         break;
                     case "FIREFOX":
                         _currentWebDriver = new FirefoxDriver() { Url = SeleniumBaseUrl };
+                        break;
+                    case "HEADLESS":
+                        _currentWebDriver = new PhantomJSDriver() { Url = SeleniumBaseUrl };
                         break;
                     default:
                         throw new NotSupportedException($"{BrowserConfig} is not a supported browser");

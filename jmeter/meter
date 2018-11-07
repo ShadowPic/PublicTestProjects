@@ -1,0 +1,12 @@
+2018-11-07 02:01:06,950 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2018-11-07 02:01:06,965 INFO o.a.j.JMeter: Loading user properties from: C:\dropandrun\apache-jmeter-4.0\bin\user.properties
+2018-11-07 02:01:06,965 INFO o.a.j.JMeter: Loading system properties from: C:\dropandrun\apache-jmeter-4.0\bin\system.properties
+2018-11-07 02:01:06,965 ERROR o.a.j.JMeter: An error occurred: 
+java.lang.IllegalArgumentException: Unknown arg: .reportgenerator.overall_granularity=10000
+	at org.apache.jmeter.JMeter.initializeProperties(JMeter.java:772) ~[ApacheJMeter_core.jar:4.0 r1823414]
+	at org.apache.jmeter.JMeter.start(JMeter.java:441) [ApacheJMeter_core.jar:4.0 r1823414]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:245) [ApacheJMeter.jar:4.0 r1823414]
