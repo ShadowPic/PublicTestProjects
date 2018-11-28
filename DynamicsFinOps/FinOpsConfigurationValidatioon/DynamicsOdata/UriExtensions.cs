@@ -8,7 +8,7 @@ namespace DynamicsOdata
 {
     public static class UriExtensions
     {
-        public static Uri Combine(this Uri uriCurrent,params string[]  uriParts)
+        public static Uri Combine(this Uri uriCurrent, params string[]  uriParts)
         {
             string uri = uriCurrent.ToString();
             if (uriParts != null && uriParts.Count() > 0)
