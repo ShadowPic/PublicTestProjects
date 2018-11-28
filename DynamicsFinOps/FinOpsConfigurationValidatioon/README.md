@@ -1,14 +1,14 @@
 # Introduction 
-This is an examnple project using BDD based on SpecFlow to validate the configurations of a given Dynamics 365 Finance and Operations deployment.
+This is an example project using BDD based on SpecFlow to validate the configurations of a given Dynamics 365 Finance and Operations deployment.
 
-It relies on a cloud hosted FinOps instance and utilizaing an AAD registered application.
+It relies on a cloud hosted FinOps instance and utilizing an AAD registered application.
 
 # Dependencies
 - [SpecFlow Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=TechTalkSpecFlowTeam.SpecFlowforVisualStudio2017)
  
 # Getting Started
 
-The very first thing you need is a running instance of Dyanics 365 Fihance and Operations (FinOps).  It is beyond the scope of this readme to cover how to acquire an instance.
+The very first thing you need is a running instance of Dynamics 365 Finance and Operations (FinOps).  It is beyond the scope of this readme to cover how to acquire an instance.
 See: [FinOps Cloud Instance](https://docs.microsoft.com/en-us/dynamics365/unified-operations/dev-itpro/deployment/cloud-deployment-overview)
 
 Summary of next steps:
