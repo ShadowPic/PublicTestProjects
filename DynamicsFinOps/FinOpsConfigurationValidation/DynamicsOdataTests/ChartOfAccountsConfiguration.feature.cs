@@ -45,8 +45,8 @@ namespace DynamicsOdataTests
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ChartOfAccountsConfiguration", "\tIn order to verify each deployment is consistent\r\n\tAnd ensure that minimum requi" +
-                    "red accounting elements are present\r\n\tto avoid testin new features before manual" +
-                    " configurations have been completed", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "red accounting elements are present\r\n\tto avoid testing new features before manua" +
+                    "l configurations have been completed", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -106,11 +106,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Cash Advance Returns")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Cash Advance Returns")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Cash Advance Returns")]
-        public virtual void RequiredGLAccountsExist_Variant0()
+        public virtual void RequiredGLAccountsExist_CashAdvanceReturns()
         {
 #line 7
 this.RequiredGLAccountsExist("Cash Advance Returns", ((string[])(null)));
@@ -118,11 +118,11 @@ this.RequiredGLAccountsExist("Cash Advance Returns", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Bank Account - USD")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Bank Account - USD")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bank Account - USD")]
-        public virtual void RequiredGLAccountsExist_Variant1()
+        public virtual void RequiredGLAccountsExist_BankAccount_USD()
         {
 #line 7
 this.RequiredGLAccountsExist("Bank Account - USD", ((string[])(null)));
@@ -130,11 +130,11 @@ this.RequiredGLAccountsExist("Bank Account - USD", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Bank Account - CNY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Bank Account - CNY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bank Account - CNY")]
-        public virtual void RequiredGLAccountsExist_Variant2()
+        public virtual void RequiredGLAccountsExist_BankAccount_CNY()
         {
 #line 7
 this.RequiredGLAccountsExist("Bank Account - CNY", ((string[])(null)));
@@ -142,11 +142,11 @@ this.RequiredGLAccountsExist("Bank Account - CNY", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Bank Account - EUR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Bank Account - EUR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bank Account - EUR")]
-        public virtual void RequiredGLAccountsExist_Variant3()
+        public virtual void RequiredGLAccountsExist_BankAccount_EUR()
         {
 #line 7
 this.RequiredGLAccountsExist("Bank Account - EUR", ((string[])(null)));
@@ -154,11 +154,11 @@ this.RequiredGLAccountsExist("Bank Account - EUR", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Bank Account - RUB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Bank Account - RUB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bank Account - RUB")]
-        public virtual void RequiredGLAccountsExist_Variant4()
+        public virtual void RequiredGLAccountsExist_BankAccount_RUB()
         {
 #line 7
 this.RequiredGLAccountsExist("Bank Account - RUB", ((string[])(null)));
@@ -166,11 +166,11 @@ this.RequiredGLAccountsExist("Bank Account - RUB", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Bank Account - GBP")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Bank Account - GBP")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bank Account - GBP")]
-        public virtual void RequiredGLAccountsExist_Variant5()
+        public virtual void RequiredGLAccountsExist_BankAccount_GBP()
         {
 #line 7
 this.RequiredGLAccountsExist("Bank Account - GBP", ((string[])(null)));
@@ -178,11 +178,11 @@ this.RequiredGLAccountsExist("Bank Account - GBP", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: USD Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "USD Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "USD Cash Advances Account")]
-        public virtual void RequiredGLAccountsExist_Variant6()
+        public virtual void RequiredGLAccountsExist_USDCashAdvancesAccount()
         {
 #line 7
 this.RequiredGLAccountsExist("USD Cash Advances Account", ((string[])(null)));
@@ -190,11 +190,11 @@ this.RequiredGLAccountsExist("USD Cash Advances Account", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: EUR Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "EUR Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "EUR Cash Advances Account")]
-        public virtual void RequiredGLAccountsExist_Variant7()
+        public virtual void RequiredGLAccountsExist_EURCashAdvancesAccount()
         {
 #line 7
 this.RequiredGLAccountsExist("EUR Cash Advances Account", ((string[])(null)));
@@ -202,11 +202,11 @@ this.RequiredGLAccountsExist("EUR Cash Advances Account", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 8")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: CAD Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 8")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "CAD Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "CAD Cash Advances Account")]
-        public virtual void RequiredGLAccountsExist_Variant8()
+        public virtual void RequiredGLAccountsExist_CADCashAdvancesAccount()
         {
 #line 7
 this.RequiredGLAccountsExist("CAD Cash Advances Account", ((string[])(null)));
@@ -214,11 +214,11 @@ this.RequiredGLAccountsExist("CAD Cash Advances Account", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Yuan Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Yuan Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Yuan Cash Advances Account")]
-        public virtual void RequiredGLAccountsExist_Variant9()
+        public virtual void RequiredGLAccountsExist_YuanCashAdvancesAccount()
         {
 #line 7
 this.RequiredGLAccountsExist("Yuan Cash Advances Account", ((string[])(null)));
@@ -226,11 +226,11 @@ this.RequiredGLAccountsExist("Yuan Cash Advances Account", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: All Other Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "All Other Cash Advances Account")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "All Other Cash Advances Account")]
-        public virtual void RequiredGLAccountsExist_Variant10()
+        public virtual void RequiredGLAccountsExist_AllOtherCashAdvancesAccount()
         {
 #line 7
 this.RequiredGLAccountsExist("All Other Cash Advances Account", ((string[])(null)));
@@ -238,11 +238,11 @@ this.RequiredGLAccountsExist("All Other Cash Advances Account", ((string[])(null
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 11")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Bank Account - Payroll")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 11")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Bank Account - Payroll")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bank Account - Payroll")]
-        public virtual void RequiredGLAccountsExist_Variant11()
+        public virtual void RequiredGLAccountsExist_BankAccount_Payroll()
         {
 #line 7
 this.RequiredGLAccountsExist("Bank Account - Payroll", ((string[])(null)));
@@ -250,11 +250,11 @@ this.RequiredGLAccountsExist("Bank Account - Payroll", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Cash in bank - US (Fixed asset purch)")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Cash in bank - US (Fixed asset purch)")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Cash in bank - US (Fixed asset purch)")]
-        public virtual void RequiredGLAccountsExist_Variant12()
+        public virtual void RequiredGLAccountsExist_CashInBank_USFixedAssetPurch()
         {
 #line 7
 this.RequiredGLAccountsExist("Cash in bank - US (Fixed asset purch)", ((string[])(null)));
@@ -262,11 +262,11 @@ this.RequiredGLAccountsExist("Cash in bank - US (Fixed asset purch)", ((string[]
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 13")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Petty Cash")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 13")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Petty Cash")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Petty Cash")]
-        public virtual void RequiredGLAccountsExist_Variant13()
+        public virtual void RequiredGLAccountsExist_PettyCash()
         {
 #line 7
 this.RequiredGLAccountsExist("Petty Cash", ((string[])(null)));
@@ -274,11 +274,11 @@ this.RequiredGLAccountsExist("Petty Cash", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 14")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: TOTAL CASH & CASH EQUIVALENTS")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 14")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TOTAL CASH & CASH EQUIVALENTS")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL CASH & CASH EQUIVALENTS")]
-        public virtual void RequiredGLAccountsExist_Variant14()
+        public virtual void RequiredGLAccountsExist_TOTALCASHCASHEQUIVALENTS()
         {
 #line 7
 this.RequiredGLAccountsExist("TOTAL CASH & CASH EQUIVALENTS", ((string[])(null)));
@@ -286,11 +286,11 @@ this.RequiredGLAccountsExist("TOTAL CASH & CASH EQUIVALENTS", ((string[])(null))
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 15")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Bonds")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 15")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Bonds")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bonds")]
-        public virtual void RequiredGLAccountsExist_Variant15()
+        public virtual void RequiredGLAccountsExist_Bonds()
         {
 #line 7
 this.RequiredGLAccountsExist("Bonds", ((string[])(null)));
@@ -298,11 +298,11 @@ this.RequiredGLAccountsExist("Bonds", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 16")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Other Marketable Securities")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 16")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Other Marketable Securities")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Other Marketable Securities")]
-        public virtual void RequiredGLAccountsExist_Variant16()
+        public virtual void RequiredGLAccountsExist_OtherMarketableSecurities()
         {
 #line 7
 this.RequiredGLAccountsExist("Other Marketable Securities", ((string[])(null)));
@@ -310,11 +310,11 @@ this.RequiredGLAccountsExist("Other Marketable Securities", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 17")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Bill of Exchange (BOE)")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 17")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Bill of Exchange (BOE)")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bill of Exchange (BOE)")]
-        public virtual void RequiredGLAccountsExist_Variant17()
+        public virtual void RequiredGLAccountsExist_BillOfExchangeBOE()
         {
 #line 7
 this.RequiredGLAccountsExist("Bill of Exchange (BOE)", ((string[])(null)));
@@ -322,11 +322,11 @@ this.RequiredGLAccountsExist("Bill of Exchange (BOE)", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 18")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: BOE Remitted for Collection")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 18")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "BOE Remitted for Collection")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "BOE Remitted for Collection")]
-        public virtual void RequiredGLAccountsExist_Variant18()
+        public virtual void RequiredGLAccountsExist_BOERemittedForCollection()
         {
 #line 7
 this.RequiredGLAccountsExist("BOE Remitted for Collection", ((string[])(null)));
@@ -334,11 +334,11 @@ this.RequiredGLAccountsExist("BOE Remitted for Collection", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 19")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: BOE Remitted for Discount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 19")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "BOE Remitted for Discount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "BOE Remitted for Discount")]
-        public virtual void RequiredGLAccountsExist_Variant19()
+        public virtual void RequiredGLAccountsExist_BOERemittedForDiscount()
         {
 #line 7
 this.RequiredGLAccountsExist("BOE Remitted for Discount", ((string[])(null)));
@@ -346,11 +346,11 @@ this.RequiredGLAccountsExist("BOE Remitted for Discount", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 20")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Protested BOE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 20")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Protested BOE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Protested BOE")]
-        public virtual void RequiredGLAccountsExist_Variant20()
+        public virtual void RequiredGLAccountsExist_ProtestedBOE()
         {
 #line 7
 this.RequiredGLAccountsExist("Protested BOE", ((string[])(null)));
@@ -358,11 +358,11 @@ this.RequiredGLAccountsExist("Protested BOE", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 21")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: TOTAL SECURITIES")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 21")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TOTAL SECURITIES")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL SECURITIES")]
-        public virtual void RequiredGLAccountsExist_Variant21()
+        public virtual void RequiredGLAccountsExist_TOTALSECURITIES()
         {
 #line 7
 this.RequiredGLAccountsExist("TOTAL SECURITIES", ((string[])(null)));
@@ -370,11 +370,11 @@ this.RequiredGLAccountsExist("TOTAL SECURITIES", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Accounts Receivable - Domestic")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Accounts Receivable - Domestic")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accounts Receivable - Domestic")]
-        public virtual void RequiredGLAccountsExist_Variant22()
+        public virtual void RequiredGLAccountsExist_AccountsReceivable_Domestic()
         {
 #line 7
 this.RequiredGLAccountsExist("Accounts Receivable - Domestic", ((string[])(null)));
@@ -382,11 +382,11 @@ this.RequiredGLAccountsExist("Accounts Receivable - Domestic", ((string[])(null)
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 23")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Accounts Receivable - Foreign")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 23")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Accounts Receivable - Foreign")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accounts Receivable - Foreign")]
-        public virtual void RequiredGLAccountsExist_Variant23()
+        public virtual void RequiredGLAccountsExist_AccountsReceivable_Foreign()
         {
 #line 7
 this.RequiredGLAccountsExist("Accounts Receivable - Foreign", ((string[])(null)));
@@ -394,11 +394,11 @@ this.RequiredGLAccountsExist("Accounts Receivable - Foreign", ((string[])(null))
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 24")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Accounts Receivable - Clearing")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 24")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Accounts Receivable - Clearing")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accounts Receivable - Clearing")]
-        public virtual void RequiredGLAccountsExist_Variant24()
+        public virtual void RequiredGLAccountsExist_AccountsReceivable_Clearing()
         {
 #line 7
 this.RequiredGLAccountsExist("Accounts Receivable - Clearing", ((string[])(null)));
@@ -406,11 +406,11 @@ this.RequiredGLAccountsExist("Accounts Receivable - Clearing", ((string[])(null)
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 25")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Inter-unit Receivable - Domestic")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 25")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Inter-unit Receivable - Domestic")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Inter-unit Receivable - Domestic")]
-        public virtual void RequiredGLAccountsExist_Variant25()
+        public virtual void RequiredGLAccountsExist_Inter_UnitReceivable_Domestic()
         {
 #line 7
 this.RequiredGLAccountsExist("Inter-unit Receivable - Domestic", ((string[])(null)));
@@ -418,11 +418,11 @@ this.RequiredGLAccountsExist("Inter-unit Receivable - Domestic", ((string[])(nul
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 26")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Credit Card Receivable")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 26")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Credit Card Receivable")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Credit Card Receivable")]
-        public virtual void RequiredGLAccountsExist_Variant26()
+        public virtual void RequiredGLAccountsExist_CreditCardReceivable()
         {
 #line 7
 this.RequiredGLAccountsExist("Credit Card Receivable", ((string[])(null)));
@@ -430,11 +430,11 @@ this.RequiredGLAccountsExist("Credit Card Receivable", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 27")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Interest Receivable")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 27")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Interest Receivable")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Interest Receivable")]
-        public virtual void RequiredGLAccountsExist_Variant27()
+        public virtual void RequiredGLAccountsExist_InterestReceivable()
         {
 #line 7
 this.RequiredGLAccountsExist("Interest Receivable", ((string[])(null)));
@@ -442,11 +442,11 @@ this.RequiredGLAccountsExist("Interest Receivable", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Notes Receivable")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Notes Receivable")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Notes Receivable")]
-        public virtual void RequiredGLAccountsExist_Variant28()
+        public virtual void RequiredGLAccountsExist_NotesReceivable()
         {
 #line 7
 this.RequiredGLAccountsExist("Notes Receivable", ((string[])(null)));
@@ -454,11 +454,11 @@ this.RequiredGLAccountsExist("Notes Receivable", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 29")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Other Receivables")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 29")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Other Receivables")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Other Receivables")]
-        public virtual void RequiredGLAccountsExist_Variant29()
+        public virtual void RequiredGLAccountsExist_OtherReceivables()
         {
 #line 7
 this.RequiredGLAccountsExist("Other Receivables", ((string[])(null)));
@@ -466,11 +466,11 @@ this.RequiredGLAccountsExist("Other Receivables", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 30")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: TOTAL ACCOUNTS RECEIVABLE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 30")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TOTAL ACCOUNTS RECEIVABLE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL ACCOUNTS RECEIVABLE")]
-        public virtual void RequiredGLAccountsExist_Variant30()
+        public virtual void RequiredGLAccountsExist_TOTALACCOUNTSRECEIVABLE()
         {
 #line 7
 this.RequiredGLAccountsExist("TOTAL ACCOUNTS RECEIVABLE", ((string[])(null)));
@@ -478,11 +478,11 @@ this.RequiredGLAccountsExist("TOTAL ACCOUNTS RECEIVABLE", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 31")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Prepaid Expenses")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 31")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Prepaid Expenses")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Prepaid Expenses")]
-        public virtual void RequiredGLAccountsExist_Variant31()
+        public virtual void RequiredGLAccountsExist_PrepaidExpenses()
         {
 #line 7
 this.RequiredGLAccountsExist("Prepaid Expenses", ((string[])(null)));
@@ -490,11 +490,11 @@ this.RequiredGLAccountsExist("Prepaid Expenses", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 32")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Prepaid Insurance")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 32")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Prepaid Insurance")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Prepaid Insurance")]
-        public virtual void RequiredGLAccountsExist_Variant32()
+        public virtual void RequiredGLAccountsExist_PrepaidInsurance()
         {
 #line 7
 this.RequiredGLAccountsExist("Prepaid Insurance", ((string[])(null)));
@@ -502,11 +502,11 @@ this.RequiredGLAccountsExist("Prepaid Insurance", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 33")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Advances")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 33")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Advances")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Advances")]
-        public virtual void RequiredGLAccountsExist_Variant33()
+        public virtual void RequiredGLAccountsExist_Advances()
         {
 #line 7
 this.RequiredGLAccountsExist("Advances", ((string[])(null)));
@@ -514,11 +514,11 @@ this.RequiredGLAccountsExist("Advances", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 34")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Prepaid Commissions")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 34")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Prepaid Commissions")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Prepaid Commissions")]
-        public virtual void RequiredGLAccountsExist_Variant34()
+        public virtual void RequiredGLAccountsExist_PrepaidCommissions()
         {
 #line 7
 this.RequiredGLAccountsExist("Prepaid Commissions", ((string[])(null)));
@@ -526,1598 +526,14 @@ this.RequiredGLAccountsExist("Prepaid Commissions", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 35")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: TOTAL OTHER CURRENT ASSETS")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 35")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TOTAL OTHER CURRENT ASSETS")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL OTHER CURRENT ASSETS")]
-        public virtual void RequiredGLAccountsExist_Variant35()
+        public virtual void RequiredGLAccountsExist_TOTALOTHERCURRENTASSETS()
         {
 #line 7
 this.RequiredGLAccountsExist("TOTAL OTHER CURRENT ASSETS", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 36")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 36")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Car audio receipts")]
-        public virtual void RequiredGLAccountsExist_Variant36()
-        {
-#line 7
-this.RequiredGLAccountsExist("Car audio receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 37")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 37")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Car audio issues")]
-        public virtual void RequiredGLAccountsExist_Variant37()
-        {
-#line 7
-this.RequiredGLAccountsExist("Car audio issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 38")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 38")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Car audio returns")]
-        public virtual void RequiredGLAccountsExist_Variant38()
-        {
-#line 7
-this.RequiredGLAccountsExist("Car audio returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 39")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 39")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "DVD player receipts")]
-        public virtual void RequiredGLAccountsExist_Variant39()
-        {
-#line 7
-this.RequiredGLAccountsExist("DVD player receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 40")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 40")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "DVD player issues")]
-        public virtual void RequiredGLAccountsExist_Variant40()
-        {
-#line 7
-this.RequiredGLAccountsExist("DVD player issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 41")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 41")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "DVD player returns")]
-        public virtual void RequiredGLAccountsExist_Variant41()
-        {
-#line 7
-this.RequiredGLAccountsExist("DVD player returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 42")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 42")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "DVR receipts")]
-        public virtual void RequiredGLAccountsExist_Variant42()
-        {
-#line 7
-this.RequiredGLAccountsExist("DVR receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 43")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 43")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "DVR issues")]
-        public virtual void RequiredGLAccountsExist_Variant43()
-        {
-#line 7
-this.RequiredGLAccountsExist("DVR issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 44")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 44")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "DVR returns")]
-        public virtual void RequiredGLAccountsExist_Variant44()
-        {
-#line 7
-this.RequiredGLAccountsExist("DVR returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 45")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 45")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "HTS receipts")]
-        public virtual void RequiredGLAccountsExist_Variant45()
-        {
-#line 7
-this.RequiredGLAccountsExist("HTS receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 46")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 46")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "HTS issues")]
-        public virtual void RequiredGLAccountsExist_Variant46()
-        {
-#line 7
-this.RequiredGLAccountsExist("HTS issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 47")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 47")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "HTS returns")]
-        public virtual void RequiredGLAccountsExist_Variant47()
-        {
-#line 7
-this.RequiredGLAccountsExist("HTS returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 48")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 48")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Projector receipts")]
-        public virtual void RequiredGLAccountsExist_Variant48()
-        {
-#line 7
-this.RequiredGLAccountsExist("Projector receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 49")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 49")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Projector issues")]
-        public virtual void RequiredGLAccountsExist_Variant49()
-        {
-#line 7
-this.RequiredGLAccountsExist("Projector issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 50")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 50")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Projector returns")]
-        public virtual void RequiredGLAccountsExist_Variant50()
-        {
-#line 7
-this.RequiredGLAccountsExist("Projector returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 51")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 51")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Receiver receipts")]
-        public virtual void RequiredGLAccountsExist_Variant51()
-        {
-#line 7
-this.RequiredGLAccountsExist("Receiver receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 52")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 52")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Receiver issues")]
-        public virtual void RequiredGLAccountsExist_Variant52()
-        {
-#line 7
-this.RequiredGLAccountsExist("Receiver issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 53")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 53")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Receiver returns")]
-        public virtual void RequiredGLAccountsExist_Variant53()
-        {
-#line 7
-this.RequiredGLAccountsExist("Receiver returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 54")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 54")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Speaker receipts")]
-        public virtual void RequiredGLAccountsExist_Variant54()
-        {
-#line 7
-this.RequiredGLAccountsExist("Speaker receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 55")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 55")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Speaker issues")]
-        public virtual void RequiredGLAccountsExist_Variant55()
-        {
-#line 7
-this.RequiredGLAccountsExist("Speaker issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 56")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 56")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Speaker returns")]
-        public virtual void RequiredGLAccountsExist_Variant56()
-        {
-#line 7
-this.RequiredGLAccountsExist("Speaker returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 57")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 57")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Television receipts")]
-        public virtual void RequiredGLAccountsExist_Variant57()
-        {
-#line 7
-this.RequiredGLAccountsExist("Television receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 58")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 58")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Television issues")]
-        public virtual void RequiredGLAccountsExist_Variant58()
-        {
-#line 7
-this.RequiredGLAccountsExist("Television issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 59")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 59")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Television returns")]
-        public virtual void RequiredGLAccountsExist_Variant59()
-        {
-#line 7
-this.RequiredGLAccountsExist("Television returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 60")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 60")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Raw materials receipts")]
-        public virtual void RequiredGLAccountsExist_Variant60()
-        {
-#line 7
-this.RequiredGLAccountsExist("Raw materials receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 61")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 61")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Raw materials issues")]
-        public virtual void RequiredGLAccountsExist_Variant61()
-        {
-#line 7
-this.RequiredGLAccountsExist("Raw materials issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 62")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 62")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Raw materials returns")]
-        public virtual void RequiredGLAccountsExist_Variant62()
-        {
-#line 7
-this.RequiredGLAccountsExist("Raw materials returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 63")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 63")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Packaging receipts")]
-        public virtual void RequiredGLAccountsExist_Variant63()
-        {
-#line 7
-this.RequiredGLAccountsExist("Packaging receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 64")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 64")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Packaging issues")]
-        public virtual void RequiredGLAccountsExist_Variant64()
-        {
-#line 7
-this.RequiredGLAccountsExist("Packaging issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 65")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 65")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Packaging returns")]
-        public virtual void RequiredGLAccountsExist_Variant65()
-        {
-#line 7
-this.RequiredGLAccountsExist("Packaging returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 66")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 66")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Services receipts")]
-        public virtual void RequiredGLAccountsExist_Variant66()
-        {
-#line 7
-this.RequiredGLAccountsExist("Services receipts", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 67")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 67")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Services issues")]
-        public virtual void RequiredGLAccountsExist_Variant67()
-        {
-#line 7
-this.RequiredGLAccountsExist("Services issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 68")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 68")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Services returns")]
-        public virtual void RequiredGLAccountsExist_Variant68()
-        {
-#line 7
-this.RequiredGLAccountsExist("Services returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 69")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 69")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Misc. receipts/issues")]
-        public virtual void RequiredGLAccountsExist_Variant69()
-        {
-#line 7
-this.RequiredGLAccountsExist("Misc. receipts/issues", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 70")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 70")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Misc. returns")]
-        public virtual void RequiredGLAccountsExist_Variant70()
-        {
-#line 7
-this.RequiredGLAccountsExist("Misc. returns", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 71")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 71")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Inventory Clearing - Received, un-invoiced")]
-        public virtual void RequiredGLAccountsExist_Variant71()
-        {
-#line 7
-this.RequiredGLAccountsExist("Inventory Clearing - Received, un-invoiced", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 72")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 72")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Inventory Clearing - Received, un-invoiced - Intercompany")]
-        public virtual void RequiredGLAccountsExist_Variant72()
-        {
-#line 7
-this.RequiredGLAccountsExist("Inventory Clearing - Received, un-invoiced - Intercompany", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 73")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 73")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Inventory Clearing - Shipped, un-invoiced")]
-        public virtual void RequiredGLAccountsExist_Variant73()
-        {
-#line 7
-this.RequiredGLAccountsExist("Inventory Clearing - Shipped, un-invoiced", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 74")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 74")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Inventory Clearing - Shipped, un-invoiced - Intercompany")]
-        public virtual void RequiredGLAccountsExist_Variant74()
-        {
-#line 7
-this.RequiredGLAccountsExist("Inventory Clearing - Shipped, un-invoiced - Intercompany", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 75")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 75")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Deferred expense")]
-        public virtual void RequiredGLAccountsExist_Variant75()
-        {
-#line 7
-this.RequiredGLAccountsExist("Deferred expense", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 76")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 76")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Deferred expense - Intercompany")]
-        public virtual void RequiredGLAccountsExist_Variant76()
-        {
-#line 7
-this.RequiredGLAccountsExist("Deferred expense - Intercompany", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 77")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 77")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL PHYSICAL INVENTORY")]
-        public virtual void RequiredGLAccountsExist_Variant77()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL PHYSICAL INVENTORY", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 78")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 78")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Production WIP-Clearing")]
-        public virtual void RequiredGLAccountsExist_Variant78()
-        {
-#line 7
-this.RequiredGLAccountsExist("Production WIP-Clearing", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 79")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 79")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Production WIP-Materials")]
-        public virtual void RequiredGLAccountsExist_Variant79()
-        {
-#line 7
-this.RequiredGLAccountsExist("Production WIP-Materials", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 80")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 80")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Production WIP-Labor")]
-        public virtual void RequiredGLAccountsExist_Variant80()
-        {
-#line 7
-this.RequiredGLAccountsExist("Production WIP-Labor", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 81")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 81")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Production WIP-Overhead")]
-        public virtual void RequiredGLAccountsExist_Variant81()
-        {
-#line 7
-this.RequiredGLAccountsExist("Production WIP-Overhead", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 82")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 82")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL INVENTORY PRODUCTION")]
-        public virtual void RequiredGLAccountsExist_Variant82()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL INVENTORY PRODUCTION", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 83")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 83")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL INVENTORY")]
-        public virtual void RequiredGLAccountsExist_Variant83()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL INVENTORY", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 84")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 84")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "WIP - Hour Costs")]
-        public virtual void RequiredGLAccountsExist_Variant84()
-        {
-#line 7
-this.RequiredGLAccountsExist("WIP - Hour Costs", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 85")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 85")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "WIP - Item Costs")]
-        public virtual void RequiredGLAccountsExist_Variant85()
-        {
-#line 7
-this.RequiredGLAccountsExist("WIP - Item Costs", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 86")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 86")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "WIP - Expense Costs")]
-        public virtual void RequiredGLAccountsExist_Variant86()
-        {
-#line 7
-this.RequiredGLAccountsExist("WIP - Expense Costs", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 87")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 87")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "WIP - Accrued Loss")]
-        public virtual void RequiredGLAccountsExist_Variant87()
-        {
-#line 7
-this.RequiredGLAccountsExist("WIP - Accrued Loss", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 88")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 88")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL PROJECT WIP COST VALUE")]
-        public virtual void RequiredGLAccountsExist_Variant88()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL PROJECT WIP COST VALUE", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 89")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 89")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "WIP - Production")]
-        public virtual void RequiredGLAccountsExist_Variant89()
-        {
-#line 7
-this.RequiredGLAccountsExist("WIP - Production", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 90")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 90")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "WIP - Profit")]
-        public virtual void RequiredGLAccountsExist_Variant90()
-        {
-#line 7
-this.RequiredGLAccountsExist("WIP - Profit", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 91")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 91")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "WIP - Sales Value")]
-        public virtual void RequiredGLAccountsExist_Variant91()
-        {
-#line 7
-this.RequiredGLAccountsExist("WIP - Sales Value", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 92")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 92")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL PROJECT WIP SALES VALUE")]
-        public virtual void RequiredGLAccountsExist_Variant92()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL PROJECT WIP SALES VALUE", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 93")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 93")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "PROJECT GROSS WIP")]
-        public virtual void RequiredGLAccountsExist_Variant93()
-        {
-#line 7
-this.RequiredGLAccountsExist("PROJECT GROSS WIP", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 94")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 94")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "WIP - Invoiced - On Account")]
-        public virtual void RequiredGLAccountsExist_Variant94()
-        {
-#line 7
-this.RequiredGLAccountsExist("WIP - Invoiced - On Account", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 95")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 95")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "PROJECT NET WIP")]
-        public virtual void RequiredGLAccountsExist_Variant95()
-        {
-#line 7
-this.RequiredGLAccountsExist("PROJECT NET WIP", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 96")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 96")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Goodwill")]
-        public virtual void RequiredGLAccountsExist_Variant96()
-        {
-#line 7
-this.RequiredGLAccountsExist("Goodwill", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 97")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 97")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Development")]
-        public virtual void RequiredGLAccountsExist_Variant97()
-        {
-#line 7
-this.RequiredGLAccountsExist("Development", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 98")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 98")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Amortization - intangible assets")]
-        public virtual void RequiredGLAccountsExist_Variant98()
-        {
-#line 7
-this.RequiredGLAccountsExist("Amortization - intangible assets", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 99")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 99")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL INTANGIBLE ASSETS")]
-        public virtual void RequiredGLAccountsExist_Variant99()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL INTANGIBLE ASSETS", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 100")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 100")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Computer Equipment")]
-        public virtual void RequiredGLAccountsExist_Variant100()
-        {
-#line 7
-this.RequiredGLAccountsExist("Computer Equipment", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 101")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 101")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated depreciation - Computer Equipment")]
-        public virtual void RequiredGLAccountsExist_Variant101()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated depreciation - Computer Equipment", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 102")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 102")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated depreciation - Furniture & Fixtures")]
-        public virtual void RequiredGLAccountsExist_Variant102()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated depreciation - Furniture & Fixtures", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 103")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 103")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated depreciation - Machine & Equipment")]
-        public virtual void RequiredGLAccountsExist_Variant103()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated depreciation - Machine & Equipment", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 104")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 104")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated depreciation - Office Hardware")]
-        public virtual void RequiredGLAccountsExist_Variant104()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated depreciation - Office Hardware", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 105")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 105")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Amortization- Patents")]
-        public virtual void RequiredGLAccountsExist_Variant105()
-        {
-#line 7
-this.RequiredGLAccountsExist("Amortization- Patents", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 106")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 106")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated depreciation - Vehicles")]
-        public virtual void RequiredGLAccountsExist_Variant106()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated depreciation - Vehicles", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 107")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 107")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated depreciation - Buildings")]
-        public virtual void RequiredGLAccountsExist_Variant107()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated depreciation - Buildings", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 108")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 108")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated depletion - Land")]
-        public virtual void RequiredGLAccountsExist_Variant108()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated depletion - Land", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 109")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 109")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Deferred Tax Assets, Long-term")]
-        public virtual void RequiredGLAccountsExist_Variant109()
-        {
-#line 7
-this.RequiredGLAccountsExist("Deferred Tax Assets, Long-term", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 110")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 110")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Revaluation adjustment")]
-        public virtual void RequiredGLAccountsExist_Variant110()
-        {
-#line 7
-this.RequiredGLAccountsExist("Revaluation adjustment", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 111")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 111")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Disposal fixed assets")]
-        public virtual void RequiredGLAccountsExist_Variant111()
-        {
-#line 7
-this.RequiredGLAccountsExist("Disposal fixed assets", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 112")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 112")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated write up")]
-        public virtual void RequiredGLAccountsExist_Variant112()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated write up", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 113")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 113")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accumulated write down")]
-        public virtual void RequiredGLAccountsExist_Variant113()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accumulated write down", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 114")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 114")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Reversal of depreciation & write up/down")]
-        public virtual void RequiredGLAccountsExist_Variant114()
-        {
-#line 7
-this.RequiredGLAccountsExist("Reversal of depreciation & write up/down", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 115")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 115")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Revaluation adjustment")]
-        public virtual void RequiredGLAccountsExist_Variant115()
-        {
-#line 7
-this.RequiredGLAccountsExist("Revaluation adjustment", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 116")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 116")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL TANGIBLE FIXED ASSETS")]
-        public virtual void RequiredGLAccountsExist_Variant116()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL TANGIBLE FIXED ASSETS", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 117")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 117")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL ASSETS")]
-        public virtual void RequiredGLAccountsExist_Variant117()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL ASSETS", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 118")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 118")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accounts Payable - Foreign")]
-        public virtual void RequiredGLAccountsExist_Variant118()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accounts Payable - Foreign", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 119")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 119")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL ACCRUALS")]
-        public virtual void RequiredGLAccountsExist_Variant119()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL ACCRUALS", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 120")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 120")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "SHORT TERM LIABILITIES")]
-        public virtual void RequiredGLAccountsExist_Variant120()
-        {
-#line 7
-this.RequiredGLAccountsExist("SHORT TERM LIABILITIES", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 121")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 121")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accounts Payable - Domestic")]
-        public virtual void RequiredGLAccountsExist_Variant121()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accounts Payable - Domestic", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 122")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 122")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accounts Payable - Foreign")]
-        public virtual void RequiredGLAccountsExist_Variant122()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accounts Payable - Foreign", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 123")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 123")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Inter-unit Payable")]
-        public virtual void RequiredGLAccountsExist_Variant123()
-        {
-#line 7
-this.RequiredGLAccountsExist("Inter-unit Payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 124")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 124")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accounts Payable - Clearing")]
-        public virtual void RequiredGLAccountsExist_Variant124()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accounts Payable - Clearing", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 125")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 125")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accounts Payable - Other")]
-        public virtual void RequiredGLAccountsExist_Variant125()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accounts Payable - Other", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 126")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 126")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Invoice Pending Approval")]
-        public virtual void RequiredGLAccountsExist_Variant126()
-        {
-#line 7
-this.RequiredGLAccountsExist("Invoice Pending Approval", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 127")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 127")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Offset Invoice Pending Appr")]
-        public virtual void RequiredGLAccountsExist_Variant127()
-        {
-#line 7
-this.RequiredGLAccountsExist("Offset Invoice Pending Appr", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 128")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 128")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Promisorry Notes")]
-        public virtual void RequiredGLAccountsExist_Variant128()
-        {
-#line 7
-this.RequiredGLAccountsExist("Promisorry Notes", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 129")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 129")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Remitted promissory notes")]
-        public virtual void RequiredGLAccountsExist_Variant129()
-        {
-#line 7
-this.RequiredGLAccountsExist("Remitted promissory notes", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 130")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 130")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Bridging")]
-        public virtual void RequiredGLAccountsExist_Variant130()
-        {
-#line 7
-this.RequiredGLAccountsExist("Bridging", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 131")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 131")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accrued purchases")]
-        public virtual void RequiredGLAccountsExist_Variant131()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accrued purchases", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 132")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 132")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Accrued purchases - Intercompany")]
-        public virtual void RequiredGLAccountsExist_Variant132()
-        {
-#line 7
-this.RequiredGLAccountsExist("Accrued purchases - Intercompany", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 133")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 133")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Salaries and wages payable")]
-        public virtual void RequiredGLAccountsExist_Variant133()
-        {
-#line 7
-this.RequiredGLAccountsExist("Salaries and wages payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 134")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 134")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Commissions payable")]
-        public virtual void RequiredGLAccountsExist_Variant134()
-        {
-#line 7
-this.RequiredGLAccountsExist("Commissions payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 135")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 135")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Payroll benefits payable")]
-        public virtual void RequiredGLAccountsExist_Variant135()
-        {
-#line 7
-this.RequiredGLAccountsExist("Payroll benefits payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 136")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 136")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Dividends payable")]
-        public virtual void RequiredGLAccountsExist_Variant136()
-        {
-#line 7
-this.RequiredGLAccountsExist("Dividends payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 137")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 137")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Freight payable")]
-        public virtual void RequiredGLAccountsExist_Variant137()
-        {
-#line 7
-this.RequiredGLAccountsExist("Freight payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 138")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 138")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Payroll deductions payable")]
-        public virtual void RequiredGLAccountsExist_Variant138()
-        {
-#line 7
-this.RequiredGLAccountsExist("Payroll deductions payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 139")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 139")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Employee benefits payable")]
-        public virtual void RequiredGLAccountsExist_Variant139()
-        {
-#line 7
-this.RequiredGLAccountsExist("Employee benefits payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 140")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 140")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "State workers compensation payable")]
-        public virtual void RequiredGLAccountsExist_Variant140()
-        {
-#line 7
-this.RequiredGLAccountsExist("State workers compensation payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 141")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 141")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Short term interest payable")]
-        public virtual void RequiredGLAccountsExist_Variant141()
-        {
-#line 7
-this.RequiredGLAccountsExist("Short term interest payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 142")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 142")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Prepayment of service subscription fee")]
-        public virtual void RequiredGLAccountsExist_Variant142()
-        {
-#line 7
-this.RequiredGLAccountsExist("Prepayment of service subscription fee", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 143")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 143")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Customer deposits")]
-        public virtual void RequiredGLAccountsExist_Variant143()
-        {
-#line 7
-this.RequiredGLAccountsExist("Customer deposits", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 144")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 144")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "TOTAL ACCOUNTS PAYABLE")]
-        public virtual void RequiredGLAccountsExist_Variant144()
-        {
-#line 7
-this.RequiredGLAccountsExist("TOTAL ACCOUNTS PAYABLE", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 145")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 145")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "California state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant145()
-        {
-#line 7
-this.RequiredGLAccountsExist("California state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 146")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 146")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Colorado state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant146()
-        {
-#line 7
-this.RequiredGLAccountsExist("Colorado state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 147")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 147")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Tennesse state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant147()
-        {
-#line 7
-this.RequiredGLAccountsExist("Tennesse state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 148")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 148")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Nevada state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant148()
-        {
-#line 7
-this.RequiredGLAccountsExist("Nevada state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 149")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 149")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "New Jersey state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant149()
-        {
-#line 7
-this.RequiredGLAccountsExist("New Jersey state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 150")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 150")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Michigan state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant150()
-        {
-#line 7
-this.RequiredGLAccountsExist("Michigan state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 151")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 151")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "DC state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant151()
-        {
-#line 7
-this.RequiredGLAccountsExist("DC state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 152")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 152")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Florida state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant152()
-        {
-#line 7
-this.RequiredGLAccountsExist("Florida state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 153")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 153")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Georgia state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant153()
-        {
-#line 7
-this.RequiredGLAccountsExist("Georgia state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 154")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 154")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Iowa state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant154()
-        {
-#line 7
-this.RequiredGLAccountsExist("Iowa state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 155")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 155")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Idaho state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant155()
-        {
-#line 7
-this.RequiredGLAccountsExist("Idaho state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 156")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 156")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Illinois state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant156()
-        {
-#line 7
-this.RequiredGLAccountsExist("Illinois state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 157")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 157")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Massachusetts state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant157()
-        {
-#line 7
-this.RequiredGLAccountsExist("Massachusetts state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 158")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 158")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Maryland state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant158()
-        {
-#line 7
-this.RequiredGLAccountsExist("Maryland state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 159")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 159")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Minnesota state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant159()
-        {
-#line 7
-this.RequiredGLAccountsExist("Minnesota state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 160")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 160")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "North Dakota state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant160()
-        {
-#line 7
-this.RequiredGLAccountsExist("North Dakota state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 161")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 161")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "New York state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant161()
-        {
-#line 7
-this.RequiredGLAccountsExist("New York state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 162")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 162")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Ohio state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant162()
-        {
-#line 7
-this.RequiredGLAccountsExist("Ohio state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 163")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 163")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Oregon state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant163()
-        {
-#line 7
-this.RequiredGLAccountsExist("Oregon state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 164")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 164")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Pennsylvania state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant164()
-        {
-#line 7
-this.RequiredGLAccountsExist("Pennsylvania state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 165")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 165")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Texas state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant165()
-        {
-#line 7
-this.RequiredGLAccountsExist("Texas state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 166")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 166")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Washington state tax payable")]
-        public virtual void RequiredGLAccountsExist_Variant166()
-        {
-#line 7
-this.RequiredGLAccountsExist("Washington state tax payable", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required GL Accounts exist: Variant 167")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChartOfAccountsConfiguration")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 167")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountName", "Sales Tax Payable - Clearing")]
-        public virtual void RequiredGLAccountsExist_Variant167()
-        {
-#line 7
-this.RequiredGLAccountsExist("Sales Tax Payable - Clearing", ((string[])(null)));
 #line hidden
         }
     }
