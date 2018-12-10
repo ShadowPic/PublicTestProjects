@@ -43,4 +43,4 @@ TBD
 # References
 - Awesome posting on how to combine urls at https://stackoverflow.com/questions/372865/path-combine-for-urls?rq=1 
 - Data Integration with Dynamics 365 Finance and Operations https://docs.microsoft.com/en-us/dynamics365/unified-operations/dev-itpro/data-entities/integration-overview?toc=/fin-and-ops/toc.json
-- Configuration builder specific notes are [here](./docs/securingsettings.md)
+- Configuration builder specific notes are [here](docs/securingsettings.md)
