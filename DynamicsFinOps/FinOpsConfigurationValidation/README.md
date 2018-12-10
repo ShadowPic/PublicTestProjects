@@ -49,4 +49,3 @@ TBD
 - [SpecFlow Feature and Scenario Context Performance Impact](http://darrenrich.blogspot.com/2018/12/specflow-feature-and-scenario-context.html)
 - [Gherkin specflow Test Examples for Dynamics 365 Finance and Operations](http://darrenrich.blogspot.com/2018/12/gherkin-specflow-test-examples-for.html)
 - [Automating Dynamics 365 Finance and Operations Configuration Validation](http://darrenrich.blogspot.com/2018/11/automating-dynamics-365-finance-and.html)
-- 
