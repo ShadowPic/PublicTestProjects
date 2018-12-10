@@ -43,4 +43,10 @@ TBD
 # References
 - Awesome posting on how to combine urls at https://stackoverflow.com/questions/372865/path-combine-for-urls?rq=1 
 - Data Integration with Dynamics 365 Finance and Operations https://docs.microsoft.com/en-us/dynamics365/unified-operations/dev-itpro/data-entities/integration-overview?toc=/fin-and-ops/toc.json
-- Configuration builder specific notes are [here](docs/securingsettings.md)
+
+# Blog Articles
+- [Accessing Dynamics OData the Easy way](http://darrenrich.blogspot.com/2018/12/accessing-dynamics-odata-easy-way.html)
+- [SpecFlow Feature and Scenario Context Performance Impact](http://darrenrich.blogspot.com/2018/12/specflow-feature-and-scenario-context.html)
+- [Gherkin specflow Test Examples for Dynamics 365 Finance and Operations](http://darrenrich.blogspot.com/2018/12/gherkin-specflow-test-examples-for.html)
+- [Automating Dynamics 365 Finance and Operations Configuration Validation](http://darrenrich.blogspot.com/2018/11/automating-dynamics-365-finance-and.html)
+- 
