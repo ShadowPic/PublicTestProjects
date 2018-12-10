@@ -116,9 +116,12 @@
     <Compile Include="FinOpsRSSTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSSUtil.cs" />
+    <Compile Include="ConfigurationBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ChartOfAccountsConfiguration.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ChartOfAccountsConfiguration.feature.cs</LastGenOutput>
