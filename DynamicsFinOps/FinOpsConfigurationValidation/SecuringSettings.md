@@ -16,3 +16,9 @@ For this project I used .net Configuration Builds which you can read more about 
 - This is the only configbuilder that can be shared across teams.
 - Make sure you name your keyvault secrets correctly
 ![keyvault secret names](./images/keyvaultsecrets.JPG)
+
+# Q&A
+
+| Error Message | Resolution | Config Builder |
+| --- | --- | --- |
+|AzureServiceTokenProvider.\<GetAccessTokenAsyncImpl\>|You may need to reauthenticate your AAD account ![Refresh AD Account](./images/refreshAAD.JPG)| Azure Key Vault|
