@@ -22,3 +22,4 @@ For this project I used .net Configuration Builds which you can read more about 
 | Error Message | Resolution | Config Builder |
 | --- | --- | --- |
 |AzureServiceTokenProvider.\<GetAccessTokenAsyncImpl\>|You may need to reauthenticate your AAD account ![Refresh AD Account](./images/refreshAAD.JPG)| Azure Key Vault|
+|An error occurred while parsing EntityName |If your configuration setting also happens to include an [XML Reserved Character](https://www.w3resource.com/xml/reserved-markup-characters.php) you will need to 'escape' it with the appropriate setting. If your Azure Secret included a '\&' you need to replace it with '\&amp;'   |XML Configurator|
