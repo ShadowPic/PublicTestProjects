@@ -14,10 +14,14 @@ namespace DynamicsOdataTests
         {
             return new FinOpsRSS()
             {
+#pragma warning disable CS0618 // Type or member is obsolete
+
                 ActiveDirectoryTenant = ConfigurationSettings.AppSettings["ActiveDirectoryTenant"].ToString(),
                 ActiveDirectoryResource = ConfigurationSettings.AppSettings["ActiveDirectoryResource"].ToString(),
                 ActiveDirectoryClientAppId = ConfigurationSettings.AppSettings["ActiveDirectoryClientAppId"].ToString(),
                 AzureSecret = ConfigurationSettings.AppSettings["axTestSecret"].ToString()
+#pragma warning disable CS0618 // Type or member is obsolete
+
             };
         }
     }

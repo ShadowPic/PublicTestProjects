@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using System.Linq;
 
 namespace DynamicsOdataTests
 {
@@ -57,6 +56,18 @@ namespace DynamicsOdataTests
             }
             //assert
             Assert.IsTrue(numberOfCustomers > 0);
+        }
+
+        [TestMethod]
+        public void DumpConfigurationSettings()
+        {
+            //arrange
+            FinOpsRSS finOpsRSS = RSSUtil.CreateRssFromConfig();
+            //act
+            TC.WriteLine("ActiveDirectoryClientAppId '{0}'",finOpsRSS.ActiveDirectoryClientAppId);
+            TC.WriteLine("ActiveDirectoryResource '{0}'", finOpsRSS.ActiveDirectoryResource);
+            TC.WriteLine("ActiveDirectoryTenant '{0}'", finOpsRSS.ActiveDirectoryTenant);
+            TC.WriteLine("AzureSecret '{0}'", finOpsRSS.AzureSecret);
         }
 
     }

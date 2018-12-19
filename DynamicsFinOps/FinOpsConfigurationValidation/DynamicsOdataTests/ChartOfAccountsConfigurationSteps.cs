@@ -2,7 +2,6 @@
 using TechTalk.SpecFlow;
 using Newtonsoft.Json.Linq;
 using System.Linq;
-using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DynamicsOdata;
 using System.Configuration;
