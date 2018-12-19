@@ -14,3 +14,5 @@ For this project I used .net Configuration Builds which you can read more about 
 
 - This is probably obvious but if you have your project in a public GitHub make sure that you remove the name of your keyvault from the config before checking in
 - This is the only configbuilder that can be shared across teams.
+- Make sure you name your keyvault secrets correctly
+![keyvault secret names](./images/keyvaultsecrets.JPG)

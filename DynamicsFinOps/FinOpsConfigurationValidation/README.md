@@ -25,14 +25,13 @@ Summary of next steps:
 - Update the app.config for the DynamicsOataTests project
   - ONLY REPLACE THE YOURKEYVAULTHERE
 - Run and verify that your tests are passing
+- Ensure that you [Secure Your Settings](SecuringSettings.md)
 
 ## Additional Notes on Getting Started
 
 ### When registering the "AAD Web App / API" don't forget the required permissions.
 ![required permissions](./images/requiredpermissions.JPG)
 
-### Make sure you name your keyvault secrets correctly
-![keyvault secret names](./images/keyvaultsecrets.JPG)
 
 # Build and Test
 Download the source code, open in Visual Studio 2017 and run the tests. 
