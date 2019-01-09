@@ -1,8 +1,6 @@
 # Introduction
 
-For your application to accessfully query the FinOps Odata service you have to get the settings correct for the OAuth 2.0 authentication.  All of the examples that I found used the FinOps AAD registrations and no examples for on premise.
-
-All service principle based access to finops are configured through the mi=SysAADClientTable form.  
+For your application to successfully query the FinOps Odata service you have to get the settings correct for the OAuth 2.0 authentication.  All of the examples that I found used the FinOps AAD registrations and no examples for on premise.
 
 ## Settings For this Application
 
