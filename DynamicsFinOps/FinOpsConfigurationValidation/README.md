@@ -32,7 +32,7 @@ Summary of next steps:
 ### When registering the "AAD Web App / API" don't forget the required permissions.
 ![required permissions](./images/requiredpermissions.JPG)
 
-
+See the [Service Principal Settings](ServicePrincipalSettings.md) for help with on premise and AAD settings.
 # Build and Test
 Download the source code, open in Visual Studio 2017 and run the tests. 
 
