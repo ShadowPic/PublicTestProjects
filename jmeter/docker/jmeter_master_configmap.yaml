@@ -5,7 +5,7 @@ metadata:
   labels:
     app: influxdb-jmeter
 data:
-  load_test: |
+  load_test_run: |
     #!/bin/bash
     #Script created to invoke jmeter test script with the slave POD IP addresses
     #Script should be run like: ./load_test "path to the test script in jmx format"
