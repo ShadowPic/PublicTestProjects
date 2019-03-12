@@ -1,0 +1,2804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="121398" lt="121398" ts="1551925398035" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-3" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=CFB3F545E1F7612BC3AFBF49677D583C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121764" lt="121764" ts="1551925397687" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-15" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3607125E67778C5CCA682C529EB5C8A9; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121765" lt="121765" ts="1551925397686" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-5" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=03097A3178BAB1363FEFD5A62017950C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121200" lt="121200" ts="1551925398251" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-9" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=FC2E0749BB5043C57F0F01BED88841BF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121772" lt="121772" ts="1551925397679" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-16" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=370FF64582A3A82C56CDB923333AFDBC; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121234" lt="121234" ts="1551925398217" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-11" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=614F857D154C51C1EC79843C9F5237B2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="120766" lt="120766" ts="1551925398685" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-20" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=02A27894984AED04652479739AC3DECB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121482" lt="121482" ts="1551925397953" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-17" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=01B7E24F051063C54AC7FD9921F8093C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121749" lt="121749" ts="1551925397686" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-7" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=64A49B0D75F391F72DE2750FE1C5D940; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121411" lt="121411" ts="1551925398023" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-13" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=2FD4DAE345E4539B36F0C8002C113EFB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121402" lt="121402" ts="1551925398032" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-12" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=C54BE3024B96F3967274E0684CC53AEF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121084" lt="121084" ts="1551925398348" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-19" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=6DED140A2A6D63CB122691BD5EB0A1DA; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121398" lt="121398" ts="1551925398035" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-14" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=748B4D618865612E918AB67EAA692AF7; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121400" lt="121400" ts="1551925398032" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-2" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:18 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=151BDEF0DD7DB54C8C4054781ED37DE1; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121397" lt="121397" ts="1551925398035" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-8" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3CADD8E007D95AA31AFB0C029003EDAB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121210" lt="121210" ts="1551925398222" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-4" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=523E34592002CDF9081675DCC3788DF2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121401" lt="121401" ts="1551925398032" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-6" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:17 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=628200DB9E35BFA0DE3ED64F76EF8CC3; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121400" lt="121400" ts="1551925398033" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-1" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=1473F965A8A0E8C6A1D8853074987231; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121191" lt="121191" ts="1551925398242" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-18" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=A263F57A2D061391DE3A3F64B222BA6F; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<httpSample t="121467" lt="121467" ts="1551925397966" s="false" lb="50 /index.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-10" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:25:16 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/about.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=E31EA5CF6300E96FAB39ADDA208A0D62; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/index.jsp</java.net.URL>
+</httpSample>
+<sample t="121233" lt="121191" ts="1551925398242" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-18" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121441" lt="121400" ts="1551925398032" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-1" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121442" lt="121401" ts="1551925398032" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-6" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121251" lt="121210" ts="1551925398222" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-4" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121438" lt="121397" ts="1551925398034" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-8" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121440" lt="121400" ts="1551925398032" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-2" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121437" lt="121398" ts="1551925398035" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-14" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121124" lt="121084" ts="1551925398347" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-19" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121439" lt="121402" ts="1551925398032" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-12" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121447" lt="121411" ts="1551925398022" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-13" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121784" lt="121749" ts="1551925397686" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-7" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121516" lt="121482" ts="1551925397952" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-17" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="120784" lt="120766" ts="1551925398685" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-20" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121251" lt="121234" ts="1551925398217" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-11" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121789" lt="121772" ts="1551925397678" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-16" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121216" lt="121200" ts="1551925398250" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-9" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121780" lt="121764" ts="1551925397686" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-15" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121781" lt="121765" ts="1551925397686" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-5" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121432" lt="121398" ts="1551925398035" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-3" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="121509" lt="121467" ts="1551925397965" s="false" lb="50 /index.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-10" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127183" lt="127183" ts="1551925519479" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-4" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=523E34592002CDF9081675DCC3788DF2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127185" lt="127185" ts="1551925519477" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-14" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:24 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=748B4D618865612E918AB67EAA692AF7; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127182" lt="127182" ts="1551925519480" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-20" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=02A27894984AED04652479739AC3DECB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127186" lt="127185" ts="1551925519477" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-14" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127184" lt="127183" ts="1551925519476" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-4" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127184" lt="127184" ts="1551925519479" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-13" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=2FD4DAE345E4539B36F0C8002C113EFB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127182" lt="127181" ts="1551925519481" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-16" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=370FF64582A3A82C56CDB923333AFDBC; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127185" lt="127184" ts="1551925519477" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-13" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127183" lt="127182" ts="1551925519479" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-20" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127183" lt="127181" ts="1551925519480" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-16" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127184" lt="127183" ts="1551925519482" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-10" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=E31EA5CF6300E96FAB39ADDA208A0D62; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127184" lt="127183" ts="1551925519482" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-10" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127186" lt="127186" ts="1551925519481" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-15" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:24 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3607125E67778C5CCA682C529EB5C8A9; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127185" lt="127185" ts="1551925519482" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-3" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=CFB3F545E1F7612BC3AFBF49677D583C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127189" lt="127189" ts="1551925519478" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-19" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:24 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=6DED140A2A6D63CB122691BD5EB0A1DA; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127186" lt="127185" ts="1551925519481" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-3" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127187" lt="127186" ts="1551925519480" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-15" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127191" lt="127189" ts="1551925519477" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-19" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127191" lt="127191" ts="1551925519478" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-12" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:26 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=C54BE3024B96F3967274E0684CC53AEF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127189" lt="127189" ts="1551925519480" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-11" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:26 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=614F857D154C51C1EC79843C9F5237B2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127192" lt="127191" ts="1551925519477" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-12" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127192" lt="127192" ts="1551925519479" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-1" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=1473F965A8A0E8C6A1D8853074987231; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127191" lt="127191" ts="1551925519480" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-9" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:24 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=FC2E0749BB5043C57F0F01BED88841BF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127193" lt="127192" ts="1551925519476" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-1" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127191" lt="127189" ts="1551925519479" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-11" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127191" lt="127191" ts="1551925519480" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-7" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:24 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=64A49B0D75F391F72DE2750FE1C5D940; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127192" lt="127192" ts="1551925519481" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-5" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=03097A3178BAB1363FEFD5A62017950C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127192" lt="127191" ts="1551925519480" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-9" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127193" lt="127191" ts="1551925519478" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-7" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127192" lt="127192" ts="1551925519480" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-5" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127197" lt="127197" ts="1551925519477" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-6" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:24 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=628200DB9E35BFA0DE3ED64F76EF8CC3; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127196" lt="127196" ts="1551925519479" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-18" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:24 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=A263F57A2D061391DE3A3F64B222BA6F; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127198" lt="127197" ts="1551925519476" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-6" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127196" lt="127196" ts="1551925519476" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-18" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127201" lt="127201" ts="1551925519479" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-8" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:24 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3CADD8E007D95AA31AFB0C029003EDAB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="127202" lt="127202" ts="1551925519478" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-2" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=151BDEF0DD7DB54C8C4054781ED37DE1; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127202" lt="127201" ts="1551925519476" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-8" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="127203" lt="127202" ts="1551925519476" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-2" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="127201" lt="127201" ts="1551925519480" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-17" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:27:23 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=01B7E24F051063C54AC7FD9921F8093C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="127203" lt="127201" ts="1551925519479" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-17" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124034" lt="124034" ts="1551925646676" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-6" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=628200DB9E35BFA0DE3ED64F76EF8CC3; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124037" lt="124037" ts="1551925646673" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-11" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=614F857D154C51C1EC79843C9F5237B2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124026" lt="124026" ts="1551925646684" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-8" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:27 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3CADD8E007D95AA31AFB0C029003EDAB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124023" lt="124023" ts="1551925646687" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-2" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=151BDEF0DD7DB54C8C4054781ED37DE1; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124037" lt="124037" ts="1551925646674" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-9" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=FC2E0749BB5043C57F0F01BED88841BF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124027" lt="124026" ts="1551925646681" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-8" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124038" lt="124037" ts="1551925646672" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-11" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124035" lt="124034" ts="1551925646675" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-6" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124048" lt="124048" ts="1551925646665" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-13" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=2FD4DAE345E4539B36F0C8002C113EFB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124041" lt="124041" ts="1551925646669" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-3" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=CFB3F545E1F7612BC3AFBF49677D583C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124036" lt="124036" ts="1551925646674" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-7" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=64A49B0D75F391F72DE2750FE1C5D940; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124045" lt="124041" ts="1551925646668" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-3" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124047" lt="124047" ts="1551925646666" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-16" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:27 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=370FF64582A3A82C56CDB923333AFDBC; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124048" lt="124048" ts="1551925646665" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-13" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124048" lt="124047" ts="1551925646665" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-16" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124039" lt="124039" ts="1551925646674" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-5" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=03097A3178BAB1363FEFD5A62017950C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124040" lt="124040" ts="1551925646673" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-1" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=1473F965A8A0E8C6A1D8853074987231; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124038" lt="124037" ts="1551925646673" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-9" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124042" lt="124040" ts="1551925646672" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-1" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124045" lt="124045" ts="1551925646665" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-20" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=02A27894984AED04652479739AC3DECB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124025" lt="124023" ts="1551925646682" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-2" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124051" lt="124045" ts="1551925646665" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-20" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124041" lt="124039" ts="1551925646674" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-5" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124040" lt="124036" ts="1551925646674" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-7" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124050" lt="124050" ts="1551925646667" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-10" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=E31EA5CF6300E96FAB39ADDA208A0D62; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124032" lt="124032" ts="1551925646685" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-17" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:27 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=01B7E24F051063C54AC7FD9921F8093C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124053" lt="124053" ts="1551925646664" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-4" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=523E34592002CDF9081675DCC3788DF2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124033" lt="124032" ts="1551925646684" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-17" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124054" lt="124053" ts="1551925646664" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-4" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124043" lt="124043" ts="1551925646676" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-18" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=A263F57A2D061391DE3A3F64B222BA6F; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124051" lt="124050" ts="1551925646667" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-10" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124043" lt="124043" ts="1551925646675" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-18" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124055" lt="124055" ts="1551925646664" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-14" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=748B4D618865612E918AB67EAA692AF7; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124049" lt="124049" ts="1551925646670" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-19" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:27 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=6DED140A2A6D63CB122691BD5EB0A1DA; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124049" lt="124049" ts="1551925646670" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-15" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:28 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3607125E67778C5CCA682C529EB5C8A9; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124050" lt="124049" ts="1551925646669" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-19" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124051" lt="124049" ts="1551925646669" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-15" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124056" lt="124055" ts="1551925646664" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-14" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124048" lt="124048" ts="1551925646672" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-12" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:29:27 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=C54BE3024B96F3967274E0684CC53AEF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124050" lt="124048" ts="1551925646671" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-12" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124018" lt="124018" ts="1551925770723" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-19" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:32 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=6DED140A2A6D63CB122691BD5EB0A1DA; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124017" lt="124017" ts="1551925770724" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-12" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=C54BE3024B96F3967274E0684CC53AEF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124025" lt="124025" ts="1551925770715" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-13" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:32 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=2FD4DAE345E4539B36F0C8002C113EFB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124027" lt="124025" ts="1551925770714" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-13" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124017" lt="124017" ts="1551925770723" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-15" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3607125E67778C5CCA682C529EB5C8A9; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124022" lt="124022" ts="1551925770719" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-4" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:32 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=523E34592002CDF9081675DCC3788DF2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124022" lt="124022" ts="1551925770719" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-17" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:32 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=01B7E24F051063C54AC7FD9921F8093C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124023" lt="124023" ts="1551925770717" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-5" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=03097A3178BAB1363FEFD5A62017950C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124025" lt="124022" ts="1551925770718" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-17" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124028" lt="124028" ts="1551925770716" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-9" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=FC2E0749BB5043C57F0F01BED88841BF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124030" lt="124028" ts="1551925770716" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-9" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124025" lt="124022" ts="1551925770719" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-4" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124029" lt="124028" ts="1551925770715" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-16" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=370FF64582A3A82C56CDB923333AFDBC; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124021" lt="124020" ts="1551925770723" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-14" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:32 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=748B4D618865612E918AB67EAA692AF7; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124020" lt="124017" ts="1551925770721" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-15" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124024" lt="124020" ts="1551925770722" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-14" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124019" lt="124018" ts="1551925770721" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-19" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124018" lt="124017" ts="1551925770723" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-12" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124032" lt="124028" ts="1551925770715" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-16" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124028" lt="124023" ts="1551925770716" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-5" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124035" lt="124035" ts="1551925770713" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-6" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=628200DB9E35BFA0DE3ED64F76EF8CC3; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124036" lt="124035" ts="1551925770712" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-6" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124033" lt="124033" ts="1551925770717" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-20" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=02A27894984AED04652479739AC3DECB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124036" lt="124036" ts="1551925770714" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-8" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3CADD8E007D95AA31AFB0C029003EDAB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124035" lt="124035" ts="1551925770716" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-1" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:32 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=1473F965A8A0E8C6A1D8853074987231; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124031" lt="124031" ts="1551925770720" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-18" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=A263F57A2D061391DE3A3F64B222BA6F; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124037" lt="124037" ts="1551925770713" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-11" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:32 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=614F857D154C51C1EC79843C9F5237B2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124031" lt="124031" ts="1551925770719" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-18" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124038" lt="124037" ts="1551925770712" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-11" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124035" lt="124035" ts="1551925770716" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-1" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124037" lt="124036" ts="1551925770712" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-8" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124034" lt="124033" ts="1551925770716" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-20" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124033" lt="124033" ts="1551925770720" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-10" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=E31EA5CF6300E96FAB39ADDA208A0D62; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124034" lt="124034" ts="1551925770717" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-2" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=151BDEF0DD7DB54C8C4054781ED37DE1; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="124038" lt="124038" ts="1551925770715" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-3" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:31 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=CFB3F545E1F7612BC3AFBF49677D583C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124033" lt="124033" ts="1551925770719" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-10" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124036" lt="124034" ts="1551925770716" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-2" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="124037" lt="124037" ts="1551925770717" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-7" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:31:32 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=64A49B0D75F391F72DE2750FE1C5D940; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="124039" lt="124038" ts="1551925770714" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-3" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="124038" lt="124037" ts="1551925770717" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-7" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="123962" lt="123962" ts="1551925894750" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-6" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:35 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=628200DB9E35BFA0DE3ED64F76EF8CC3; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123968" lt="123968" ts="1551925894745" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-13" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:35 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=2FD4DAE345E4539B36F0C8002C113EFB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123957" lt="123957" ts="1551925894756" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-10" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:35 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=E31EA5CF6300E96FAB39ADDA208A0D62; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123960" lt="123960" ts="1551925894753" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-8" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:35 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3CADD8E007D95AA31AFB0C029003EDAB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123960" lt="123960" ts="1551925894753" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-18" dt="text" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=A263F57A2D061391DE3A3F64B222BA6F; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="123961" lt="123960" ts="1551925894752" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-8" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123961" lt="123960" ts="1551925894752" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-18" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123958" lt="123957" ts="1551925894754" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-10" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123969" lt="123968" ts="1551925894743" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-13" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123963" lt="123962" ts="1551925894749" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-6" dt="" de="" by="250" ng="20" na="20">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="123961" lt="123961" ts="1551925894754" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-11" dt="text" de="" by="250" ng="16" na="16">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=614F857D154C51C1EC79843C9F5237B2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123968" lt="123968" ts="1551925894747" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-4" dt="text" de="" by="250" ng="16" na="16">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=523E34592002CDF9081675DCC3788DF2; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123965" lt="123965" ts="1551925894750" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-15" dt="text" de="" by="250" ng="15" na="15">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:35 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=3607125E67778C5CCA682C529EB5C8A9; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="123962" lt="123961" ts="1551925894752" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-11" dt="" de="" by="250" ng="16" na="16">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123969" lt="123968" ts="1551925894746" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-4" dt="" de="" by="250" ng="16" na="16">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123966" lt="123965" ts="1551925894747" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-15" dt="" de="" by="250" ng="15" na="15">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="123970" lt="123970" ts="1551925894747" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-17" dt="text" de="" by="250" ng="13" na="13">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=01B7E24F051063C54AC7FD9921F8093C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123968" lt="123968" ts="1551925894749" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-5" dt="text" de="" by="250" ng="13" na="13">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=03097A3178BAB1363FEFD5A62017950C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="123971" lt="123970" ts="1551925894746" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-17" dt="" de="" by="250" ng="13" na="13">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123969" lt="123968" ts="1551925894748" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-5" dt="" de="" by="250" ng="13" na="13">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="123972" lt="123972" ts="1551925894748" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-16" dt="text" de="" by="250" ng="10" na="10">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:35 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=370FF64582A3A82C56CDB923333AFDBC; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123973" lt="123973" ts="1551925894747" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-9" dt="text" de="" by="250" ng="10" na="10">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:35 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=FC2E0749BB5043C57F0F01BED88841BF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="123973" lt="123972" ts="1551925894748" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-16" dt="" de="" by="250" ng="10" na="10">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123974" lt="123973" ts="1551925894746" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-9" dt="" de="" by="250" ng="10" na="10">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="123965" lt="123965" ts="1551925894757" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-2" dt="text" de="" by="250" ng="8" na="8">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=151BDEF0DD7DB54C8C4054781ED37DE1; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123964" lt="123964" ts="1551925894758" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-7" dt="text" de="" by="250" ng="8" na="8">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=64A49B0D75F391F72DE2750FE1C5D940; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="123966" lt="123965" ts="1551925894754" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-2" dt="" de="" by="250" ng="8" na="8">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123965" lt="123964" ts="1551925894756" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-7" dt="" de="" by="250" ng="8" na="8">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="123971" lt="123971" ts="1551925894753" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-20" dt="text" de="" by="250" ng="6" na="6">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=02A27894984AED04652479739AC3DECB; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123976" lt="123976" ts="1551925894748" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-12" dt="text" de="" by="250" ng="6" na="6">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=C54BE3024B96F3967274E0684CC53AEF; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123971" lt="123971" ts="1551925894753" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-1" dt="text" de="" by="250" ng="6" na="6">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=1473F965A8A0E8C6A1D8853074987231; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="123971" lt="123971" ts="1551925894752" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-20" dt="" de="" by="250" ng="6" na="6">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123977" lt="123976" ts="1551925894748" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-12" dt="" de="" by="250" ng="6" na="6">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123972" lt="123971" ts="1551925894752" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-1" dt="" de="" by="250" ng="6" na="6">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="123976" lt="123976" ts="1551925894749" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-19" dt="text" de="" by="250" ng="6" na="6">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:35 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=6DED140A2A6D63CB122691BD5EB0A1DA; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="123976" lt="123976" ts="1551925894748" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-19" dt="" de="" by="250" ng="6" na="6">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<httpSample t="123982" lt="123982" ts="1551925894748" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-14" dt="text" de="" by="250" ng="2" na="2">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=748B4D618865612E918AB67EAA692AF7; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<httpSample t="123972" lt="123972" ts="1551925894758" s="false" lb="47 /about.jsp" rc="502" rm="Bad Gateway" tn="Thread Group 1-3" dt="text" de="" by="250" ng="2" na="2">
+  <responseHeader class="java.lang.String">HTTP/1.1 502 Bad Gateway
+Content-Length: 89
+Content-Type: text/html
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 07 Mar 2019 02:33:36 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Referer: https://drcoffee.azurewebsites.net/index.jsp
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate, br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: drcoffee.azurewebsites.net
+</requestHeader>
+  <responseData class="java.lang.String">The specified CGI application encountered an error and the server terminated the process.</responseData>
+  <cookies class="java.lang.String">JSESSIONID=CFB3F545E1F7612BC3AFBF49677D583C; ARRAffinity=4e8a51dc9165bd907c70a65faa47eb80f0a0ecc06a9af22efb19a5cbc488f39b</cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>https://drcoffee.azurewebsites.net/about.jsp</java.net.URL>
+</httpSample>
+<sample t="123983" lt="123982" ts="1551925894747" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-14" dt="" de="" by="250" ng="2" na="2">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="123973" lt="123972" ts="1551925894755" s="false" lb="47 /about.jsp" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Thread Group 1-3" dt="" de="" by="250" ng="2" na="2">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+
+</testResults>

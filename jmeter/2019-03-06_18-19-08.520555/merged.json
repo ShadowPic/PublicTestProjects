@@ -1,0 +1,12 @@
+{
+ "execution": [
+  {
+   "scenario": "simple"
+  }
+ ],
+ "scenarios": {
+  "simple": {
+   "script": "coffeeperftest.jmx"
+  }
+ }
+}
