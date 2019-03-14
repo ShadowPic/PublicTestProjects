@@ -6,7 +6,8 @@ ARG JMETER_VERSION=5.0
 ENV JMETER_VERSION=5.0
 
 COPY rmi_keystore.jks /jmeter/apache-jmeter-$JMETER_VERSION/bin/
-                     
+
+COPY rmi_keystore.jks /                     
 
 EXPOSE 1099 50000
 

@@ -5,6 +5,8 @@ ARG JMETER_VERSION=5.0
 
 COPY rmi_keystore.jks /jmeter/apache-jmeter-$JMETER_VERSION/bin/
 
+COPY rmi_keystore.jks /
+
 COPY load_test_run /
 
 RUN ["chmod","777","load_test_run"]

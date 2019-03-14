@@ -17,6 +17,11 @@ spec:
       containers:
       - name: jmslave
         image: shadowpic/jmeter-slave:latest
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+              cpu: "0.5"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 1099
