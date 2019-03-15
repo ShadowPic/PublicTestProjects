@@ -29,26 +29,3 @@ Write-Output "Creating Jmeter Master"
 kubectl create -n $tenant -f jmeter_master_configmap.yaml
 
 kubectl create -n $tenant -f jmeter_master_deploy.yaml
-
-
-# echo "Creating Influxdb and the service"
-
-# kubectl create -n $tenant -f $working_dir/jmeter_influxdb_configmap.yaml
-
-# kubectl create -n $tenant -f $working_dir/jmeter_influxdb_deploy.yaml
-
-# kubectl create -n $tenant -f $working_dir/jmeter_influxdb_svc.yaml
-
-# echo "Creating Grafana Deployment"
-
-# kubectl create -n $tenant -f $working_dir/jmeter_grafana_deploy.yaml
-
-# kubectl create -n $tenant -f $working_dir/jmeter_grafana_svc.yaml
-
-# echo "Printout Of the $tenant Objects"
-
-# echo
-
-# kubectl get -n $tenant all
-
-# echo namespace = $tenant > $working_dir/tenant_export
