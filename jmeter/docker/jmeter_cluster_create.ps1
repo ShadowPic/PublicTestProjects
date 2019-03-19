@@ -1,7 +1,11 @@
 param(
     [Parameter(Mandatory=$true)]
     [string]
-    $tenant
+    $tenant,
+    # Add more than 2 instances
+    [Parameter(Mandatory=$false)]
+    [int]
+    $ScaleSlaves = 0
 )
 
 Write-Output "checking if kubectl is present"
@@ -23,7 +27,10 @@ Write-Output "Creating Jmeter slave nodes"
 kubectl create -n $tenant -f jmeter_slaves_deploy.yaml
 
 kubectl create -n $tenant -f jmeter_slaves_svc.yaml
-
+if($ScaleSlaves -gt 2)
+{
+    kubectl scale -n $tenant --replicas=$ScaleSlaves deployment/jmeter-slaves
+}
 Write-Output "Creating Jmeter Master"
 
 kubectl create -n $tenant -f jmeter_master_configmap.yaml

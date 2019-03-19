@@ -5,7 +5,7 @@ metadata:
   labels:
     jmeter_mode: slave
 spec:
-  replicas: 2 
+  replicas: 2
   selector:
     matchLabels:
       jmeter_mode: slave
@@ -21,7 +21,7 @@ spec:
           limits:
             cpu: "1"
           requests:
-              cpu: "0.5"
+            cpu: "0.5"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 1099
