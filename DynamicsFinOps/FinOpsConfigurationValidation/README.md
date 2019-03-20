@@ -16,7 +16,7 @@ Summary of next steps:
 - Register the [external application in FinOps](https://docs.microsoft.com/en-us/dynamics365/unified-operations/dev-itpro/data-entities/services-home-page#register-your-external-application-in-finance-and-operations)
 - [Create an Azure Keyvault](https://docs.microsoft.com/en-us/azure/key-vault/key-vault-get-started)
 - Collect required settings
-  - axTestSecret: the AAD Key Secret
+  - AzureSecret: the AAD Key Secret
   - ActiveDirectoryTenant: URL to your tenant ID
   - ActiveDirectoryResource: this is the url to your FinOps Instance
   - ActiveDirectoryClientAppId: This is called the Application ID in Azure AD
@@ -25,15 +25,14 @@ Summary of next steps:
 - Update the app.config for the DynamicsOataTests project
   - ONLY REPLACE THE YOURKEYVAULTHERE
 - Run and verify that your tests are passing
+- Ensure that you [Secure Your Settings](SecuringSettings.md)
 
 ## Additional Notes on Getting Started
 
 ### When registering the "AAD Web App / API" don't forget the required permissions.
 ![required permissions](./images/requiredpermissions.JPG)
 
-### Make sure you name your keyvault secrets correctly
-![keyvault secret names](./images/keyvaultsecrets.JPG)
-
+See the [Service Principal Settings](ServicePrincipalSettings.md) for help with on premise and AAD settings.
 # Build and Test
 Download the source code, open in Visual Studio 2017 and run the tests. 
 

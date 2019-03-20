@@ -1,0 +1,17 @@
+FROM shadowpic/jmeter-base:latest
+MAINTAINER DarrenRich
+
+ARG JMETER_VERSION=5.0
+
+ENV JMETER_VERSION=5.0
+
+COPY rmi_keystore.jks /jmeter/apache-jmeter-$JMETER_VERSION/bin/
+
+COPY rmi_keystore.jks /                     
+
+EXPOSE 1099 50000
+
+ENTRYPOINT $JMETER_HOME/bin/jmeter-server \ 
+-Dserver.rmi.ssl.keystore.file /jmeter/apache-jmeter-${JMETER_VERSION}/bin/rmi_keystore.jks \ 
+-Dserver.rmi.localport=50000 \
+-Dserver_port=1099
