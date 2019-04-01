@@ -16,3 +16,4 @@ $MasterPod = $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-he
 kubectl cp $TestName $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
 kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -Leaf)"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
+kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder
