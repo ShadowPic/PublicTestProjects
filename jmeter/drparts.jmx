@@ -771,27 +771,6 @@
         <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="true"/>
         <hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Searches" enabled="true"/>
-          <hashTree/>
-          <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="bzm - Weighted Switch Controller" enabled="true">
-            <boolProp name="IsRandomChoice">false</boolProp>
-            <collectionProp name="Weights">
-              <collectionProp name="-1211725350">
-                <stringProp name="-1828226003">Attempting CSV Search</stringProp>
-                <stringProp name="1691">50</stringProp>
-                <stringProp name="3569038">true</stringProp>
-              </collectionProp>
-              <collectionProp name="-1702086744">
-                <stringProp name="2019287882">Search With Test Scrip top variable</stringProp>
-                <stringProp name="1603">25</stringProp>
-                <stringProp name="3569038">true</stringProp>
-              </collectionProp>
-              <collectionProp name="1315032448">
-                <stringProp name="-386004320">19 search</stringProp>
-                <stringProp name="1603">25</stringProp>
-                <stringProp name="3569038">true</stringProp>
-              </collectionProp>
-            </collectionProp>
-          </com.blazemeter.jmeter.control.WeightedSwitchController>
           <hashTree>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
@@ -1150,17 +1129,6 @@
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <com.blazemeter.jmeter.RandomCSVDataSetConfig guiclass="com.blazemeter.jmeter.RandomCSVDataSetConfigGui" testclass="com.blazemeter.jmeter.RandomCSVDataSetConfig" testname="bzm - Random CSV Data Set Config" enabled="true">
-        <stringProp name="filename"></stringProp>
-        <stringProp name="fileEncoding">UTF-8</stringProp>
-        <stringProp name="delimiter">,</stringProp>
-        <stringProp name="variableNames"></stringProp>
-        <boolProp name="randomOrder">true</boolProp>
-        <boolProp name="ignoreFirstLine">false</boolProp>
-        <boolProp name="rewindOnTheEndOfList">true</boolProp>
-        <boolProp name="independentListPerThread">false</boolProp>
-      </com.blazemeter.jmeter.RandomCSVDataSetConfig>
-      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
