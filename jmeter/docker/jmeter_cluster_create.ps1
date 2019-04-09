@@ -10,6 +10,10 @@ param(
 
 Write-Output "checking if kubectl is present"
 
+$PathToYaml = Split-Path $MyInvocation.MyCommand.Path -Parent
+
+Set-Location $PathToYaml
+
 if ($null -eq (Get-Command "kubectl.exe" -ErrorAction SilentlyContinue)) 
 { 
    Write-Host "Unable to find kubectl.exe in your PATH"
@@ -27,6 +31,7 @@ Write-Output "Creating Jmeter slave nodes"
 kubectl create -n $tenant -f jmeter_slaves_deploy.yaml
 
 kubectl create -n $tenant -f jmeter_slaves_svc.yaml
+
 if($ScaleSlaves -gt 2)
 {
     kubectl scale -n $tenant --replicas=$ScaleSlaves deployment/jmeter-slaves
