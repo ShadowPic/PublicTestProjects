@@ -1,9 +1,9 @@
 FROM shadowpic/jmeter-base:latest
 MAINTAINER DarrenRich
 
-ARG JMETER_VERSION=5.0
+ARG JMETER_VERSION=5.1.1
 
-ENV JMETER_VERSION=5.0
+ENV JMETER_VERSION=5.1.1
 
 COPY rmi_keystore.jks /jmeter/apache-jmeter-$JMETER_VERSION/bin/
 
