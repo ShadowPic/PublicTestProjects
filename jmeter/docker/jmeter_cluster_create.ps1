@@ -41,3 +41,5 @@ Write-Output "Creating Jmeter Master"
 kubectl create -n $tenant -f jmeter_master_configmap.yaml
 
 kubectl create -n $tenant -f jmeter_master_deploy.yaml
+
+kubectl -n $tenant rollout status -f .\jmeter_slaves_deploy.yaml
