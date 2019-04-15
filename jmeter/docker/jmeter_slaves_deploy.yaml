@@ -17,6 +17,8 @@ spec:
       containers:
       - name: jmslave
         image: shadowpic/jmeter-slave:latest
+        command: ["/jmeter/apache-jmeter-$(JMETERVERSION)/bin/jmeter-server"]
+        args: ["-Dserver.rmi.ssl.keystore.file /jmeter/apache-jmeter-$(JMETERVERSION)/bin/rmi_keystore.jks","-Djava.rmi.server.hostname=$(MY_POD_IP)", "-Dserver.rmi.localport=50000", "-Dserver_port=1099"]
         resources:
           limits:
             cpu: "1"
@@ -26,3 +28,10 @@ spec:
         ports:
         - containerPort: 1099
         - containerPort: 50000
+        env:
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: JMETERVERSION
+            value: "5.1.1"
