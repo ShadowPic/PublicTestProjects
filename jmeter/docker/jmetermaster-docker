@@ -11,4 +11,4 @@ COPY load_test_run /
 
 RUN ["chmod","777","load_test_run"]
 
-EXPOSE 60000
+EXPOSE 60000-60200

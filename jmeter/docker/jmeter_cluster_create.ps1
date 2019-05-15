@@ -5,7 +5,13 @@ param(
     # Add more than 2 instances
     [Parameter(Mandatory=$false)]
     [int]
-    $ScaleSlaves = 0
+    $ScaleSlaves = 0,
+    [Parameter(Mandatory=$true)]
+    [string]
+    $StorageAccount,
+    [Parameter(Mandatory=$true)]
+    [string]
+    $StorageResourceGroup
 )
 
 Write-Output "checking if kubectl is present"
@@ -36,6 +42,20 @@ if($ScaleSlaves -gt 2)
 {
     kubectl scale -n $tenant --replicas=$ScaleSlaves deployment/jmeter-slaves
 }
+
+$storage_key=$(az storage account keys list --resource-group $StorageResourceGroup --account-name $StorageAccount --query "[0].value" -o tsv)
+kubectl -n $tenant create secret generic azure-secret --from-literal=azurestorageaccountname=$StorageAccount --from-literal=azurestorageaccountkey=$STORAGE_KEY
+
+Write-Output "Creating Influxdb and the service"
+
+kubectl create -n $tenant -f jmeter_influxdb_configmap.yaml
+
+kubectl create -n $tenant -f jmeter_influxdb_deploy.yaml
+
+kubectl create -n $tenant -f jmeter_influxdb_svc.yaml
+
+kubectl -n $tenant rollout status -f .\jmeter_influxdb_deploy.yaml
+
 Write-Output "Creating Jmeter Master"
 
 kubectl create -n $tenant -f jmeter_master_configmap.yaml
@@ -43,3 +63,4 @@ kubectl create -n $tenant -f jmeter_master_configmap.yaml
 kubectl create -n $tenant -f jmeter_master_deploy.yaml
 
 kubectl -n $tenant rollout status -f .\jmeter_slaves_deploy.yaml
+
