@@ -18,12 +18,12 @@ spec:
       - name: grafana
         image: grafana/grafana
         imagePullPolicy: IfNotPresent
-        volumeMounts:
-          - name: grafanavol
-            mountPath: /var/lib/grafana
         ports:
         - containerPort: 3000
           protocol: TCP
+        volumeMounts:
+        - name: grafanavol
+          mountPath: /var/lib/grafana
       volumes:
       - name: grafanavol
         azureFile:
