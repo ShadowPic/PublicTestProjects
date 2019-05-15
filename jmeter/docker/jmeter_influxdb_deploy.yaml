@@ -30,7 +30,6 @@ spec:
               name: api
             - containerPort: 2003
               name: graphite
-
       volumes:
       - name: config-volume
         configMap:
