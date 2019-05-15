@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jmeter-grafana
+  labels:
+    app: jmeter-grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jmeter-grafana
+  template:
+    metadata:
+      labels:
+        app: jmeter-grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - name: grafanavol
+            mountPath: /var/lib/grafana
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+      volumes:
+      - name: grafanavol
+        azureFile:
+          secretName: azure-secret
+          shareName: grafana
+          readOnly: false

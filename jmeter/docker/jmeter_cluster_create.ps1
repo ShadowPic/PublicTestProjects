@@ -66,3 +66,7 @@ kubectl create -n $tenant -f jmeter_master_deploy.yaml
 
 kubectl -n $tenant rollout status -f .\jmeter_slaves_deploy.yaml
 
+write-output "deploying grafana"
+
+kubectl create -n $tenant -f .\jmeter_grafana_deploy.yaml
+kubectl create -n $tenant -f .\jmeter_grafana_svc.yaml
