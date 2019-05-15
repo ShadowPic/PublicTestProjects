@@ -11,7 +11,10 @@ param(
     $StorageAccount,
     [Parameter(Mandatory=$true)]
     [string]
-    $StorageResourceGroup
+    $StorageResourceGroup,
+    [Parameter(Mandatory=$true)]
+    [string]
+    $StorageKey
 )
 
 Write-Output "checking if kubectl is present"
@@ -43,8 +46,7 @@ if($ScaleSlaves -gt 2)
     kubectl scale -n $tenant --replicas=$ScaleSlaves deployment/jmeter-slaves
 }
 
-$storage_key=$(az storage account keys list --resource-group $StorageResourceGroup --account-name $StorageAccount --query "[0].value" -o tsv)
-kubectl -n $tenant create secret generic azure-secret --from-literal=azurestorageaccountname=$StorageAccount --from-literal=azurestorageaccountkey=$STORAGE_KEY
+kubectl -n $tenant create secret generic azure-secret --from-literal=azurestorageaccountname=$StorageAccount --from-literal=azurestorageaccountkey=$StorageKey
 
 Write-Output "Creating Influxdb and the service"
 
