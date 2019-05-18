@@ -17,6 +17,8 @@ spec:
       containers:
         - name: grafana
           image: grafana/grafana
+          securityContext:
+            runAsUser: 0
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 3000
@@ -26,8 +28,7 @@ spec:
             mountPath: /var/lib/grafana
       volumes:
       - name: grafanavol
-        azureFile:
-          secretName: azure-secret
-          shareName: grafana
-          readOnly: false
-          
+        azureDisk:
+          diskURI: this is super secret so don't check in
+          diskName: myAKSDisk
+          kind: Managed
