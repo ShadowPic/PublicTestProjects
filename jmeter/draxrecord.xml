@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+
+
+
+<httpSample t="319" it="0" lt="319" ct="135" ts="1558362265663" s="true" lb="1 attempt auth" rc="200" rm="OK" tn="" dt="text" de="utf-8" by="2045" sc="1" ec="0" ng="0" na="0" hn="DrDashBot">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Cache-Control: no-cache, no-store
+Pragma: no-cache
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+x-ms-request-id: e3958b4c-734b-4f04-b654-0dee73d59800
+P3P: CP=&quot;DSP CUR OTPi IND OTRi ONL FIN&quot;
+Set-Cookie: fpc=AmAmDRnoTspFgUc0jxizoc_n0a0EAgAAAP6udNQOAAAA; expires=Wed, 19-Jun-2019 14:24:25 GMT; path=/; secure; HttpOnly
+Set-Cookie: x-ms-gateway-slice=prod; path=/; secure; HttpOnly
+Set-Cookie: stsservicecookie=ests; path=/; secure; HttpOnly
+Date: Mon, 20 May 2019 14:24:24 GMT
+Connection: close
+Content-Length: 1391
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Postman-Token: c03aa5f9-763d-470f-a0e3-a7de279c4558
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded
+cache-control: no-cache
+accept-encoding: gzip, deflate
+User-Agent: PostmanRuntime/7.6.0
+Accept: */*
+Content-Length: 199
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;token_type&quot;:&quot;Bearer&quot;,&quot;expires_in&quot;:&quot;3600&quot;,&quot;ext_expires_in&quot;:&quot;3600&quot;,&quot;expires_on&quot;:&quot;1558365865&quot;,&quot;not_before&quot;:&quot;1558361965&quot;,&quot;resource&quot;:&quot;https://draxc884b7251765490daos.cloudax.dynamics.com&quot;,&quot;access_token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkhCeGw5bUFlNmd4YXZDa2NvT1UyVEhzRE5hMCIsImtpZCI6IkhCeGw5bUFlNmd4YXZDa2NvT1UyVEhzRE5hMCJ9.eyJhdWQiOiJodHRwczovL2RyYXhjODg0YjcyNTE3NjU0OTBkYW9zLmNsb3VkYXguZHluYW1pY3MuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlhdCI6MTU1ODM2MTk2NSwibmJmIjoxNTU4MzYxOTY1LCJleHAiOjE1NTgzNjU4NjUsImFpbyI6IjQyWmdZRGk3bm1ucmdtT21pVXg3YmlsYU9uRnVBZ0E9IiwiYXBwaWQiOiIzYzdlMzE3OC1hZmQwLTQ4NDYtYmJmNi00NzdlZjRlYzYxOTIiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwib2lkIjoiOTZmMTU1NDEtYzI4Ny00MTk2LWFjZGYtOTYxM2U5YTQzNWE1Iiwic3ViIjoiOTZmMTU1NDEtYzI4Ny00MTk2LWFjZGYtOTYxM2U5YTQzNWE1IiwidGlkIjoiNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3IiwidXRpIjoiVEl1VjQwdHpCRS0yVkEzdWM5V1lBQSIsInZlciI6IjEuMCJ9.k_89sQSFdbGLtnXOISQtZBcroskm3Ubm1klYmkqmzXaju6XUm16JbtSsBgq3-20zewF3hrmdO-5M1nQHcQElr0Nc8eL_0nZ6NQZ5WNC8qIQy_OQhgXCpw8BTqzyiL1MVFEXtHoy4O3ZwNAQk_3iJRM89yxuKeQkQkvHcRQYVxaYgXlvdBgwKcitj_BYm-MQ2X4RrnAzihrx2GNvEeJnhSrlfAbArtnPT8pCd4HKijb3DBl_Pd1WoCHe9-XefdyI-R0zfMqPt1qfGdXvrfFSgKmmVjNlcZmE-726bi4u9xaQSBMIByBfzQdDjdvzAQgaCkacSl_yOLno2yysNO7JwaA&quot;}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String">x-ms-gateway-slice=prod; stsservicecookie=ests; fpc=AmAmDRnoTspFgUc0jxizoc_n0a0EAQAAAP6udNQOAAAA</cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">grant_type=client_credentials&amp;client_id=3c7e3178-afd0-4846-bbf6-477ef4ec6192&amp;client_secret=%3A%7C%3E%5E9%3F5cDJ%5Dv%3E%28M_-%26%24*&amp;resource=https%3A%2F%2Fdraxc884b7251765490daos.cloudax.dynamics.com</queryString>
+  <java.net.URL>https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/token</java.net.URL>
+</httpSample>
+<httpSample t="269" it="0" lt="269" ct="92" ts="1558362284677" s="true" lb="2 attempt auth" rc="200" rm="OK" tn="" dt="text" de="utf-8" by="2045" sc="1" ec="0" ng="0" na="0" hn="DrDashBot">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Cache-Control: no-cache, no-store
+Pragma: no-cache
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+x-ms-request-id: 488bca01-d5ea-496a-93cf-374677d7ae00
+P3P: CP=&quot;DSP CUR OTPi IND OTRi ONL FIN&quot;
+Set-Cookie: fpc=AmAmDRnoTspFgUc0jxizoc_n0a0EAwAAAP6udNQOAAAA; expires=Wed, 19-Jun-2019 14:24:44 GMT; path=/; secure; HttpOnly
+Set-Cookie: x-ms-gateway-slice=prod; path=/; secure; HttpOnly
+Set-Cookie: stsservicecookie=ests; path=/; secure; HttpOnly
+Date: Mon, 20 May 2019 14:24:43 GMT
+Connection: close
+Content-Length: 1391
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Postman-Token: 94d12c74-b505-4676-beed-a3aff6b873bb
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded
+cache-control: no-cache
+accept-encoding: gzip, deflate
+User-Agent: PostmanRuntime/7.6.0
+Accept: */*
+Content-Length: 199
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;token_type&quot;:&quot;Bearer&quot;,&quot;expires_in&quot;:&quot;3600&quot;,&quot;ext_expires_in&quot;:&quot;3600&quot;,&quot;expires_on&quot;:&quot;1558365884&quot;,&quot;not_before&quot;:&quot;1558361984&quot;,&quot;resource&quot;:&quot;https://draxc884b7251765490daos.cloudax.dynamics.com&quot;,&quot;access_token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkhCeGw5bUFlNmd4YXZDa2NvT1UyVEhzRE5hMCIsImtpZCI6IkhCeGw5bUFlNmd4YXZDa2NvT1UyVEhzRE5hMCJ9.eyJhdWQiOiJodHRwczovL2RyYXhjODg0YjcyNTE3NjU0OTBkYW9zLmNsb3VkYXguZHluYW1pY3MuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlhdCI6MTU1ODM2MTk4NCwibmJmIjoxNTU4MzYxOTg0LCJleHAiOjE1NTgzNjU4ODQsImFpbyI6IjQyWmdZQWhMdEg3VFpIbTZSLzNldWNVbUpwb1hBUT09IiwiYXBwaWQiOiIzYzdlMzE3OC1hZmQwLTQ4NDYtYmJmNi00NzdlZjRlYzYxOTIiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwib2lkIjoiOTZmMTU1NDEtYzI4Ny00MTk2LWFjZGYtOTYxM2U5YTQzNWE1Iiwic3ViIjoiOTZmMTU1NDEtYzI4Ny00MTk2LWFjZGYtOTYxM2U5YTQzNWE1IiwidGlkIjoiNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3IiwidXRpIjoiQWNxTFNPclZha21UenpkR2Q5ZXVBQSIsInZlciI6IjEuMCJ9.MwMKgtRD2qfbvwJijuFe3eks4c-_7eGDAoL3bAveiIqdo6aCNR1Ju0h746ohli6YFxO0mxJzyWYxzl3T89YmrNXnqkcOJ68Ykvw-r5fD3ghiBBplxB3xEKEktkovGh_Ya3NBfA8HpHOwqawj3SC8dyJ1wn6R5QS3Z54tIHSVnvsu3zKltG3r8Rn3bQBB2AGt815sTaX_4hiSH6bVfQCdAW-09NzXO5UG5zu0CLyMiYqGXvoy9t4txHtPdglNI3jt0y8N5t33UqDnKStxScUPnnfVRv1sn_vHmumgoPGU0jBlYp8Ph-_5C7uyOFcRdVhz-Cl6WHj09SREZ4Ro7HOEbw&quot;}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String">x-ms-gateway-slice=prod; stsservicecookie=ests; fpc=AmAmDRnoTspFgUc0jxizoc_n0a0EAgAAAP6udNQOAAAA</cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">grant_type=client_credentials&amp;client_id=3c7e3178-afd0-4846-bbf6-477ef4ec6192&amp;client_secret=%3A%7C%3E%5E9%3F5cDJ%5Dv%3E%28M_-%26%24*&amp;resource=https%3A%2F%2Fdraxc884b7251765490daos.cloudax.dynamics.com</queryString>
+  <java.net.URL>https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/token</java.net.URL>
+</httpSample>
+
+</testResults>

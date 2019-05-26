@@ -29,6 +29,6 @@ spec:
       volumes:
       - name: grafanavol
         azureDisk:
-          diskURI: this is super secret so don't check in
+          diskURI: /subscriptions/<hide>/resourceGroups/<hide>/providers/Microsoft.Compute/disks/myAKSDisk
           diskName: myAKSDisk
           kind: Managed

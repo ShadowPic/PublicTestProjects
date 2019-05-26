@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jmeter-grafana-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - <hide>.westus2.cloudapp.azure.com
+    secretName: tls-secret-staging
+  rules:
+  - host: <hide>.westus2.cloudapp.azure.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jmeter-grafana
+          servicePort: 3000
