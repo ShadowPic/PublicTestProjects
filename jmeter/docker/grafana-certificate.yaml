@@ -5,13 +5,13 @@ metadata:
 spec:
   secretName: tls-secret-staging
   dnsNames:
-  - jmetergrafana.westus2.cloudapp.azure.com
+  - <hide>.westus2.cloudapp.azure.com
   acme:
     config:
     - http01:
         ingressClass: nginx
       domains:
-      - jmetergrafana.westus2.cloudapp.azure.com
+      - <hide>.westus2.cloudapp.azure.com
   issuerRef:
     name: letsencrypt-staging
     kind: ClusterIssuer
