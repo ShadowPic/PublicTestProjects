@@ -5,16 +5,7 @@ param(
     # Add more than 2 instances
     [Parameter(Mandatory=$false)]
     [int]
-    $ScaleSlaves = 0,
-    [Parameter(Mandatory=$true)]
-    [string]
-    $StorageAccount,
-    [Parameter(Mandatory=$true)]
-    [string]
-    $StorageResourceGroup,
-    [Parameter(Mandatory=$true)]
-    [string]
-    $StorageKey
+    $ScaleSlaves = 0
 )
 
 Write-Output "checking if kubectl is present"
@@ -31,42 +22,28 @@ if ($null -eq (Get-Command "kubectl.exe" -ErrorAction SilentlyContinue))
 
 kubectl version --short
 
-Write-Output "Creating Namespace: $tenant"
-
-kubectl create namespace $tenant
-
 Write-Output "Creating Jmeter slave nodes"
 
 kubectl create -n $tenant -f jmeter_slaves_deploy.yaml
-
-kubectl create -n $tenant -f jmeter_slaves_svc.yaml
 
 if($ScaleSlaves -gt 2)
 {
     kubectl scale -n $tenant --replicas=$ScaleSlaves deployment/jmeter-slaves
 }
 
-kubectl -n $tenant create secret generic azure-secret --from-literal=azurestorageaccountname=$StorageAccount --from-literal=azurestorageaccountkey=$StorageKey
-
 Write-Output "Creating Influxdb and the service"
-
-kubectl create -n $tenant -f jmeter_influxdb_configmap.yaml
 
 kubectl create -n $tenant -f jmeter_influxdb_deploy.yaml
 
-kubectl create -n $tenant -f jmeter_influxdb_svc.yaml
-
-kubectl -n $tenant rollout status -f .\jmeter_influxdb_deploy.yaml
+kubectl -n $tenant rollout status deployment influxdb-jmeter
 
 Write-Output "Creating Jmeter Master"
 
-kubectl create -n $tenant -f jmeter_master_configmap.yaml
-
 kubectl create -n $tenant -f jmeter_master_deploy.yaml
 
-kubectl -n $tenant rollout status -f .\jmeter_slaves_deploy.yaml
+kubectl -n $tenant rollout status deployment jmeter-master
 
-write-output "deploying grafana"
+kubectl -n $tenant rollout status deployment jmeter-slaves
 
-kubectl create -n $tenant -f .\jmeter_grafana_deploy.yaml
-kubectl create -n $tenant -f .\jmeter_grafana_svc.yaml
+
+

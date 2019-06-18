@@ -14,8 +14,17 @@ param(
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 Set-Location $CurrentPath
+if($null -eq $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name) )
+{
+    kubectl create -n $tenant -f jmeter_master_deploy.yaml
+    kubectl -n $tenant rollout status deployment jmeter-master
+}
 $MasterPod = $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name).Replace("pod/","")
+
+
 kubectl cp $TestName $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
 kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -Leaf)"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
-kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder
+kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.log
+kubectl -n $tenant delete pod $MasterPod
+kubectl -n $tenant wait --for=delete pod $MasterPod --timeout=15s

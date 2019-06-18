@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - <hide>.westus2.cloudapp.azure.com
+    - drgrafana.westus2.cloudapp.azure.com
     secretName: tls-secret-staging
   rules:
-  - host: <hide>.westus2.cloudapp.azure.com
+  - host: drgrafana.westus2.cloudapp.azure.com
     http:
       paths:
       - path: /

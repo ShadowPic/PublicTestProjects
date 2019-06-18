@@ -1,3 +1,17 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: azure-managed-disk
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
@@ -28,7 +42,21 @@ spec:
             mountPath: /var/lib/grafana
       volumes:
       - name: grafanavol
-        azureDisk:
-          diskURI: /subscriptions/<hide>/resourceGroups/<hide>/providers/Microsoft.Compute/disks/myAKSDisk
-          diskName: myAKSDisk
-          kind: Managed
+        persistentVolumeClaim:
+          claimName: azure-managed-disk
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmeter-grafana
+  labels:
+    app: jmeter-grafana
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: jmeter-grafana
