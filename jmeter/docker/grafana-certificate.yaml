@@ -3,6 +3,7 @@ kind: Certificate
 metadata:
   name: tls-secret
 spec:
+  commonName: drgrafanacn
   secretName: tls-secret-staging
   dnsNames:
   - drgrafana.westus2.cloudapp.azure.com

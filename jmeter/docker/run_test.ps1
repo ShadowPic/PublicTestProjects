@@ -16,8 +16,8 @@ $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 Set-Location $CurrentPath
 if($null -eq $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name) )
 {
-    kubectl create -n $tenant -f jmeter_master_deploy.yaml
-    kubectl -n $tenant rollout status deployment jmeter-master
+    Write-Error "Master pod does not exist"
+    exit
 }
 $MasterPod = $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name).Replace("pod/","")
 
