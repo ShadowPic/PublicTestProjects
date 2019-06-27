@@ -55,14 +55,14 @@ Adapted from: https://docs.microsoft.com/en-us/azure/aks/ingress-tls
     helm install stable/nginx-ingress `
       --namespace $tenant  `
       --set controller.replicaCount=1 `
-      --set controller.nodeSelector."beta\\.kubernetes\\.io/os"=linux `
-      --set defaultBackend.nodeSelector."beta\\.kubernetes\\.io/os"=linux
+      --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux `
+      --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
 
 ## Retrieve Public IP from NGINX
 
     $nginxPublicIP = $(kubectl -n $tenant get service -o json|convertfrom-json).items.status.LoadBalancer.ingress.ip
     $SubDns="drgrafana"
-    $PUBLICIPID=$(az network public-ip list --query "[?ipAddress!=null]\|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
+    $PUBLICIPID=$(az network public-ip list --query "[?ipAddress!=null]|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
     az network public-ip update --ids $PUBLICIPID --dns-name $SubDns
 
 ## Cluster Certificate Manager
