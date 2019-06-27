@@ -56,13 +56,15 @@ Adapted from: https://docs.microsoft.com/en-us/azure/aks/ingress-tls
       --namespace $tenant  `
       --set controller.replicaCount=1 `
       --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux `
-      --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
+      --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux `
+      --wait
 
 ## Retrieve Public IP from NGINX
 
     $nginxPublicIP = $(kubectl -n $tenant get service -o json|convertfrom-json).items.status.LoadBalancer.ingress.ip
     $SubDns="drgrafana"
-    $PUBLICIPID=$(az network public-ip list --query "[?ipAddress!=null]|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
+    $AksVmResourceGroup="Name of your aks resource group"
+    $PUBLICIPID=$(az network public-ip list --resource-group $AksVmResourceGroup --query "[?ipAddress!=null]|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
     az network public-ip update --ids $PUBLICIPID --dns-name $SubDns
 
 ## Cluster Certificate Manager
@@ -76,8 +78,8 @@ Adapted from: https://docs.microsoft.com/en-us/azure/aks/ingress-tls
     helm install `
         --name cert-manager `
         --namespace cert-manager `
-        --version v0.8.0 `
-    jetstack/cert-manager
+        --version v0.8.0 jetstack/cert-manager `
+        --wait
 
 ## CA Cluster Issuer
 
