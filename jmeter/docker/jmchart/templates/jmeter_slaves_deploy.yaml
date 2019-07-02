@@ -1,0 +1,58 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: jmeter-slaves
+  namespace: {{.Values.metadata.namespace.jmeter}}
+  labels:
+    jmeter_mode: slave
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      jmeter_mode: slave
+  template:
+    metadata:
+      labels:
+        jmeter_mode: slave
+    spec:
+      containers:
+      - name: jmslave
+        image: shadowpic/jmeter-slave:latest
+        command: ["/jmeter/apache-jmeter-$(JMETERVERSION)/bin/jmeter-server"]
+        args: ["-Dserver.rmi.ssl.keystore.file /jmeter/apache-jmeter-$(JMETERVERSION)/bin/rmi_keystore.jks","-Djava.rmi.server.hostname=$(MY_POD_IP)", "-Dserver.rmi.localport=50000", "-Dserver_port=1099"]
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: "0.5"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 1099
+        - containerPort: 50000
+        env:
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: JMETERVERSION
+            value: "5.1.1"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmeter-slaves-svc
+  labels:
+    jmeter_mode: slave
+spec:
+  clusterIP: None
+  ports:
+    - port: 1099
+      name: first
+      targetPort: 1099
+    - port: 50000
+      name: second
+      targetPort: 50000
+  selector:
+    jmeter_mode: slave
