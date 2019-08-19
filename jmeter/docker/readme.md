@@ -36,10 +36,12 @@ Notes:
     kubectl config use-context docker-desktop
     kubectl config delete-context draks2
     kubectl config delete-cluster draks2
-    kubectl unset users.clusterUser_draks2_draks2
+    kubectl config unset users.clusterUser_draks2_draks2
 See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration
   
 ## Creating the AKS Cluster
+**The following assumes you are the Azure subscription owner.  You may want to exclude the monitoring addon as this must create a service account.**
+
     az aks create --resource-group draks2   --name draks2   --node-count 1  --enable-addons monitoring  --generate-ssh-keys
     az aks get-credentials --name draks2 --resource-group draks2
     kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
