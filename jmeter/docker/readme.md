@@ -45,7 +45,6 @@ See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-an
     az aks create --resource-group draks2   --name draks2   --node-count 1  --enable-addons monitoring  --generate-ssh-keys
     az aks get-credentials --name draks2 --resource-group draks2
     kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
-    az aks upgrade --name draks2 --resource-group draks2 --kubernetes-version 1.13.5
     kubectl apply -f helm-rbac.yaml
     helm init --service-account tiller
 
