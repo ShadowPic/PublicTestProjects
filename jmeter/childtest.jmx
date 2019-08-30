@@ -34,6 +34,8 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Chauncee" enabled="false"/>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
