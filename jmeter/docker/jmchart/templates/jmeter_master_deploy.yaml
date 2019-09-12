@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: jmeter-load-test
+  namespace: {{.Values.metadata.namespace.jmeter}}
   labels:
     app: influxdb-jmeter
 data:

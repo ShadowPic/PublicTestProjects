@@ -14,6 +14,8 @@ To provide a simple method of deleting the test rig after the test execution we 
   - Linux based containers whicdh allow for K8S native pod clustering
 - PowerShell script to create your own docker images if you don't want to use mine at https://cloud.docker.com/u/shadowpic
 - Build the cluster from Docker root containers
+- Real time monitoring of the performance test with Grafana
+- Combine Azure PAS service metrics side by side with JMeter metrics using Grafana
 
 ## Dependendies
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
@@ -24,13 +26,81 @@ To provide a simple method of deleting the test rig after the test execution we 
   - JMeter Plugins: https://jmeter-plugins.org/
   - A web site somewhere that you can break and not get in trouble.  :)
 
-## Scripts
+# Overview of the deployment steps
+Notes:
+- Will need to customize settings in the following files
+  - cluster-issuer-prod.yaml: replace the noname@nowhere.com with your e-mail address
+  - jmeter_grafana_ingress-prod.yaml: replace fqdn of drgrafana.westus2.cloudapp.azure.com with your specific url
 
-### Building the Docker Images
+## To Delete Prior Cluster Client Context
+    kubectl config use-context docker-desktop
+    kubectl config delete-context draks2
+    kubectl config delete-cluster draks2
+    kubectl config unset users.clusterUser_draks2_draks2
+See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration
+  
+## Creating the AKS Cluster
+**The following assumes you are the Azure subscription owner.  You may want to exclude the monitoring addon as this must create a service account.**
+
+    az aks create --resource-group draks2   --name draks2   --node-count 1  --enable-addons monitoring  --generate-ssh-keys
+    az aks get-credentials --name draks2 --resource-group draks2
+    kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+    kubectl apply -f helm-rbac.yaml
+    helm init --service-account tiller
+
+# Creating the Grafana Ingress
+Adapted from: https://docs.microsoft.com/en-us/azure/aks/ingress-tls
+
+## NGINX Ingress Controller
+
+    helm install stable/nginx-ingress `
+      --namespace $tenant  `
+      --set controller.replicaCount=1 `
+      --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux `
+      --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux `
+      --wait
+
+## Retrieve Public IP from NGINX
+
+    $nginxPublicIP = $(kubectl -n $tenant get service -o json|convertfrom-json).items.status.LoadBalancer.ingress.ip
+    $SubDns="drgrafana"
+    $AksVmResourceGroup="Name of your aks resource group"
+    $PUBLICIPID=$(az network public-ip list --resource-group $AksVmResourceGroup --query "[?ipAddress!=null]|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
+    az network public-ip update --ids $PUBLICIPID --dns-name $SubDns
+
+## Cluster Certificate Manager
+
+    kubectl create namespace cert-manager
+    kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
+    # Install the CustomResourceDefinition resources separately 
+    kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.8/deploy/manifests/00-crds.yaml 
+    helm repo update
+    # Install the cert-manager Helm chart
+    helm install `
+        --name cert-manager `
+        --namespace cert-manager `
+        --version v0.8.0 jetstack/cert-manager `
+        --wait
+
+## CA Cluster Issuer
+
+    # edit the e-mail address replacing with your actual e-mail
+    kubectl apply -f cluster-issuer-prod.yaml
+
+## Deploy Grafana
+
+    kubectl -n $tenant apply -f .\jmeter_grafana_deploy.yaml
+
+## Create Ingress Route
+    kubectl -n $tenant apply -f .\jmeter_grafana_ingress-prod.yaml
+
+# Scripts
+
+## Building the Docker Images
 **File Name:** builddocker.ps1
 Must be hand edited to point this to your Docker repository and then update the relevent scripts which is beyond the scope of this document.
 
-### Creating the K8S JMeter Cluster
+## Creating the K8S JMeter Cluster
 **File Name:** jmeter_cluster_create.ps1
 This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also creates the K8S master configurtion map and the JMeter Slaves service.  Once the script is completed you can check the status of the Pods with the following kubectl command:
 
@@ -41,18 +111,18 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
 - -ScaleSlaves [integer larger than 2]
   - OPTIONAL parameter which allows for a cluster larger than the default of 1 master and 2 slaves
   
-### Running the Test
+## Running the Test
 **File Name:** run_test.ps1
 - -tenant <K8S NameSpace> 
 - -TestName < full or relative path to the JMeter test script >
 - -ReportFolder < folder name to publish the results of the test >
 
-### Cleaning Up
+## Cleaning Up
 
 To delete tbe cluster you run the following command:
 **kubectl delete namespace NAMESPCENAME**
 
-## Supporting files
+# Supporting files
 
 - Docker Files
   - jmeterbase-docker
