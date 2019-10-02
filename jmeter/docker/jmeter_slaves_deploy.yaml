@@ -24,7 +24,7 @@ spec:
             cpu: "1"
           requests:
             cpu: "0.5"
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 1099
         - containerPort: 50000

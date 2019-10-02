@@ -52,12 +52,12 @@
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">import org.apache.commons.codec.binary.Base64;
 String jwtToken = vars.get(&quot;bearer&quot;);
-  String[] split_string = jwtToken.split(&quot;\\.&quot;);
-        String base64EncodedHeader = split_string[0];
-        String base64EncodedBody = split_string[1];
-        String base64EncodedSignature = split_string[2];
-        Base64 base64Url = new Base64(true);
-        String header = new String(base64Url.decode(base64EncodedHeader));
+String[] split_string = jwtToken.split(&quot;\\.&quot;);
+String base64EncodedHeader = split_string[0];
+String base64EncodedBody = split_string[1];
+String base64EncodedSignature = split_string[2];
+Base64 base64Url = new Base64(true);
+String header = new String(base64Url.decode(base64EncodedHeader));
 String body = new String(base64Url.decode(base64EncodedBody));
 vars.put(&quot;jwtHeader&quot;,header)
 vars.put(&quot;jwtBody&quot;,body)</stringProp>
