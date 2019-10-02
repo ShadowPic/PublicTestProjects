@@ -22,6 +22,10 @@ if ($null -eq (Get-Command "kubectl.exe" -ErrorAction SilentlyContinue))
 
 kubectl version --short
 
+Write-Output "Installing redis"
+
+helm install --name redis-release --namespace $tenant stable/redis --set usePassword=false --wait
+
 Write-Output "Creating Jmeter slave nodes"
 
 kubectl create -n $tenant -f jmeter_slaves_deploy.yaml

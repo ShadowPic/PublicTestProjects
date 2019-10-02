@@ -15,7 +15,7 @@ param(
     $DeleteTestRig = $true,
     [Parameter(Mandatory=$false)]
     [string]
-    $UserProperties=$null
+    $UserProperties=""
 )
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
@@ -27,7 +27,7 @@ if($null -eq $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-he
 }
 $MasterPod = $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name).Replace("pod/","")
 Write-Output "Checking for user properties"
-if(!($UserProperties -eq $null))
+if(!($UserProperties -eq $null -or $UserProperties -eq "" ))
 {
     Write-Output "Copying user.properties over"
     kubectl cp $UserProperties $tenant/${MasterPod}:/jmeter/apache-jmeter-5.1.1/bin/user.properties
@@ -42,4 +42,5 @@ if($DeleteTestRig)
 {
     kubectl -n $tenant delete -f jmeter_master_deploy.yaml
     kubectl -n $tenant delete -f jmeter_slaves_deploy.yaml
+    #helm del --purge redis-release
 }
