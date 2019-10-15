@@ -15,7 +15,10 @@ param(
     $DeleteTestRig = $true,
     [Parameter(Mandatory=$false)]
     [string]
-    $UserProperties=""
+    $UserProperties="",
+    [Parameter(Mandatory=$false)]
+    [string]
+    $RedisScript=""
 )
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
@@ -31,6 +34,13 @@ if(!($UserProperties -eq $null -or $UserProperties -eq "" ))
 {
     Write-Output "Copying user.properties over"
     kubectl cp $UserProperties $tenant/${MasterPod}:/jmeter/apache-jmeter-5.1.1/bin/user.properties
+}
+Write-Output "Checking for Redis script"
+if(!($RedisScript -eq $null -or $RedisScript -eq ""))
+{
+    #Since we use helm to install Redis we can assume the pod name for the first redis slave instance
+    write-output "Executing redis script"
+    Get-Content $RedisScript | kubectl -n $tenant exec -i redis-release-master-0 -- redis-cli --pipe
 }
 kubectl cp $TestName $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
 

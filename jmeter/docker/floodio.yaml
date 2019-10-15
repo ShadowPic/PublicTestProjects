@@ -1,0 +1,39 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: floodio-challenge
+  labels:
+    challenge: youbet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      challenge: youbet
+  template:
+    metadata:
+      labels:
+        challenge: youbet
+    spec:
+      containers:
+      - name: floodio-challenge
+        image: floodio/challenge:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: floodio-challenge-service
+  labels:
+    challenge: youbet
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+  selector:
+    challenge: youbet
