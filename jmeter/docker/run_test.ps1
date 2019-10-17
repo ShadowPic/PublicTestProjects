@@ -18,7 +18,10 @@ param(
     $UserProperties="",
     [Parameter(Mandatory=$false)]
     [string]
-    $RedisScript=""
+    $RedisScript="",
+    [parameter(ValueFromRemainingArguments=$true)]
+    [string[]]
+    $GlobalJmeterParams
 )
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
@@ -42,14 +45,24 @@ if(!($RedisScript -eq $null -or $RedisScript -eq ""))
     write-output "Executing redis script"
     Get-Content $RedisScript | kubectl -n $tenant exec -i redis-release-master-0 -- redis-cli --pipe
 }
-kubectl cp $TestName $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
+Write-Output "Processing global parameters"
+[string]$GlobalParmsCombined=" "
+foreach($gr in $GlobalJmeterParams)
+{
+    $GlobalParmsCombined += $gr + " "
 
-kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -Leaf)"
+}
+Write-Output "Copying test plan to aks"
+kubectl cp $TestName $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
+Write-Output "Starting test execution on AKS Cluster"
+kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -Leaf)" $GlobalJmeterParams
+Write-Output "Retrieving dashboard, results and Master jmeter.log"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
 kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.log
 kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.1.1/bin/jmeter.log $ReportFolder/jmeter.log
 if($DeleteTestRig)
 {
+    Write-Output "Removing JMeter master and slave pods"
     kubectl -n $tenant delete -f jmeter_master_deploy.yaml
     kubectl -n $tenant delete -f jmeter_slaves_deploy.yaml
     #helm del --purge redis-release
