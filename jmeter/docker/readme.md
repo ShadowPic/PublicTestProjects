@@ -16,6 +16,7 @@ To provide a simple method of deleting the test rig after the test execution we 
 - Build the cluster from Docker root containers
 - Real time monitoring of the performance test with Grafana
 - Combine Azure PAS service metrics side by side with JMeter metrics using Grafana
+- Redis support to feed parameters to your tests
 
 ## Dependendies
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
@@ -113,9 +114,20 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
   
 ## Running the Test
 **File Name:** run_test.ps1
-- -tenant <K8S NameSpace> 
-- -TestName < full or relative path to the JMeter test script >
-- -ReportFolder < folder name to publish the results of the test >
+- -tenant (required): K8S NameSpace
+- -TestName (required): full or relative path to the JMeter test script
+- -ReportFolder (required): folder name to publish the results of the test
+- -DeleteTestRig (optional)
+  - $true (default) means to remove the JMeter Master and Slave pods at the end of the run.
+  - $false means to leave the AKS JMeter Master and slaves.  This is used for debugging purposes.
+- -UserProperties (optional): path to a custom user properties file for the JMeter Master pod
+- -RedisScript (optional): full or relative path to a Redis script for populating parameters to support perf tests
+  - JMeter supports Redis as a data source for parameters.
+  - See: https://jmeter-plugins.org/wiki/RedisDataSet/ 
+- -GlobalJmeterParams (optional): JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves
+  - This feature allows for any number of "-G" parameters to be added.
+  - This feature also allows you to add any other JMeter option you want to assuming it's not already present.  
+  - See: https://jmeter.apache.org/usermanual/remote-test.html
 
 ## Cleaning Up
 
