@@ -17,7 +17,7 @@ spec:
       containers:
       - name: floodio-challenge
         image: floodio/challenge:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
 
@@ -30,10 +30,9 @@ metadata:
   labels:
     challenge: youbet
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - name: http
       port: 8080
-      targetPort: 8080
   selector:
     challenge: youbet

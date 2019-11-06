@@ -41,6 +41,12 @@ kubectl create -n $tenant -f jmeter_influxdb_deploy.yaml
 
 kubectl -n $tenant rollout status deployment influxdb-jmeter
 
+write-output "Creating JMeter Influx database"
+
+$InfluxPod = $(kubectl -n $tenant get pods --selector=app=influxdb-jmeter --no-headers=true --output=name).Replace("pod/","")
+
+kubectl -n $tenant exec $InfluxPod -- curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE jmeter"
+
 Write-Output "Creating Jmeter Master"
 
 kubectl create -n $tenant -f jmeter_master_deploy.yaml
