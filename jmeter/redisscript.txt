@@ -1,0 +1,8 @@
+del Users
+SADD Users "awkward@duck.com,Password1!"
+SADD Users "astonmartin@luxury.com,Luxury!01"
+SADD Users "ritesh@ritesh.com,Msgd@123!"
+SADD Users "testuser001@dspart.com,Password1!"
+SADD Users "testuser002@dspart.com,Password1!"
+SADD Users "testuser003@dspart.com,Password1!"
+SADD Users "testuser004@dspart.com,Password1!"	

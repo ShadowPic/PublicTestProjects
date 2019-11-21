@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DetectParams", "DetectParams\DetectParams.csproj", "{45F0ECE5-EAEB-4D48-B462-9ED13C0A4DC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dos2unix", "dos2unix\dos2unix.csproj", "{5D184E58-68CB-499D-8CCE-19D8EDD98540}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45F0ECE5-EAEB-4D48-B462-9ED13C0A4DC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F0ECE5-EAEB-4D48-B462-9ED13C0A4DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F0ECE5-EAEB-4D48-B462-9ED13C0A4DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F0ECE5-EAEB-4D48-B462-9ED13C0A4DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D184E58-68CB-499D-8CCE-19D8EDD98540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D184E58-68CB-499D-8CCE-19D8EDD98540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D184E58-68CB-499D-8CCE-19D8EDD98540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D184E58-68CB-499D-8CCE-19D8EDD98540}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05463C41-2E13-483A-A837-FF0E6A1869E6}
+	EndGlobalSection
+EndGlobal
