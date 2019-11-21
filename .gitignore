@@ -299,3 +299,4 @@ __pycache__/
 
 # End of https://www.gitignore.io/api/visualstudio
 jmeter/docker/rmi_keystore.jks
+.vs/slnx.sqlite
