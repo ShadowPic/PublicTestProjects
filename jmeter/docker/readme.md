@@ -22,7 +22,8 @@ To provide a simple method of deleting the test rig after the test execution we 
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
 - Kitematic: https://github.com/docker/kitematic
 - AKS: https://azure.microsoft.com/en-us/services/kubernetes-service/
-- To create a basic load test
+- Helm: https://github.com/helm/helm 
+To create a basic load test
   - JmMter 5.x: https://jmeter.apache.org/download_jmeter.cgi
   - JMeter Plugins: https://jmeter-plugins.org/
   - A web site somewhere that you can break and not get in trouble.  :)
