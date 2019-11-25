@@ -48,19 +48,21 @@ if(($PUBLICIPID -eq $null) -or ($PUBLICIPID -eq ""))
     log "Failed to get the public ip address id"
     return;
 }
-return
 log "Adding DNS suffix"
 az network public-ip update --ids $PUBLICIPID --dns-name $SubDns
 kubectl create namespace cert-manager
 kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
 # Install the CustomResourceDefinition resources separately 
 helm repo add jetstack https://charts.jetstack.io
+helm repo update
 kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.8/deploy/manifests/00-crds.yaml 
 helm repo update
 log "Install the cert-manager Helm chart"
 helm install --name cert-manager --namespace cert-manager --version v0.8.0 jetstack/cert-manager --wait
-kubectl apply -n $namespace -f cluster-issuer-prod.yaml
+kubectl apply -f cluster-issuer-prod.yaml
 kubectl -n $tenant apply -f .\jmeter_grafana_deploy.yaml
 kubectl -n $tenant rollout status deployment jmeter-grafana
+Read-Host -Prompt "press enter to continue"
+
 kubectl -n $tenant apply -f .\jmeter_grafana_ingress-prod.yaml
 # the ingress has the fqdn of the grafana service.  this may require a helm chart to make this generic.
