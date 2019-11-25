@@ -43,7 +43,7 @@ $nginxPublicIP = $(kubectl -n $tenant get service -o json|convertfrom-json).item
 $AksVmResourceGroup=$(az aks list --query "[*].nodeResourceGroup" -o tsv)
 $PUBLICIPID=$(az network public-ip list --resource-group $AksVmResourceGroup --query "[?ipAddress=='$($nginxPublicIP)']|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
 log "Public IP ID: $($PUBLICIPID)"
-if($PUBLICIPID == $null || $PUBLICIPID == "")
+if(($PUBLICIPID -eq $null) -or ($PUBLICIPID -eq ""))
 {
     log "Failed to get the public ip address id"
     return;
