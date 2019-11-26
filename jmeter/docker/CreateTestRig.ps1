@@ -39,9 +39,26 @@ kubectl create namespace $tenant
 log "Installing nginx"
 helm install stable/nginx-ingress --namespace $tenant --set controller.replicaCount=1 --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux --wait
 log "Getting Public IP address"
-$nginxPublicIP = $(kubectl -n $tenant get service -o json|convertfrom-json).items.status.LoadBalancer.ingress.ip
-$AksVmResourceGroup=$(az aks list --query "[*].nodeResourceGroup" -o tsv)
-$PUBLICIPID=$(az network public-ip list --resource-group $AksVmResourceGroup --query "[?ipAddress=='$($nginxPublicIP)']|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
+$RetryCount=0
+$Complete=$false
+[string]$PUBLICIPID=""
+while(-not $Complete)
+{
+    $nginxPublicIP = $(kubectl -n $tenant get service -o json|convertfrom-json).items.status.LoadBalancer.ingress.ip
+    $AksVmResourceGroup=$(az aks list --query "[*].nodeResourceGroup" -o tsv)
+    $PUBLICIPID=$(az network public-ip list --resource-group $AksVmResourceGroup --query "[?ipAddress=='$($nginxPublicIP)']|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
+    if(-not($null -eq $PUBLICIPID) -and -not($PUBLICIPID -eq ""))
+    {
+        $Complete=$true;
+    } 
+    if(($RetryCount -gt 3) -and (-not $Complete))
+    {
+        log "failed to obtain an IP address"
+        throw 
+    }
+    $RetryCount ++   
+    Start-Sleep -Seconds 3
+}
 log "Public IP ID: $($PUBLICIPID)"
 if(($PUBLICIPID -eq $null) -or ($PUBLICIPID -eq ""))
 {
@@ -59,10 +76,9 @@ kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release
 helm repo update
 log "Install the cert-manager Helm chart"
 helm install --name cert-manager --namespace cert-manager --version v0.8.0 jetstack/cert-manager --wait
+Start-Sleep -Seconds 30
 kubectl apply -f cluster-issuer-prod.yaml
 kubectl -n $tenant apply -f .\jmeter_grafana_deploy.yaml
 kubectl -n $tenant rollout status deployment jmeter-grafana
-Read-Host -Prompt "press enter to continue"
-
 kubectl -n $tenant apply -f .\jmeter_grafana_ingress-prod.yaml
 # the ingress has the fqdn of the grafana service.  this may require a helm chart to make this generic.
