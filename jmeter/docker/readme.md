@@ -44,6 +44,19 @@ See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-an
 ## Creating the AKS Cluster
 **The following assumes you are the Azure subscription owner.  You may want to exclude the monitoring addon as this must create a service account.**
 
+**New way to create the test rig has just been posted!**
+I have created a new PowerShell script that creates the AKS cluster and does all of the work for you!  It's not perfect and you will have to customize the files described in the Overview section.
+
+### New Way to Create AKS Cluster
+
+**CreateTestRig.ps1**
+- -tenant < K8S NameSpace > 
+- -SubDns < Azure Public IP DNS name label > 
+- -AksResourceGroup < Resource Group You already created >
+- -AksClusterName < Name of your AKS Cluster >
+
+### Old and Broke Way to Create AKS Cluster
+
     az aks create --resource-group draks2   --name draks2   --node-count 1  --enable-addons monitoring  --generate-ssh-keys
     az aks get-credentials --name draks2 --resource-group draks2
     kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
@@ -108,7 +121,7 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
 
 **kubectl -n \<K8S NameSpace\> get pods**
 
-- -tenant <K8S NameSpace> 
+- -tenant < K8S NameSpace> 
   - Will create a K8S NameSpace and use that to create and deploy all services
 - -ScaleSlaves [integer larger than 2]
   - OPTIONAL parameter which allows for a cluster larger than the default of 1 master and 2 slaves
@@ -162,3 +175,4 @@ To delete tbe cluster you run the following command:
 - https://kubernauts.io/en/
 - http://www.testautomationguru.com/jmeter-distributed-load-testing-using-docker/
 - https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how 
+- https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address
