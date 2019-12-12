@@ -28,6 +28,25 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)/k8sjmeter'
+  inputs:
+    SourceFolder: POC
+    TargetFolder: '$(build.artifactstagingdirectory)/k8sjmeter'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  
+- task: HelmInstaller@0
+  displayName: 'Install Helm 2.14.1'
+
+- task: AzureCLI@1
+  displayName: 'Get K8S credentials'
+  inputs:
+    azureSubscription: $(AzureSubscription)
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName)'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
