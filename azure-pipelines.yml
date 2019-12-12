@@ -48,6 +48,22 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName)'
 
+- task: AzurePowerShell@3
+  displayName: 'jmeter_cluster_create.ps1'
+  inputs:
+    azureSubscription: 'JMeter-NFT-Playground'
+    ScriptPath: 'jmeter/docker/jmeter_cluster_create.ps1'
+    ScriptArguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors) '
+    azurePowerShellVersion: LatestVersion
+
+- task: AzurePowerShell@3
+  displayName: RunTest
+  inputs:
+    azureSubscription: 'JMeter-NFT-Playground'
+    ScriptPath: 'jmeter/docker/run_test.ps1'
+    ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt'
+    azurePowerShellVersion: LatestVersion
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
