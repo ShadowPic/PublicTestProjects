@@ -43,7 +43,7 @@ steps:
 - task: AzureCLI@1
   displayName: 'Get K8S credentials'
   inputs:
-    azureSubscription: $(AzureSubscription)
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName)'
 
