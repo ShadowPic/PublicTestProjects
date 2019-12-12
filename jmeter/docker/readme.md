@@ -37,8 +37,12 @@ To create a basic load test
 See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration
   
 # Overview of the deployment steps
-Notes:
-- Will need to customize settings in the following files
+
+- Login with the Azure Client
+- Select the subscription that you want to create the AKS cluster in
+- Make your current working directory in the same location as the this readme file
+- Create a resource group and note the azure region you are using
+- Customize the following files
   - **cluster-issuer-prod.yaml**: replace the noname@nowhere.com with your e-mail address
   - **jmeter_grafana_ingress-prod.yaml**: replace fqdn of drgrafana.westus2.cloudapp.azure.com with your specific url
 
@@ -49,6 +53,8 @@ Notes:
 I have created a new PowerShell script that creates the AKS cluster and does all of the work for you!  It's not perfect and you will have to customize the files described in the Overview section.
 
 ### New Way to Create AKS Cluster
+
+### Step 1
 
 **CreateTestRig.ps1**
 - -tenant < K8S NameSpace > 
