@@ -1,4 +1,5 @@
 {
   "jmeterLogFileName": "./samplefail/jmeter.log",
-  "statisticsFileName": "./samplefail/statistics.json"
+  "statisticsFileName": "./samplefail/statistics.json",
+  "expectedKoMax": "5.0"
 }

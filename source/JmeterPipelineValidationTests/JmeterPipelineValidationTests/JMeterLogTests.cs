@@ -31,7 +31,10 @@ namespace JmeterPipelineValidationTests
             //arrange
             string failMessage = "AutoStop: Sending StopTestNow request to port 4445";
             string statisticsFileName = Config.Configuration["statisticsFileName"];
-            float expectedMax = 30.0f;
+            string expectedMaxString = Config.Configuration["expectedKoMax"];
+            float expectedMax;
+            float.TryParse(expectedMaxString,out expectedMax);
+            
             //act
             JObject rss = JObject.Parse(File.ReadAllText(statisticsFileName));
             float errorPercentage;
