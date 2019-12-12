@@ -31,8 +31,9 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)/k8sjmeter'
   inputs:
-    SourceFolder: POC
-    TargetFolder: '$(build.artifactstagingdirectory)/k8sjmeter'
+    SourceFolder: 'jmeter'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/jmeter'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
