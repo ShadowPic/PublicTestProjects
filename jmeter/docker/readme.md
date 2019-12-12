@@ -20,19 +20,13 @@ To provide a simple method of deleting the test rig after the test execution we 
 
 ## Dependendies
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
-- Kitematic: https://github.com/docker/kitematic
+- Azure Client: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - AKS: https://azure.microsoft.com/en-us/services/kubernetes-service/
-- Helm: https://github.com/helm/helm 
+- Helm version 2.*: https://github.com/helm/helm 
 To create a basic load test
-  - JmMter 5.x: https://jmeter.apache.org/download_jmeter.cgi
+  - JMeter 5.x: https://jmeter.apache.org/download_jmeter.cgi
   - JMeter Plugins: https://jmeter-plugins.org/
   - A web site somewhere that you can break and not get in trouble.  :)
-
-# Overview of the deployment steps
-Notes:
-- Will need to customize settings in the following files
-  - cluster-issuer-prod.yaml: replace the noname@nowhere.com with your e-mail address
-  - jmeter_grafana_ingress-prod.yaml: replace fqdn of drgrafana.westus2.cloudapp.azure.com with your specific url
 
 ## To Delete Prior Cluster Client Context
     kubectl config use-context docker-desktop
@@ -41,6 +35,12 @@ Notes:
     kubectl config unset users.clusterUser_draks2_draks2
 See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration
   
+# Overview of the deployment steps
+Notes:
+- Will need to customize settings in the following files
+  - **cluster-issuer-prod.yaml**: replace the noname@nowhere.com with your e-mail address
+  - **jmeter_grafana_ingress-prod.yaml**: replace fqdn of drgrafana.westus2.cloudapp.azure.com with your specific url
+
 ## Creating the AKS Cluster
 **The following assumes you are the Azure subscription owner.  You may want to exclude the monitoring addon as this must create a service account.**
 
