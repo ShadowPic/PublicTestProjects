@@ -1,0 +1,4 @@
+{
+  "jmeterLogFileName": "./samplefail/jmeter.log",
+  "statisticsFileName": "./samplefail/statistics.json"
+}

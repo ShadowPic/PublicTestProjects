@@ -1,0 +1,1384 @@
+<html xmlns:jmeter="http://jmeter.apache.org/">
+   <title>Schematic view of Test Plan</title>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <style>
+ul.tree, ul.tree ul {
+    list-style-type: none;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAKAQMAAABPHKYJAAAAA1BMVEWIiIhYZW6zAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1ggGExMZBky19AAAAAtJREFUCNdjYMAEAAAUAAHlhrBKAAAAAElFTkSuQmCC') repeat-y;
+    margin: 0;
+    padding: 0;
+}
+ul.tree ul {
+    margin-left: 10px;
+}
+ul.tree li {
+    margin: 0;
+    padding: 0 12px;
+    line-height: 20px;
+    background:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAUAQMAAACK1e4oAAAABlBMVEUAAwCIiIgd2JB2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9YIBhQIJYVaFGwAAAARSURBVAjXY2hgQIf/GTDFGgDSkwqATqpCHAAAAABJRU5ErkJggg==') no-repeat;
+    color: #369;
+}
+ul.tree li:last-child { 
+    background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAUAQMAAACK1e4oAAAABlBMVEUAAwCIiIgd2JB2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9YIBhQIIhs+gc8AAAAQSURBVAjXY2hgQIf/GbAAAKCTBYBUjWvCAAAAAElFTkSuQmCC') no-repeat; 
+}
+</style>
+   </head>
+   <body>
+      <ul class="tree" id="tree">
+         <li><b>load test </b>
+            "DRParts Performance Test" 
+            (globalVars:[
+            "SearchTerm"
+            =
+            "Fan"
+            ], 
+            executeTearDownThreadsOnShutdown: )
+            <br>
+            &nbsp;&nbsp;&nbsp;Comments: <i style="color:green"></i></li>
+         <li>
+            <ul>
+               <li><b>globalVars</b>
+                  "User Defined Variables" 
+                  ([
+                  "InfluxDns"
+                  =
+                  "jmeter-influxdb-svc"
+                  ,
+                  "ExecutionTime"
+                  =
+                  "300"
+                  ,
+                  "DiagReportingOn"
+                  =
+                  "true"
+                  ,
+                  "Redis"
+                  =
+                  "${__P(RedisParam,localhost)}"
+                  ])
+                  </li>
+               <li><b>kg.apc.jmeter.config.redis.RedisDataSet</b>
+                  "Redis-Users Parameters" </li>
+               <li><b>http defaults</b>
+                  "HTTP Request Defaults" 
+                  (protocol: "https",
+                  domain: "drpartsunlimited.azurewebsites.net",
+                  port: "",
+                  path: "",
+                  connectTimeout: ""ms,
+                  responseTimeout: ""ms
+                  )
+                  </li>
+               <li><b>handle cookies</b>
+                  "HTTP Cookie Manager" 
+                  (clearOnEachIteration: false,
+                  policy: "",
+                  cookies: [
+                  ])
+                  </li>
+               <li><b>run</b>
+                  "S2f" 
+                  (
+                  threads: "100",
+                  loops: "-1",
+                  ramp-up: "${ExecutionTime}"
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><b>reuse controller</b>
+                        "Call all scenarios" 
+                        (
+                        DRParts Performance Test
+                        &gt;
+                        <a href="#All Scenarios">All Scenarios</a>
+                        )
+                        </li>
+                     <li><b>Summariser</b>
+                        "Generate Summary Results" </li>
+                     <li><b>DebugSampler</b>
+                        "Debug Sampler" <del>(disabled)</del>&nbsp;
+                        </li>
+                     <li><b>DurationAssertion</b>
+                        "Duration Assertion" </li>
+                     <li><b>kg.apc.jmeter.reporters.AutoStop</b>
+                        "jp@gc - AutoStop Listener" </li>
+                     <li><a id="Throughput Controller"><b>run at percentage</b></a>
+                        "Throughput Controller" 
+                        (pct: "%")
+                        <br></li>
+                     <li>
+                        <ul>
+                           <li><a id="Login"><b>transaction</b></a>
+                              "Login" </li>
+                           <li>
+                              <ul>
+                                 <li><b>reuse controller</b>
+                                    "Login" 
+                                    (
+                                    DRParts Performance Test
+                                    &gt;
+                                    All Scenarios
+                                    &gt;
+                                    <a href="#${user}">${user}</a>
+                                    )
+                                    </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li><a id="Throughput Controller"><b>run at percentage</b></a>
+                        "Throughput Controller" 
+                        (pct: "%")
+                        <br></li>
+                     <li>
+                        <ul>
+                           <li><b>reuse controller</b>
+                              "search" 
+                              (
+                              DRParts Performance Test
+                              &gt;
+                              All Scenarios
+                              &gt;
+                              <a href="#Searches">Searches</a>
+                              )
+                              </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li><b>run</b>
+                  "S2f - throughput" <del>(disabled)</del>&nbsp;
+                  
+                  (
+                  threads: "100",
+                  loops: "-1",
+                  ramp-up: "1"
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><b>kg.apc.jmeter.timers.VariableThroughputTimer</b>
+                        "jp@gc - Throughput Shaping Timer" </li>
+                     <li><b>reuse controller</b>
+                        "Call all scenarios" 
+                        (
+                        DRParts Performance Test
+                        &gt;
+                        <a href="#All Scenarios">All Scenarios</a>
+                        )
+                        </li>
+                     <li><b>Summariser</b>
+                        "Generate Summary Results" </li>
+                     <li><b>DebugSampler</b>
+                        "Debug Sampler" <del>(disabled)</del>&nbsp;
+                        </li>
+                     <li><b>BackendListener</b>
+                        "Backend Listener" </li>
+                     <li><b>DurationAssertion</b>
+                        "Duration Assertion" </li>
+                     <li><b>kg.apc.jmeter.reporters.AutoStop</b>
+                        "jp@gc - AutoStop Listener" </li>
+                  </ul>
+               </li>
+               <li><b>run</b>
+                  "TOR" <del>(disabled)</del>&nbsp;
+                  
+                  (
+                  threads: "20",
+                  loops: "-1",
+                  ramp-up: "30"
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><b>reuse controller</b>
+                        "Call all scenarios" 
+                        (
+                        DRParts Performance Test
+                        &gt;
+                        <a href="#All Scenarios">All Scenarios</a>
+                        )
+                        </li>
+                     <li><b>Summariser</b>
+                        "Generate Summary Results" </li>
+                     <li><b>DebugSampler</b>
+                        "Debug Sampler" <del>(disabled)</del>&nbsp;
+                        </li>
+                  </ul>
+               </li>
+               <li><b>declare reusable Elements</b>
+                  "All Scenarios" <del>(disabled)</del>&nbsp;
+                  </li>
+               <li>
+                  <ul>
+                     <li><b>think-time Gaussian</b>
+                        "Gaussian Random Timer" <del>(disabled)</del>&nbsp;
+                        
+                        (const:100ms, 
+                        variation:100.0ms)
+                        </li>
+                     <li><a id="${user}"><b>transaction</b></a>
+                        "${user}" </li>
+                     <li>
+                        <ul>
+                           <li><a id="hp-4"><b>transaction</b></a>
+                              "hp-4" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "hp-4" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "hp-9" 
+                                    (method: "OPTIONS",
+                                    url: "
+                                    ://dc.services.visualstudio.com:443//v2/track",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Origin"=
+                                          "https://drpartsunlimited.azurewebsites.net"
+                                          ,
+                                          {"Access-Control-Request-Headers"=
+                                          "content-type,sdk-context"
+                                          ,
+                                          {"Access-Control-Request-Method"=
+                                          "POST"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0"
+                                          ,
+                                          {"Accept"=
+                                          "*/*"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "hp-10" 
+                                    (method: "POST",
+                                    url: "
+                                    ://dc.services.visualstudio.com:443//v2/track",
+                                    
+                                    body: "[{"time":"2019-11-13T10:12:01.012Z","iKey":"7c80e24f-c95e-44b6-b3a4-ce7b6b92dd58","name":"Microsoft.ApplicationInsights.7c80e24fc95e44b6b3a4ce7b6b92dd58.Pageview","tags":{"ai.session.id":"fXyh8","ai.device.id":"browser","ai.device.type":"Browser","ai.internal.sdkVersion":"javascript:1.0.20","ai.user.id":"vSVol","ai.operation.id":"IsmQ","ai.operation.name":"/"},"data":{"baseType":"PageviewData","baseData":{"ver":2,"name":"Home
+                                    Page – Parts Unlimited","url":"https://drpartsunlimited.azurewebsites.net/","duration":"00:00:58.033","id":"IsmQ"}}},{"time":"${__time(yyyy-MM-dd'T'HH:mm:ss,)}.014Z","iKey":"7c80e24f-c95e-44b6-b3a4-ce7b6b92dd58","name":"Microsoft.ApplicationInsights.7c80e24fc95e44b6b3a4ce7b6b92dd58.PageviewPerformance","tags":{"ai.session.id":"fXyh8","ai.device.id":"browser","ai.device.type":"Browser","ai.internal.sdkVersion":"javascript:1.0.20","ai.user.id":"vSVol","ai.operation.id":"IsmQ","ai.operation.name":"/"},"data":{"baseType":"PageviewPerformanceData","baseData":{"ver":2,"name":"Home
+                                    Page – Parts Unlimited","url":"https://drpartsunlimited.azurewebsites.net/","duration":"00:00:58.033","perfTotal":"00:00:58.033","networkConnect":"00:00:55.008","sentRequest":"00:00:00.002","receivedResponse":"00:00:01.345","domProcessing":"00:00:01.678"}}}]"
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Origin"=
+                                          "https://drpartsunlimited.azurewebsites.net"
+                                          ,
+                                          {"Content-type"=
+                                          "application/json"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"Sdk-Context"=
+                                          "appId"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0"
+                                          ,
+                                          {"Accept"=
+                                          "*/*"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="login-11"><b>transaction</b></a>
+                              "login-11" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "login-11" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Account/Login",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                       <li><b>extract-css-selector </b>
+                                          "Extract __RequestVerificationToken" <b>using response body</b>
+                                          (exportedVar: "__RequestVerificationToken",
+                                          selector: "input[name=__RequestVerificationToken]",
+                                          attribute: "value",
+                                          default: "nv__RequestVerificationToken",
+                                          matchNr: "1")
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="login-15"><b>transaction</b></a>
+                              "login-15" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "login-15" 
+                                    (method: "POST",
+                                    url: "
+                                    ://:443//Account/Login",
+                                    
+                                    body: [
+                                    
+                                    "Email"=
+                                    "${user}"
+                                    ,
+                                    "Password"=
+                                    "${password}"
+                                    ,
+                                    "__RequestVerificationToken"=
+                                    "${__RequestVerificationToken}"
+                                    ,
+                                    "RememberMe"=
+                                    "false"
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;Comments: <i style="color:green">Detected the start of a redirect chain</i></li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Account/Login"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Origin"=
+                                          "https://drpartsunlimited.azurewebsites.net"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Content-Type"=
+                                          "application/x-www-form-urlencoded"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "login-16" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Account/Login"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "login-17" 
+                                    (method: "POST",
+                                    url: "
+                                    ://dc.services.visualstudio.com:443//v2/track",
+                                    
+                                    body: "[{"time":"2019-11-13T10:12:30.995Z","iKey":"7c80e24f-c95e-44b6-b3a4-ce7b6b92dd58","name":"Microsoft.ApplicationInsights.7c80e24fc95e44b6b3a4ce7b6b92dd58.Pageview","tags":{"ai.session.id":"fXyh8","ai.device.id":"browser","ai.device.type":"Browser","ai.internal.sdkVersion":"javascript:1.0.20","ai.user.id":"vSVol","ai.operation.id":"BtTvY","ai.operation.name":"/"},"data":{"baseType":"PageviewData","baseData":{"ver":2,"name":"Home
+                                    Page – Parts Unlimited","url":"https://drpartsunlimited.azurewebsites.net/","duration":"00:00:02.664","id":"BtTvY"}}},{"time":"2019-11-13T10:12:31.001Z","iKey":"7c80e24f-c95e-44b6-b3a4-ce7b6b92dd58","name":"Microsoft.ApplicationInsights.7c80e24fc95e44b6b3a4ce7b6b92dd58.PageviewPerformance","tags":{"ai.session.id":"fXyh8","ai.device.id":"browser","ai.device.type":"Browser","ai.internal.sdkVersion":"javascript:1.0.20","ai.user.id":"vSVol","ai.operation.id":"BtTvY","ai.operation.name":"/"},"data":{"baseType":"PageviewPerformanceData","baseData":{"ver":2,"name":"Home
+                                    Page – Parts Unlimited","url":"https://drpartsunlimited.azurewebsites.net/","duration":"00:00:02.664","perfTotal":"00:00:02.664","networkConnect":"00:00:01.161","sentRequest":"00:00:00.000","receivedResponse":"00:00:01.156","domProcessing":"00:00:00.341"}}}]"
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Origin"=
+                                          "https://drpartsunlimited.azurewebsites.net"
+                                          ,
+                                          {"Content-type"=
+                                          "application/json"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"Sdk-Context"=
+                                          "appId"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0"
+                                          ,
+                                          {"Accept"=
+                                          "*/*"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li><a id="Searches"><b>container</b></a>
+                        "Searches" </li>
+                     <li>
+                        <ul>
+                           <li><b>assert as</b>
+                              "Response Assertion" <b> that (response_data)</b><b>
+                                 contains
+                                 </b>
+                              [
+                              
+                              "No products"
+                              
+                              ])
+                              </li>
+                           <li><b>http request</b>
+                              "Attempting CSV Search" <del>(disabled)</del>&nbsp;
+                              
+                              (method: "GET",
+                              url: "
+                              ://:443//Search",
+                              
+                              body: [
+                              
+                              "q"=
+                              "${SearchValue}"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Referer"=
+                                    "https://drpartsunlimited.azurewebsites.net/"
+                                    ,
+                                    {"Accept-Language"=
+                                    "en-US,en;q=0.5"
+                                    ,
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"Accept-Encoding"=
+                                    "gzip, deflate, br"
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search With Test Scrip top variable" 
+                              (method: "GET",
+                              url: "
+                              ://:443//Search",
+                              
+                              body: [
+                              
+                              "q"=
+                              "${SearchTerm}"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Referer"=
+                                    "https://drpartsunlimited.azurewebsites.net/Search?q=wheel"
+                                    ,
+                                    {"Accept-Language"=
+                                    "en-US,en;q=0.5"
+                                    ,
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"Accept-Encoding"=
+                                    "gzip, deflate, br"
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "19 search" 
+                              (method: "GET",
+                              url: "
+                              ://:443//Search",
+                              
+                              body: [
+                              
+                              "q"=
+                              "wheel"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Referer"=
+                                    "https://drpartsunlimited.azurewebsites.net/Search?q=brake"
+                                    ,
+                                    {"Accept-Language"=
+                                    "en-US,en;q=0.5"
+                                    ,
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"Accept-Encoding"=
+                                    "gzip, deflate, br"
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li><a id="Random Controller"><b>randomly run children</b></a>
+                        "Random Controller" </li>
+                     <li>
+                        <ul>
+                           <li><a id="homepage"><b>transaction</b></a>
+                              "homepage" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "4 homepage" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "25 homepage" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//lib/bootstrap/fonts/glyphicons-halflings-regular.woff2",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/lib/bootstrap/css/bootstrap.css"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "identity"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="new season parts"><b>transaction</b></a>
+                              "new season parts" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "44 new season parts" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="Brakes"><b>transaction</b></a>
+                              "Brakes" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "49 Brakes" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Browse",
+                                    
+                                    body: [
+                                    
+                                    "CategoryId"=
+                                    "1"
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="Brakes"><b>transaction</b></a>
+                              "Brakes" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "55 Brakes" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Details/11",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Browse?CategoryId=1"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="Lighting"><b>transaction</b></a>
+                              "Lighting" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "57 Lighting" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Browse",
+                                    
+                                    body: [
+                                    
+                                    "CategoryId"=
+                                    "2"
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Details/11"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "62 Lighting" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Details/1",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Browse?CategoryId=2"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="Lighting"><b>transaction</b></a>
+                              "Lighting" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "65 Lighting" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Details/2",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Browse?CategoryId=2"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="oil"><b>transaction</b></a>
+                              "oil" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "68 oil" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Browse",
+                                    
+                                    body: [
+                                    
+                                    "CategoryId"=
+                                    "5"
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Browse?CategoryId=2"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "70 oil" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Details/16",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Browse?CategoryId=5"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "73 oil" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Details/17",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Browse?CategoryId=5"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                                 <li><b>http request</b>
+                                    "77 oil" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store/Details/18",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Browse?CategoryId=5"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a id="more"><b>transaction</b></a>
+                              "more" </li>
+                           <li>
+                              <ul>
+                                 <li><b>http request</b>
+                                    "81 more" 
+                                    (method: "GET",
+                                    url: "
+                                    ://:443//Store",
+                                    
+                                    body: [
+                                    
+                                    ]
+                                    ,
+                                    upload-files: [
+                                    
+                                    ]
+                                    )
+                                    </li>
+                                 <li>
+                                    <ul>
+                                       <li><b>add headers</b>
+                                          "HTTP Header Manager" 
+                                          (headers:[
+                                          
+                                          {"Referer"=
+                                          "https://drpartsunlimited.azurewebsites.net/Store/Browse?CategoryId=2"
+                                          ,
+                                          {"Accept-Language"=
+                                          "en-US,en;q=0.5"
+                                          ,
+                                          {"Upgrade-Insecure-Requests"=
+                                          "1"
+                                          ,
+                                          {"Accept-Encoding"=
+                                          "gzip, deflate, br"
+                                          ,
+                                          {"User-Agent"=
+                                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                                          ,
+                                          {"Accept"=
+                                          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                                          ])
+                                          </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li><b>write samples</b>
+                  "Summary Report" </li>
+               <li><b>kg.apc.jmeter.vizualizers.CorrectedResultCollector</b>
+                  "jp@gc - Active Threads Over Time" </li>
+               <li><b>kg.apc.jmeter.vizualizers.CorrectedResultCollector</b>
+                  "jp@gc - Hits per Second" </li>
+               <li><b>BackendListener</b>
+                  "Backend Listener" <del>(disabled)</del>&nbsp;
+                  </li>
+               <li><b>write samples</b>
+                  "View Results Tree" </li>
+               <li><b>run</b>
+                  "New recordings" <del>(disabled)</del>&nbsp;
+                  
+                  (
+                  threads: "1",
+                  loops: "1",
+                  ramp-up: "1"
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><b>RecordingController</b>
+                        "Recording Controller" </li>
+                  </ul>
+               </li>
+               <li><b>ProxyControl</b>
+                  "HTTP(S) Test Script Recorder" <del>(disabled)</del>&nbsp;
+                  </li>
+               <li>
+                  <ul>
+                     <li><b>write samples</b>
+                        "View Results Tree" <del>(disabled)</del>&nbsp;
+                        
+                        (filename: "recording.xml",
+                        xml: true,
+                        errorsOnly: false,
+                        successOnly: )
+                        </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </body>
+</html>

@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - drgrafana.westus2.cloudapp.azure.com
+    - drgrafana.westus.cloudapp.azure.com
     secretName: tls-secret-production
   rules:
-  - host: drgrafana.westus2.cloudapp.azure.com
+  - host: drgrafana.westus.cloudapp.azure.com
     http:
       paths:
       - backend:

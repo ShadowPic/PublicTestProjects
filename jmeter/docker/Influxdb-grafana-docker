@@ -1,8 +1,8 @@
-FROM ubuntu
+FROM ubuntu:14.04
 MAINTAINER Darren Rich
 
 RUN \
-  apt-get update && apt-get -y --no-install-recommends install \
+    apt-get update && apt-get -y --no-install-recommends install \
     ca-certificates \
     software-properties-common \
     python-django-tagging \

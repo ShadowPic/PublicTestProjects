@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments">This test plan will decode bearer tokens into a header and body.  It has a dependency on the Apache Commons Codec at http://commons.apache.org/proper/commons-codec/index.html</stringProp>
@@ -48,7 +48,7 @@
             <stringProp name="JSONPostProcessor.defaultValues">nvbearer</stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -66,14 +66,26 @@ vars.put(&quot;jwtBody&quot;,body)</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">larry = vars.get(&quot;bearer&quot;)
-printf larry
-vars.put(&quot;something&quot;,&quot;interesting&quot;)</stringProp>
+            <stringProp name="script">//@Grab(group=&apos;commons-codec&apos;, module=&apos;commons-codec&apos;, version=&apos;1.13&apos;)
+import org.apache.commons.codec.binary.Base64;
+//String jwtToken = &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSldUIFJ1bGVzISIsImlhdCI6MTQ1OTQ0ODExOSwiZXhwIjoxNDU5NDU0NTE5fQ.-yIVBD5b73C75osbmwwshQNRC7frWUYrqaTjTpza2y4&quot;;
+String jwtToken = vars.get(&quot;bearer&quot;);
+String[] split_string = jwtToken.split(&quot;\\.&quot;);
+String base64EncodedHeader = split_string[0];
+String base64EncodedBody = split_string[1];
+String base64EncodedSignature = split_string[2];
+Base64 base64Url = new Base64(true);
+String header = new String(base64Url.decode(base64EncodedHeader));
+String body = new String(base64Url.decode(base64EncodedBody));
+printf header;
+printf body;
+vars.put(&quot;jwtHeader&quot;,header)
+vars.put(&quot;jwtBody&quot;,body)</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
