@@ -45,7 +45,7 @@ $Complete=$false
 while(-not $Complete)
 {
     $nginxPublicIP = $(kubectl -n $tenant get service -o json|convertfrom-json).items.status.LoadBalancer.ingress.ip
-    $AksVmResourceGroup=$(az aks list --query "[*].nodeResourceGroup" -o tsv)
+    $AksVmResourceGroup=$(az aks list --query "[?name=='$($AksClusterName)'].nodeResourceGroup" -o tsv)
     $PUBLICIPID=$(az network public-ip list --resource-group $AksVmResourceGroup --query "[?ipAddress=='$($nginxPublicIP)']|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
     if(-not($null -eq $PUBLICIPID) -and -not($PUBLICIPID -eq ""))
     {
