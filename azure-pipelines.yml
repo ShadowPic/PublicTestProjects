@@ -51,18 +51,20 @@ steps:
 - task: AzurePowerShell@3
   displayName: 'jmeter_cluster_create.ps1'
   inputs:
-    azureSubscription: 'JMeter-NFT-Playground'
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    ScriptType: 'FilePath'
     ScriptPath: 'jmeter/docker/jmeter_cluster_create.ps1'
-    ScriptArguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors) '
-    azurePowerShellVersion: LatestVersion
+    ScriptArguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors)'
+    azurePowerShellVersion: 'LatestVersion'
 
 - task: AzurePowerShell@3
   displayName: RunTest
   inputs:
-    azureSubscription: 'JMeter-NFT-Playground'
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    ScriptType: 'FilePath'
     ScriptPath: 'jmeter/docker/run_test.ps1'
     ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt'
-    azurePowerShellVersion: LatestVersion
+    azurePowerShellVersion: 'LatestVersion'
 
 - task: DotNetCoreCLI@2
   inputs:
