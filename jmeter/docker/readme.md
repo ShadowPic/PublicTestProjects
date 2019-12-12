@@ -23,10 +23,11 @@ To provide a simple method of deleting the test rig after the test execution we 
 - Azure Client: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - AKS: https://azure.microsoft.com/en-us/services/kubernetes-service/
 - Helm version 2.*: https://github.com/helm/helm 
+
 To create a basic load test
-  - JMeter 5.x: https://jmeter.apache.org/download_jmeter.cgi
-  - JMeter Plugins: https://jmeter-plugins.org/
-  - A web site somewhere that you can break and not get in trouble.  :)
+- JMeter 5.x: https://jmeter.apache.org/download_jmeter.cgi
+- JMeter Plugins: https://jmeter-plugins.org/
+- A web site somewhere that you can break and not get in trouble.  :)
 
 ## To Delete Prior Cluster Client Context
     kubectl config use-context docker-desktop
