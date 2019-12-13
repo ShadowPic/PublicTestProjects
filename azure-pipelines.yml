@@ -28,7 +28,45 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)/k8sjmeter'
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    SourceFolder: 'jmeter'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/jmeter'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  
+- task: HelmInstaller@0
+  displayName: 'Install Helm 2.14.1'
+
+- task: AzureCLI@1
+  displayName: 'Get K8S credentials'
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName)'
+
+- task: AzurePowerShell@3
+  displayName: 'jmeter_cluster_create.ps1'
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    ScriptType: 'FilePath'
+    ScriptPath: 'jmeter/docker/jmeter_cluster_create.ps1'
+    ScriptArguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors)'
+    azurePowerShellVersion: 'LatestVersion'
+
+- task: AzurePowerShell@3
+  displayName: RunTest
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    ScriptType: 'FilePath'
+    ScriptPath: 'jmeter/docker/run_test.ps1'
+    ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt'
+    azurePowerShellVersion: 'LatestVersion'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/source/**/*.csproj'
