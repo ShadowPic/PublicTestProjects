@@ -38,6 +38,13 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   
+- task: Tokenization@2
+  inputs:
+    SourcePath: '$(build.artifactstagingdirectory)'
+    TargetFileNames: 'apsettings.json'
+    TokenStart: '__'
+    TokenEnd: '__'
+
 - task: HelmInstaller@0
   displayName: 'Install Helm 2.14.1'
 
