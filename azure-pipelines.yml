@@ -75,8 +75,8 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '**/loadtestresults/**'
-    Contents: '**'
+    SourceFolder: 'jmeter/docker'
+    Contents: '**/loadtestresults/**'
     TargetFolder: '$(build.artifactstagingdirectory)/results'
 
 - task: PublishBuildArtifacts@1
