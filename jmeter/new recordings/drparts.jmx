@@ -36,7 +36,7 @@
           </elementProp>
           <elementProp name="email" elementType="Argument">
             <stringProp name="Argument.name">email</stringProp>
-            <stringProp name="Argument.value">test8@contoso.com</stringProp>
+            <stringProp name="Argument.value">test12@contoso.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="password" elementType="Argument">
@@ -436,12 +436,6 @@
               <hashTree/>
             </hashTree>
           </hashTree>
-          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Current progress" enabled="true">
-            <boolProp name="displayJMeterProperties">false</boolProp>
-            <boolProp name="displayJMeterVariables">true</boolProp>
-            <boolProp name="displaySystemProperties">false</boolProp>
-          </DebugSampler>
-          <hashTree/>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Login-40" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
             <boolProp name="TransactionController.parent">false</boolProp>
@@ -497,7 +491,7 @@
               <hashTree/>
               <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="extract __RequestVerificationToken" enabled="true">
                 <stringProp name="HtmlExtractor.refname">__RequestVerificationToken</stringProp>
-                <stringProp name="HtmlExtractor.expr">input name=&quot;__RequestVerificationToken&quot;</stringProp>
+                <stringProp name="HtmlExtractor.expr">input[name=__RequestVerificationToken]</stringProp>
                 <stringProp name="HtmlExtractor.attribute">value</stringProp>
                 <stringProp name="HtmlExtractor.default">nv__RequestVerificationToken</stringProp>
                 <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
@@ -804,7 +798,7 @@
               <hashTree/>
               <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="extract __RequestVerificationToken" enabled="true">
                 <stringProp name="HtmlExtractor.refname">__RequestVerificationToken</stringProp>
-                <stringProp name="HtmlExtractor.expr">input name=&quot;__RequestVerificationToken&quot;</stringProp>
+                <stringProp name="HtmlExtractor.expr">input[name=__RequestVerificationToken]</stringProp>
                 <stringProp name="HtmlExtractor.attribute">value</stringProp>
                 <stringProp name="HtmlExtractor.default">nv__RequestVerificationToken</stringProp>
                 <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
@@ -950,7 +944,7 @@
               <hashTree/>
               <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="extract __RequestVerificationToken" enabled="true">
                 <stringProp name="HtmlExtractor.refname">__RequestVerificationToken</stringProp>
-                <stringProp name="HtmlExtractor.expr">input name=&quot;__RequestVerificationToken&quot;</stringProp>
+                <stringProp name="HtmlExtractor.expr">input[name=__RequestVerificationToken]</stringProp>
                 <stringProp name="HtmlExtractor.attribute">value</stringProp>
                 <stringProp name="HtmlExtractor.default">nv__RequestVerificationToken</stringProp>
                 <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
@@ -958,8 +952,24 @@
                 <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
               </HtmlExtractor>
               <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Extract phoneverify" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">phoneverify</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">the current code is </stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&lt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">nvphoneverify</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number"></stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
             </hashTree>
           </hashTree>
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Current progress" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugSampler>
+          <hashTree/>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Verify Code-57" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
             <boolProp name="TransactionController.parent">false</boolProp>
@@ -978,7 +988,7 @@
                   <elementProp name="Code" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">true</boolProp>
                     <stringProp name="Argument.name">Code</stringProp>
-                    <stringProp name="Argument.value">606016 </stringProp>
+                    <stringProp name="Argument.value">${phoneverify} </stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
