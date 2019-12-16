@@ -73,6 +73,18 @@ steps:
     ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt'
     azurePowerShellVersion: 'LatestVersion'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'jmeter/docker'
+    Contents: '**/loadtestresults/**'
+    TargetFolder: '$(build.artifactstagingdirectory)/results'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/results'
+    ArtifactName: 'results'
+    publishLocation: 'Container'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
