@@ -7,8 +7,8 @@
 #- develop
 
 pool:
-  #vmImage: 'windows-latest'
-  name: local debug
+  vmImage: 'windows-latest'
+  #name: local debug
 
 variables:
   solution: '**/source/**/*.sln'
