@@ -12,7 +12,7 @@ namespace JmeterPipelineValidationTests
             get {
                 var builder = new ConfigurationBuilder()
                .SetBasePath(Directory.GetCurrentDirectory())
-               .AddJsonFile("apsettings.json");
+               .AddJsonFile("appsettings.json");
                 return builder.Build();
             }}
 
