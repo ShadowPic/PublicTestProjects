@@ -66,9 +66,8 @@ steps:
     azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
     ScriptType: 'FilePath'
     ScriptPath: 'jmeter/docker/run_test.ps1'
-    ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt' -GlobalJmeterParams GDuration=60
-    azurePowerShellVersion: 'LatestVersion'
-    azurePowerShellVersion: 'LatestVersion'
+    ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
+
 
 - task: CopyFiles@2
   inputs:
