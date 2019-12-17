@@ -3,12 +3,13 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-trigger:
-- develop
+#trigger:
+#- develop
 
 pool:
   #vmImage: 'windows-latest'
   name: local debug
+
 variables:
   solution: '**/source/**/*.sln'
   buildPlatform: 'Any CPU'
@@ -83,10 +84,10 @@ steps:
 - task: Tokenization@2
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)/source'
-    TargetFileNames: 'apsettings.json'
+    TargetFileNames: 'appsettings.json'
     TokenStart: '__'
     TokenEnd: '__'
-
+     
 
 - task: DotNetCoreCLI@2
   inputs:
