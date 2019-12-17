@@ -18,7 +18,7 @@ steps:
 
 - task: Tokenization@2
   inputs:
-    SourcePath: '$(build.artifactstagingdirectory)'
+    SourcePath: '$(Build.SourcesDirectory)'
     TargetFileNames: 'apsettings.json'
     TokenStart: '__'
     TokenEnd: '__'
