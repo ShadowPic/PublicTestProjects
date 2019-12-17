@@ -13,10 +13,13 @@ namespace JmeterPipelineValidationTests
         [TestMethod]
         public void AutoStopListenerDidNotFire()
         {
-            
+
             //arrange
             string failMessage = "AutoStop: Sending StopTestNow request to port 4445";
-            string jmeterLogFileName = Config.Configuration["jmeterLogFileName"];
+            string currentConfig = File.ReadAllText("apsettings.json");
+            File.WriteAllText("apsettings.json", currentConfig.Replace(@"\", @"\\"));
+
+            string jmeterLogFileName = Config.Configuration["jmeterLogFileName"].Replace(@"\",@"\\");
             //act
             var logFileContents = File.ReadAllText(jmeterLogFileName);
             bool failedMessageFound = logFileContents.Contains(failMessage);
@@ -29,7 +32,8 @@ namespace JmeterPipelineValidationTests
         {
 
             //arrange
-            string failMessage = "AutoStop: Sending StopTestNow request to port 4445";
+            string currentConfig = File.ReadAllText("apsettings.json");
+            File.WriteAllText("apsettings.json", currentConfig.Replace(@"\", @"\\"));
             string statisticsFileName = Config.Configuration["statisticsFileName"];
             string expectedMaxString = Config.Configuration["expectedKoMax"];
             float expectedMax;
