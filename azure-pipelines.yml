@@ -16,13 +16,6 @@ variables:
 
 steps:
 
-- task: Tokenization@2
-  inputs:
-    SourcePath: '$(Build.SourcesDirectory)'
-    TargetFileNames: 'apsettings.json'
-    TokenStart: '__'
-    TokenEnd: '__'
-
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -78,10 +71,28 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'jmeter/docker'
-    Contents: |
-      **/loadtestresults/**
-      **/source/**
+    Contents: '**/loadtestresults/**'
     TargetFolder: '$(build.artifactstagingdirectory)/results'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'source'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/source'
+
+- task: Tokenization@2
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)/source'
+    TargetFileNames: 'apsettings.json'
+    TokenStart: '__'
+    TokenEnd: '__'
+
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/source/**/*.csproj'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
@@ -89,7 +100,9 @@ steps:
     ArtifactName: 'results'
     publishLocation: 'Container'
 
-- task: DotNetCoreCLI@2
+- task: PublishBuildArtifacts@1
   inputs:
-    command: 'test'
-    projects: '**/source/**/*.csproj'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/source'
+    ArtifactName: 'results'
+    publishLocation: 'Container'
+
