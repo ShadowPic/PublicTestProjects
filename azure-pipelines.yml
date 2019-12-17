@@ -17,19 +17,6 @@ variables:
 
 steps:
 
-#- task: NuGetToolInstaller@1
-#
-#- task: NuGetCommand@2
-#  inputs:
-#    restoreSolution: '$(solution)'
-
-#- task: VSBuild@1
-#  inputs:
-#    solution: '$(solution)'
-#    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-#    platform: '$(buildPlatform)'
-#    configuration: '$(buildConfiguration)'
-
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)/jmeter'
   inputs:
@@ -38,7 +25,10 @@ steps:
     TargetFolder: '$(build.artifactstagingdirectory)/jmeter'
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: jmeter'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/jmeter'
+    ArtifactName: 'jmeter'
+    publishLocation: 'Container'
   
 
 - task: HelmInstaller@0
@@ -61,7 +51,7 @@ steps:
     azurePowerShellVersion: 'LatestVersion'
 
 - task: AzurePowerShell@3
-  displayName: RunTest
+  displayName: Run Load Test
   inputs:
     azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
     ScriptType: 'FilePath'
@@ -76,6 +66,12 @@ steps:
     Contents: '**/loadtestresults/**'
     TargetFolder: '$(build.artifactstagingdirectory)/results'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/results'
+    ArtifactName: 'results'
+    publishLocation: 'Container'
+
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'source'
@@ -89,24 +85,14 @@ steps:
     TokenStart: '__'
     TokenEnd: '__'
      
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: '$(Build.ArtifactStagingDirectory)/**/source/**/*.csproj'
-    workingDirectory: '$(Build.ArtifactStagingDirectory)'
-
-      
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/results'
-    ArtifactName: 'results'
-    publishLocation: 'Container'
-
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/source'
     ArtifactName: 'Source'
     publishLocation: 'Container'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '$(Build.ArtifactStagingDirectory)/**/source/**/*.csproj'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'
