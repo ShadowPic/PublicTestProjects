@@ -16,14 +16,13 @@ variables:
 
 steps:
 
-- task: PowerShell@2
+- task: Tokenization@2
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
-      
-      dir env:
-      throw -1
+    SourcePath: '$(build.artifactstagingdirectory)'
+    TargetFileNames: 'apsettings.json'
+    TokenStart: '__'
+    TokenEnd: '__'
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -47,12 +46,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   
-- task: Tokenization@2
-  inputs:
-    SourcePath: '$(build.artifactstagingdirectory)'
-    TargetFileNames: 'apsettings.json'
-    TokenStart: '__'
-    TokenEnd: '__'
 
 - task: HelmInstaller@0
   displayName: 'Install Helm 2.14.1'
