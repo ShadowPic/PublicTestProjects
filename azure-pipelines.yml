@@ -16,7 +16,14 @@ variables:
 
 steps:
 
-
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      dir env:
+      throw -1
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
