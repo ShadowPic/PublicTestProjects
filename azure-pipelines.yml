@@ -88,17 +88,17 @@ steps:
     TokenEnd: '__'
 
 
-# - task: DotNetCoreCLI@2
-#   inputs:
-#     command: 'test'
-#     projects: '**/source/**/*.csproj'
-#     workingDirectory: '$(Build.ArtifactStagingDirectory)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/source/**/*.csproj'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'
 
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)/results'
-#     ArtifactName: 'results'
-#     publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/results'
+    ArtifactName: 'results'
+    publishLocation: 'Container'
 
 - task: PublishBuildArtifacts@1
   inputs:
