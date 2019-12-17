@@ -93,8 +93,10 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '**/source/**/*.csproj'
+    projects: '$(Build.ArtifactStagingDirectory)/**/source/**/*.csproj'
     workingDirectory: '$(Build.ArtifactStagingDirectory)'
+
+      
 
 - task: PublishBuildArtifacts@1
   inputs:
