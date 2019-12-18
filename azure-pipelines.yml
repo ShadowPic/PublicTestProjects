@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 pool:
-  name: 'debug local'
+  name: 'local debug'
 
 variables:
   solution: '**/source/**/*.sln'
