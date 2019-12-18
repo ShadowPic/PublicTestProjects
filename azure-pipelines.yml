@@ -6,11 +6,6 @@
 trigger:
 - develop
 
-pool:
-  name: local debug
-  #vmImage: 'windows-latest'
-  
-
 variables:
   solution: '**/source/**/*.sln'
   buildPlatform: 'Any CPU'
