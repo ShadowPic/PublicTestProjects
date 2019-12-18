@@ -97,6 +97,7 @@ steps:
     projects: '$(Build.ArtifactStagingDirectory)/**/source/**/*.csproj'
     workingDirectory: '$(Build.ArtifactStagingDirectory)'
 
+# to do more cool stuff see https://github.com/microsoft/azure-pipelines-tasks/blob/master/docs/authoring/commands.md
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
