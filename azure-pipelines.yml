@@ -7,8 +7,9 @@ trigger:
 - develop
 
 pool:
-  #vmImage: 'windows-latest'
   name: local debug
+  #vmImage: 'windows-latest'
+  
 
 variables:
   solution: '**/source/**/*.sln'
