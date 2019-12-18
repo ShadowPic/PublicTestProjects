@@ -7,8 +7,8 @@ trigger:
 - develop
 
 pool:
-  #vmImage: 'windows-latest'
-  name: local debug
+  vmImage: 'windows-latest'
+  #name: local debug
 
 variables:
   solution: '**/source/**/*.sln'
@@ -85,12 +85,6 @@ steps:
     TokenStart: '__'
     TokenEnd: '__'
      
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/source'
-    ArtifactName: 'Source'
-    publishLocation: 'Container'
-
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
@@ -105,3 +99,9 @@ steps:
       
       Write-Host "##vso[task.uploadsummary]$(Build.SourcesDirectory)/play.md"
     errorActionPreference: 'continue'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/source'
+    ArtifactName: 'Source'
+    publishLocation: 'Container'
