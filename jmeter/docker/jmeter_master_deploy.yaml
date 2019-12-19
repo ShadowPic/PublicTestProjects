@@ -32,7 +32,7 @@ spec:
       containers:
       - name: jmmaster
         image: shadowpic/jmeter-master:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         command: [ "/bin/bash", "-c", "--" ]
         args: [ "while true; do sleep 30; done;" ]
         volumeMounts:

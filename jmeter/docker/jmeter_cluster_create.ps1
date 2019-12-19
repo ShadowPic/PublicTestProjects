@@ -22,6 +22,10 @@ if ($null -eq (Get-Command "kubectl.exe" -ErrorAction SilentlyContinue))
 
 kubectl version --short
 
+Write-Output "Installing redis"
+
+helm install --name redis-release --namespace $tenant stable/redis --set usePassword=false --wait
+
 Write-Output "Creating Jmeter slave nodes"
 
 kubectl create -n $tenant -f jmeter_slaves_deploy.yaml
@@ -36,6 +40,12 @@ Write-Output "Creating Influxdb and the service"
 kubectl create -n $tenant -f jmeter_influxdb_deploy.yaml
 
 kubectl -n $tenant rollout status deployment influxdb-jmeter
+
+write-output "Creating JMeter Influx database"
+
+$InfluxPod = $(kubectl -n $tenant get pods --selector=app=influxdb-jmeter --no-headers=true --output=name).Replace("pod/","")
+
+kubectl -n $tenant exec $InfluxPod -- curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE jmeter"
 
 Write-Output "Creating Jmeter Master"
 

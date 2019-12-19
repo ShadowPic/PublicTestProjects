@@ -1,0 +1,107 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- develop
+
+pool:
+  vmImage: 'windows-latest'
+  #name: local debug
+
+variables:
+  solution: '**/source/**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)/jmeter'
+  inputs:
+    SourceFolder: 'jmeter'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/jmeter'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/jmeter'
+    ArtifactName: 'jmeter'
+    publishLocation: 'Container'
+  
+
+- task: HelmInstaller@0
+  displayName: 'Install Helm 2.14.1'
+
+- task: AzureCLI@1
+  displayName: 'Get K8S credentials'
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName)'
+
+- task: AzurePowerShell@3
+  displayName: 'jmeter_cluster_create.ps1'
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    ScriptType: 'FilePath'
+    ScriptPath: 'jmeter/docker/jmeter_cluster_create.ps1'
+    ScriptArguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors)'
+    azurePowerShellVersion: 'LatestVersion'
+
+- task: AzurePowerShell@3
+  displayName: Run Load Test
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    ScriptType: 'FilePath'
+    ScriptPath: 'jmeter/docker/run_test.ps1'
+    ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
+    azurePowerShellVersion: 'LatestVersion'
+
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'jmeter/docker'
+    Contents: '**/loadtestresults/**'
+    TargetFolder: '$(build.artifactstagingdirectory)/results'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/results'
+    ArtifactName: 'results'
+    publishLocation: 'Container'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'source'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/source'
+
+- task: Tokenization@2
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)/source'
+    TargetFileNames: 'appsettings.json'
+    TokenStart: '__'
+    TokenEnd: '__'
+     
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '$(Build.ArtifactStagingDirectory)/**/source/**/*.csproj'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "##vso[task.uploadsummary]$(Build.SourcesDirectory)/play.md"
+    errorActionPreference: 'continue'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/source'
+    ArtifactName: 'Source'
+    publishLocation: 'Container'

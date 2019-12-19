@@ -16,21 +16,18 @@ To provide a simple method of deleting the test rig after the test execution we 
 - Build the cluster from Docker root containers
 - Real time monitoring of the performance test with Grafana
 - Combine Azure PAS service metrics side by side with JMeter metrics using Grafana
+- Redis support to feed parameters to your tests
 
 ## Dependendies
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
-- Kitematic: https://github.com/docker/kitematic
+- Azure Client: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - AKS: https://azure.microsoft.com/en-us/services/kubernetes-service/
-- To create a basic load test
-  - JmMter 5.x: https://jmeter.apache.org/download_jmeter.cgi
-  - JMeter Plugins: https://jmeter-plugins.org/
-  - A web site somewhere that you can break and not get in trouble.  :)
+- Helm version 2.*: https://github.com/helm/helm 
 
-# Overview of the deployment steps
-Notes:
-- Will need to customize settings in the following files
-  - cluster-issuer-prod.yaml: replace the noname@nowhere.com with your e-mail address
-  - jmeter_grafana_ingress-prod.yaml: replace fqdn of drgrafana.westus2.cloudapp.azure.com with your specific url
+To create a basic load test
+- JMeter 5.x: https://jmeter.apache.org/download_jmeter.cgi
+- JMeter Plugins: https://jmeter-plugins.org/
+- A web site somewhere that you can break and not get in trouble.  :)
 
 ## To Delete Prior Cluster Client Context
     kubectl config use-context docker-desktop
@@ -39,8 +36,33 @@ Notes:
     kubectl config unset users.clusterUser_draks2_draks2
 See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration
   
+# Overview of the deployment steps
+
+- Login with the Azure Client
+- Select the subscription that you want to create the AKS cluster in
+- Make your current working directory in the same location as the this readme file
+- Create a resource group and note the azure region you are using
+- Customize the following files
+  - **cluster-issuer-prod.yaml**: replace the noname@nowhere.com with your e-mail address
+  - **jmeter_grafana_ingress-prod.yaml**: replace fqdn of drgrafana.westus2.cloudapp.azure.com with your specific url
+
 ## Creating the AKS Cluster
 **The following assumes you are the Azure subscription owner.  You may want to exclude the monitoring addon as this must create a service account.**
+
+**New way to create the test rig has just been posted!**
+I have created a new PowerShell script that creates the AKS cluster and does all of the work for you!  It's not perfect and you will have to customize the files described in the Overview section.
+
+### New Way to Create AKS Cluster
+
+### Step 1
+
+**CreateTestRig.ps1**
+- -tenant < K8S NameSpace > 
+- -SubDns < Azure Public IP DNS name label > 
+- -AksResourceGroup < Resource Group You already created >
+- -AksClusterName < Name of your AKS Cluster >
+
+### Old and Broke Way to Create AKS Cluster
 
     az aks create --resource-group draks2   --name draks2   --node-count 1  --enable-addons monitoring  --generate-ssh-keys
     az aks get-credentials --name draks2 --resource-group draks2
@@ -106,16 +128,27 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
 
 **kubectl -n \<K8S NameSpace\> get pods**
 
-- -tenant <K8S NameSpace> 
+- -tenant < K8S NameSpace> 
   - Will create a K8S NameSpace and use that to create and deploy all services
 - -ScaleSlaves [integer larger than 2]
   - OPTIONAL parameter which allows for a cluster larger than the default of 1 master and 2 slaves
   
 ## Running the Test
 **File Name:** run_test.ps1
-- -tenant <K8S NameSpace> 
-- -TestName < full or relative path to the JMeter test script >
-- -ReportFolder < folder name to publish the results of the test >
+- -tenant (required): K8S NameSpace
+- -TestName (required): full or relative path to the JMeter test script
+- -ReportFolder (required): folder name to publish the results of the test
+- -DeleteTestRig (optional)
+  - $true (default) means to remove the JMeter Master and Slave pods at the end of the run.
+  - $false means to leave the AKS JMeter Master and slaves.  This is used for debugging purposes.
+- -UserProperties (optional): path to a custom user properties file for the JMeter Master pod
+- -RedisScript (optional): full or relative path to a Redis script for populating parameters to support perf tests
+  - JMeter supports Redis as a data source for parameters.
+  - See: https://jmeter-plugins.org/wiki/RedisDataSet/ 
+- -GlobalJmeterParams (optional): JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves
+  - This feature allows for any number of "-G" parameters to be added.
+  - This feature also allows you to add any other JMeter option you want to assuming it's not already present.  
+  - See: https://jmeter.apache.org/usermanual/remote-test.html
 
 ## Cleaning Up
 
@@ -149,3 +182,4 @@ To delete tbe cluster you run the following command:
 - https://kubernauts.io/en/
 - http://www.testautomationguru.com/jmeter-distributed-load-testing-using-docker/
 - https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how 
+- https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address

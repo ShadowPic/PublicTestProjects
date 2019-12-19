@@ -16,9 +16,17 @@ RUN   mkdir /jmeter \
 && tar -xzf apache-jmeter-$JMETER_VERSION.tgz \
 && rm apache-jmeter-$JMETER_VERSION.tgz
 
+ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION/
+		
+ENV PATH $JMETER_HOME/bin:$PATH
+
 RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O /tmp/JMeterPlugins-Standard-1.4.0.zip https://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.4.0.zip && unzip -n /tmp/JMeterPlugins-Standard-1.4.0.zip && rm /tmp/JMeterPlugins-Standard-1.4.0.zip
 
-RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O ./lib/ext/jmeter-plugins-manager-1.3.jar  http://central.maven.org/maven2/kg/apc/jmeter-plugins-manager/1.3/jmeter-plugins-manager-1.3.jar && wget -U "any user agent" -q -O ./lib/cmdrunner-2.2.jar http://central.maven.org/maven2/kg/apc/cmdrunner/2.2/cmdrunner-2.2.jar && sed -i 's/^assistive_technologies=/#&/' /etc/java-8-openjdk/accessibility.properties && java -cp ./lib/ext/jmeter-plugins-manager-1.3.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
+RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O ./lib/ext/jmeter-plugins-manager-1.3.jar  http://central.maven.org/maven2/kg/apc/jmeter-plugins-manager/1.3/jmeter-plugins-manager-1.3.jar && wget -U "any user agent" -q -O ./lib/cmdrunner-2.2.jar http://central.maven.org/maven2/kg/apc/cmdrunner/2.2/cmdrunner-2.2.jar && java -cp ./lib/ext/jmeter-plugins-manager-1.3.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
+
+RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/lib && wget https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
+
+RUN mkdir /stuff && export _JAVA_OPTIONS=-Droot.home=/stuff && PluginsManagerCMD.sh install-all-except jpgc-oauth &&  PluginsManagerCMD.sh status && rm -r /stuff
 
 # RUN wget -q -O /jmeter/apache-jmeter-$JMETER_VERSION/lib/ext/pepper-box-1.0.jar https://github.com/raladev/load/blob/master/JARs/pepper-box-1.0.jar?raw=true
 
@@ -26,6 +34,4 @@ RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O ./lib/ext/jmeter-plu
 
 # COPY jmeter-plugins-manager-1.3.jar /jmeter/apache-jmeter-$JMETER_VERSION/lib/ext
 
-ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION/
-		
-ENV PATH $JMETER_HOME/bin:$PATH
+
