@@ -158,7 +158,7 @@
         </kg.apc.jmeter.reporters.AutoStop>
         <hashTree/>
         <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion" enabled="false">
-          <stringProp name="DurationAssertion.duration">1500</stringProp>
+          <stringProp name="DurationAssertion.duration">3000</stringProp>
         </DurationAssertion>
         <hashTree/>
       </hashTree>
