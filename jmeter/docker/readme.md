@@ -22,7 +22,7 @@ To provide a simple method of deleting the test rig after the test execution we 
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
 - Azure Client: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - AKS: https://azure.microsoft.com/en-us/services/kubernetes-service/
-- Helm version 2.*: https://github.com/helm/helm 
+- Helm version 2.*: https://github.com/helm/helm/releases/tag/v2.16.1 
 
 To create a basic load test
 - JMeter 5.x: https://jmeter.apache.org/download_jmeter.cgi
