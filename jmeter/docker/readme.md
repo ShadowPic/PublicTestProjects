@@ -42,79 +42,29 @@ See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-an
 - Select the subscription that you want to create the AKS cluster in
 - Make your current working directory in the same location as the this readme file
 - Create a resource group and note the azure region you are using
-- Customize the following files
+- Optional: Customize the following files (Only if you plan on exposing Grafana externally)
   - **cluster-issuer-prod.yaml**: replace the noname@nowhere.com with your e-mail address
   - **jmeter_grafana_ingress-prod.yaml**: replace fqdn of drgrafana.westus2.cloudapp.azure.com with your specific url
 
 ## Creating the AKS Cluster
 **The following assumes you are the Azure subscription owner.  You may want to exclude the monitoring addon as this must create a service account.**
 
-**New way to create the test rig has just been posted!**
-I have created a new PowerShell script that creates the AKS cluster and does all of the work for you!  It's not perfect and you will have to customize the files described in the Overview section.
-
-### New Way to Create AKS Cluster
-
-### Step 1
-
+Execute the following PowerShell
 **CreateTestRig.ps1**
-- -tenant < K8S NameSpace > 
-- -SubDns < Azure Public IP DNS name label > 
+- -tenant < K8S [NameSpace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) > 
+- -AksResourceGroup < Resource Group You already created >
+- -AksClusterName < Name of your AKS Cluster >
+- Optional: -ExposeGrafanaExternally < $false (default)| $true >
+- Optional: -SubDns < Azure Public IP DNS name label > 
+
+## Deleting the AKS Cluster
+
+To delete tbe cluster you run the following PowerShell
+**DeleteTestRig.ps1**
+- -tenant < K8S [NameSpace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) > 
 - -AksResourceGroup < Resource Group You already created >
 - -AksClusterName < Name of your AKS Cluster >
 
-### Old and Broke Way to Create AKS Cluster
-
-    az aks create --resource-group draks2   --name draks2   --node-count 1  --enable-addons monitoring  --generate-ssh-keys
-    az aks get-credentials --name draks2 --resource-group draks2
-    kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
-    kubectl apply -f helm-rbac.yaml
-    helm init --service-account tiller
-
-# Creating the Grafana Ingress
-Adapted from: https://docs.microsoft.com/en-us/azure/aks/ingress-tls
-
-## NGINX Ingress Controller
-
-    helm install stable/nginx-ingress `
-      --namespace $tenant  `
-      --set controller.replicaCount=1 `
-      --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux `
-      --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux `
-      --wait
-
-## Retrieve Public IP from NGINX
-
-    $nginxPublicIP = $(kubectl -n $tenant get service -o json|convertfrom-json).items.status.LoadBalancer.ingress.ip
-    $SubDns="drgrafana"
-    $AksVmResourceGroup="Name of your aks resource group"
-    $PUBLICIPID=$(az network public-ip list --resource-group $AksVmResourceGroup --query "[?ipAddress!=null]|[?contains(ipAddress, '$IP')].[ id]" --output tsv)
-    az network public-ip update --ids $PUBLICIPID --dns-name $SubDns
-
-## Cluster Certificate Manager
-
-    kubectl create namespace cert-manager
-    kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
-    # Install the CustomResourceDefinition resources separately 
-    kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.8/deploy/manifests/00-crds.yaml 
-    helm repo update
-    # Install the cert-manager Helm chart
-    helm install `
-        --name cert-manager `
-        --namespace cert-manager `
-        --version v0.8.0 jetstack/cert-manager `
-        --wait
-
-## CA Cluster Issuer
-
-    # edit the e-mail address replacing with your actual e-mail
-    kubectl apply -f cluster-issuer-prod.yaml
-
-## Deploy Grafana
-
-    kubectl -n $tenant apply -f .\jmeter_grafana_deploy.yaml
-
-## Create Ingress Route
-    kubectl -n $tenant apply -f .\jmeter_grafana_ingress-prod.yaml
 
 # Scripts
 
@@ -150,10 +100,6 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
   - This feature also allows you to add any other JMeter option you want to assuming it's not already present.  
   - See: https://jmeter.apache.org/usermanual/remote-test.html
 
-## Cleaning Up
-
-To delete tbe cluster you run the following command:
-**kubectl delete namespace NAMESPCENAME**
 
 # Supporting files
 

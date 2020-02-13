@@ -1,19 +1,14 @@
 param(
     [Parameter(Mandatory=$true)]
-    [string]
-    $tenant,
+    [string]$tenant,
     [Parameter(Mandatory=$true)]
-    [string]
-    $SubDns,
+    [string]$AksResourceGroup,
     [Parameter(Mandatory=$true)]
-    [string]
-    $AksResourceGroup,
-    [Parameter(Mandatory=$true)]
-    [string]
-    $AksClusterName,
+    [string]$AksClusterName,
     [Parameter(Mandatory=$false)]
-    [bool]
-    $ExposeGrafanaExternally=$false
+    [bool]$ExposeGrafanaExternally=$false,
+    [Parameter(Mandatory=$false)]
+    [string]$SubDns
 
 )
 
