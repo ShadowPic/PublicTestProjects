@@ -18,7 +18,7 @@ To provide a simple method of deleting the test rig after the test execution we 
 - Combine Azure PAS service metrics side by side with JMeter metrics using Grafana
 - Redis support to feed parameters to your tests
 
-## Dependendies
+## Dependencies
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
 - Azure Client: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - AKS: https://azure.microsoft.com/en-us/services/kubernetes-service/
