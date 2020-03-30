@@ -29,22 +29,12 @@ To create a basic load test
 - JMeter Plugins: https://jmeter-plugins.org/
 - A web site somewhere that you can break and not get in trouble.  :)
 
-## To Delete Prior Cluster Client Context
-    kubectl config use-context docker-desktop
-    kubectl config delete-context draks2
-    kubectl config delete-cluster draks2
-    kubectl config unset users.clusterUser_draks2_draks2
-See: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration
-  
 # Overview of the deployment steps
 
 - Login with the Azure Client
 - Select the subscription that you want to create the AKS cluster in
 - Make your current working directory in the same location as the this readme file
 - Create a resource group and note the azure region you are using
-- Optional: Customize the following files (Only if you plan on exposing Grafana externally)
-  - **cluster-issuer-prod.yaml**: replace the noname@nowhere.com with your e-mail address
-  - **jmeter_grafana_ingress-prod.yaml**: replace fqdn of drgrafana.westus2.cloudapp.azure.com with your specific url
 
 ## Creating the AKS Cluster
 **The following assumes you are the Azure subscription owner.  You may want to exclude the monitoring addon as this must create a service account.**
@@ -54,35 +44,15 @@ Execute the following PowerShell
 - -tenant < K8S [NameSpace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) > 
 - -AksResourceGroup < Resource Group You already created >
 - -AksClusterName < Name of your AKS Cluster >
-- Optional: -ExposeGrafanaExternally < $false (default)| $true >
-- Optional: -SubDns < Azure Public IP DNS name label > 
-
-## Deleting the AKS Cluster
-
-To delete tbe cluster you run the following PowerShell
-**DeleteTestRig.ps1**
-- -tenant < K8S [NameSpace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) > 
-- -AksResourceGroup < Resource Group You already created >
-- -AksClusterName < Name of your AKS Cluster >
-
-
-# Scripts
-
-## Building the Docker Images
-**File Name:** builddocker.ps1
-Must be hand edited to point this to your Docker repository and then update the relevent scripts which is beyond the scope of this document.
-
+\
 ## Creating the K8S JMeter Cluster
 **File Name:** jmeter_cluster_create.ps1
 This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also creates the K8S master configurtion map and the JMeter Slaves service.  Once the script is completed you can check the status of the Pods with the following kubectl command:
-
-**kubectl -n \<K8S NameSpace\> get pods**
-
 - -tenant < K8S NameSpace> 
   - Will create a K8S NameSpace and use that to create and deploy all services
 - -ScaleSlaves [integer larger than 2]
   - OPTIONAL parameter which allows for a cluster larger than the default of 1 master and 2 slaves
-  
+
 ## Running the Test
 **File Name:** run_test.ps1
 - -tenant (required): K8S NameSpace
@@ -99,6 +69,14 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
   - This feature allows for any number of "-G" parameters to be added.
   - This feature also allows you to add any other JMeter option you want to assuming it's not already present.  
   - See: https://jmeter.apache.org/usermanual/remote-test.html
+
+## If you want to remove your AKS Cluster
+
+To delete tbe cluster you run the following PowerShell
+**DeleteTestRig.ps1**
+- -tenant < K8S [NameSpace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) > 
+- -AksResourceGroup < Resource Group You already created >
+- -AksClusterName < Name of your AKS Cluster >
 
 
 # Supporting files
