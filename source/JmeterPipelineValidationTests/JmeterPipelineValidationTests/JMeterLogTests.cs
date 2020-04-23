@@ -17,6 +17,7 @@ namespace JmeterPipelineValidationTests
             //arrange
             string failMessage = "AutoStop: Sending StopTestNow request to port 4445";
             //act
+            Assert.IsTrue(File.Exists(Config.Configuration["jmeterLogFileName"]));
             string jmeterLogFileName = Config.Configuration["jmeterLogFileName"];
             var logFileContents = File.ReadAllText(jmeterLogFileName);
             bool failedMessageFound = logFileContents.Contains(failMessage);
