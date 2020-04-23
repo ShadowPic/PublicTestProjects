@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <kg.apc.jmeter.config.redis.RedisDataSet guiclass="TestBeanGUI" testclass="kg.apc.jmeter.config.redis.RedisDataSet" testname="Param-Users" enabled="true">
+        <stringProp name="redisKey">Users</stringProp>
+        <stringProp name="variableNames">email,password</stringProp>
+        <stringProp name="delimiter">,</stringProp>
+        <intProp name="redisDataType">1</intProp>
+        <boolProp name="recycleDataOnUse">true</boolProp>
+        <stringProp name="host">localhost</stringProp>
+        <stringProp name="port">6379</stringProp>
+        <stringProp name="timeout">2000</stringProp>
+        <stringProp name="password"></stringProp>
+        <stringProp name="database">0</stringProp>
+        <intProp name="minIdle">0</intProp>
+        <intProp name="maxIdle">10</intProp>
+        <intProp name="maxActive">20</intProp>
+        <longProp name="maxWait">30000</longProp>
+        <intProp name="whenExhaustedAction">2</intProp>
+        <boolProp name="testOnBorrow">false</boolProp>
+        <boolProp name="testOnReturn">false</boolProp>
+        <boolProp name="testWhileIdle">false</boolProp>
+        <longProp name="timeBetweenEvictionRunsMillis">30000</longProp>
+        <intProp name="numTestsPerEvictionRun">0</intProp>
+        <longProp name="minEvictableIdleTimeMillis">60000</longProp>
+        <longProp name="softMinEvictableIdleTimeMillis">60000</longProp>
+      </kg.apc.jmeter.config.redis.RedisDataSet>
+      <hashTree/>
+      <kg.apc.jmeter.config.redis.RedisDataSet guiclass="TestBeanGUI" testclass="kg.apc.jmeter.config.redis.RedisDataSet" testname="Param-letters" enabled="true">
+        <stringProp name="redisKey">Custom</stringProp>
+        <stringProp name="variableNames">col1,col2,col3</stringProp>
+        <stringProp name="delimiter">,</stringProp>
+        <intProp name="redisDataType">1</intProp>
+        <boolProp name="recycleDataOnUse">true</boolProp>
+        <stringProp name="host">localhost</stringProp>
+        <stringProp name="port">6379</stringProp>
+        <stringProp name="timeout">2000</stringProp>
+        <stringProp name="password"></stringProp>
+        <stringProp name="database">0</stringProp>
+        <intProp name="minIdle">0</intProp>
+        <intProp name="maxIdle">10</intProp>
+        <intProp name="maxActive">20</intProp>
+        <longProp name="maxWait">30000</longProp>
+        <intProp name="whenExhaustedAction">2</intProp>
+        <boolProp name="testOnBorrow">false</boolProp>
+        <boolProp name="testOnReturn">false</boolProp>
+        <boolProp name="testWhileIdle">false</boolProp>
+        <longProp name="timeBetweenEvictionRunsMillis">30000</longProp>
+        <intProp name="numTestsPerEvictionRun">0</intProp>
+        <longProp name="minEvictableIdleTimeMillis">60000</longProp>
+        <longProp name="softMinEvictableIdleTimeMillis">60000</longProp>
+      </kg.apc.jmeter.config.redis.RedisDataSet>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">500</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">4</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

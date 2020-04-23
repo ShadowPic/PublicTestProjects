@@ -6,6 +6,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+recording.xml
 # User-specific files
 **/*.suo
 *.user

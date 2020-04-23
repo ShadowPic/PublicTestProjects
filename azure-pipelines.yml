@@ -90,6 +90,7 @@ steps:
     command: 'test'
     projects: '$(Build.ArtifactStagingDirectory)/**/source/**/*.csproj'
     workingDirectory: '$(Build.ArtifactStagingDirectory)'
+  continueOnError: true
 
 - task: PowerShell@2
   inputs:
