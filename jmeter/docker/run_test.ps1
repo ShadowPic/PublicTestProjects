@@ -23,7 +23,7 @@ param(
     [string[]]
     $GlobalJmeterParams
 )
-$JmeterVersion=5.2.1
+#$JmeterVersion=5.2.1
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 Set-Location $CurrentPath
@@ -37,7 +37,7 @@ Write-Output "Checking for user properties"
 if(!($UserProperties -eq $null -or $UserProperties -eq "" ))
 {
     Write-Output "Copying user.properties over"
-    kubectl cp $UserProperties $tenant/${MasterPod}:/jmeter/apache-jmeter-$JmeterVersion/bin/user.properties
+    kubectl cp $UserProperties $tenant/${MasterPod}:/jmeter/apache-jmeter-5.2.1/bin/user.properties
 }
 Write-Output "Checking for Redis script"
 if(!($RedisScript -eq $null -or $RedisScript -eq ""))
@@ -60,7 +60,7 @@ kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -L
 Write-Output "Retrieving dashboard, results and Master jmeter.log"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
 kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.log
-kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-$JmeterVersion/bin/jmeter.log $ReportFolder/jmeter.log
+kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.2.1/bin/jmeter.log $ReportFolder/jmeter.log
 if($DeleteTestRig)
 {
     Write-Output "Removing JMeter master and slave pods"
