@@ -1,0 +1,46 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: jmeter-function
+  labels:
+    jmeter-mode: jmeter-function-mode
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      jmeter-mode: jmeter-function-mode
+  template:
+    metadata:
+      labels:
+        jmeter-mode: jmeter-function-mode
+    spec:
+      containers:
+      - name: jmeter-function
+        image: shadowpic/jmeterfunc:v1
+        #command: ["/jmeter/apache-jmeter-$(JMETERVERSION)/bin/jmeter-server"]
+        #args: ["-Dserver.rmi.ssl.keystore.file /jmeter/apache-jmeter-$(JMETERVERSION)/bin/rmi_keystore.jks","-Djava.rmi.server.hostname=$(MY_POD_IP)", "-Dserver.rmi.localport=50000", "-Dserver_port=1099"]
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: "0.5"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmeter-function-svc
+  labels:
+    jmeter-mode: jmeter-function-mode
+spec:
+  clusterIP: None
+  ports:
+    - port: 80
+      name: first
+      targetPort: 80
+  selector:
+    jmeter-mode: jmeter-function-mode
