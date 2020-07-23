@@ -8,8 +8,10 @@ param(
     [Parameter(Mandatory=$false)]
     [bool]$ExposeGrafanaExternally=$false,
     [Parameter(Mandatory=$false)]
-    [string]$SubDns
-
+    [string]$SubDns,
+    [Parameter(Mandatory=$false)]
+    [string]$NodeVmSize="Standard_DS2_v2"
+    
 )
 
 function log([string] $message)
@@ -19,9 +21,9 @@ function log([string] $message)
 if($(az account list).contains("[]")){
      Exit-PSSession
 }
-
 log "Creating aks cluster"
-az aks create --resource-group $AksResourceGroup   --name $AksClusterName   --node-count 1  --enable-addons monitoring  --generate-ssh-keys
+az aks create --resource-group $AksResourceGroup   --name $AksClusterName --enable-managed-identity --vm-set-type VirtualMachineScaleSets --node-vm-size $NodeVmSize  --node-count 1
+
 log "Getting cluster credentials"
 az aks get-credentials --name $AksClusterName --resource-group $AksResourceGroup --admin --overwrite-existing
 # log "Setting up k8s dashboard role binding"
