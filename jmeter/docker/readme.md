@@ -22,7 +22,7 @@ To provide a simple method of deleting the test rig after the test execution we 
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
 - Azure Client: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - AKS: https://azure.microsoft.com/en-us/services/kubernetes-service/
-- Helm version 2.*: https://github.com/helm/helm/releases/tag/v2.16.1 
+- Helm version v3.2.4: https://github.com/helm/helm/releases/tag/v3.2.4 
 
 To create a basic load test
 - JMeter 5.x: https://jmeter.apache.org/download_jmeter.cgi
@@ -37,14 +37,16 @@ To create a basic load test
 - Create a resource group and note the azure region you are using
 
 ## Creating the AKS Cluster
-**The following assumes you are the Azure subscription owner.  You may want to exclude the monitoring addon as this must create a service account.**
 
 Execute the following PowerShell
 **CreateTestRig.ps1**
-- -tenant < K8S [NameSpace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) > 
-- -AksResourceGroup < Resource Group You already created >
-- -AksClusterName < Name of your AKS Cluster >
-\
+- -tenant (required) < K8S [NameSpace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) > 
+- -AksResourceGroup (required) < Resource Group You already created >
+- -AksClusterName (required) < Name of your AKS Cluster >
+- -NodeVmSize (optional) < Standard_F8s >
+  - The VM Size relates to the AKS node size for your test rig.
+  - see: https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create
+
 ## Creating the K8S JMeter Cluster
 **File Name:** jmeter_cluster_create.ps1
 This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also creates the K8S master configurtion map and the JMeter Slaves service.  Once the script is completed you can check the status of the Pods with the following kubectl command:
