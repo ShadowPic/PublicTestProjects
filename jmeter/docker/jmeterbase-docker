@@ -27,10 +27,10 @@ RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O /tmp/$JMETER_PLUGIN_
 
 RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O ./lib/ext/$JMETER_PLUGIN_MANAGER_JAR  https://jmeter-plugins.org/get/ 
 
-RUN cd /jmeter/apache-jmeter-5.2.1/ && wget -U "any user agent" -q -O ./lib/cmdrunner-2.2.jar http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/2.2/cmdrunner-2.2.jar
+RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -U "any user agent" -q -O ./lib/cmdrunner-2.2.jar http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/2.2/cmdrunner-2.2.jar
 
 RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && java -cp ./lib/ext/$JMETER_PLUGIN_MANAGER_JAR org.jmeterplugins.repository.PluginManagerCMDInstaller
 
 RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/lib && wget https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
 
-RUN mkdir /stuff && export _JAVA_OPTIONS=-Droot.home=/stuff && PluginsManagerCMD.sh install-all-except jpgc-oauth &&  PluginsManagerCMD.sh status && rm -r /stuff
+RUN mkdir /stuff && export _JAVA_OPTIONS=-Droot.home=/stuff && PluginsManagerCMD.sh install-all-except jpgc-oauth,ulp-jmeter-autocorrelator-plugin,ulp-jmeter-gwt-plugin,ulp-jmeter-videostreaming-plugin,bzm-jmeter-citrix-plugin  &&  PluginsManagerCMD.sh status && rm -r /stuff
