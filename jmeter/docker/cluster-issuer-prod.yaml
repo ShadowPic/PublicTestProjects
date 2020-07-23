@@ -6,7 +6,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: darrich@microsoft.com
+    email: noone@nowhere.com
     privateKeySecretRef:
       name: letsencrypt-production
     http01: {}

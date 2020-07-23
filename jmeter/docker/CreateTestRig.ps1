@@ -8,8 +8,10 @@ param(
     [Parameter(Mandatory=$false)]
     [bool]$ExposeGrafanaExternally=$false,
     [Parameter(Mandatory=$false)]
-    [string]$SubDns
-
+    [string]$SubDns,
+    [Parameter(Mandatory=$false)]
+    [string]$NodeVmSize="Standard_DS2_v2"
+    
 )
 
 function log([string] $message)
@@ -19,18 +21,16 @@ function log([string] $message)
 if($(az account list).contains("[]")){
      Exit-PSSession
 }
-
 log "Creating aks cluster"
-az aks create --resource-group $AksResourceGroup   --name $AksClusterName   --node-count 1  --enable-addons monitoring  --generate-ssh-keys
+az aks create --resource-group $AksResourceGroup   --name $AksClusterName --enable-managed-identity --vm-set-type VirtualMachineScaleSets --node-vm-size $NodeVmSize  --node-count 1
+
 log "Getting cluster credentials"
-az aks get-credentials --name $AksClusterName --resource-group $AksResourceGroup
-log "Setting up k8s dashboard role binding"
-kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
-log "Seting helm rbac"
-kubectl apply -f helm-rbac.yaml
+az aks get-credentials --name $AksClusterName --resource-group $AksResourceGroup --admin --overwrite-existing
+# log "Setting up k8s dashboard role binding"
+# kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+log "Installing helm stable repo"
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 # may need to add code here to wait for the policy to be applied
-log "Starting tiller"
-helm init --service-account tiller  --wait
 log "Creating AKS Namespace"
 kubectl create namespace $tenant
 #timing issue may be here

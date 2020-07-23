@@ -24,11 +24,11 @@ kubectl version --short
 
 Write-Output "Installing redis"
 
-helm install --name redis-release --namespace $tenant stable/redis --set usePassword=false --wait
+helm install redis-release stable/redis --namespace $tenant  --set usePassword=false --wait
 
 Write-Output "Creating Jmeter slave nodes"
 
-kubectl create -n $tenant -f jmeter_slaves_deploy.yaml
+kubectl apply -n $tenant -f jmeter_slaves_deploy.yaml
 
 if($ScaleSlaves -gt 2)
 {
@@ -37,7 +37,7 @@ if($ScaleSlaves -gt 2)
 
 Write-Output "Creating Influxdb and the service"
 
-kubectl create -n $tenant -f jmeter_influxdb_deploy.yaml
+kubectl apply -n $tenant -f jmeter_influxdb_deploy.yaml
 
 kubectl -n $tenant rollout status deployment influxdb-jmeter
 
