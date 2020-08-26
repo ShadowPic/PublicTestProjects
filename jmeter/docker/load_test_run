@@ -2,4 +2,4 @@
 #Script created to invoke jmeter test script with the slave POD IP addresses
 #Script should be run like: ./load_test "path to the test script in jmx format"
 cd $JMETER_HOME/bin
-./jmeter -l /results.log -e -o /report -n -t $@ -Dserver.rmi.ssl.disable=false -R `getent ahostsv4 jmeter-slaves-svc | cut -d' ' -f1 | sort -u | awk -v ORS=, '{print $1}' | sed 's/,$//'` 
+./jmeter -l /results.log -e -o /report -n -t $@ -Dserver.rmi.ssl.disable=false -R 'getent ahostsv4 jmeter-slaves-svc | cut -d' ' -f1 | sort -u | awk -v ORS=, '{print $1}' | sed 's/,$//'' 

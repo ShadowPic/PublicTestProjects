@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -38,6 +38,7 @@
         <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
         <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
         <boolProp name="ChromeDriverConfig.insecurecerts_enabled">false</boolProp>
+        <boolProp name="ChromeDriverConfig.incognito_enabled">false</boolProp>
       </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">

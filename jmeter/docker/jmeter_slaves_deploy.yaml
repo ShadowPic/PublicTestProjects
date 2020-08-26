@@ -40,7 +40,7 @@ items:
                 apiVersion: v1
                 fieldPath: status.podIP
           - name: JMETERVERSION
-            value: 5.2.1
+            value: "5.3"
           image: shadowpic/jmeter-slave:latest
           imagePullPolicy: Always
           name: jmslave
@@ -51,9 +51,10 @@ items:
             protocol: TCP
           resources:
             limits:
-              cpu: "1"
+              cpu: "2"
+              memory: "2Gi"
             requests:
-              cpu: 500m
+              cpu: ".5"
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
         dnsPolicy: ClusterFirst

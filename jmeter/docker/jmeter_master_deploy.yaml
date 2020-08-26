@@ -1,18 +1,16 @@
 apiVersion: v1
 items:
 - apiVersion: v1
+  kind: ConfigMap
   data:
     load_test_run: |
       #!/bin/bash
       #Script created to invoke jmeter test script with the slave POD IP addresses
       #Script should be run like: ./load_test "path to the test script in jmx format"
-      /jmeter/apache-jmeter-*/bin/jmeter -n -t $1 -Dserver.rmi.ssl.disable=true -R `getent ahostsv4 jmeter-slaves-svc | cut -d' ' -f1 | sort -u | awk -v ORS=, '{print $1}' | sed 's/,$//'`
-  kind: ConfigMap
+      #This is from the configmap
+      /jmeter/apache-jmeter-*/bin/jmeter -n -t $1 -Dserver.rmi.ssl.disable=true -R 'getent ahostsv4 jmeter-slaves-svc | cut -d' ' -f1 | sort -u | awk -v ORS=, '{print $1}' | sed 's/,$//''
   metadata:
-    creationTimestamp: null
-    labels:
-      app: influxdb-jmeter
-    name: jmeter-load-test
+      name: jmeter-load-test-script
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
@@ -51,23 +49,23 @@ items:
           ports:
           - containerPort: 60000
             protocol: TCP
-          resources: {}
+          resources:
+            limits:
+              cpu: "4"
+              memory: "8Gi"
+            requests:
+              cpu: "2"
+              memory: "1Gi"
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
-          volumeMounts:
-          - mountPath: /load_test
-            name: loadtest
-            subPath: load_test
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler
         securityContext: {}
         terminationGracePeriodSeconds: 30
         volumes:
-        - configMap:
-            defaultMode: 420
-            name: jmeter-load-test
-          name: loadtest
-  status: {}
+          - name: load-test-run
+            configMap:
+              name: jmeter-load-test-script
 kind: List
 metadata: {}

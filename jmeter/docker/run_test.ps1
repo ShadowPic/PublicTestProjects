@@ -37,14 +37,14 @@ Write-Output "Checking for user properties"
 if(!($UserProperties -eq $null -or $UserProperties -eq "" ))
 {
     Write-Output "Copying user.properties over"
-    kubectl cp $UserProperties $tenant/${MasterPod}:/jmeter/apache-jmeter-5.2.1/bin/user.properties
+    kubectl cp $UserProperties $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/user.properties
 }
 Write-Output "Checking for Redis script"
 if(!($RedisScript -eq $null -or $RedisScript -eq ""))
 {
     #Since we use helm to install Redis we can assume the pod name for the first redis slave instance
     write-output "Executing redis script"
-    Get-Content $RedisScript | kubectl -n $tenant exec -i redis-release-master-0 -- redis-cli --pipe
+    Get-Content $RedisScript | kubectl -n $tenant exec -i jmeterredis-master-0 -- redis-cli --pipe
 }
 Write-Output "Processing global parameters"
 [string]$GlobalParmsCombined=" "
