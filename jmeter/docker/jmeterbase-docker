@@ -20,7 +20,9 @@ RUN   mkdir /jmeter \
 && rm apache-jmeter-$JMETER_VERSION.tgz
 
 ENV JMETER_HOME=/jmeter/apache-jmeter-$JMETER_VERSION
-		
+
+ENV JVM_ARGS="-d64 -Xms1g -Xmx4g -XX:MaxMetaspaceSize=1g"
+
 ENV PATH $JMETER_HOME/bin:$PATH
 
 RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O /tmp/$JMETER_PLUGIN_ZIP https://jmeter-plugins.org/downloads/file/$JMETER_PLUGIN_ZIP && unzip -n /tmp/$JMETER_PLUGIN_ZIP && rm /tmp/$JMETER_PLUGIN_ZIP
