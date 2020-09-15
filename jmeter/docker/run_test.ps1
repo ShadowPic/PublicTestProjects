@@ -60,7 +60,7 @@ kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -L
 Write-Output "Retrieving dashboard, results and Master jmeter.log"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
 kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.log
-kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.2.1/bin/jmeter.log $ReportFolder/jmeter.log
+kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $ReportFolder/jmeter.log
 if($DeleteTestRig)
 {
     Write-Output "Removing JMeter master and slave pods"

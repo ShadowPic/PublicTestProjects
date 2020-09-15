@@ -21,7 +21,9 @@ RUN   mkdir /jmeter \
 
 ENV JMETER_HOME=/jmeter/apache-jmeter-$JMETER_VERSION
 
-ENV JVM_ARGS="-d64 -Xms1g -Xmx4g -XX:MaxMetaspaceSize=1g"
+ENV RUN_IN_DOCKER=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap
+
+ENV JVM_ARGS=-d64 -Xms1g -Xmx12g -XX:MaxMetaspaceSize=1g
 
 ENV PATH $JMETER_HOME/bin:$PATH
 

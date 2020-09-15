@@ -27,7 +27,7 @@ items:
       spec:
         containers:
         - args:
-          - -Dserver.rmi.ssl.keystore.file /jmeter/apache-jmeter-$(JMETERVERSION)/bin/rmi_keystore.jks
+          - -Dserver.rmi.ssl.disable=true
           - -Djava.rmi.server.hostname=$(MY_POD_IP)
           - -Dserver.rmi.localport=50000
           - -Dserver_port=1099
