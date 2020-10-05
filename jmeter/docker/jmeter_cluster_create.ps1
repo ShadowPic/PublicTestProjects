@@ -37,7 +37,7 @@ Write-Output "Installing redis"
 
 helm repo add azure-marketplace https://marketplace.azurecr.io/helm/v1/repo
 
-helm -n jmeter install --set usePassword=false jmeterredis azure-marketplace/redis --wait
+helm -n $tenant install --set usePassword=false jmeterredis azure-marketplace/redis --wait
 
 Write-Output "Creating Jmeter slave nodes"
 
