@@ -54,8 +54,8 @@ items:
               cpu: "4"
               memory: "8Gi"
             requests:
-              cpu: "2"
-              memory: "1Gi"
+              cpu: ".5"
+              memory: "500Mi"
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
         dnsPolicy: ClusterFirst

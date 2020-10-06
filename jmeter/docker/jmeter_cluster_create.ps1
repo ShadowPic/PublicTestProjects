@@ -24,8 +24,6 @@ kubectl version --short
 
 Write-Output "Verifying Helm v3.* is installed"
 
-$testHelm=helm version |Select-String -Pattern "v3."
-
 if(($null -eq (Get-Command "helm.exe" -ErrorAction SilentlyContinue)) -and ($null -ne ($testHelm=helm version |Select-String -Pattern "v3.")))
 {
     Write-Host "Wrong version or Helm does not exist"

@@ -52,8 +52,8 @@ items:
               cpu: "4"
               memory: "8Gi"
             requests:
-              cpu: "2"
-              memory: "1Gi"
+              cpu: ".5"
+              memory: "256Mi"
           securityContext:
             runAsUser: 0
           terminationMessagePath: /dev/termination-log
