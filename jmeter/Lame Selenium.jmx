@@ -39,6 +39,7 @@
         <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
         <boolProp name="ChromeDriverConfig.insecurecerts_enabled">false</boolProp>
         <boolProp name="ChromeDriverConfig.incognito_enabled">false</boolProp>
+        <boolProp name="ChromeDriverConfig.no_sandbox_enabled">false</boolProp>
       </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
@@ -62,6 +63,7 @@
         <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc - WebDriver Sampler" enabled="true">
           <stringProp name="WebDriverSampler.script">WDS.sampleResult.sampleStart()
 WDS.browser.get(&apos;http://jmeter-plugins.org&apos;)
+WDS.browser.get(&apos;https://google.com&apos;)
 WDS.sampleResult.sampleEnd()
 </stringProp>
           <stringProp name="WebDriverSampler.parameters"></stringProp>
