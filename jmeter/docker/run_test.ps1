@@ -7,9 +7,9 @@ param(
     [string]
     $TestName,
     # Where to put the report directory
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$false)]
     [string]
-    $ReportFolder,
+    $ReportFolder="$(get-date -Format FileDateTimeUniversal)results",
     [Parameter(Mandatory=$false)]
     [bool]
     $DeleteTestRig = $true,
@@ -64,7 +64,10 @@ kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $Report
 if($DeleteTestRig)
 {
     Write-Output "Removing JMeter master and slave pods"
-    kubectl -n $tenant delete -f jmeter_master_deploy.yaml
-    kubectl -n $tenant delete -f jmeter_slaves_deploy.yaml
+    kubectl -n $tenant delete -f jmeter_master_deploy.yaml --wait=true
+    kubectl -n $tenant delete -f jmeter_slaves_deploy.yaml --wait=true
+    kubectl -n $tenant wait --for=delete pods --selector=jmeter_mode=master --timeout=60s
+    kubectl -n $tenant wait --for=delete pods --selector=jmeter_mode=slave --timeout=60s
+    
     #helm del --purge redis-release
 }

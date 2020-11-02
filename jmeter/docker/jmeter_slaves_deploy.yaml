@@ -61,7 +61,7 @@ items:
         restartPolicy: Always
         schedulerName: default-scheduler
         securityContext: {}
-        terminationGracePeriodSeconds: 30
+        terminationGracePeriodSeconds: 10
   status: {}
 - apiVersion: v1
   kind: Service

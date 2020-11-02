@@ -62,7 +62,7 @@ items:
         restartPolicy: Always
         schedulerName: default-scheduler
         securityContext: {}
-        terminationGracePeriodSeconds: 30
+        terminationGracePeriodSeconds: 10
         volumes:
           - name: load-test-run
             configMap:
