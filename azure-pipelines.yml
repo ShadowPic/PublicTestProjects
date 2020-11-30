@@ -32,7 +32,7 @@ steps:
   
 - task: KubectlInstaller@0
   inputs:
-    kubectlVersion: '1.19'
+    kubectlVersion: 'v1.19.4'
 
 - task: HelmInstaller@1
   inputs:
