@@ -30,11 +30,13 @@ steps:
     ArtifactName: 'jmeter'
     publishLocation: 'Container'
   
-
+- task: KubectlInstaller@0
   inputs:
-    helmVersion: 'v3.2.4'
-    installKubectl: true
     kubectlVersion: '1.19'
+
+- task: HelmInstaller@1
+  inputs:
+    helmVersionToInstall: '3.2.4'
 
 - task: AzureCLI@1
   displayName: 'Get K8S credentials'
