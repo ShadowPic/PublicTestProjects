@@ -30,16 +30,20 @@ steps:
     ArtifactName: 'jmeter'
     publishLocation: 'Container'
   
+- task: KubectlInstaller@0
+  inputs:
+    kubectlVersion: 'v1.19.4'
 
-- task: HelmInstaller@0
-  displayName: 'Install Helm 2.14.1'
+- task: HelmInstaller@1
+  inputs:
+    helmVersionToInstall: '3.2.4'
 
 - task: AzureCLI@1
   displayName: 'Get K8S credentials'
   inputs:
     azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName)'
+    inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --admin --overwrite-existing'
 
 - task: AzurePowerShell@3
   displayName: 'jmeter_cluster_create.ps1'
