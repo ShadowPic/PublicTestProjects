@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-slim
 MAINTAINER DarrenRich
 		
-ARG JMETER_VERSION=5.2.1
+ARG JMETER_VERSION=5.3
 ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.4.jar
 ARG JMETER_PLUGIN_VERSION=1.4
 ARG JMETER_PLUGIN_ZIP=JMeterPlugins-Standard-1.4.0.zip
@@ -20,7 +20,11 @@ RUN   mkdir /jmeter \
 && rm apache-jmeter-$JMETER_VERSION.tgz
 
 ENV JMETER_HOME=/jmeter/apache-jmeter-$JMETER_VERSION
-		
+
+ENV RUN_IN_DOCKER=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap
+
+ENV JVM_ARGS=-d64 -Xms1g -Xmx12g -XX:MaxMetaspaceSize=1g
+
 ENV PATH $JMETER_HOME/bin:$PATH
 
 RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O /tmp/$JMETER_PLUGIN_ZIP https://jmeter-plugins.org/downloads/file/$JMETER_PLUGIN_ZIP && unzip -n /tmp/$JMETER_PLUGIN_ZIP && rm /tmp/$JMETER_PLUGIN_ZIP

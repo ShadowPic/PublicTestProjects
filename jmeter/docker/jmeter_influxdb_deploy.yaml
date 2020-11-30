@@ -76,7 +76,13 @@ items:
           - containerPort: 2003
             name: graphite
             protocol: TCP
-          resources: {}
+          resources:
+            limits:
+              cpu: "4"
+              memory: "8Gi"
+            requests:
+              cpu: ".5"
+              memory: "256Mi"
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           volumeMounts:

@@ -22,9 +22,20 @@ if ($null -eq (Get-Command "kubectl.exe" -ErrorAction SilentlyContinue))
 
 kubectl version --short
 
+Write-Output "Verifying Helm v3.* is installed"
+
+if(($null -eq (Get-Command "helm.exe" -ErrorAction SilentlyContinue)) -and ($null -ne ($testHelm=helm version |Select-String -Pattern "v3.")))
+{
+    Write-Host "Wrong version or Helm does not exist"
+    throw "helm is not right"
+}
+
 Write-Output "Installing redis"
 
-helm install redis-release stable/redis --namespace $tenant  --set usePassword=false --wait
+
+helm repo add azure-marketplace https://marketplace.azurecr.io/helm/v1/repo
+
+helm -n $tenant install --set usePassword=false jmeterredis azure-marketplace/redis --wait
 
 Write-Output "Creating Jmeter slave nodes"
 

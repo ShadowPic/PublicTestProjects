@@ -47,7 +47,13 @@ items:
           ports:
           - containerPort: 3000
             protocol: TCP
-          resources: {}
+          resources:
+            limits:
+              cpu: "4"
+              memory: "8Gi"
+            requests:
+              cpu: ".5"
+              memory: "256Mi"
           securityContext:
             runAsUser: 0
           terminationMessagePath: /dev/termination-log
