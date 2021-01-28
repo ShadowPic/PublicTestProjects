@@ -29,7 +29,7 @@ az aks get-credentials --name $AksClusterName --resource-group $AksResourceGroup
 # log "Setting up k8s dashboard role binding"
 # kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
 log "Installing helm stable repo"
-helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm repo add stable https://charts.helm.sh/stable
 # may need to add code here to wait for the policy to be applied
 log "Creating AKS Namespace"
 kubectl create namespace $tenant
