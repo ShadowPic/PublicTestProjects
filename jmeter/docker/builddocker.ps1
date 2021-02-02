@@ -1,6 +1,12 @@
-docker build --tag="shadowpic/jmeter-base:latest" -f jmeterbase-docker .
-docker push shadowpic/jmeter-base
-docker build --tag="shadowpic/jmeter-master:latest" -f jmetermaster-docker .
-docker build --tag="shadowpic/jmeter-slave:latest" -f jmeterslave-docker .
-docker push shadowpic/jmeter-master
-docker push shadowpic/jmeter-slave
+[CmdletBinding()]
+param (
+    [Parameter(Mandatory=$false)]
+    [string]
+    $label="latest"
+)
+docker build --tag="shadowpic/jmeter-base:$label" -f jmeterbase-docker .
+docker push "shadowpic/jmeter-base:$label"
+docker build --tag="shadowpic/jmeter-master:$label" -f jmetermaster-docker .
+docker build --tag="shadowpic/jmeter-slave:$label" -f jmeterslave-docker .
+docker push "shadowpic/jmeter-master:$label"
+docker push "shadowpic/jmeter-slave:$label"

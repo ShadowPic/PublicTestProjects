@@ -45,6 +45,13 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --admin --overwrite-existing'
 
+- task: AzureCLI@1
+  displayName: 'Increase nodes to 3'
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 3'
+
 - task: AzurePowerShell@3
   displayName: 'jmeter_cluster_create.ps1'
   inputs:
@@ -63,6 +70,12 @@ steps:
     ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
     azurePowerShellVersion: 'LatestVersion'
 
+- task: AzureCLI@1
+  displayName: 'Decrease nodes to 1'
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 1'
 
 - task: CopyFiles@2
   inputs:
