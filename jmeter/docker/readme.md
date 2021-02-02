@@ -1,5 +1,9 @@
 # Overview
 This project is a very lean implementation of a Kubernetes JMeter cluster.  It will allow for the execution of a JMeter test script on an arbitrarily sized [JMeter test rig](https://jmeter.apache.org/usermanual/jmeter_distributed_testing_step_by_step.html#distributed-testing) and then will generate:
+- A deployed AKS cluster using managed identities.  The AKS cluster is intended to remain running to provide reporting across performance test runs.
+  - The initial size of the cluster is a [single node](https://docs.microsoft.com/en-us/azure/aks/concepts-clusters-workloads#nodes-and-node-pools) with 2 cores.  To successfully run a test with the smallest test rig requires 3 nodes.
+  - To increase or decrease the number of nodes you will need to use the [az aks scale](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az_aks_scale) command to a minimum of 3 nodes *assuming* you did not override the nodeVMSize when you run the CreateTestRig PowerShell command.
+  - When the test rig is not actively being used to execute tests you can scale it back down to a single node using the [az aks scale](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az_aks_scale) command.
 - A [JMeter DashBoard Report](http://jmeter.apache.org/usermanual/generating-dashboard.html#generation)
 - [JMeter Test Log \(JTL\)](https://jmeter.apache.org/usermanual/get-started.html#non_gui)
    
@@ -15,6 +19,8 @@ To provide a simple method of deleting the test rig after the test execution we 
 - PowerShell script to create your own docker images if you don't want to use mine at https://cloud.docker.com/u/shadowpic
 - Build the cluster from Docker root containers
 - Real time monitoring of the performance test with Grafana
+  - An example Grafana JMeter dashboard is included for import with the [JMeter Demo Dashboard-for external.json](./JMeter%20Demo%20Dashboard-for%20external.json) file.
+  - Requires that you add the [JMeter Backend Listener](https://jmeter.apache.org/usermanual/component_reference.html#Backend_Listener).  There is an example of how to use this in the [drparts](../drparts.jmx) sample.
 - Combine Azure PAS service metrics side by side with JMeter metrics using Grafana
 - Redis support to feed parameters to your tests
 
@@ -30,11 +36,30 @@ To create a basic load test
 - A web site somewhere that you can break and not get in trouble.  :)
 
 # Overview of the deployment steps
+1. Clone this repo
+2. Login with the Azure Client with an account that has sufficient authority to create a new AKS cluster
+3. Select the subscription that you want to create the AKS cluster in
+    - use the [az account set](https://docs.microsoft.com/en-us/cli/azure/account?view=azure-cli-latest#az_account_set) command
+4. Make your current working directory in the same location as the this readme file
+5. Create a resource group and note the azure region you are using with the [az group create](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest#az_group_create) or through https://portal.azure.com/ 
+6. Execute the [CreateTestRig.ps1](readme.md#creating-the-aks-cluster) Powershell command.
+    - this can fail for a number of reasons with the most common being:
+      - not having the correct [dependencies](readme.md#Dependencies) deployed to the machine you are executing the scripts on
+      - not having sufficient priveleges to create the test rig
+    - If you need to start over there is a [DeleteTestRig](readme.md#if-you-want-to-remove-your-aks-cluster) script
+7. At this point if everything has completed successfully you *should* have a working test rig.  Next let's make sure.
+8. When executing performance tests you will ALWAYS be using the [jmeter_cluster_create.ps1](jmeter_cluster_create.ps1) followed by the [run_test.ps1](run_test.ps1) scripts.
+    - jmeter_cluster_create.ps1 creates a number of assets that *could* be used by your test script.  The first time it executes it will take a long time because it always creates resources.  If resources already exist, like the influxdb, you will get a warning but the script will continue.  This is an expected behavior.
+    - the run_test.ps1 script uploads your jmx test script, executes the test and returns a report.
+9. If everything has gone awesome you are ready to go break my demo site at https://drpartsunlimited.azurewebsites.net/
 
-- Login with the Azure Client
-- Select the subscription that you want to create the AKS cluster in
-- Make your current working directory in the same location as the this readme file
-- Create a resource group and note the azure region you are using
+I recommand the following commands to test your fancy new test rig
+```
+.\jmeter_cluster_create.ps1 -tenant jmeter
+.\run_test.ps1 -tenant jmeter -TestName ..\drparts.jmx -UserProperties ..\user.properties
+```
+
+
 
 ## Creating the AKS Cluster
 
@@ -102,7 +127,8 @@ To delete tbe cluster you run the following PowerShell
 - Miscellaneous
   - load_test_run
     - the linux shell script used to execute the tests
-    - CRITICAL NOTE:  must be in linux line endings and not DOS                                                      
+    - CRITICAL NOTE:  must be in linux line endings and not DOS
+
 
 # References
 - https://kubernauts.io/en/
