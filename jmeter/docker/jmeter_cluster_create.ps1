@@ -30,8 +30,13 @@ if(($null -eq (Get-Command "helm.exe" -ErrorAction SilentlyContinue)) -and ($nul
     throw "helm is not right"
 }
 
+Write-Output "Removing any leftover test rigs"
+kubectl -n $tenant delete -f jmeter_master_deploy.yaml --wait=true
+kubectl -n $tenant delete -f jmeter_slaves_deploy.yaml --wait=true
+kubectl -n $tenant wait --for=delete pods --selector=jmeter_mode=master --timeout=120s
+kubectl -n $tenant wait --for=delete pods --selector=jmeter_mode=slave --timeout=120s
+    
 Write-Output "Installing redis"
-
 
 helm repo add azure-marketplace https://marketplace.azurecr.io/helm/v1/repo
 
