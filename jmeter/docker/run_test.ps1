@@ -19,6 +19,9 @@ param(
     [Parameter(Mandatory=$false)]
     [string]
     $RedisScript="",
+    [Parameter(Mandatory=$false)]
+    [bool]
+    $ExecuteOnceOnMaster=$false,
     [parameter(ValueFromRemainingArguments=$true)]
     [string[]]
     $GlobalJmeterParams
@@ -55,7 +58,13 @@ foreach($gr in $GlobalJmeterParams)
 }
 Write-Output "Copying test plan to aks"
 kubectl cp $TestName $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
+if($ExecuteOnceOnMaster)
+{
+    Write-Output "Starting optional execution of jmx on the master node"
+    kubectl -n $tenant exec $MasterPod -- jmeter -n -t "/$(Split-Path $TestName -Leaf)" -JMaster=true $GlobalJmeterParams
+}
 Write-Output "Starting test execution on AKS Cluster"
+
 kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -Leaf)" $GlobalJmeterParams
 Write-Output "Retrieving dashboard, results and Master jmeter.log"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder

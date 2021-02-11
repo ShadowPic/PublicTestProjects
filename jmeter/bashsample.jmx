@@ -43,9 +43,16 @@
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
-          <stringProp name="script">&quot;apt install nodejs -y&quot;.execute().waitForOrKill(30000)
-&quot;apt install git -y&quot;.execute().waitForOrKill(30000)
-&quot;git clone https://github.com/ShadowPic/PublicTestProjects.git&quot;.execute().waitForOrKill(30000)
+          <stringProp name="script">int timeout = 30000
+String out
+out +=&quot;apt update&quot;.execute().text
+out +=&quot;apt install nodejs -y&quot;.execute().text
+out +=&quot;apt install git -y&quot;.execute().text
+out +=&quot;apt install npm -y&quot;.execute().text
+out += &quot;****Installing typescript*****&quot;
+out += &quot;npm install -g typescript&quot;.execute().text
+out +=&quot;git clone https://github.com/ShadowPic/PublicTestProjects.git&quot;.execute().text
+log(out)
 //def sout = new StringBuilder(), serr = new StringBuilder()
 //def proc = &apos;git clone https://github.com/ShadowPic/PublicTestProjects.git&apos;.execute()
 //proc.consumeProcessOutput(sout, serr)
