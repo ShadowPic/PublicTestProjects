@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "jmchart.fullname" . }}
+  name: {{ include "jmetertestrig.fullname" . }}
   labels:
-{{ include "jmchart.labels" . | indent 4 }}
+    {{- include "jmetertestrig.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,5 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ include "jmchart.name" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    {{- include "jmetertestrig.selectorLabels" . | nindent 4 }}
