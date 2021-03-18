@@ -5,4 +5,5 @@
 replicaCount: 1
 jmeterMasterImage: shadowpic/jmeter-master:latest
 jmeterSlaveImage: shadowpic/jmeter-slave:latest
-usePassword: false
+redis:
+  usePassword: false
