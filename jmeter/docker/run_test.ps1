@@ -126,11 +126,6 @@ kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.log
 kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $ReportFolder/jmeter.log
 if($DeleteTestRig)
 {
-    Write-Output "Removing JMeter master and slave pods"
-    kubectl -n $tenant delete -f jmeter_master_deploy.yaml --wait=true
-    kubectl -n $tenant delete -f jmeter_slaves_deploy.yaml --wait=true
-    kubectl -n $tenant wait --for=delete pods --selector=jmeter_mode=master --timeout=60s
-    kubectl -n $tenant wait --for=delete pods --selector=jmeter_mode=slave --timeout=60s
-    
-    #helm del --purge redis-release
+    $result = .\Set-JmeterTestRig.ps1 -tenant $tenant -ZeroOutTestRig $true
+   
 }

@@ -63,7 +63,7 @@ items:
           app: influxdb-jmeter
       spec:
         containers:
-        - image: influxdb
+        - image: {{ .Values.jmeterInfluxDbImage }}
           imagePullPolicy: IfNotPresent
           name: influxdb
           ports:
