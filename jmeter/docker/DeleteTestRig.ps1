@@ -1,9 +1,6 @@
 param(
     [Parameter(Mandatory=$true)]
     [string]
-    $tenant,
-    [Parameter(Mandatory=$true)]
-    [string]
     $AksResourceGroup,
     [Parameter(Mandatory=$true)]
     [string]
