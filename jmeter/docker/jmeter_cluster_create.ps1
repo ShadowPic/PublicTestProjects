@@ -8,13 +8,15 @@ param(
     $ScaleSlaves = 2
 )
 
-Import-Module ./commenutils.psm1 -DisableNameChecking
-
-VerifyKubeCtl
-
 $PathToYaml = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 Set-Location $PathToYaml
+
+Import-Module .\commenutils.psm1 -DisableNameChecking
+
+VerifyKubeCtl
+
+
 
 kubectl version --short
 
