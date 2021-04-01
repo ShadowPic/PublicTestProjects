@@ -20,16 +20,13 @@ items:
     name: jmeter-master
   spec:
     progressDeadlineSeconds: 600
-    replicas: {{ .Values.masterReplicaCount }}
+    replicas: 1
     revisionHistoryLimit: 10
     selector:
       matchLabels:
         jmeter_mode: master
     strategy:
-      rollingUpdate:
-        maxSurge: 25%
-        maxUnavailable: 25%
-      type: RollingUpdate
+      type: Recreate
     template:
       metadata:
         creationTimestamp: null

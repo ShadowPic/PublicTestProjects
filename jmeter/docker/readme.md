@@ -135,7 +135,7 @@ To delete tbe cluster you run the following PowerShell
 
 
 # References
-- https://kubernauts.io/en/
+- https://kubernauts.de/en/home/
 - http://www.testautomationguru.com/jmeter-distributed-load-testing-using-docker/
 - https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how 
 - https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address
