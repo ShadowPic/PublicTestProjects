@@ -21,14 +21,18 @@ items:
     creationTimestamp: null
     labels:
       app: influxdb
-    name: influxdb-config
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "fullname" . }}-influxdb-config
 - apiVersion: apps/v1
   kind: StatefulSet
   metadata:
     creationTimestamp: null
     labels:
       app: influxdb
-    name: influxdb
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "fullname" . }}-influxdb
   spec:
     replicas: 1
     revisionHistoryLimit: 10
@@ -41,6 +45,8 @@ items:
         creationTimestamp: null
         labels:
           app: influxdb
+          chart: {{ template "name" . }}
+          release: {{ .Release.Name }}
       spec:
         containers:
         - image: {{ .Values.jmeterInfluxDbImage }}
@@ -78,7 +84,7 @@ items:
         volumes:
         - configMap:
             defaultMode: 420
-            name: influxdb-config
+            name: {{ template "fullname" . }}-influxdb-config
           name: config-volume
     volumeClaimTemplates:
       - metadata:
@@ -95,6 +101,8 @@ items:
     creationTimestamp: null
     labels:
       app: influxdb
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
     name: {{ template "fullname" . }}-influxdb-svc
   spec:
     ports:
