@@ -28,6 +28,9 @@ items:
     creationTimestamp: null
     name: influx-storage
   spec:
+    metadata:
+      annotations:
+        helm.sh/resource-policy: "keep"
     accessModes:
     - ReadWriteOnce
     resources:
