@@ -8,16 +8,18 @@ items:
       #Script created to invoke jmeter test script with the slave POD IP addresses
       #Script should be run like: ./load_test "path to the test script in jmx format"
       #This is from the configmap
-      /jmeter/apache-jmeter-*/bin/jmeter -n -t $1 -Dserver.rmi.ssl.disable=true -R 'getent ahostsv4 jmeter-slaves-svc | cut -d' ' -f1 | sort -u | awk -v ORS=, '{print $1}' | sed 's/,$//''
+      /jmeter/apache-jmeter-*/bin/jmeter -n -t $1 -Dserver.rmi.ssl.disable=true -R 'getent ahostsv4 {{ template "fullname" . }}-jmeter-slaves-svc | cut -d' ' -f1 | sort -u | awk -v ORS=, '{print $1}' | sed 's/,$//''
   metadata:
-      name: jmeter-load-test-script
+      name: {{ template "fullname" . }}-jmeter-load-test-script
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
     creationTimestamp: null
     labels:
       jmeter_mode: master
-    name: jmeter-master
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "fullname" . }}-jmeter-master
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -32,6 +34,8 @@ items:
         creationTimestamp: null
         labels:
           jmeter_mode: master
+          chart: {{ template "name" . }}
+          release: {{ .Release.Name }}
       spec:
         containers:
         - args:
@@ -63,6 +67,6 @@ items:
         volumes:
           - name: load-test-run
             configMap:
-              name: jmeter-load-test-script
+              name: {{ template "fullname" . }}-jmeter-load-test-script
 kind: List
 metadata: {}
