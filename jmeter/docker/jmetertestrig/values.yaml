@@ -5,5 +5,8 @@ replicaCount: 1
 jmeterMasterImage: shadowpic/jmeter-master:latest
 jmeterSlaveImage: shadowpic/jmeter-slave:latest
 jmeterInfluxDbImage: influxdb:1.8
+jmeterInfluxDbStorageClass:  # Allow specifying alternate StorageClass
 redis:
   usePassword: false
+  cluster:
+    enabled: false
