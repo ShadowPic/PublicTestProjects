@@ -7,10 +7,6 @@ This project is a very lean implementation of a Kubernetes JMeter cluster.  It w
 - A [JMeter DashBoard Report](http://jmeter.apache.org/usermanual/generating-dashboard.html#generation)
 - [JMeter Test Log \(JTL\)](https://jmeter.apache.org/usermanual/get-started.html#non_gui)
    
-To provide a simple method of deleting the test rig after the test execution we are using the [Kubernetes Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) feature which allows for an expedited method to delete everything created.
-
-[**kubectl delete namespace *NameSpacdName***](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete)
-
 ## Features
 - Certified on [AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/)
 - PowerShell scripts automate all of the features 
