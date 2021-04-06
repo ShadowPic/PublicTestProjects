@@ -26,3 +26,18 @@ function IsJmeterHelmDeployed($tenant)
     [boolean]$match = $deploymentStatus -like "*STATUS: deployed*"
     return $match 
 }
+
+function GetRedisMaster ($tenant)
+{
+    return (kubectl -n $tenant get pod --selector=app=redis --selector=role=master -o json|ConvertFrom-Json).items.metadata.name
+}
+
+function JmeterMasterDeploymentName ($tenant)
+{
+    return (kubectl -n $tenant get deployment --selector=jmeter_mode=master -o json|ConvertFrom-Json).items.metadata.name
+}
+
+function JmeterSlaveDeploymentName ($tenant)
+{
+    return (kubectl -n $tenant get deployment --selector=jmeter_mode=slave -o json|ConvertFrom-Json).items.metadata.name
+}

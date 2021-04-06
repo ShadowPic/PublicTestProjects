@@ -50,8 +50,8 @@ items:
             protocol: TCP
           resources:
             limits:
-              cpu: "2"
-              memory: "2Gi"
+              cpu: "{{ .Values.jmeterSlaveCpu }}"
+              memory: "{{ .Values.jmeterSlaveMemory }}"
             requests:
               cpu: ".5"
           terminationMessagePath: /dev/termination-log
@@ -70,7 +70,7 @@ items:
       jmeter_mode: slave
       chart: {{ template "name" . }}
       release: {{ .Release.Name }}
-    name: {{ template "fullname" . }}-jmeter-slaves-svc
+    name: jmeter-slaves-svc
   spec:
     clusterIP: None
     ports:

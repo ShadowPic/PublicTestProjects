@@ -103,7 +103,7 @@ items:
       app: influxdb
       chart: {{ template "name" . }}
       release: {{ .Release.Name }}
-    name: {{ template "fullname" . }}-influxdb-svc
+    name: {{ template "name" . }}-influxdb-svc
   spec:
     ports:
     - name: http

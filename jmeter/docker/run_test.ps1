@@ -84,6 +84,9 @@ param(
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 Set-Location $CurrentPath
+
+Import-Module ./commenutils.psm1 -force
+
 if($null -eq $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name) )
 {
     Write-Error "Master pod does not exist"
@@ -101,7 +104,8 @@ if(!($RedisScript -eq $null -or $RedisScript -eq ""))
 {
     #Since we use helm to install Redis we can assume the pod name for the first redis slave instance
     write-output "Executing redis script"
-    Get-Content $RedisScript | kubectl -n $tenant exec -i jmeterredis-master-0 -- redis-cli --pipe
+    $redisMaster=GetRedisMaster -tenant $tenant
+    Get-Content $RedisScript | kubectl -n $tenant exec -i $redisMaster -- redis-cli --pipe
 }
 Write-Output "Processing global parameters"
 [string]$GlobalParmsCombined=" "

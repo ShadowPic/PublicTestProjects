@@ -52,8 +52,8 @@ items:
             protocol: TCP
           resources:
             limits:
-              cpu: "4"
-              memory: "8Gi"
+              cpu: "{{ .Values.jmeterMasterCpu }}"
+              memory: "{{ .Values.jmeterMasterMemory }}"
             requests:
               cpu: ".5"
               memory: "500Mi"

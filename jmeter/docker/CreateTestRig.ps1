@@ -30,5 +30,5 @@ helm repo add stable https://charts.helm.sh/stable
 log "Creating AKS Namespace"
 kubectl create namespace $tenant
 #timing issue may be here
-kubectl -n $tenant apply -f .\jmeter_grafana_deploy.yaml
+kubectl -n $tenant apply -f ./jmeter_grafana_deploy.yaml
 kubectl -n $tenant rollout status deployment jmeter-grafana
