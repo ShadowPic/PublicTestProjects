@@ -34,6 +34,6 @@ if(-not (IsJmeterHelmDeployed($tenant)))
 
 }
 
-$result = ./Set-JmeterTestRig.ps1 -tenant $tenant -ZeroOutTestRig $true
-$result = ./Set-JmeterTestRig.ps1 -tenant $tenant -JmeterSlaveCount $ScaleSlaves
+./Set-JmeterTestRig.ps1 -tenant $tenant -ZeroOutTestRig $true
+./Set-JmeterTestRig.ps1 -tenant $tenant -JmeterSlaveCount $ScaleSlaves
 
