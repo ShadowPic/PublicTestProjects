@@ -8,6 +8,8 @@ ARG JMETER_PLUGIN_ZIP=JMeterPlugins-Standard-1.4.0.zip
 
 COPY rmi_keystore.jks /jmeter/apache-jmeter-$JMETER_VERSION/bin/
 
+COPY log4j2.xml /jmeter/apache-jmeter-$JMETER_VERSION/bin/
+
 COPY rmi_keystore.jks /
 
 COPY load_test_run /

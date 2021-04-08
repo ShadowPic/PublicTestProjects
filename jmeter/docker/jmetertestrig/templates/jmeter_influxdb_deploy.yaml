@@ -20,47 +20,33 @@ items:
   metadata:
     creationTimestamp: null
     labels:
-      app: influxdb-jmeter
-    name: influxdb-config
-- apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    creationTimestamp: null
-    name: influx-storage
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 10Gi
-    storageClassName: default
-    volumeMode: Filesystem
-  status:
-    phase: Pending
+      app: influxdb
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "fullname" . }}-influxdb-config
 - apiVersion: apps/v1
-  kind: Deployment
+  kind: StatefulSet
   metadata:
     creationTimestamp: null
     labels:
-      app: influxdb-jmeter
-    name: influxdb-jmeter
+      app: influxdb
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "fullname" . }}-influxdb
   spec:
-    progressDeadlineSeconds: 600
     replicas: 1
     revisionHistoryLimit: 10
     selector:
       matchLabels:
-        app: influxdb-jmeter
-    strategy:
-      rollingUpdate:
-        maxSurge: 25%
-        maxUnavailable: 25%
-      type: RollingUpdate
+        app: influxdb
+    serviceName: {{ template "fullname" . }}-influxdb-svc
     template:
       metadata:
         creationTimestamp: null
         labels:
-          app: influxdb-jmeter
+          app: influxdb
+          chart: {{ template "name" . }}
+          release: {{ .Release.Name }}
       spec:
         containers:
         - image: {{ .Values.jmeterInfluxDbImage }}
@@ -89,7 +75,7 @@ items:
           - mountPath: /etc/influxdb
             name: config-volume
           - mountPath: /var/lib/influxdb
-            name: azureinflux
+            name: influx-data
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler
@@ -98,19 +84,26 @@ items:
         volumes:
         - configMap:
             defaultMode: 420
-            name: influxdb-config
+            name: {{ template "fullname" . }}-influxdb-config
           name: config-volume
-        - name: azureinflux
-          persistentVolumeClaim:
-            claimName: influx-storage
-  status: {}
+    volumeClaimTemplates:
+      - metadata:
+          name: influx-data
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: {{ .Values.jmeterInfluxDbStorageClass }}
+          resources:
+            requests:
+              storage: 10Gi
 - apiVersion: v1
   kind: Service
   metadata:
     creationTimestamp: null
     labels:
-      app: influxdb-jmeter
-    name: jmeter-influxdb-svc
+      app: influxdb
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "name" . }}-influxdb-svc
   spec:
     ports:
     - name: http
@@ -126,7 +119,7 @@ items:
       protocol: TCP
       targetPort: 2003
     selector:
-      app: influxdb-jmeter
+      app: influxdb
     sessionAffinity: None
     type: ClusterIP
   status:

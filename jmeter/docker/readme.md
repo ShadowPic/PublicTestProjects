@@ -7,10 +7,6 @@ This project is a very lean implementation of a Kubernetes JMeter cluster.  It w
 - A [JMeter DashBoard Report](http://jmeter.apache.org/usermanual/generating-dashboard.html#generation)
 - [JMeter Test Log \(JTL\)](https://jmeter.apache.org/usermanual/get-started.html#non_gui)
    
-To provide a simple method of deleting the test rig after the test execution we are using the [Kubernetes Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) feature which allows for an expedited method to delete everything created.
-
-[**kubectl delete namespace *NameSpacdName***](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete)
-
 ## Features
 - Certified on [AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/)
 - PowerShell scripts automate all of the features 
@@ -135,7 +131,7 @@ To delete tbe cluster you run the following PowerShell
 
 
 # References
-- https://kubernauts.io/en/
+- https://kubernauts.de/en/home/
 - http://www.testautomationguru.com/jmeter-distributed-load-testing-using-docker/
 - https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how 
 - https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address

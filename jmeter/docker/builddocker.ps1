@@ -2,7 +2,7 @@
 param (
     [Parameter(Mandatory=$false)]
     [string]
-    $label="latest"
+    $label="test"
 )
 docker build --tag="shadowpic/jmeter-base:$label" -f jmeterbase-docker .
 docker push "shadowpic/jmeter-base:$label"

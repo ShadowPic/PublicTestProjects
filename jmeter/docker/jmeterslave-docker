@@ -10,6 +10,8 @@ ENV JMETER_VERSION=5.3
 
 COPY rmi_keystore.jks /jmeter/apache-jmeter-$JMETER_VERSION/bin/
 
-COPY rmi_keystore.jks /                     
+COPY rmi_keystore.jks /     
+
+COPY log4j2.xml /jmeter/apache-jmeter-$JMETER_VERSION/bin/
 
 EXPOSE 1099 50000

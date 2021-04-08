@@ -6,7 +6,7 @@ items:
     creationTimestamp: null
     labels:
       jmeter_mode: slave
-    name: jmeter-slaves
+    name: {{ template "fullname" . }}-jmeter-slaves
   spec:
     progressDeadlineSeconds: 600
     replicas: {{ .Values.replicaCount }}
@@ -15,15 +15,14 @@ items:
       matchLabels:
         jmeter_mode: slave
     strategy:
-      rollingUpdate:
-        maxSurge: 25%
-        maxUnavailable: 25%
-      type: RollingUpdate
+      type: Recreate
     template:
       metadata:
         creationTimestamp: null
         labels:
           jmeter_mode: slave
+          chart: {{ template "name" . }}
+          release: {{ .Release.Name }}
       spec:
         containers:
         - args:
@@ -51,8 +50,8 @@ items:
             protocol: TCP
           resources:
             limits:
-              cpu: "2"
-              memory: "2Gi"
+              cpu: "{{ .Values.jmeterSlaveCpu }}"
+              memory: "{{ .Values.jmeterSlaveMemory }}"
             requests:
               cpu: ".5"
           terminationMessagePath: /dev/termination-log
@@ -69,6 +68,8 @@ items:
     creationTimestamp: null
     labels:
       jmeter_mode: slave
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
     name: jmeter-slaves-svc
   spec:
     clusterIP: None
