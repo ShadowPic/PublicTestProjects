@@ -18,7 +18,7 @@ if($(az account list).contains("[]")){
      Exit-PSSession
 }
 log "Creating aks cluster"
-az aks create --resource-group $AksResourceGroup   --name $AksClusterName --enable-managed-identity --vm-set-type VirtualMachineScaleSets --node-vm-size $NodeVmSize  --node-count 1
+az aks create --resource-group $AksResourceGroup   --name $AksClusterName --enable-managed-identity --vm-set-type VirtualMachineScaleSets --node-vm-size $NodeVmSize  --node-count 1 --generate-ssh-keys 
 
 log "Getting cluster credentials"
 az aks get-credentials --name $AksClusterName --resource-group $AksResourceGroup --admin --overwrite-existing
