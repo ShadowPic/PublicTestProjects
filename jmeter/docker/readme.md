@@ -55,8 +55,6 @@ I recommand the following commands to test your fancy new test rig
 .\run_test.ps1 -tenant jmeter -TestName ..\drparts.jmx -UserProperties ..\user.properties
 ```
 
-
-
 ## Creating the AKS Cluster
 
 Execute the following PowerShell
@@ -105,6 +103,9 @@ To delete tbe cluster you run the following PowerShell
 - -AksResourceGroup < Resource Group You already created >
 - -AksClusterName < Name of your AKS Cluster >
 
+## Want a more secure test rig?
+
+I have recently updated the deployment model for the test rig to use a helm chart.  All of the supporting PowerShell scripts have been refactored to support this new deployment mechanism.  Among the settings exposed by the Helm chart is the ability to override the docker images used to create the JMeter test rig.  If you want to use a custom container image you will need to update the [values.yaml](./jmetertestrig/values.yaml) to point to your custom jmeter image(s).
 
 # Supporting files
 
