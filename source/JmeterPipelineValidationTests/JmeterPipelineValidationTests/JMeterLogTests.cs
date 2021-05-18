@@ -44,5 +44,28 @@ namespace JmeterPipelineValidationTests
             //assert
             Assert.IsTrue(koIsOk);
         }
+        
+        [TestMethod]
+        public void AverageAndLabel()
+        {
+            //arrange
+            string statisticsFileName = Config.Configuration["statisticsFileName"];
+
+            //act
+            JObject rss = JObject.Parse(File.ReadAllText(statisticsFileName));
+
+            //retrieving average
+            float average;
+            string averageString = (string)rss["Home Page-0"]["meanResTime"];
+            float.TryParse(averageString, out average);
+            bool averageIsOkay = average > 0;
+
+            //retrieving label
+            string label = (string)rss["Home Page-0"]["transaction"];
+            bool labelIsOkay = !label.Equals("", StringComparison.OrdinalIgnoreCase);
+
+            //assert
+            Assert.IsTrue(averageIsOkay && labelIsOkay);
+        }
     }
 }
