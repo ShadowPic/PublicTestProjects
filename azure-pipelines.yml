@@ -41,21 +41,21 @@ steps:
 - task: AzureCLI@1
   displayName: 'Get K8S credentials'
   inputs:
-    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    azureSubscription: 'ms internal v 2'
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --admin --overwrite-existing'
 
 - task: AzureCLI@1
   displayName: 'Increase nodes to 3'
   inputs:
-    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    azureSubscription: 'ms internal v 2'
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 3'
 
 - task: AzurePowerShell@3
   displayName: 'jmeter_cluster_create.ps1'
   inputs:
-    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    azureSubscription: 'ms internal v 2'
     ScriptType: 'FilePath'
     ScriptPath: 'jmeter/docker/jmeter_cluster_create.ps1'
     ScriptArguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors)'
@@ -64,7 +64,7 @@ steps:
 - task: AzurePowerShell@3
   displayName: Run Load Test
   inputs:
-    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    azureSubscription: 'ms internal v 2'
     ScriptType: 'FilePath'
     ScriptPath: 'jmeter/docker/run_test.ps1'
     ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
@@ -73,7 +73,7 @@ steps:
 - task: AzureCLI@1
   displayName: 'Decrease nodes to 1'
   inputs:
-    azureSubscription: 'Microsoft Azure Internal Consumption (c5c98e13-4009-4d18-9355-af83a59c3893)'
+    azureSubscription: 'ms internal v 2'
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 1'
 
