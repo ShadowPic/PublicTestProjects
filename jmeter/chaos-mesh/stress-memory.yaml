@@ -1,0 +1,18 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-memory-show
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      "app": "jfrcosmos"
+  stressors:
+    memory:
+      workers: 1
+      size: 1G
+  duration: '15s'
+  scheduler:
+    cron: '@every 15s'
