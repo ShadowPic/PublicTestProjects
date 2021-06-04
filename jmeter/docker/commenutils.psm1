@@ -41,3 +41,9 @@ function JmeterSlaveDeploymentName ($tenant)
 {
     return (kubectl -n $tenant get deployment --selector=jmeter_mode=slave -o json|ConvertFrom-Json).items.metadata.name
 }
+
+function PublishResultsToStorageAccount($container,$StorageAccountName,$DestinationPath,$SourceDirectory)
+{
+    az extension add --name storage-preview
+    az storage azcopy blob upload --container $container --account-name $StorageAccountName --destination $DestinationPath --source $SourceDirectory --recursive
+}
