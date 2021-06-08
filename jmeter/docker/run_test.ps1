@@ -60,6 +60,7 @@
 
 #>
 
+#Requires -Version 7
 
 param(
     [Parameter(Mandatory=$true)]
@@ -158,7 +159,6 @@ kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $Report
 
 if($PublishResultsToBlobStorage.IsPresent)
 {
-    Write-Output "Publishing to storage account"
     $destinationPath=get-date -format "yyyy/MM/dd" -AsUTC
     #TODO: Add checking to ensure the minimum verson of AZ is installed already
     [xml]$testPlanXml=Get-Content $TestName
@@ -166,6 +166,7 @@ if($PublishResultsToBlobStorage.IsPresent)
     {
         $destinationPath = $testPlanXml.SelectNodes("//TestPlan").testname + "/" + $destinationPath
     }
+    Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"
     Write-Output "Adding the AZ storage-preview extension"
     az extension add --name storage-preview
     Write-Output "Attempting to upload to storage account using the current AZ Security context"
