@@ -88,8 +88,15 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
 - -RedisScript (optional): full or relative path to a Redis script for populating parameters to support perf tests
   - JMeter supports Redis as a data source for parameters.
   - See: https://jmeter-plugins.org/wiki/RedisDataSet/ 
-- -ExecuteOnceOnMaster <boolean> (optional)
+- -ExecuteOnceOnMaster (optional)
   - Sometimes there is a need to setup test runs and trying to coordinate across several test slaves to only do things 1 time is difficult. This Provides the ability to execute a test script 1 time per test run on the Master Node.
+- -PublishResultsToBlobStorage (optional)
+  - To enable the ability to do more advanced reporting like with PowerBi you can add this parameter to upload the contents of the results directory to an Azure Blob Storage.
+  - **If you override your default test name the new name will become the root folder in the target container blob**
+- -StorageAccount (optional)
+  - The string name for the storage account you are uploading the results folder to
+- -Container (optional)
+  - Blob Storage container that you are uploading the results to.
 - -GlobalJmeterParams (optional): JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves
   - This feature allows for any number of "-G" parameters to be added.
   - This feature also allows you to add any other JMeter option you want to assuming it's not already present.  

@@ -34,6 +34,15 @@
     * A JMeter command line parameter of -JMaster=true is added so that your JMeter script can use an "If Controller" to modify how it acts on the master node.
     * No slaves start executing until after the JMX script has completed on the Master node.
 
+    .PARAMETER PublishResultsToBlobStorage
+    To enable the ability to do more advanced reporting like with PowerBi you can add this parameter to upload the contents of the results directory to an Azure Blob Storage.
+
+    .PARAMETER StorageAccount
+    The string name for the storage account you are uploading the results folder to
+
+    .PARAMETER Container
+    Blob Storage container that you are uploading the results to.
+
     .PARAMETER GlobalJmeterParams
     JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves.
     * This feature allows for any number of "-G" parameters to be added.
@@ -63,7 +72,7 @@ param(
     # Where to put the report directory
     [Parameter(Mandatory=$false)]
     [string]
-    $ReportFolder="$(get-date -Format FileDateTimeUniversal)results",
+    $ReportFolder="$(get-date -Format FileDateTimeUniversal -AsUTC)results",
     [Parameter(Mandatory=$false)]
     [bool]
     $DeleteTestRig = $true,
@@ -74,8 +83,17 @@ param(
     [string]
     $RedisScript="",
     [Parameter(Mandatory=$false)]
-    [bool]
-    $ExecuteOnceOnMaster=$false,
+    [Switch]
+    $ExecuteOnceOnMaster,
+    [Parameter(Mandatory=$false)]
+    [Switch]
+    $PublishResultsToBlobStorage,
+    [Parameter(Mandatory=$false)]
+    [string]
+    $StorageAccount="",
+    [Parameter(Mandatory=$false)]
+    [string]
+    $Container="",
     [parameter(ValueFromRemainingArguments=$true)]
     [string[]]
     $GlobalJmeterParams
@@ -86,6 +104,15 @@ $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 Set-Location $CurrentPath
 
 Import-Module ./commenutils.psm1 -force
+
+if($PublishResultsToBlobStorage.IsPresent)
+{
+    if(($StorageAccount -eq "") -or ($Container -eq ""))
+    {
+        Write-Error "If publishing to a storage account the -StorageAccount and -Container are required fields"
+        throw "Required fields missing when publishing to storage account"
+    }
+}
 
 if($null -eq $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name) )
 {
@@ -116,7 +143,7 @@ foreach($gr in $GlobalJmeterParams)
 }
 Write-Output "Copying test plan to aks"
 kubectl cp $TestName $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
-if($ExecuteOnceOnMaster)
+if($ExecuteOnceOnMaster.IsPresent)
 {
     Write-Output "Starting optional execution of jmx on the master node"
     kubectl -n $tenant exec $MasterPod -- jmeter -n -t "/$(Split-Path $TestName -Leaf)" -JMaster=true $GlobalJmeterParams
@@ -126,8 +153,24 @@ Write-Output "Starting test execution on AKS Cluster"
 kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -Leaf)" $GlobalJmeterParams
 Write-Output "Retrieving dashboard, results and Master jmeter.log"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
-kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.log
+kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.jtl
 kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $ReportFolder/jmeter.log
+
+if($PublishResultsToBlobStorage.IsPresent)
+{
+    Write-Output "Publishing to storage account"
+    $destinationPath=get-date -format "yyyy/MM/dd" -AsUTC
+    #TODO: Add checking to ensure the minimum verson of AZ is installed already
+    [xml]$testPlanXml=Get-Content $TestName
+    if(!($testPlanXml.SelectNodes("//TestPlan").testname -eq "Test Plan"))
+    {
+        $destinationPath = $testPlanXml.SelectNodes("//TestPlan").testname + "/" + $destinationPath
+    }
+    Write-Output "Adding the AZ storage-preview extension"
+    az extension add --name storage-preview
+    Write-Output "Attempting to upload to storage account using the current AZ Security context"
+    PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolder
+}
 if($DeleteTestRig)
 {
     $result = .\Set-JmeterTestRig.ps1 -tenant $tenant -ZeroOutTestRig $true

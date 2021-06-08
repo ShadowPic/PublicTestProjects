@@ -1,0 +1,18 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-cpu-show
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      "app": "jfrcosmos"
+  stressors:
+    cpu:
+      workers: 5
+      load: 50
+  duration: '15s'
+  scheduler:
+    cron: '@every 15s'
