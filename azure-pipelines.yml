@@ -53,20 +53,20 @@ steps:
     inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 3'
 
 - task: PowerShell@2
+  displayName: Create test rig
   inputs:
     filePath: 'jmeter/docker/jmeter_cluster_create.ps1'
     arguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors)'
     pwsh: true
     workingDirectory: 'jmeter/docker'
 
-- task: AzurePowerShell@3
+- task: PowerShell@2
   displayName: Run Load Test
   inputs:
-    azureSubscription: 'ms internal v 2'
-    ScriptType: 'FilePath'
-    ScriptPath: 'jmeter/docker/run_test.ps1'
-    ScriptArguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
-    azurePowerShellVersion: 'LatestVersion'
+    filePath: 'jmeter/docker/run_test.ps1'
+    arguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
+    pwsh: true
+    workingDirectory: 'jmeter/docker'
 
 - task: AzureCLI@1
   displayName: 'Decrease nodes to 1'
