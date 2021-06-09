@@ -62,6 +62,7 @@ steps:
 
 - task: PowerShell@2
   displayName: Run Load Test
+  continueOnError: true
   inputs:
     filePath: 'jmeter/docker/run_test.ps1'
     arguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
