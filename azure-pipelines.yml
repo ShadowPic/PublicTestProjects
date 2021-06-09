@@ -59,7 +59,7 @@ steps:
     ScriptType: 'FilePath'
     ScriptPath: 'jmeter/docker/jmeter_cluster_create.ps1'
     ScriptArguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors)'
-    azurePowerShellVersion: 'LatestVersion'
+    preferredAzurePowerShellVersion: '7.1.3'
 
 - task: AzurePowerShell@3
   displayName: Run Load Test
