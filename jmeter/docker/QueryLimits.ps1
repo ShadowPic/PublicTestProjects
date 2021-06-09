@@ -1,3 +1,4 @@
+#Requires -Version 7
 param ($ResourceGroup, $AzureSQLinstance)
 
 # This set of Powershell commands show how to query limit and quotas for commonly used Networking resources, Virtual machines, SQL database and Storage Accounts

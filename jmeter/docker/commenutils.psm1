@@ -1,3 +1,4 @@
+#Requires -Version 7
 function VerifyKubeCtl
 {
     if ($null -eq (Get-Command "kubectl.exe" -ErrorAction SilentlyContinue)) 
