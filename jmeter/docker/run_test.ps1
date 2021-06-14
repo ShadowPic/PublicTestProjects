@@ -36,6 +36,9 @@
 
     .PARAMETER PublishResultsToBlobStorage
     To enable the ability to do more advanced reporting like with PowerBi you can add this parameter to upload the contents of the results directory to an Azure Blob Storage.
+    
+    .PARAMETER $PublishPreviousResultsToStorageAccount
+    To enable the ability to upload contents of previous result files to Azure Blob Storage manually and view results in Power BI. 
 
     .PARAMETER StorageAccount
     The string name for the storage account you are uploading the results folder to
