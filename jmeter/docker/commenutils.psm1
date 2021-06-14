@@ -1,8 +1,8 @@
 #Requires -Version 7
 function VerifyKubeCtl
 {
-    if ($null -eq (Get-Command "kubectl.exe" -ErrorAction SilentlyContinue)) 
-    { 
+    if ($null -eq (Get-Command "kubectl.exe" -ErrorAction SilentlyContinue))
+    {
         Write-Host "Unable to find kubectl.exe in your PATH"
         throw "kubectl is required"
     }
@@ -22,10 +22,10 @@ function VerifyHelm3
 
 function IsJmeterHelmDeployed($tenant)
 {
-    
+
     [string]$deploymentStatus=Helm status jmeter --namespace jmeter
     [boolean]$match = $deploymentStatus -like "*STATUS: deployed*"
-    return $match 
+    return $match
 }
 
 function GetRedisMaster ($tenant)
@@ -47,4 +47,19 @@ function PublishResultsToStorageAccount($container,$StorageAccountName,$Destinat
 {
     az extension add --name storage-preview
     az storage azcopy blob upload --container $container --account-name $StorageAccountName --destination $DestinationPath --source $SourceDirectory --recursive
+}
+
+function PublishPreviousResultsToStorageAccount($container,$StorageAccountName,$DestinationPath,$SourceDirectory)
+{
+    az extension add --name storage-preview
+    [bool]$jtlPresent = (Get-ChildItem -Path $SourceDirectory -force | Where-Object Extension -in ('.jtl') | Measure-Object).Count -ne 0
+    if ($jtlPresent)
+    {
+        az storage azcopy blob upload --container $container --account-name $StorageAccountName --destination $DestinationPath --source $SourceDirectory --recursive
+    }
+    else
+    {
+        Write-Host ".jtl file not present"
+        throw ".jtl file is required"
+    }
 }
