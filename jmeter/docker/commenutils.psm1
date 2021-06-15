@@ -49,16 +49,19 @@ function PublishResultsToStorageAccount($container,$StorageAccountName,$Destinat
     az storage azcopy blob upload --container $container --account-name $StorageAccountName --destination $DestinationPath --source $SourceDirectory --recursive
 }
 
-function PublishPreviousResultsToStorageAccount($container,$StorageAccountName,$DestinationPath,$SourceDirectory)
+function ConvertUnixTimeToUTC($timestamp)
 {
-    az extension add --name storage-preview
+    $origin=New-Object -Type DateTime -ArgumentList 1970, 1, 1, 0, 0, 0, 0
+    $timestamp=$origin.AddSeconds([double]$timestamp/1000)
+    return Get-Date -Date $timestamp -format "yyyy/MM/dd" -AsUTC
+    
+}
 
-    [bool]$jtlPresent = (Get-ChildItem -Path $SourceDirectory -force | Where-Object Extension -in ('.jtl') | Measure-Object).Count -ne 0
-    if ($jtlPresent)
-    {
-        az storage azcopy blob upload --container $container --account-name $StorageAccountName --destination $DestinationPath --source $SourceDirectory --recursive
-    }
-    else
+function IsJTLPresent($resultFile)
+{
+    [bool]$jtlPresent = (Get-ChildItem -Path $resultFile -force | Where-Object Extension -in ('.jtl') | Measure-Object).Count -ne 0
+
+    if (!($jtlPresent))
     {
         Write-Host ".jtl file not present"
         throw ".jtl file is required"

@@ -179,31 +179,6 @@ if($PublishResultsToBlobStorage.IsPresent)
     PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolder
 }
 
-if (!($PublishPreviousResultsToStorageAccount -eq $null)) 
-{
-    Write-Output "Publishing previous results to storage account"
-
-    # Retrieving date from file path
-    $destinationPathString=(Split-Path $PublishPreviousResultsToStorageAccount -Leaf).Substring(0,8)
-    $year=$destinationPathString.Substring(0,4)
-    $month=($destinationPathString.Substring(4)).Substring(0,2)
-    $day=$destinationPathString.Substring(6)
-    $stringDate=$year+"/"+$month+"/"+$day
-    $destinationPath=[datetime]::ParseExact($stringDate, "yyyy/MM/dd",$null)
-    $destinationPath=Get-Date -Date $destinationPath -format "yyyy/MM/dd" -AsUTC
-
-    [xml]$testPlanXml=Get-Content $TestName
-    if(!($testPlanXml.SelectNodes("//TestPlan").testname -eq "Test Plan"))
-    {
-        $destinationPath = $testPlanXml.SelectNodes("//TestPlan").testname + "/" + $destinationPath
-    }
-    Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"
-    Write-Output "Adding the AZ storage-preview extension"
-    az extension add --name storage-preview
-    Write-Output "Attempting to upload to storage account using the current AZ Security context"
-    PublishPreviousResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $PublishPreviousResultsToStorageAccount
-}
-
 if($DeleteTestRig)
 {
     $result = .\Set-JmeterTestRig.ps1 -tenant $tenant -ZeroOutTestRig $true
