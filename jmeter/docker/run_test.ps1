@@ -183,7 +183,15 @@ if (!($PublishPreviousResultsToStorageAccount -eq $null))
 {
     Write-Output "Publishing previous results to storage account"
 
-    $destinationPath=get-date -format "yyyy/MM/dd" -AsUTC
+    # Retrieving date from file path
+    $destinationPathString=(Split-Path $PublishPreviousResultsToStorageAccount -Leaf).Substring(0,8)
+    $year=$destinationPathString.Substring(0,4)
+    $month=($destinationPathString.Substring(4)).Substring(0,2)
+    $day=$destinationPathString.Substring(6)
+    $stringDate=$year+"/"+$month+"/"+$day
+    $destinationPath=[datetime]::ParseExact($stringDate, "yyyy/MM/dd",$null)
+    $destinationPath=Get-Date -Date $destinationPath -format "yyyy/MM/dd" -AsUTC
+
     [xml]$testPlanXml=Get-Content $TestName
     if(!($testPlanXml.SelectNodes("//TestPlan").testname -eq "Test Plan"))
     {

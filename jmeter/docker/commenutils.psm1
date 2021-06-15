@@ -52,6 +52,7 @@ function PublishResultsToStorageAccount($container,$StorageAccountName,$Destinat
 function PublishPreviousResultsToStorageAccount($container,$StorageAccountName,$DestinationPath,$SourceDirectory)
 {
     az extension add --name storage-preview
+
     [bool]$jtlPresent = (Get-ChildItem -Path $SourceDirectory -force | Where-Object Extension -in ('.jtl') | Measure-Object).Count -ne 0
     if ($jtlPresent)
     {
