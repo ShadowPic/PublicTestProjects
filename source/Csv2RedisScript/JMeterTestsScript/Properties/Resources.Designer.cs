@@ -64,12 +64,12 @@ namespace JMeterTestsScript.Properties {
         ///   Looks up a localized string similar to &lt;kg.apc.jmeter.config.redis.RedisDataSet guiclass=&quot;TestBeanGUI&quot; testclass=&quot;kg.apc.jmeter.config.redis.RedisDataSet&quot; testname=&quot;jp@gc - Redis Data Set&quot; enabled=&quot;true&quot;&gt;
         ///		&lt;stringProp name=&quot;database&quot;&gt;0&lt;/stringProp&gt;
         ///		&lt;stringProp name=&quot;delimiter&quot;&gt;,&lt;/stringProp&gt;
-        ///		&lt;stringProp name=&quot;host&quot;/&gt;
+        ///		&lt;stringProp name=&quot;host&quot;&gt;redis-master&lt;/stringProp&gt;
         ///		&lt;intProp name=&quot;maxActive&quot;&gt;20&lt;/intProp&gt;
         ///		&lt;intProp name=&quot;maxIdle&quot;&gt;10&lt;/intProp&gt;
         ///		&lt;longProp name=&quot;maxWait&quot;&gt;30000&lt;/longProp&gt;
         ///		&lt;longProp name=&quot;minEvictableIdleTimeMillis&quot;&gt;60000&lt;/longProp&gt;
-        ///		&lt;intProp name=&quot;minIdle&quot;&gt;0&lt;/int [rest of string was truncated]&quot;;.
+        ///		&lt;intPr [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string redisConfigString {
             get {

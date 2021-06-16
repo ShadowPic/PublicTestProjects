@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="csv-missing-filenames.jmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="redis.jmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

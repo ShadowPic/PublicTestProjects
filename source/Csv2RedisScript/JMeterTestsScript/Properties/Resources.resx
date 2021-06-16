@@ -121,7 +121,7 @@
     <value>&lt;kg.apc.jmeter.config.redis.RedisDataSet guiclass="TestBeanGUI" testclass="kg.apc.jmeter.config.redis.RedisDataSet" testname="jp@gc - Redis Data Set" enabled="true"&gt;
 		&lt;stringProp name="database"&gt;0&lt;/stringProp&gt;
 		&lt;stringProp name="delimiter"&gt;,&lt;/stringProp&gt;
-		&lt;stringProp name="host"/&gt;
+		&lt;stringProp name="host"&gt;redis-master&lt;/stringProp&gt;
 		&lt;intProp name="maxActive"&gt;20&lt;/intProp&gt;
 		&lt;intProp name="maxIdle"&gt;10&lt;/intProp&gt;
 		&lt;longProp name="maxWait"&gt;30000&lt;/longProp&gt;
@@ -131,7 +131,7 @@
 		&lt;stringProp name="password"/&gt;
 		&lt;stringProp name="port"&gt;6379&lt;/stringProp&gt;
 		&lt;boolProp name="recycleDataOnUse"&gt;true&lt;/boolProp&gt;
-		&lt;intProp name="redisDataType"&gt;0&lt;/intProp&gt;
+		&lt;intProp name="redisDataType"&gt;1&lt;/intProp&gt;
 		&lt;stringProp name="redisKey"/&gt;
 		&lt;longProp name="softMinEvictableIdleTimeMillis"&gt;60000&lt;/longProp&gt;
 		&lt;boolProp name="testOnBorrow"&gt;false&lt;/boolProp&gt;

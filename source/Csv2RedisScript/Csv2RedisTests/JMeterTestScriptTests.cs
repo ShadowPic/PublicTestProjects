@@ -62,6 +62,21 @@ namespace Csv2RedisTests
             //assert
             Assert.AreEqual(Expected, Actual);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(FileNotFoundException))]
+        public void DetectsNoCsvFileNames()
+        {
+            //arrange
+            string jmxWithNoCsvFileNames = "csv-missing-filenames.jmx";
+            JmeterScript jmeterScript = new JmeterScript(jmxWithNoCsvFileNames);
+            //act
+            bool Actual = jmeterScript.HasEnabledCsvControl();
+            jmeterScript.AddRedisControl();
+            //assert
+            Assert.IsTrue(true);
+        }
+
     }
 
 }
