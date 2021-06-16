@@ -11,6 +11,7 @@ namespace JMeterTestsScript
     public class JmeterScript
     {
         private string jmeterScriptFileName;
+        const string REDIS_SCRIPT_FILE_NAME = "csv2redis.redis";
         XElement jmeterScriptXml;
         
         public JmeterScript()
@@ -49,6 +50,7 @@ namespace JMeterTestsScript
                 if (String.IsNullOrEmpty(fileNameElement.Value))
                     throw new FileNotFoundException($"There is no csv file name in the {csvElementName} csv configuration.");
                 string csvFileName = fileNameElement.Value;
+                Csv2Redis.ConvertToRedis(csvFileName, REDIS_SCRIPT_FILE_NAME);
                 string redisKey= Path.GetFileNameWithoutExtension(csvFileName);
                 string columnNamesFromCsvFile = Csv2Redis.GetCsvColumnNames(csvFileName);
                 XElement redisConfigElement = XElement.Parse(JMeterTestsScript.Properties.Resources.redisConfigString);
