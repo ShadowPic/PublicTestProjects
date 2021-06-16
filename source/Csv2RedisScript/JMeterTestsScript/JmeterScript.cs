@@ -42,15 +42,21 @@ namespace JMeterTestsScript
                 .Where(item => (bool)item.Attribute("enabled"));
             foreach (var csvElement in enabledCsvConfigElements)
             {
+                string stringPropTag = "stringProp";
                 string csvElementName = csvElement.Attribute("testname").Value;
-                var fileNameElement = csvElement.Elements("stringProp").Where(a => a.Attribute("name").Value == "filename").FirstOrDefault<XElement>();
+                string columnNamesFromJmeter = csvElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "variableNames").Value;
+                var fileNameElement = csvElement.Elements(stringPropTag).Where(a => a.Attribute("name").Value == "filename").FirstOrDefault<XElement>();
                 if (String.IsNullOrEmpty(fileNameElement.Value))
                     throw new FileNotFoundException($"There is no csv file name in the {csvElementName} csv configuration.");
                 string csvFileName = fileNameElement.Value;
-                
+                string redisKey= Path.GetFileNameWithoutExtension(csvFileName);
+                string columnNamesFromCsvFile = Csv2Redis.GetCsvColumnNames(csvFileName);
                 XElement redisConfigElement = XElement.Parse(JMeterTestsScript.Properties.Resources.redisConfigString);
                 csvElement.Attribute("enabled").SetValue(false);
                 redisConfigElement.Attribute("testname").SetValue(csvElementName);
+                redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "variableNames").Value = String.IsNullOrEmpty(columnNamesFromJmeter) ? columnNamesFromCsvFile : columnNamesFromJmeter;
+                redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "host").Value = "jmeter-redis-master";
+                redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "redisKey").Value = redisKey;
                 csvElement.AddAfterSelf(redisConfigElement);
                 csvElement.AddAfterSelf(new XElement("hashTree"));
             }

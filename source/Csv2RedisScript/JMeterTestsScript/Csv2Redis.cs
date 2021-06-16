@@ -20,5 +20,13 @@ namespace JMeterTestsScript
                 textWriter.WriteLine($"SADD {csvBaseName} \"{line}\"");
             }
         }
+
+        internal static string GetCsvColumnNames(string csvFileName)
+        {
+            using TextReader textReader = File.OpenText(csvFileName);
+            string line = null;
+            string csvHeader = textReader.ReadLine();
+            return csvHeader;
+        }
     }
 }
