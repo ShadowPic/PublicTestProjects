@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using log4net;
 
 namespace Csv2RedisScript
 {
@@ -7,17 +8,7 @@ namespace Csv2RedisScript
     {
         static void Main(string[] args)
         {
-            string fileName = args[0];
-            string csvBaseName = Path.GetFileNameWithoutExtension(fileName);
-            using TextReader textReader = File.OpenText(fileName);
-            string line = null;
-            string csvHeader = textReader.ReadLine();
-            Console.WriteLine($"del {csvBaseName}");
-            while ( textReader.Peek()>0)
-            {
-                line = textReader.ReadLine();
-                Console.WriteLine($"SADD {csvBaseName} \"{line}\"");
-            }
+            DoWork.Run(args);
             
         }
     }

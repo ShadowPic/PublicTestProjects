@@ -7,10 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\JMeterTestsScript\JMeterTestsScript.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="logger.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="names.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="redis.jmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Search.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
