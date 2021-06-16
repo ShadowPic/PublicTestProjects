@@ -4,7 +4,7 @@ param(
     [Parameter(Mandatory=$true)]
     [string]
     $tenant,
-    [Parameter(Mandatory=$false)]
+    [Parameter(Mandatory=$true)]
     [string]
     $TestName="",
     [Parameter(Mandatory=$true)]
@@ -28,7 +28,7 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
     $resultFile=Get-ChildItem -Path $PublishPreviousResultsToStorageAccount -force | Where-Object Extension -in ('.jtl')
     if ((Get-Content $resultFile).Length -le 1) 
     {
-        Write-Host ".jtl file is empty"
+        Write-Output ".jtl file is empty"
         throw "jtl file with test results is required"
     }
  
