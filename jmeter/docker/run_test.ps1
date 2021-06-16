@@ -65,6 +65,7 @@
 
 #Requires -Version 7
 
+#TODO: add parameter to see if user wants to upload jmx
 param(
     [Parameter(Mandatory=$true)]
     [string]

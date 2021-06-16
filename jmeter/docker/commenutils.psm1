@@ -57,6 +57,13 @@ function ConvertUnixTimeToUTC($timestamp)
     
 }
 
+function ConvertUnixTimeToFileDateTimeUniversal($timestamp)
+{
+    $origin=New-Object -Type DateTime -ArgumentList 1970, 1, 1, 0, 0, 0, 0
+    $timestamp=$origin.AddSeconds([double]$timestamp/1000)
+    return Get-Date -Date $timestamp -format FileDateTimeUniversal -AsUTC
+}
+
 function IsJTLPresent($resultFile)
 {
     [bool]$jtlPresent = (Get-ChildItem -Path $resultFile -force | Where-Object Extension -in ('.jtl') | Measure-Object).Count -ne 0
