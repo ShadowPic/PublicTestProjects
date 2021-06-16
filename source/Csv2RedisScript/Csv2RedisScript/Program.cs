@@ -9,7 +9,6 @@ namespace Csv2RedisScript
         {
             string fileName = args[0];
             string csvBaseName = Path.GetFileNameWithoutExtension(fileName);
-            string fileContents = File.ReadAllText(fileName);
             using TextReader textReader = File.OpenText(fileName);
             string line = null;
             string csvHeader = textReader.ReadLine();
