@@ -7,7 +7,7 @@ using DynamicsOdata;
 using System.Configuration;
 
 namespace DynamicsOdataTests
-{
+{//apparently this is missing.
     public class RSSUtil
     {
         public static FinOpsRSS CreateRssFromConfig()
