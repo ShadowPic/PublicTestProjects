@@ -12,7 +12,7 @@ param(
     $PublishPreviousResultsToStorageAccount,
     [Parameter(Mandatory=$false)]
     [switch]
-    $PublishTestToSotrageAccount,
+    $PublishTestToStorageAccount,
     [Parameter(Mandatory=$true)]
     [string]
     $StorageAccount="",
@@ -27,8 +27,12 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
 {
     Write-Output "Publishing previous results to storage account"
 
+    $accountKey=RetrieveStorageAccountKey -storageAccountName $StorageAccount
+
     foreach($file in $PublishPreviousResultsToStorageAccount) 
     {
+        $addBlobToStorageAccount=$true
+
         # Making sure jtl file is present
         IsJTLPresent -resultFile $file
         $resultFile=Get-ChildItem -Path $file -force | Where-Object Extension -in ('.jtl')
@@ -51,38 +55,41 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
             $destinationPath = $testPlanXml.SelectNodes("//TestPlan").testname + "/" + $destinationPath
         } 
     
-        # Creating report folder 
+        # Creating report folder name
         $ReportFolderName="$(ConvertUnixTimeToFileDateTimeUniversal -timestamp $timestamp)results"
         $blob="$($destinationPath)/$($ReportFolderName)/results.jtl"
         
         # Checking if results file is already in storage account
-        $blobExists = IsResultInStoragAccount -container $Container -StorageAccountName $StorageAccount -blob $blob
-        if ($blobExists -eq "true"){
-            Write-Output "blob exists in storage account"
-        }
-        else {
-            Write-Output "blob does not exist in storage account"
-        }
-
-        
-        #Creating report folder 
-        if (Test-Path -Path $ReportFolderName) 
+        $blobExists = IsResultInStoragAccount -container $Container -StorageAccountName $StorageAccount -blob $blob -accountKey $accountKey
+        if ($blobExists -eq "true")
         {
-            Write-Output "$($ReportFolderName) already exists. New Report Folder not created locally."
-            # throw "Report Folder not created locally because it already exists. Delete report folder and run the command again."
-        } 
-        else 
-        {
-            $currentWorkingDirectory=Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
-            New-Item -Path $currentWorkingDirectory -Name $ReportFolderName -ItemType "directory"
-            Copy-Item -Path $resultFile -Destination $currentWorkingDirectory"/"$ReportFolderName"/results.jtl" -Force
-            Copy-Item -Path $resultFile -Destination $currentWorkingDirectory"/"$ReportFolderName -Force
-
-            if ($PublishTestToSotrageAccount.IsPresent) 
+            [bool]$askAgain=$true
+            while($askAgain)
             {
-                Copy-Item -Path $TestName -Destination $currentWorkingDirectory"/"$ReportFolderName -Force
-            } 
-    
+                $userInput=Read-Host -Prompt "$($file) already exists in storage account. Do you want to overwrite it? [Y or N]"
+                $userInput = $userInput.ToUpper()
+                switch ($userInput) {
+                    'N'
+                    { 
+                        $askAgain=$false
+                        $addBlobToStorageAccount=$false
+                    }
+                    'Y'{ $askAgain=$false }
+                    Default {'Input not recognized.'}
+                }
+            }
+        }
+
+        if ($addBlobToStorageAccount)
+        {
+            # Creating report folder 
+            DoesReportDirectoryExist -reportFolderName $ReportFolderName
+            $currentWorkingDirectory=Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
+            $isTestInReport=$PublishTestToStorageAccount.IsPresent
+            CreateReportDirectory -reportFolderName $ReportFolderName -resultFile $resultFile -currentWorkingDirectory $currentWorkingDirectory -isTestInReport $isTestInReport -testName $TestName
+            Write-Output "Publishing $($ReportFolderName) to $($currentWorkingDirectory)"
+
+            # Adding result folder to storage account
             Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"
             Write-Output "Adding the AZ storage-preview extension"
             az extension add --name storage-preview

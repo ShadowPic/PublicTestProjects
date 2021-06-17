@@ -37,8 +37,8 @@
     .PARAMETER PublishResultsToBlobStorage
     To enable the ability to do more advanced reporting like with PowerBi you can add this parameter to upload the contents of the results directory to an Azure Blob Storage.
     
-    .PARAMETER $PublishPreviousResultsToStorageAccount
-    To enable the ability to upload contents of previous result files to Azure Blob Storage manually and view results in Power BI. 
+    .PARAMETER $PublishTestToStorageAccount
+    This feature includes the test file in the storage account and report folder
 
     .PARAMETER StorageAccount
     The string name for the storage account you are uploading the results folder to
@@ -65,7 +65,6 @@
 
 #Requires -Version 7
 
-#TODO: add parameter to see if user wants to upload jmx
 param(
     [Parameter(Mandatory=$true)]
     [string]
@@ -93,6 +92,9 @@ param(
     [Parameter(Mandatory=$false)]
     [Switch]
     $PublishResultsToBlobStorage,
+    [Parameter(Mandatory=$false)]
+    [switch]
+    $PublishTestToStorageAccount,
     [Parameter(Mandatory=$false)]
     [string]
     $PublishPreviousResultsToStorageAccount,
@@ -166,6 +168,11 @@ kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $Report
 
 if($PublishResultsToBlobStorage.IsPresent)
 {
+    if ($PublishTestToStorageAccount.IsPresent) 
+    {
+        Copy-Item -Path $TestName -Destination $ReportFolder -Force
+    } 
+
     $destinationPath=get-date -format "yyyy/MM/dd" -AsUTC
     #TODO: Add checking to ensure the minimum verson of AZ is installed already
     [xml]$testPlanXml=Get-Content $TestName

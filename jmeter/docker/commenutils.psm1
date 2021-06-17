@@ -49,12 +49,14 @@ function PublishResultsToStorageAccount($container,$StorageAccountName,$Destinat
     az storage azcopy blob upload --container $container --account-name $StorageAccountName --destination $DestinationPath --source $SourceDirectory --recursive
 }
 
-function IsResultInStoragAccount($container,$StorageAccountName,$blob)
+function IsResultInStoragAccount($container,$StorageAccountName,$blob,$accountKey)
 {
-    $accountKey=az storage account keys list --account-name $StorageAccountName --query [0].value
-    #return $accountKey
-    #$sasToken=az storage blob generate-sas --account-name $StorageAccountName --container-name $container
     return az storage blob exists --account-key $accountKey --account-name $StorageAccountName --container-name $container --name $blob --query exists
+}
+
+function RetrieveStorageAccountKey($storageAccountName) 
+{
+    return az storage account keys list --account-name $StorageAccountName --query [0].value
 }
 
 function ConvertUnixTimeToUTC($timestamp)
@@ -80,5 +82,25 @@ function IsJTLPresent($resultFile)
     {
         Write-Host ".jtl file not present"
         throw ".jtl file is required"
+    }
+}
+
+function CreateReportDirectory($reportFolderName,$isTestInReport,$testName,$resultFile,$currentWorkingDirectory)
+{
+    New-Item -Path $currentWorkingDirectory -Name $ReportFolderName -ItemType "directory"
+    Copy-Item -Path $resultFile -Destination $currentWorkingDirectory"/"$ReportFolderName"/results.jtl" -Force
+    Copy-Item -Path $resultFile -Destination $currentWorkingDirectory"/"$ReportFolderName -Force
+
+    if ($isTestInReport)
+    {
+        Copy-Item -Path $testName -Destination $currentWorkingDirectory"/"$ReportFolderName -Force
+    }
+}
+
+function DoesReportDirectoryExist($reportFolderName)
+{
+    if (Test-Path -Path $reportFolderName)
+    {
+        Remove-Item -LiteralPath $reportFolderName -Force -Recurse
     }
 }
