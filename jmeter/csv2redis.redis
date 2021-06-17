@@ -1,0 +1,8 @@
+del names
+SADD names "Chauncee,Chettlebom"
+SADD names "Francis,Cheekbot"
+SADD names "Lawrencia,Smith"
+del search
+SADD search "Brakes"
+SADD search "Janice Choi"
+SADD search "chauncee"
