@@ -49,6 +49,14 @@ function PublishResultsToStorageAccount($container,$StorageAccountName,$Destinat
     az storage azcopy blob upload --container $container --account-name $StorageAccountName --destination $DestinationPath --source $SourceDirectory --recursive
 }
 
+function IsResultInStoragAccount($container,$StorageAccountName,$blob)
+{
+    $accountKey=az storage account keys list --account-name $StorageAccountName --query [0].value
+    #return $accountKey
+    #$sasToken=az storage blob generate-sas --account-name $StorageAccountName --container-name $container
+    return az storage blob exists --account-key $accountKey --account-name $StorageAccountName --container-name $container --name $blob --query exists
+}
+
 function ConvertUnixTimeToUTC($timestamp)
 {
     $origin=New-Object -Type DateTime -ArgumentList 1970, 1, 1, 0, 0, 0, 0

@@ -29,6 +29,7 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
 
     foreach($file in $PublishPreviousResultsToStorageAccount) 
     {
+        # Making sure jtl file is present
         IsJTLPresent -resultFile $file
         $resultFile=Get-ChildItem -Path $file -force | Where-Object Extension -in ('.jtl')
         if ((Get-Content $resultFile).Length -le 1) 
@@ -37,16 +38,38 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
             throw "jtl file with test results is required"
         }
     
+        # Retrieving timestamp in results file
         # TODO: look into using stream to grab first line
         $firstResultLine=Get-Content -Path $resultFile | Select-Object -index 1 
         $timestamp=$firstResultLine.Substring(0,$firstResultLine.IndexOf(','))
+        $destinationPath=ConvertUnixTimeToUTC -timestamp $timestamp
+
+        # Retrieving test plan name
+        [xml]$testPlanXml=Get-Content $TestName
+        if(!($testPlanXml.SelectNodes("//TestPlan").testname -eq "Test Plan"))
+        {
+            $destinationPath = $testPlanXml.SelectNodes("//TestPlan").testname + "/" + $destinationPath
+        } 
     
         # Creating report folder 
         $ReportFolderName="$(ConvertUnixTimeToFileDateTimeUniversal -timestamp $timestamp)results"
+        $blob="$($destinationPath)/$($ReportFolderName)/results.jtl"
+        
+        # Checking if results file is already in storage account
+        $blobExists = IsResultInStoragAccount -container $Container -StorageAccountName $StorageAccount -blob $blob
+        if ($blobExists -eq "true"){
+            Write-Output "blob exists in storage account"
+        }
+        else {
+            Write-Output "blob does not exist in storage account"
+        }
+
+        
+        #Creating report folder 
         if (Test-Path -Path $ReportFolderName) 
         {
-            Write-Output "$($ReportFolderName) already exists"
-            throw "Results file is already in storage account"
+            Write-Output "$($ReportFolderName) already exists. New Report Folder not created locally."
+            # throw "Report Folder not created locally because it already exists. Delete report folder and run the command again."
         } 
         else 
         {
@@ -58,15 +81,7 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
             if ($PublishTestToSotrageAccount.IsPresent) 
             {
                 Copy-Item -Path $TestName -Destination $currentWorkingDirectory"/"$ReportFolderName -Force
-            }
-            
-    
-            $destinationPath=ConvertUnixTimeToUTC -timestamp $timestamp
-            [xml]$testPlanXml=Get-Content $TestName
-            if(!($testPlanXml.SelectNodes("//TestPlan").testname -eq "Test Plan"))
-            {
-                $destinationPath = $testPlanXml.SelectNodes("//TestPlan").testname + "/" + $destinationPath
-            }  
+            } 
     
             Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"
             Write-Output "Adding the AZ storage-preview extension"
