@@ -30,7 +30,7 @@ namespace Csv2RedisScript
                 logger.Info("Checking Arguments");
                 if (ArgsNotValid(args))
                 {
-                    logger.Warn("Arguments are not valid");
+                    logger.Error("Arguments are not valid");
                     ShowUsage();
                     testStatus = "Fail";
                     throw new ArgumentException("invalid arguments");
@@ -61,7 +61,12 @@ namespace Csv2RedisScript
         private static void ShowUsage()
         {
             string eol = Environment.NewLine;
-            string messageFormat = "show parameters help";
+            string messageFormat = $"This application will analyze a jmeter test file and replace csv configuration " +
+                $"elements with Redis Configuration elements in preparation for running the test on a test rig.  The only command line" +
+                $"that it supports is --testscript YourJmeterTest.jmx \r\n" +
+                $"The application will then generate 2 files:\r\n" +
+                $"- YourJmeterTest-modified.jmx\r\n" +
+                $"- csv2redis.redis";
             Console.WriteLine(messageFormat);
         }
 
