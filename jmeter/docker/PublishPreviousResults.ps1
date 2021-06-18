@@ -1,3 +1,39 @@
+<#
+    .SYNOPSIS
+    Publishes previous JMeter result files in Azure Blob Storage
+
+    .DESCRIPTION
+    The PublishPreviousResults.ps1 script provides a highly flexible method to publish local jtl file or modified result files to
+    an already existing Azure Storage account. It will automatically conform to the reuqired naming convention so that you have the 
+    ability to do more advanced reporting like with PowerBi. It will produce a uniquely named folder in the current working directory. 
+
+    .PARAMETER Tenant
+    Theoretically this allows for multiple concurrent jmeter deployments on a common AKS cluster.  Please note
+    that this feature has not been functionally tested yet.
+
+    .PARAMETER TestName
+    The name of the JMeter test to be executed.
+
+    .PARAMETER $PublishPreviousResultsToStorageAccount
+    The string name of the file that you are uploading to the Azure Storage account
+
+    .PARAMETER $$PublishTestToStorageAccount
+    This feature gives you the option to upload the JMeter test to the Azure Storage account and in the uniquly created report folder 
+
+    .PARAMETER StorageAccount
+    The string name for the storage account you are uploading the results folder to
+
+    .PARAMETER Container
+    Blob Storage container that you are uploading the results to.
+    
+    .INPUTS
+    None.  You cannot pipe objects to PublishPreviousResults.ps1
+
+    .EXAMPLE
+    PS> .\PublishPreviousResults.ps1 -tenant jmeter -TestName ..\drparts.jmx -PublishPreviousResultsToStorageAccount ..\resultFile1.jtl, ..\resultFile2.jtl -PublishTestToStorageAccount -StorageAccount drpartsunlimited -Container jmeterresults
+
+#>
+
 #Requires -Version 7
 
 param(
@@ -43,8 +79,9 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
         }
     
         # Retrieving timestamp in results file
-        # TODO: look into using stream to grab first line
-        $firstResultLine=Get-Content -Path $resultFile | Select-Object -index 1 
+        $readFile = New-Object System.IO.StreamReader($resultFile)
+        $header=$readFile.ReadLine()
+        $firstResultLine=$readFile.ReadLine()
         $timestamp=$firstResultLine.Substring(0,$firstResultLine.IndexOf(','))
         $destinationPath=ConvertUnixTimeToUTC -timestamp $timestamp
 
@@ -67,15 +104,14 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
             while($askAgain)
             {
                 $userInput=Read-Host -Prompt "$($file) already exists in storage account. Do you want to overwrite it? [Y or N]"
-                $userInput = $userInput.ToUpper()
                 switch ($userInput) {
-                    'N'
+                    { @("n", "no") -contains $_ } 
                     { 
                         $askAgain=$false
                         $addBlobToStorageAccount=$false
                     }
-                    'Y'{ $askAgain=$false }
-                    Default {'Input not recognized.'}
+                    { @("y", "yes") -contains $_ } { $askAgain=$false }
+                    default {'Input not recognized.'}
                 }
             }
         }
