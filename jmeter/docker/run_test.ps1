@@ -152,7 +152,7 @@ foreach($gr in $GlobalJmeterParams)
 
 }
 Write-Output "Copying test plan to aks"
-kubectl cp $TestName $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
+kubectl cp $(Split-Path $TestName -NoQualifier) $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
 if($ExecuteOnceOnMaster.IsPresent)
 {
     Write-Output "Starting optional execution of jmx on the master node"
