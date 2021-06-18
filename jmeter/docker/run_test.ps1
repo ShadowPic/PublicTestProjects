@@ -36,6 +36,9 @@
 
     .PARAMETER PublishResultsToBlobStorage
     To enable the ability to do more advanced reporting like with PowerBi you can add this parameter to upload the contents of the results directory to an Azure Blob Storage.
+    
+    .PARAMETER $PublishTestToStorageAccount
+    This feature includes the test file in the storage account and report folder
 
     .PARAMETER StorageAccount
     The string name for the storage account you are uploading the results folder to
@@ -89,6 +92,12 @@ param(
     [Parameter(Mandatory=$false)]
     [Switch]
     $PublishResultsToBlobStorage,
+    [Parameter(Mandatory=$false)]
+    [switch]
+    $PublishTestToStorageAccount,
+    [Parameter(Mandatory=$false)]
+    [string]
+    $PublishPreviousResultsToStorageAccount,
     [Parameter(Mandatory=$false)]
     [string]
     $StorageAccount="",
@@ -159,6 +168,11 @@ kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $Report
 
 if($PublishResultsToBlobStorage.IsPresent)
 {
+    if ($PublishTestToStorageAccount.IsPresent) 
+    {
+        Copy-Item -Path $TestName -Destination $ReportFolder -Force
+    } 
+
     $destinationPath=get-date -format "yyyy/MM/dd" -AsUTC
     #TODO: Add checking to ensure the minimum verson of AZ is installed already
     [xml]$testPlanXml=Get-Content $TestName
@@ -172,6 +186,7 @@ if($PublishResultsToBlobStorage.IsPresent)
     Write-Output "Attempting to upload to storage account using the current AZ Security context"
     PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolder
 }
+
 if($DeleteTestRig)
 {
     $result = .\Set-JmeterTestRig.ps1 -tenant $tenant -ZeroOutTestRig $true
