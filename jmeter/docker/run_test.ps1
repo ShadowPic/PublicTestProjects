@@ -37,7 +37,7 @@
     .PARAMETER PublishResultsToBlobStorage
     To enable the ability to do more advanced reporting like with PowerBi you can add this parameter to upload the contents of the results directory to an Azure Blob Storage.
     
-    .PARAMETER $PublishTestToStorageAccount
+    .PARAMETER PublishTestToStorageAccount
     This feature includes the test file in the storage account and report folder
 
     .PARAMETER StorageAccount
@@ -45,6 +45,9 @@
 
     .PARAMETER Container
     Blob Storage container that you are uploading the results to.
+
+    .PARAMETER StorageAccountPathTopLevel
+    This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
 
     .PARAMETER GlobalJmeterParams
     JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves.
@@ -104,6 +107,9 @@ param(
     [Parameter(Mandatory=$false)]
     [string]
     $Container="",
+    [Parameter(Mandatory=$false)]
+    [string]
+    $StorageAccountPathTopLevel="Test Plan",
     [parameter(ValueFromRemainingArguments=$true)]
     [string[]]
     $GlobalJmeterParams
@@ -173,13 +179,37 @@ if($PublishResultsToBlobStorage.IsPresent)
         Copy-Item -Path $TestName -Destination $ReportFolder -Force
     } 
 
+    # Making sure result file created is not empty
+    $currentDirectory=Split-Path $myInvocation.MyCommand.Path
+    $resultDirectory="$($currentDirectory)/$($ReportFolder)"
+    $resultFile=Get-ChildItem -Path $resultDirectory -force | Where-Object Extension -in ('.jtl')
+    if ((Get-Content $resultFile).Length -le 1) 
+    {
+        Write-Output ".jtl file is empty"
+        throw "Empty .jtl file found. jtl file with test results is required"
+    } 
+
+    # Making sure file does not only include header
+    $readFile = New-Object System.IO.StreamReader($resultFile)
+    $header=$readFile.ReadLine()
+    $firstResultLine=$readFile.ReadLine()
+    if ($null -eq $firstResultLine)
+    {
+        Write-Output ".jtl file has no results."
+        throw ".jtl file with test results is required"
+    }
+
     $destinationPath=get-date -format "yyyy/MM/dd" -AsUTC
     #TODO: Add checking to ensure the minimum verson of AZ is installed already
-    [xml]$testPlanXml=Get-Content $TestName
-    if(!($testPlanXml.SelectNodes("//TestPlan").testname -eq "Test Plan"))
+    if (!($null -eq $StorageAccountPathTopLevel))
     {
-        $destinationPath = $testPlanXml.SelectNodes("//TestPlan").testname + "/" + $destinationPath
+        $destinationPath = $StorageAccountPathTopLevel + "/" + $destinationPath
     }
+    else 
+    {
+        $destinationPath = "Test Plan/" + $destinationPath
+    }
+
     Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"
     Write-Output "Adding the AZ storage-preview extension"
     az extension add --name storage-preview

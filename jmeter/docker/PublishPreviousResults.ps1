@@ -25,6 +25,9 @@
 
     .PARAMETER Container
     Blob Storage container that you are uploading the results to.
+
+    .PARAMETER StorageAccountPathTopLevel
+    This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
     
     .INPUTS
     None.  You cannot pipe objects to PublishPreviousResults.ps1
@@ -54,7 +57,10 @@ param(
     $StorageAccount="",
     [Parameter(Mandatory=$true)]
     [string]
-    $Container=""
+    $Container="",
+    [Parameter(Mandatory=$false)]
+    [string]
+    $StorageAccountPathTopLevel="Test Plan"
 )
 
 Import-Module ./commenutils.psm1 -force
@@ -75,62 +81,50 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
         if ((Get-Content $resultFile).Length -le 1) 
         {
             Write-Output ".jtl file is empty"
-            throw "jtl file with test results is required"
-        }
+            throw "Empty .jtl file found. jtl file with test results is required"
+        }  
     
         # Retrieving timestamp in results file
         $readFile = New-Object System.IO.StreamReader($resultFile)
         $header=$readFile.ReadLine()
         $firstResultLine=$readFile.ReadLine()
+
+        # Making sure file does not only include header
+        if ($null -eq $firstResultLine)
+        {
+            Write-Output ".jtl file has no results."
+            throw ".jtl file with test results is required"
+        }
+
         $timestamp=$firstResultLine.Substring(0,$firstResultLine.IndexOf(','))
         $destinationPath=ConvertUnixTimeToUTC -timestamp $timestamp
 
-        # Retrieving test plan name
-        [xml]$testPlanXml=Get-Content $TestName
-        if(!($testPlanXml.SelectNodes("//TestPlan").testname -eq "Test Plan"))
+        # Retrieving test plan name from parameter or using default Test Plan name
+        if (!($null -eq $StorageAccountPathTopLevel))
         {
-            $destinationPath = $testPlanXml.SelectNodes("//TestPlan").testname + "/" + $destinationPath
-        } 
-    
+            $destinationPath = $StorageAccountPathTopLevel + "/" + $destinationPath
+        }
+        else 
+        {
+            $destinationPath = "Test Plan/" + $destinationPath
+        }
+
         # Creating report folder name
         $ReportFolderName="$(ConvertUnixTimeToFileDateTimeUniversal -timestamp $timestamp)results"
         $blob="$($destinationPath)/$($ReportFolderName)/results.jtl"
         
-        # Checking if results file is already in storage account
-        $blobExists = IsResultInStoragAccount -container $Container -StorageAccountName $StorageAccount -blob $blob -accountKey $accountKey
-        if ($blobExists -eq "true")
-        {
-            [bool]$askAgain=$true
-            while($askAgain)
-            {
-                $userInput=Read-Host -Prompt "$($file) already exists in storage account. Do you want to overwrite it? [Y or N]"
-                switch ($userInput) {
-                    { @("n", "no") -contains $_ } 
-                    { 
-                        $askAgain=$false
-                        $addBlobToStorageAccount=$false
-                    }
-                    { @("y", "yes") -contains $_ } { $askAgain=$false }
-                    default {'Input not recognized.'}
-                }
-            }
-        }
+        # Creating report folder 
+        DoesReportDirectoryExist -reportFolderName $ReportFolderName
+        $currentWorkingDirectory=Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
+        $isTestInReport=$PublishTestToStorageAccount.IsPresent
+        CreateReportDirectory -reportFolderName $ReportFolderName -resultFile $resultFile -currentWorkingDirectory $currentWorkingDirectory -isTestInReport $isTestInReport -testName $TestName
+        Write-Output "Publishing $($ReportFolderName) to $($currentWorkingDirectory)"
 
-        if ($addBlobToStorageAccount)
-        {
-            # Creating report folder 
-            DoesReportDirectoryExist -reportFolderName $ReportFolderName
-            $currentWorkingDirectory=Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
-            $isTestInReport=$PublishTestToStorageAccount.IsPresent
-            CreateReportDirectory -reportFolderName $ReportFolderName -resultFile $resultFile -currentWorkingDirectory $currentWorkingDirectory -isTestInReport $isTestInReport -testName $TestName
-            Write-Output "Publishing $($ReportFolderName) to $($currentWorkingDirectory)"
-
-            # Adding result folder to storage account
-            Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"
-            Write-Output "Adding the AZ storage-preview extension"
-            az extension add --name storage-preview
-            Write-Output "Attempting to upload to storage account using the current AZ Security context"
-            PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolderName
-        }
+        # Adding result folder to storage account
+        Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"
+        Write-Output "Adding the AZ storage-preview extension"
+        az extension add --name storage-preview
+        Write-Output "Attempting to upload to storage account using the current AZ Security context"
+        PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolderName
     }
 }

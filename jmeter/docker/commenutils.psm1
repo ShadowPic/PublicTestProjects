@@ -104,3 +104,25 @@ function DoesReportDirectoryExist($reportFolderName)
         Remove-Item -LiteralPath $reportFolderName -Force -Recurse
     }
 }
+
+function PromptUserForTestName($destinationPath,$testPlanXml,$file) 
+{
+    [bool]$askAgain=$true
+    while($askAgain)
+    {
+        if ([string]::IsNullOrEmpty($file))
+        {
+            $file="results.jtl"
+        }
+        $userInput=Read-Host -Prompt "The report is called $("Test Plan") for result file $($file). Do you want to change it? [Y or N]"
+        switch ($userInput) {
+            { @("n", "no") -contains $_ } { return "Test Plan/" + $destinationPath }
+            { @("y", "yes") -contains $_ } 
+            { 
+               $testPlanName=Read-Host -Prompt "Enter Test Plan Name"
+               return $testPlanName + "/" + $destinationPath 
+            }
+            default {'Input not recognized.'}
+        }
+    }
+}
