@@ -60,7 +60,7 @@ param(
     $Container="",
     [Parameter(Mandatory=$false)]
     [string]
-    $StorageAccountPathTopLevel="Test Plan"
+    $StorageAccountPathTopLevel=""
 )
 
 Import-Module ./commenutils.psm1 -force
@@ -100,9 +100,15 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
         $destinationPath=ConvertUnixTimeToUTC -timestamp $timestamp
 
         # Retrieving test plan name from parameter or using default Test Plan name
-        if (!($null -eq $StorageAccountPathTopLevel))
+        [xml]$testPlanXml=Get-Content $TestName
+         $testPlanName=$testPlanXml.SelectNodes("//TestPlan").testname
+        if (!($null -eq $StorageAccountPathTopLevel) -and !($StorageAccountPathTopLevel -eq "")) 
         {
             $destinationPath = $StorageAccountPathTopLevel + "/" + $destinationPath
+        }
+        elseif (!($testPlanName -eq "Test Plan") -and !($testPlanName -eq "") -and !($null -eq $testPlanName)) 
+        {
+            $destinationPath = $testPlanName + "/" + $destinationPath
         }
         else 
         {

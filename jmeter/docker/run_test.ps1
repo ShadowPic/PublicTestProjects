@@ -109,7 +109,7 @@ param(
     $Container="",
     [Parameter(Mandatory=$false)]
     [string]
-    $StorageAccountPathTopLevel="Test Plan",
+    $StorageAccountPathTopLevel="",
     [parameter(ValueFromRemainingArguments=$true)]
     [string[]]
     $GlobalJmeterParams
@@ -201,9 +201,15 @@ if($PublishResultsToBlobStorage.IsPresent)
 
     $destinationPath=get-date -format "yyyy/MM/dd" -AsUTC
     #TODO: Add checking to ensure the minimum verson of AZ is installed already
-    if (!($null -eq $StorageAccountPathTopLevel))
+    [xml]$testPlanXml=Get-Content $TestName
+    $testPlanName=$testPlanXml.SelectNodes("//TestPlan").testname
+    if (!($null -eq $StorageAccountPathTopLevel) -and !($StorageAccountPathTopLevel -eq "")) 
     {
         $destinationPath = $StorageAccountPathTopLevel + "/" + $destinationPath
+    }
+    elseif (!($testPlanName -eq "Test Plan") -and !($testPlanName -eq "") -and !($null -eq $testPlanName)) 
+    {
+        $destinationPath = $testPlanName + "/" + $destinationPath
     }
     else 
     {
