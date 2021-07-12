@@ -1,0 +1,147 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+parameters:
+- name: autoscaleNodes
+  displayName: Autoscale Nodes
+  type: boolean
+  default: false
+
+trigger:
+- develop
+
+pool:
+  vmImage: 'windows-latest'
+  #name: local debug
+
+variables:
+  solution: '**/source/**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+      
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)/jmeter'
+  inputs:
+    SourceFolder: 'jmeter'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/jmeter'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/jmeter'
+    ArtifactName: 'jmeter'
+    publishLocation: 'Container'
+  
+- task: KubectlInstaller@0
+  inputs:
+    kubectlVersion: 'v1.19.4'
+
+- task: HelmInstaller@1
+  inputs:
+    helmVersionToInstall: '3.2.4'
+
+- task: AzureCLI@1
+  displayName: 'Get K8S credentials'
+  inputs:
+    azureSubscription: 'Saloni Gupta - MCS Azure Subscription(8e8b8fbb-a1ac-4390-878e-343e1038026f)'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --admin --overwrite-existing'
+
+- task: AzureCLI@1
+  displayName: 'Increase nodes to 3'
+  condition: ${{parameters.autoscaleNodes}}
+  inputs:
+    azureSubscription: 'Saloni Gupta - MCS Azure Subscription(8e8b8fbb-a1ac-4390-878e-343e1038026f)'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 3'
+
+- task: PowerShell@2
+  displayName: Create test rig
+  inputs:
+    filePath: 'jmeter/docker/jmeter_cluster_create.ps1'
+    arguments: '-tenant $(K8SNameSpace) -ScaleSlaves $(JmeterInjectors)'
+    pwsh: true
+    workingDirectory: 'jmeter/docker'
+
+- task: AzureCLI@2
+  displayName: Run Load Test
+  inputs:
+    azureSubscription: 'Saloni Gupta - MCS Azure Subscription(8e8b8fbb-a1ac-4390-878e-343e1038026f)'
+    scriptType: 'pscore'
+    scriptLocation: 'scriptPath'
+    scriptPath: 'jmeter/docker/run_test.ps1'
+    arguments: '-tenant jmeter -TestName ../drparts.jmx -RedisScript ../redisscript.txt -GDuration=60 -PublishResultsToBlobStorage -StorageAccount $(StorageAccountName) -Container $(ContainerName) -StorageAccountPathTopLevel $(TestPlanName)'
+    powerShellErrorActionPreference: 'continue'
+    workingDirectory: 'jmeter/docker'
+
+- task: AzureCLI@1
+  displayName: 'Decrease nodes to 1'
+  condition: ${{parameters.autoscaleNodes}}
+  inputs:
+    azureSubscription: 'Saloni Gupta - MCS Azure Subscription(8e8b8fbb-a1ac-4390-878e-343e1038026f)'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 1'
+
+- task: PowerShell@2
+  displayName: loadtestresults
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd jmeter/docker
+      Get-ChildItem -Filter *results| sort CreationTime -desc | select -First 1 | foreach{Rename-Item $_.FullName loadtestresults }
+    pwsh: true
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'jmeter/docker'
+    Contents: '**/loadtestresults/**'
+    TargetFolder: '$(build.artifactstagingdirectory)/results'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)/results'
+    ArtifactName: 'results'
+    publishLocation: 'Container'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'source'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/source'
+
+- task: Tokenization@2
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)/source'
+    TargetFileNames: 'appsettings.json'
+    TokenStart: '__'
+    TokenEnd: '__'
+     
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '$(Build.ArtifactStagingDirectory)/**/source/**/*.csproj'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'
+  continueOnError: true
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "##vso[task.uploadsummary]$(Build.SourcesDirectory)/play.md"
+    errorActionPreference: 'continue'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/source'
+    ArtifactName: 'Source'
+    publishLocation: 'Container'
+
+- task: CredScan@2
+  inputs:
+    toolMajorVersion: 'V2'
