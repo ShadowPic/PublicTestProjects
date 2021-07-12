@@ -47,7 +47,7 @@ steps:
 - task: AzureCLI@1
   displayName: 'Get K8S credentials'
   inputs:
-    azureSubscription: 'Saloni Gupta - MCS Azure Subscription(8e8b8fbb-a1ac-4390-878e-343e1038026f)'
+    azureSubscription: 'ms internal v 2'
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --admin --overwrite-existing'
 
@@ -55,7 +55,7 @@ steps:
   displayName: 'Increase nodes to 3'
   condition: ${{parameters.autoscaleNodes}}
   inputs:
-    azureSubscription: 'Saloni Gupta - MCS Azure Subscription(8e8b8fbb-a1ac-4390-878e-343e1038026f)'
+    azureSubscription: 'ms internal v 2'
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 3'
 
@@ -70,7 +70,7 @@ steps:
 - task: AzureCLI@2
   displayName: Run Load Test
   inputs:
-    azureSubscription: 'Saloni Gupta - MCS Azure Subscription(8e8b8fbb-a1ac-4390-878e-343e1038026f)'
+    azureSubscription: 'ms internal v 2'
     scriptType: 'pscore'
     scriptLocation: 'scriptPath'
     scriptPath: 'jmeter/docker/run_test.ps1'
@@ -82,7 +82,7 @@ steps:
   displayName: 'Decrease nodes to 1'
   condition: ${{parameters.autoscaleNodes}}
   inputs:
-    azureSubscription: 'Saloni Gupta - MCS Azure Subscription(8e8b8fbb-a1ac-4390-878e-343e1038026f)'
+    azureSubscription: 'ms internal v 2'
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 1'
 
