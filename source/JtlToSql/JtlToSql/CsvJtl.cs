@@ -40,6 +40,7 @@ namespace JtlToSql
             jtlRowDict.Add("TestRun", this.testRun);
             jtlRowDict.Add("TestPlan", this.testName);
             jtlRowDict.Add("LabelPlusTestRun", $"{jtlRow.label} ({this.testRun})");
+            jtlRowDict.Add("StorageAccountPath", pathToJtlFile);
         }
 
         private DateTime ConvertJsonTimeStamp(long jsonTimeStamp)

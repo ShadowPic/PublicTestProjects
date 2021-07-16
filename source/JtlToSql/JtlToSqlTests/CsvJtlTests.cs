@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using JtlToSql;
 using System;
+using System.Collections.Generic;
 
 namespace JtlToSqlTests
 {
@@ -67,7 +68,11 @@ namespace JtlToSqlTests
             csvJtl.ReadNextCsvLine();
             var csvRow = csvJtl.GetCsvRow();
             csvJtl.AddCalculatedColumns(csvRow);
-            
+            var csvDict = csvRow as IDictionary<string,object>;
+            foreach(var row in csvDict)
+            {
+                Console.WriteLine($"Key:{row.Key},value:{row.Value}");
+            };
             //assert
             Assert.AreEqual(expectedTestName,csvRow.TestPlan);
             Assert.AreEqual(expectedTestRun, csvRow.TestRun);

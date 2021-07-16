@@ -22,11 +22,18 @@
     [UtcTimeStamp]       DATETIME       NULL,
     [ElapsedMS]     INT            NULL,
     [LabelPlusTestRun]   NVARCHAR (500) NULL, 
-    CONSTRAINT [PK_jmeterrawresults] PRIMARY KEY ([TestPlan],[TestRun],[timeStamp])
+    
 );
 
-
+-- Create index template for Azure SQL Database and Azure SQL Data Warehouse Database 
+-- ==================================================================================
+go
+CREATE INDEX testRunIndex
+ON jmeterrawresults
+(
+	TestPlan asc,
+    TestRun asc
+)
 GO
-CREATE NONCLUSTERED INDEX [TestRunIndex]
-    ON [dbo].[jmeterrawresults]([TestRun] ASC);
+
 

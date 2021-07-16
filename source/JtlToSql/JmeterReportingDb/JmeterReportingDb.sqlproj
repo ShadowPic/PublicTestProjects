@@ -68,6 +68,7 @@
     <Build Include="dbo\Tables\TestRuns.sql" />
     <Build Include="dbo\Functions\fn_ConvertToDateTime.sql" />
     <Build Include="dbo\Stored Procedures\sp_create_result.sql" />
+    <Build Include="dbo\Stored Procedures\spAddJtlRow.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="JmeterReportingDb.refactorlog" />
