@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="e73fb660-9593-4183-9e90-927ec6956fef" ChangeDateTime="07/15/2021 23:59:38">
+    <Property Name="ElementName" Value="[dbo].[jmeterrawresults].[ElapsedSeconds]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[jmeterrawresults]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ElapsedMS" />
+  </Operation>
+</Operations>
