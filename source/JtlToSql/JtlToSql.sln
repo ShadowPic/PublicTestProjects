@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JmeterToSqlFunction", "..\JmeterToSqlFunction\JmeterToSqlFunction.csproj", "{0B180406-D7C2-4099-8E41-3CB1075E9B11}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JtlToSqlTests", "JtlToSqlTests\JtlToSqlTests.csproj", "{D511C3FC-8CE8-4464-A4C3-E71018BACFC6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JtlToSql", "JtlToSql\JtlToSql.csproj", "{E297397D-15C8-42B6-8C0B-014FE73FEA56}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "JmeterReportingDb", "JmeterReportingDb\JmeterReportingDb.sqlproj", "{982EC2B3-E6C5-4240-91A0-070500089F64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JmeterToSqlFunction", "JmeterToSqlFunction\JmeterToSqlFunction.csproj", "{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B180406-D7C2-4099-8E41-3CB1075E9B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B180406-D7C2-4099-8E41-3CB1075E9B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B180406-D7C2-4099-8E41-3CB1075E9B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B180406-D7C2-4099-8E41-3CB1075E9B11}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D511C3FC-8CE8-4464-A4C3-E71018BACFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D511C3FC-8CE8-4464-A4C3-E71018BACFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D511C3FC-8CE8-4464-A4C3-E71018BACFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +31,10 @@ Global
 		{982EC2B3-E6C5-4240-91A0-070500089F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{982EC2B3-E6C5-4240-91A0-070500089F64}.Release|Any CPU.Build.0 = Release|Any CPU
 		{982EC2B3-E6C5-4240-91A0-070500089F64}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
