@@ -37,7 +37,7 @@ namespace JtlToSqlTests
         public void SendAllRows()
         {
             //arrange
-            string connectionString = "Server=tcp:jmeterreporting.database.windows.net,1433;Initial Catalog=jmeterreporting;Persist Security Info=False;User ID=jmeteradmin;Password=ASDFasdf1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Server=tcp:jmeterreporting.database.windows.net,1433;Initial Catalog=jmeterreporting;Persist Security Info=False;User ID=jmeteradmin;Password=testanotherpassword;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             string pathToJtlFile = "chauncee test/2021/06/14/20210614T1755279470Zresults/results.jtl";
             string demoJtlFileName = "results.jtl";
             string expectedTestName = "chauncee test";
