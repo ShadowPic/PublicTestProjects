@@ -44,7 +44,6 @@ namespace JtlToSqlTests
             while (csvJtl.ReadNextCsvLine())
             {
                 var csvRow = csvJtl.GetCsvRow();
-                csvJtl.AddCalculatedColumns(csvRow);
                 elapsedMilliseconds = csvRow.ElapsedMS;
                 i++;
             }
@@ -67,7 +66,6 @@ namespace JtlToSqlTests
             csvJtl.InitJtlReader(jtlStreamReader);
             csvJtl.ReadNextCsvLine();
             var csvRow = csvJtl.GetCsvRow();
-            csvJtl.AddCalculatedColumns(csvRow);
             var csvDict = csvRow as IDictionary<string,object>;
             foreach(var row in csvDict)
             {

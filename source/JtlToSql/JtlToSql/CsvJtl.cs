@@ -5,40 +5,53 @@ using System.IO;
 using CsvHelper;
 namespace JtlToSql
 {
-    public class CsvJtl : IDisposable, ICsvJtl
+    public class CsvJtl : IDisposable
     {
         CsvReader jtlResultsReader = null;
+        dynamic stashedFirstRow;
         bool firstLineRead = false;
         long firstJsonTimeStamp = 0;
         DateTime testStartTimeStamp;
+        public DateTime TestStartTime
+        {
+            get { return testStartTimeStamp; }
+        }
         string pathToJtlFile;
-        string testName;
+        string testPlan;
+        public string TestPlan 
+        { 
+            get { return testPlan; } 
+        }
         string testRun;
+        public string TestRun
+        {
+            get { return testRun; }
+        }
         public CsvJtl(string pathToJtlFile = null)
         {
             if (!string.IsNullOrEmpty(pathToJtlFile))
             {
                 var splitPath = pathToJtlFile.Split("/");
-                testName = splitPath[0];
-                testRun = splitPath[splitPath.Length-2];
+                testPlan = splitPath[0];
+                testRun = splitPath[splitPath.Length - 2];
             }
             else
             {
-                testName = "No Test Name";
+                testPlan = "No Test Name";
             }
             this.pathToJtlFile = pathToJtlFile;
-            
+
         }
 
-        public void AddCalculatedColumns(dynamic jtlRow)
+        void AddCalculatedColumns(dynamic jtlRow)
         {
             var jtlRowDict = jtlRow as IDictionary<string, object>;
             long currentTimeStamp = long.Parse(jtlRow.timeStamp);
-            int elapsedMilliseconds =Convert.ToInt32( currentTimeStamp - firstJsonTimeStamp);
+            int elapsedMilliseconds = Convert.ToInt32(currentTimeStamp - firstJsonTimeStamp);
             jtlRowDict.Add("UtcTimeStamp", ConvertJsonTimeStamp(currentTimeStamp));
             jtlRowDict.Add("ElapsedMS", elapsedMilliseconds);
             jtlRowDict.Add("TestRun", this.testRun);
-            jtlRowDict.Add("TestPlan", this.testName);
+            jtlRowDict.Add("TestPlan", this.testPlan);
             jtlRowDict.Add("LabelPlusTestRun", $"{jtlRow.label} ({this.testRun})");
             jtlRowDict.Add("StorageAccountPath", pathToJtlFile);
         }
@@ -55,15 +68,14 @@ namespace JtlToSql
 
         public dynamic GetCsvRow()
         {
-            if(!firstLineRead)
+            if (!firstLineRead)
             {
-                dynamic firstRow = jtlResultsReader.GetRecord<dynamic>();
-                firstJsonTimeStamp = long.Parse(firstRow.timeStamp);
-                testStartTimeStamp = ConvertJsonTimeStamp(firstJsonTimeStamp);
                 firstLineRead = true;
-                return firstRow;
+                return stashedFirstRow;
             }
-            return jtlResultsReader.GetRecord<dynamic>();
+            dynamic csvRow = jtlResultsReader.GetRecord<dynamic>();
+            AddCalculatedColumns(csvRow);
+            return csvRow;
         }
 
         public void InitJtlReader(StreamReader jtlStream)
@@ -71,6 +83,11 @@ namespace JtlToSql
             jtlResultsReader = new CsvReader(jtlStream, CultureInfo.InvariantCulture);
             jtlResultsReader.Read();
             jtlResultsReader.ReadHeader();
+            jtlResultsReader.Read();
+            stashedFirstRow = jtlResultsReader.GetRecord<dynamic>();
+            firstJsonTimeStamp = long.Parse(stashedFirstRow.timeStamp);
+            testStartTimeStamp = ConvertJsonTimeStamp(firstJsonTimeStamp);
+            AddCalculatedColumns(stashedFirstRow);
 
         }
 
