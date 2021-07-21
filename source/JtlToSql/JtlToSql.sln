@@ -11,6 +11,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "JmeterReportingDb", "Jmeter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JmeterToSqlFunction", "JmeterToSqlFunction\JmeterToSqlFunction.csproj", "{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileJtlToSql", "FileJtlToSql\FileJtlToSql.csproj", "{999DB86D-50A0-4679-9ED6-1ED7AC8BDBF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0DB7E73-C6CA-477E-ADB1-DBCD5A1D3DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999DB86D-50A0-4679-9ED6-1ED7AC8BDBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999DB86D-50A0-4679-9ED6-1ED7AC8BDBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999DB86D-50A0-4679-9ED6-1ED7AC8BDBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999DB86D-50A0-4679-9ED6-1ED7AC8BDBF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

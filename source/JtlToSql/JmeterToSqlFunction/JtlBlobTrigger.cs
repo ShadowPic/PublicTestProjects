@@ -9,17 +9,22 @@ namespace Microsoft.JtlToSqlFunction
     public static class JtlBlobTrigger
     {
         [FunctionName("JtlBlobTrigger")]
-        public static void Run(
-            [BlobTrigger("jmeterresults/{name}", Connection = "blobConnection")]Stream myBlob,
+        [return: Queue("JtlPendingReports",Connection = "blobConnection")]
+        public static string Run(
+            [BlobTrigger("jmeterresults/{name}", Connection = "blobConnection")] byte[] jtlContent,
             string name,
             ILogger log)
         {
-            var connStr = Environment.GetEnvironmentVariable("SQLConnectionString");
+            
             if (!name.EndsWith("results.jtl"))
             {
-                return;
+                return null;
             }
-            log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
+            else
+            {
+                return name;
+            }
+            
         }
     }
 }

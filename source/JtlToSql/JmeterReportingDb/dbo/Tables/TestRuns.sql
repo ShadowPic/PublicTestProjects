@@ -2,6 +2,6 @@
     [TestPlan]  NVARCHAR (500) NOT NULL,
     [StartTime] DATETIME       NOT NULL,
     [TestRun]   NVARCHAR (100) NOT NULL, 
-    CONSTRAINT [PK_TestRuns] PRIMARY KEY ([TestPlan], [TestRun])
+   
 );
 

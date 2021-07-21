@@ -7,6 +7,7 @@ namespace JtlToSql
 {
     public class CsvJtl : IDisposable
     {
+        StreamReader jtlFileReader;
         CsvReader jtlResultsReader = null;
         dynamic stashedFirstRow;
         bool firstLineRead = false;
@@ -64,6 +65,7 @@ namespace JtlToSql
         public void Dispose()
         {
             jtlResultsReader.Dispose();
+            jtlFileReader.Dispose();
         }
 
         public dynamic GetCsvRow()
@@ -90,7 +92,19 @@ namespace JtlToSql
             AddCalculatedColumns(stashedFirstRow);
 
         }
+        public void InitJtlReader(string jtlFileName)
+        {
+            jtlFileReader = new StreamReader(jtlFileName);
+            jtlResultsReader = new CsvReader(jtlFileReader, CultureInfo.InvariantCulture);
+            jtlResultsReader.Read();
+            jtlResultsReader.ReadHeader();
+            jtlResultsReader.Read();
+            stashedFirstRow = jtlResultsReader.GetRecord<dynamic>();
+            firstJsonTimeStamp = long.Parse(stashedFirstRow.timeStamp);
+            testStartTimeStamp = ConvertJsonTimeStamp(firstJsonTimeStamp);
+            AddCalculatedColumns(stashedFirstRow);
 
+        }
         public bool ReadNextCsvLine()
         {
             return jtlResultsReader.Read();

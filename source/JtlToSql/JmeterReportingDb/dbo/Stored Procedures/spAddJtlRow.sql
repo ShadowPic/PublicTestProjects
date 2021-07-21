@@ -1,6 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[spAddJtlRow]
-	@storageaccountpath nvarchar(500), 
-    @timeStamp bigint, 
+	@timeStamp bigint, 
     @elapsed int, 
     @label nvarchar(500), 
     @responseCode int, 
@@ -25,8 +24,7 @@
 AS
 
 INSERT INTO [dbo].[jmeterrawresults]
-           ([storageaccountpath]
-           ,[timeStamp]
+           ([timeStamp]
            ,[elapsed]
            ,[label]
            ,[responseCode]
@@ -50,7 +48,6 @@ INSERT INTO [dbo].[jmeterrawresults]
            ,[LabelPlusTestRun])
      VALUES
            (
-           @storageaccountpath, 
             @timeStamp, 
             @elapsed, 
             @label, 

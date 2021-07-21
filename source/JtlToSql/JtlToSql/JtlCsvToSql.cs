@@ -11,12 +11,15 @@ namespace JtlToSql
         string connectionString;
         SqlConnection sqlConnection;
         SqlTransaction sqlTransaction;
+        DataTable batchOfRows;
+        string batchTableName = "jtlbatchrows";
         public JtlCsvToSql(string connectionString)
         {
             this.connectionString = connectionString;
             this.sqlConnection = new SqlConnection(connectionString);
             this.sqlConnection.Open();
             this.sqlTransaction = sqlConnection.BeginTransaction();
+            batchOfRows = new DataTable(batchTableName);
         }
 
 
@@ -26,6 +29,7 @@ namespace JtlToSql
             sqlConnection.Close();
             sqlConnection.Dispose();
             sqlTransaction.Dispose();
+            batchOfRows.Dispose();
         }
 
         public void AddJtlRow(dynamic csvRow)
@@ -37,7 +41,6 @@ namespace JtlToSql
                 CommandType = CommandType.StoredProcedure,
                 Transaction = sqlTransaction
             };
-            spAddJtlRow.Parameters.Add(new SqlParameter() { ParameterName = "@storageaccountpath", DbType = DbType.String, Value = csvRow.StorageAccountPath });
             spAddJtlRow.Parameters.Add(new SqlParameter() { ParameterName = "@timeStamp", DbType = DbType.Int64, Value = csvRow.timeStamp });
             spAddJtlRow.Parameters.Add(new SqlParameter() { ParameterName = "@elapsed", DbType = DbType.Int32, Value = csvRow.elapsed });
             spAddJtlRow.Parameters.Add(new SqlParameter() { ParameterName = "@label", DbType = DbType.String, Value = csvRow.label });
@@ -62,6 +65,13 @@ namespace JtlToSql
             spAddJtlRow.Parameters.Add(new SqlParameter() { ParameterName = "@Connect", DbType = DbType.Int32, Value = csvRow.Connect });
 
             spAddJtlRow.ExecuteNonQuery();
+        }
+
+        public  void CommitBatch()
+        {
+            sqlTransaction.Commit();
+            this.sqlTransaction.Dispose();
+            this.sqlTransaction = sqlConnection.BeginTransaction();
         }
 
         public void AddReport(string testPlan, string testRun, DateTime testStartTime)

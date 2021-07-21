@@ -1,5 +1,4 @@
 ﻿CREATE TABLE [dbo].[jmeterrawresults] (
-    [storageaccountpath] NVARCHAR (500) NOT NULL,
     [timeStamp]          BIGINT  NOT NULL,
     [elapsed]            INT            NULL,
     [label]              NVARCHAR (500) NOT NULL,
