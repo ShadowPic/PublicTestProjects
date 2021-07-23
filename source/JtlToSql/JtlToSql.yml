@@ -1,0 +1,48 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jtltoosql
+spec:
+  selector:
+    matchLabels:
+      app: jtltoosql
+  template:
+    metadata:
+      labels:
+        app: jtltoosql
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: jtltoosql
+        image: shadowpic/chauncee:latest
+        imagePullPolicy: Always
+        env:
+        - name: JtlReportingStorage
+          value: "REDACTED"
+        - name: JtlReportingDatabase
+          value: "REDACTED"
+        resources:
+          limits:
+            memory: "4Gi"
+            cpu: "1"
+        ports:
+          - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: jtltoosql
+  name: jtltoosql-svc
+spec:
+  ports:
+  - name: first
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: jtltoosql
+  sessionAffinity: None
+  type: ClusterIP

@@ -26,21 +26,32 @@ namespace JtlToSqlTests
             csvJtl.InitJtlReader(jtlStreamReader);
             jtlCsvToSql.DeleteReport(csvJtl.TestPlan, csvJtl.TestRun);
             int i = 0;
+            int j = 0;
             while (csvJtl.ReadNextCsvLine())
             {
                 var csvRow = csvJtl.GetCsvRow();
-
-                try
+                jtlCsvToSql.AddJtlRow(csvRow);
+                if(i>10000)
                 {
-                    jtlCsvToSql.AddJtlRow(csvRow);
+                    Console.WriteLine($"Sending {i} records");
+                    jtlCsvToSql.CommitBatch();
+                    i = 0;
                 }
-                catch (Exception e)
-                { Console.WriteLine($"Skipping line {e.ToString()}"); }
+                //try
+                //{
+                //    jtlCsvToSql.AddJtlRow(csvRow);
+                //}
+                //catch (Exception e)
+                //{
+                //    Console.WriteLine($"Skipping line {e.ToString()}");
+                //    System.Diagnostics.Debugger.Break();
+                //}
                 i++;
+                j++;
             }
             jtlCsvToSql.AddReport(csvJtl.TestPlan, csvJtl.TestRun, csvJtl.TestStartTime);
             //assert
-            Assert.IsTrue(i > 1000);
+            Assert.IsTrue(j > 1000);
         }
     }
 }

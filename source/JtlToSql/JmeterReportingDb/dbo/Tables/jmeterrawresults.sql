@@ -7,7 +7,7 @@
     [threadName]         NVARCHAR (200) NOT NULL,
     [dataType]           NVARCHAR (50)  NULL,
     [success]            NVARCHAR (5)   NULL,
-    [failureMessage]     NVARCHAR (50)  NULL,
+    [failureMessage]     NVARCHAR (500)  NULL,
     [bytes]              INT            NULL,
     [sentBytes]          INT            NULL,
     [grpThreads]         INT  NOT NULL,

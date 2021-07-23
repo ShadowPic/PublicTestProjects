@@ -64,8 +64,9 @@ namespace JtlToSql
         }
         public void Dispose()
         {
+            if(jtlFileReader!=null)jtlFileReader.Dispose();
             jtlResultsReader.Dispose();
-            jtlFileReader.Dispose();
+            
         }
 
         public dynamic GetCsvRow()
