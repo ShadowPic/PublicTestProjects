@@ -12,7 +12,8 @@ The Azure Blob Storage was used because it allows you to storage large amounts o
 
 ## Diagram: Running the pipeline to publishing results
 
-![](storage_technologies.JPG)
+
+![](storage_technologies.jpg)
 
 ## How to use ACR
 Running the pipeline incorporates an implementation of a Kubernetes JMeter cluster. This allows for the execution of a JMeter test script on arbitrarily sized JMeter test rig and then will generate:
