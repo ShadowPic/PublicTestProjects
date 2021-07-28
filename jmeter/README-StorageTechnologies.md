@@ -6,11 +6,12 @@ Various storage technologies publish results to Power BI. The order is listed be
 1.	Contents of results build artifacts are stored in an Azure Blob Storage Account
 2.	Results loaded into a database in SQL Server Management Studio
 3.	Data retrieved from SQL server and displayed in Power BI
-
-An Azure Blog Storage Account has been created under the Resolute Sandbox subscription in the fhirjmeterreports, jmeterresults Blob Container.  
+ 
 The Azure Blob Storage was used because it allows you to storage large amounts of unstructured data stored in any file and any size. In addition, this storage account allows access to application data from anywhere, allowing for it to be retrieved from SQL Server and displayed in Power BI. 
 
 Diagram from running the pipeline to publishing results:
+
+![](storage_technologies.png)
 
 How to use ACR
 Running the pipeline incorporates an implementation of a Kubernetes JMeter cluster. This allows for the execution of a JMeter test script on arbitrarily sized JMeter test rig and then will generate:
