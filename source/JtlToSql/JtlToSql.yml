@@ -6,43 +6,28 @@ spec:
   selector:
     matchLabels:
       app: jtltoosql
+  replicas: 1
   template:
     metadata:
       labels:
         app: jtltoosql
     spec:
-      terminationGracePeriodSeconds: 10
       containers:
       - name: jtltoosql
         image: shadowpic/chauncee:latest
         imagePullPolicy: Always
         env:
         - name: JtlReportingStorage
-          value: "REDACTED"
+          valueFrom:
+            secretKeyRef:
+              name: jtltosqlsecrets
+              key: JtlReportingStorage
         - name: JtlReportingDatabase
-          value: "REDACTED"
+          valueFrom:
+            secretKeyRef:
+              name: jtltosqlsecrets
+              key: JtlReportingDatabase
         resources:
           limits:
-            memory: "4Gi"
+            memory: "2Gi"
             cpu: "1"
-        ports:
-          - containerPort: 8080
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: jtltoosql
-  name: jtltoosql-svc
-spec:
-  ports:
-  - name: first
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
-  selector:
-    app: jtltoosql
-  sessionAffinity: None
-  type: ClusterIP

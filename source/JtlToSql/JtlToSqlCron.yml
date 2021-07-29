@@ -1,0 +1,32 @@
+﻿apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: jtltoosql
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      Template:
+        spec:
+          containers:
+          - name: jtltoosql
+            image: shadowpic/chauncee:latest
+            imagePullPolicy: Always
+            env:
+            - name: JtlReportingStorage
+              valueFrom:
+                secretKeyRef:
+                  name: jtltosqlsecrets
+                  key: JtlReportingStorage
+            - name: JtlReportingDatabase
+              valueFrom:
+                secretKeyRef:
+                  name: jtltosqlsecrets
+                  key: JtlReportingDatabase
+            resources:
+              limits:
+                memory: "4Gi"
+                cpu: "1"
+          restartPolicy: OnFailure  
+
+
