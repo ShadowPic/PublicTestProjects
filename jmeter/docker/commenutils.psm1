@@ -22,9 +22,8 @@ function VerifyHelm3
 
 function IsJmeterHelmDeployed($tenant)
 {
-
-    [string]$deploymentStatus=Helm status jmeter --namespace jmeter
-    [boolean]$match = $deploymentStatus -like "*STATUS: deployed*"
+    [string]$deploymentStatus=Helm status jmeter --namespace $tenant
+    [bool]$match = $deploymentStatus -match "STATUS: deployed"
     return $match
 }
 
