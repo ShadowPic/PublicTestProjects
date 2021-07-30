@@ -60,8 +60,7 @@ namespace FileJtlToSql
                                             logger.LogInformation($"Checking if test run {testRun} for test plan {testPlan} has already been added to Sql.");
                                             if (!JtlCsvToSql.ReportAlreadyProcessed(testPlan, testRun, sqlConnectionString))
                                             {
-                                                logger.LogInformation($"Checking if test run {testRun} for test plan {testPlan} does not exist. Sending a message.");
-
+                                                logger.LogInformation($"There is no report for test run {testRun} for test plan {testPlan}. Sending a message.");
                                                 logger.LogInformation($"Adding {jmeterResultsBlobItem.Name}");
                                                 var resultsJtlBlobPathBytes = Encoding.UTF8.GetBytes(jmeterResultsBlobItem.Name);
                                                 queueClient.SendMessage(Convert.ToBase64String(resultsJtlBlobPathBytes));

@@ -28,23 +28,23 @@ namespace JtlToSql
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "elapsed", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "label", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "responseCode", DataType = Type.GetType("System.Int32") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength=50, ColumnName = "responseMessage", DataType = Type.GetType("System.String") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength=200, ColumnName = "threadName", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 50, ColumnName = "responseMessage", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 200, ColumnName = "threadName", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "dataType", DataType = Type.GetType("System.String") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength=500, ColumnName = "failureMessage", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "failureMessage", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "success", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "bytes", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "sentBytes", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "grpThreads", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "allThreads", DataType = Type.GetType("System.Int32") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength=500, ColumnName = "URL", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "URL", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "Latency", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "IdleTime", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "UtcTimeStamp", DataType = Type.GetType("System.DateTime") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "ElapsedMS", DataType = Type.GetType("System.Int32") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength=100, ColumnName = "TestRun", DataType = Type.GetType("System.String") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength=500, ColumnName = "TestPlan", DataType = Type.GetType("System.String") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength=500, ColumnName = "LabelPlusTestRun", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 100, ColumnName = "TestRun", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "TestPlan", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "LabelPlusTestRun", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "Connect", DataType = Type.GetType("System.Int32") });
 
         }
@@ -83,7 +83,7 @@ namespace JtlToSql
             dataRow["LabelPlusTestRun"] = csvRow.LabelPlusTestRun;
             dataRow["Connect"] = Int32.Parse(csvRow.Connect);
             batchOfRows.Rows.Add(dataRow);
-            
+
         }
 
         public void CommitBatch()
@@ -119,20 +119,23 @@ namespace JtlToSql
             batchOfRows.Clear();
         }
 
-        public static bool ReportAlreadyProcessed(string testPlan, string testRun,string connectionString)
+        public static bool ReportAlreadyProcessed(string testPlan, string testRun, string connectionString)
         {
             using SqlConnection testRunsConnection = new SqlConnection(connectionString);
             testRunsConnection.Open();
-            string query = $"select * from TestRuns where TestPlan='{testPlan}' and TestRun='{testRun}'";
-            using SqlCommand checkForReport = new SqlCommand() {
-                CommandText = query,
+            using SqlCommand checkForReport = new SqlCommand()
+            {
+                CommandText = "spReportExists",
                 Connection = testRunsConnection,
-                CommandType = CommandType.Text
+                CommandType = CommandType.StoredProcedure
             };
-            using var reader = checkForReport.ExecuteReader();
-            bool hasRows = reader.HasRows;
-            testRunsConnection.Close();
-            return hasRows;
+            int reportExists = 0;
+            checkForReport.Parameters.Add(new SqlParameter() { ParameterName = "@TestRun", DbType = DbType.String, Value = testRun });
+            checkForReport.Parameters.Add(new SqlParameter() { ParameterName = "@TestPlan", DbType = DbType.String, Value = testPlan });
+            checkForReport.Parameters.Add(new SqlParameter() { ParameterName = "@ReportExists", Direction = ParameterDirection.Output, DbType = DbType.Int32, });
+            checkForReport.ExecuteNonQuery();
+            reportExists = (int)checkForReport.Parameters["@ReportExists"].Value;
+            return reportExists > 0;
         }
 
         public void AddReport(string testPlan, string testRun, DateTime testStartTime)

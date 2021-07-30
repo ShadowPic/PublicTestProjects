@@ -69,6 +69,7 @@
     <Build Include="dbo\Functions\fn_ConvertToDateTime.sql" />
     <Build Include="dbo\Stored Procedures\spDeleteReport.sql" />
     <Build Include="dbo\Stored Procedures\spAddReport.sql" />
+    <Build Include="dbo\Stored Procedures\spReportExists.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="JmeterReportingDb.refactorlog" />
