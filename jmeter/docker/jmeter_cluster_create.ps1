@@ -21,7 +21,9 @@ kubectl version --short
 
 VerifyHelm3
 
-if((IsJmeterHelmDeployed -tenant $tenant) -eq $false)
+[bool] $IsHelmDeployed = IsJmeterHelmDeployed -tenant $tenant
+Write-Output "Checking if Helm is deployed on $($tenant): $($IsHelmDeployed)"
+if($IsHelmDeployed -eq $false)
 {
     write-output "Installing the jmetertestrig helm chart to namespace $tenant"
     Helm install jmeter jmetertestrig --namespace $tenant --wait
