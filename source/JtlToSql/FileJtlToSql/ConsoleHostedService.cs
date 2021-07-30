@@ -35,6 +35,7 @@ namespace FileJtlToSql
                 {
                     try
                     {
+                        bool alreadyGotTheResults = false;
                         while (!cancellationToken.IsCancellationRequested)
                         {
                             logger.LogInformation("Checking for the existence of the JtlPendingReports storage queue.");
@@ -45,6 +46,21 @@ namespace FileJtlToSql
                             {
                                 logger.LogInformation("The JtlPendingReports queue exists.");
                                 logger.LogInformation("Checking to see if there are any messages to process.");
+                                if((queueClient.PeekMessages().Value.Length == 0) && ! alreadyGotTheResults)
+                                {
+                                    logger.LogInformation("Adding all of the results to the queue");
+                                    BlobContainerClient jmeterResultsContainer = new BlobContainerClient(storageConnectionString, "jmeterresults");
+                                    foreach(var jmeterResultsBlobItem in jmeterResultsContainer.GetBlobs())
+                                    {
+                                        if(jmeterResultsBlobItem.Name.EndsWith("results.jtl", StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            logger.LogInformation($"Adding {jmeterResultsBlobItem.Name}");
+                                            var resultsJtlBlobPathBytes = Encoding.UTF8.GetBytes(jmeterResultsBlobItem.Name);
+                                            queueClient.SendMessage(Convert.ToBase64String(resultsJtlBlobPathBytes));
+                                        }
+                                    }
+                                    alreadyGotTheResults = true;
+                                }
                                 while (queueClient.PeekMessages().Value.Length > 0)
                                 {
                                     logger.LogInformation("Checking for new messages");
@@ -73,29 +89,36 @@ namespace FileJtlToSql
                                             var sqlConnectionString = Environment.GetEnvironmentVariable("JtlReportingDatabase");
                                             using var jtlCsvToSql = new JtlCsvToSql(sqlConnectionString);
                                             csvJtl.InitJtlReader(csvFileName);
-                                            logger.LogInformation($"Deleting existing report for test plan {csvJtl.TestPlan} and test run {csvJtl.TestRun}");
-                                            jtlCsvToSql.DeleteReport(csvJtl.TestPlan, csvJtl.TestRun);
-                                            logger.LogInformation("Sending results to SQL Server");
-                                            int i = 0;
-                                            while (csvJtl.ReadNextCsvLine())
+                                            if (!jtlCsvToSql.ReportAlreadyProcessed(csvJtl.TestPlan, csvJtl.TestRun))
                                             {
-                                                var csvRow = csvJtl.GetCsvRow();
-                                                try
+                                                logger.LogInformation($"Deleting existing report for test plan {csvJtl.TestPlan} and test run {csvJtl.TestRun}");
+                                                jtlCsvToSql.DeleteReport(csvJtl.TestPlan, csvJtl.TestRun);
+                                                logger.LogInformation("Sending results to SQL Server");
+                                                int i = 0;
+                                                while (csvJtl.ReadNextCsvLine())
                                                 {
-                                                    if (i > 10000)
+                                                    var csvRow = csvJtl.GetCsvRow();
+                                                    try
                                                     {
-                                                        logger.LogInformation($"Committing {i} rows to sql for {csvJtl.TestRun}");
-                                                        jtlCsvToSql.CommitBatch();
-                                                        i = 0;
+                                                        if (i > 10000)
+                                                        {
+                                                            logger.LogInformation($"Committing {i} rows to sql for {csvJtl.TestRun}");
+                                                            jtlCsvToSql.CommitBatch();
+                                                            i = 0;
+                                                        }
+                                                        jtlCsvToSql.AddJtlRow(csvRow);
+                                                        i++;
                                                     }
-                                                    jtlCsvToSql.AddJtlRow(csvRow);
-                                                    i++;
+                                                    catch (Exception e)
+                                                    { logger.LogWarning($"Skipping line {e.ToString()}"); }
                                                 }
-                                                catch (Exception e)
-                                                { logger.LogWarning($"Skipping line {e.ToString()}"); }
+                                                logger.LogInformation("Successfully added rows to database.  Now adding test report");
+                                                jtlCsvToSql.AddReport(csvJtl.TestPlan, csvJtl.TestRun, csvJtl.TestStartTime);
                                             }
-                                            logger.LogInformation("Successfully added rows to database.  Now adding test report");
-                                            jtlCsvToSql.AddReport(csvJtl.TestPlan, csvJtl.TestRun, csvJtl.TestStartTime);
+                                            else
+                                            {
+                                                logger.LogInformation($"The test run {csvJtl.TestRun} for test plan {csvJtl.TestPlan} is already in sql.  Skipping.");
+                                            }
 
                                         }
                                         catch (Exception e)

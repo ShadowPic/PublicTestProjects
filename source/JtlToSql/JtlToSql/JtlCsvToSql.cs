@@ -119,6 +119,19 @@ namespace JtlToSql
             batchOfRows.Clear();
         }
 
+        public bool ReportAlreadyProcessed(string testPlan, string testRun)
+        {
+            string query = $"select * from TestRuns where TestPlan='{testPlan}' and TestRun='{testRun}'";
+            using SqlCommand checkForReport = new SqlCommand() {
+                CommandText = query,
+                Connection = this.sqlConnection,
+                CommandType = CommandType.Text
+            };
+            using var reader = checkForReport.ExecuteReader();
+            
+            return reader.HasRows;
+        }
+
         public void AddReport(string testPlan, string testRun, DateTime testStartTime)
         {
             CommitBatch();

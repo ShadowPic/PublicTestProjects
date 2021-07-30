@@ -6,7 +6,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
-COPY ["JmeterToSqlFunction/JmeterToSqlFunction.csproj", "JmeterToSqlFunction/"]
+COPY ["JmeterToSqlFunction.csproj", "JmeterToSqlFunction/"]
 RUN dotnet restore "JmeterToSqlFunction/JmeterToSqlFunction.csproj"
 COPY . .
 WORKDIR "/src/JmeterToSqlFunction"
