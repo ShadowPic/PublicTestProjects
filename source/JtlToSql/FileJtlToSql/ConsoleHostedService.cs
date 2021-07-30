@@ -39,6 +39,7 @@ namespace FileJtlToSql
                         while (!cancellationToken.IsCancellationRequested)
                         {
                             logger.LogInformation("Checking for the existence of the JtlPendingReports storage queue.");
+                            var sqlConnectionString = Environment.GetEnvironmentVariable("JtlReportingDatabase");
                             var storageConnectionString = Environment.GetEnvironmentVariable("JtlReportingStorage");
                             string resultsJtlBlobPath = null;
                             QueueClient queueClient = new QueueClient(storageConnectionString, "JtlPendingReports".ToLower());
@@ -54,9 +55,17 @@ namespace FileJtlToSql
                                     {
                                         if(jmeterResultsBlobItem.Name.EndsWith("results.jtl", StringComparison.OrdinalIgnoreCase))
                                         {
-                                            logger.LogInformation($"Adding {jmeterResultsBlobItem.Name}");
-                                            var resultsJtlBlobPathBytes = Encoding.UTF8.GetBytes(jmeterResultsBlobItem.Name);
-                                            queueClient.SendMessage(Convert.ToBase64String(resultsJtlBlobPathBytes));
+                                            string testPlan = CsvJtl.ExtractTestPlan(jmeterResultsBlobItem.Name);
+                                            string testRun = CsvJtl.ExtractTestRun(jmeterResultsBlobItem.Name);
+                                            logger.LogInformation($"Checking if test run {testRun} for test plan {testPlan} has already been added to Sql.");
+                                            if (!JtlCsvToSql.ReportAlreadyProcessed(testPlan, testRun, sqlConnectionString))
+                                            {
+                                                logger.LogInformation($"Checking if test run {testRun} for test plan {testPlan} does not exist. Sending a message.");
+
+                                                logger.LogInformation($"Adding {jmeterResultsBlobItem.Name}");
+                                                var resultsJtlBlobPathBytes = Encoding.UTF8.GetBytes(jmeterResultsBlobItem.Name);
+                                                queueClient.SendMessage(Convert.ToBase64String(resultsJtlBlobPathBytes));
+                                            }
                                         }
                                     }
                                     alreadyGotTheResults = true;
@@ -86,10 +95,9 @@ namespace FileJtlToSql
 
                                             using var csvJtl = new CsvJtl(resultsJtlBlobPath);
                                             logger.LogInformation("Connecting to the Sql reporting dB");
-                                            var sqlConnectionString = Environment.GetEnvironmentVariable("JtlReportingDatabase");
                                             using var jtlCsvToSql = new JtlCsvToSql(sqlConnectionString);
                                             csvJtl.InitJtlReader(csvFileName);
-                                            if (!jtlCsvToSql.ReportAlreadyProcessed(csvJtl.TestPlan, csvJtl.TestRun))
+                                            if (!JtlCsvToSql.ReportAlreadyProcessed(csvJtl.TestPlan, csvJtl.TestRun,sqlConnectionString))
                                             {
                                                 logger.LogInformation($"Deleting existing report for test plan {csvJtl.TestPlan} and test run {csvJtl.TestRun}");
                                                 jtlCsvToSql.DeleteReport(csvJtl.TestPlan, csvJtl.TestRun);

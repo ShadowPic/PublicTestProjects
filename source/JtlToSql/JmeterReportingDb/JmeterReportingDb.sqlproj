@@ -67,7 +67,6 @@
     <Build Include="dbo\Tables\jmeterrawresults.sql" />
     <Build Include="dbo\Tables\TestRuns.sql" />
     <Build Include="dbo\Functions\fn_ConvertToDateTime.sql" />
-    <Build Include="dbo\Stored Procedures\spAddJtlRow.sql" />
     <Build Include="dbo\Stored Procedures\spDeleteReport.sql" />
     <Build Include="dbo\Stored Procedures\spAddReport.sql" />
   </ItemGroup>

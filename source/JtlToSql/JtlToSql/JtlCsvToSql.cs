@@ -119,17 +119,20 @@ namespace JtlToSql
             batchOfRows.Clear();
         }
 
-        public bool ReportAlreadyProcessed(string testPlan, string testRun)
+        public static bool ReportAlreadyProcessed(string testPlan, string testRun,string connectionString)
         {
+            using SqlConnection testRunsConnection = new SqlConnection(connectionString);
+            testRunsConnection.Open();
             string query = $"select * from TestRuns where TestPlan='{testPlan}' and TestRun='{testRun}'";
             using SqlCommand checkForReport = new SqlCommand() {
                 CommandText = query,
-                Connection = this.sqlConnection,
+                Connection = testRunsConnection,
                 CommandType = CommandType.Text
             };
             using var reader = checkForReport.ExecuteReader();
-            
-            return reader.HasRows;
+            bool hasRows = reader.HasRows;
+            testRunsConnection.Close();
+            return hasRows;
         }
 
         public void AddReport(string testPlan, string testRun, DateTime testStartTime)

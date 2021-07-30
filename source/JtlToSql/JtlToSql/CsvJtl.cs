@@ -28,13 +28,24 @@ namespace JtlToSql
         {
             get { return testRun; }
         }
+
+        public static string ExtractTestPlan(string pathToJtlFile)
+        {
+            var splitPath = pathToJtlFile.Split("/");
+            return splitPath[0];
+        }
+        public static string ExtractTestRun(string pathToJtlFile)
+        {
+            var splitPath = pathToJtlFile.Split("/");
+            return splitPath[splitPath.Length - 2]; 
+        }
+
         public CsvJtl(string pathToJtlFile = null)
         {
             if (!string.IsNullOrEmpty(pathToJtlFile))
             {
-                var splitPath = pathToJtlFile.Split("/");
-                testPlan = splitPath[0];
-                testRun = splitPath[splitPath.Length - 2];
+                testPlan = ExtractTestPlan(pathToJtlFile);
+                testRun = ExtractTestRun(pathToJtlFile);
             }
             else
             {
