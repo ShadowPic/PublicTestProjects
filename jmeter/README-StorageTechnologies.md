@@ -10,7 +10,7 @@ Various storage technologies publish results to Power BI. The order is listed be
  
 The Azure Blob Storage was used because it allows you to storage large amounts of unstructured data stored in any file and any size. In addition, this storage account allows access to application data from anywhere, allowing for it to be retrieved from SQL Server and displayed in Power BI. 
 
-## Publishing Previous Results
+## Publishing Previous Results to Azure Storage Account
 **File Name:** PublishPreviousResults.ps1
 - -tenant (required): K8S NameSpace
 - -TestName (required): full or relative path to the JMeter test script
