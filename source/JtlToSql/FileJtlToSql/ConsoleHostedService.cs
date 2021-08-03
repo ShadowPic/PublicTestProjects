@@ -35,14 +35,18 @@ namespace FileJtlToSql
                 {
                     try
                     {
+                        bool runOnceAndStop = false;
                         bool alreadyGotTheResults = false;
-                        while (!cancellationToken.IsCancellationRequested)
+                        while (!cancellationToken.IsCancellationRequested && !runOnceAndStop)
                         {
-                            logger.LogInformation("Checking for the existence of the JtlPendingReports storage queue.");
+                            runOnceAndStop = Environment.GetEnvironmentVariable("RunOnceAndStop") != null ? bool.Parse( Environment.GetEnvironmentVariable("RunOnceAndStop")) : false;
                             var sqlConnectionString = Environment.GetEnvironmentVariable("JtlReportingDatabase");
                             var storageConnectionString = Environment.GetEnvironmentVariable("JtlReportingStorage");
-                            string resultsJtlBlobPath = null;
+
+                            logger.LogInformation("Checking for the existence of the JtlPendingReports storage queue.");
+                             string resultsJtlBlobPath = null;
                             QueueClient queueClient = new QueueClient(storageConnectionString, "JtlPendingReports".ToLower());
+                            queueClient.CreateIfNotExists();
                             if (queueClient.Exists())
                             {
                                 logger.LogInformation("The JtlPendingReports queue exists.");
