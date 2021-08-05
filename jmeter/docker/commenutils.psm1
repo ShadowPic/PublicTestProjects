@@ -126,3 +126,8 @@ function PromptUserForTestName($destinationPath,$testPlanXml,$file)
         }
     }
 }
+
+function VerifyCommandExists($cmdName) 
+{
+    return [bool](Get-Command -Name $cmdname -ErrorAction SilentlyContinue)
+}

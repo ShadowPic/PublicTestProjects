@@ -67,6 +67,18 @@ Import-Module ./commenutils.psm1 -force
 
 if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousResultsToStorageAccount -eq "")) 
 {
+    # Checking to make sure Azure Client is installed 
+    $isAzureClientInstalled=VerifyCommandExists -cmdName az
+    if ($isAzureClientInstalled)
+    {
+         Write-Output "Azure Client found."
+    }
+    else
+    {
+        Write-Output "Azure Client not found."
+        throw "Azure Client is required to publish results to Azure Storage Account."
+    }
+
     Write-Output "Publishing previous results to storage account"
 
     $accountKey=RetrieveStorageAccountKey -storageAccountName $StorageAccount

@@ -174,6 +174,19 @@ kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $Report
 
 if($PublishResultsToBlobStorage.IsPresent)
 {
+
+    # Checking to make sure Azure Client is installed 
+    $isAzureClientInstalled=VerifyCommandExists -cmdName az
+    if ($isAzureClientInstalled)
+    {
+         Write-Output "Azure Client found."
+    }
+    else
+    {
+        Write-Output "Azure Client not found."
+        throw "Azure Client is required to publish results to Azure Storage Account."
+    }
+
     if ($PublishTestToStorageAccount.IsPresent) 
     {
         Copy-Item -Path $TestName -Destination $ReportFolder -Force
