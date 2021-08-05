@@ -97,10 +97,38 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
   - The string name for the storage account you are uploading the results folder to
 - -Container (optional)
   - Blob Storage container that you are uploading the results to.
+- -StorageAccountPathTopLevel (optional)
+  - This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
+- -SqlServerPresent (optional)
+  - This boolean flag confirms that the user has a SQL Server Database set up to proceed with publishing results to Power BI 
+- -AzureContainerInstance (optional)
+  - The string name of the Azure Container Instance
+- -PARAMETER ResourceGroup (optional)
+  - The string name of the resource group which the Azure Container Instance resides in 
 - -GlobalJmeterParams (optional): JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves
   - This feature allows for any number of "-G" parameters to be added.
   - This feature also allows you to add any other JMeter option you want to assuming it's not already present.  
   - See: https://jmeter.apache.org/usermanual/remote-test.html
+
+## Viewing results in Power BI
+**Report: jmeter report.pbit** in the docker directory
+
+Viewing your test run results in PowerBI provides you with a more advanced reporting dashboard. The data in PowerBI is being retrieved from your SQL Server Database. There may be a few setting configurations you will have to do in order to view your data.
+
+**Configure your Data source settings**
+
+1. File > Options and settings
+2. Click **Data Source Settings**
+3. Change Source
+    +  If you see your database server name then make the correct selection and close the window
+    + If you don't see your database server name :
+        + Click Change Source
+        + Enter your Server name and Database name
+        + Click Ok
+    + Close Window
+4. Click **Apply Changes** at the top of the report
+
+Your report will update with the results stored in your Azure Storage Account. 
 
 ## If you want to remove your AKS Cluster
 
