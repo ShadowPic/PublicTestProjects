@@ -13,7 +13,7 @@ $PathToYaml = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 Set-Location $PathToYaml
 
-Import-Module ./commenutils.psm1
+Import-Module ./commenutils.psm1 -force
 
 VerifyKubeCtl
 
@@ -21,11 +21,15 @@ kubectl version --short
 
 VerifyHelm3
 
-if(-not (IsJmeterHelmDeployed($tenant)))
+[bool] $IsHelmDeployed = IsJmeterHelmDeployed -tenant $tenant
+Write-Output "Checking if Helm is deployed on $($tenant): $($IsHelmDeployed)"
+if($IsHelmDeployed -eq $false)
 {
     write-output "Installing the jmetertestrig helm chart to namespace $tenant"
-
     Helm install jmeter jmetertestrig --namespace $tenant --wait
+
+    write-output "Upgrading the jmetertestrig helm chart to namespace $tenant"
+    Helm upgrade jmeter jmetertestrig --namespace $tenant --wait
     
     write-output "Creating JMeter Influx database"
 
