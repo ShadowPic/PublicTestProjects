@@ -23,6 +23,26 @@ The Azure Blob Storage was used because it allows you to storage large amounts o
 - -StorageAccountPathTopLevel (optional)
   - If you override your default test name the new name will become the root folder in the target container blob in the Azure Storage Account
 
+## Viewing results in Power BI
+**Report: jmeter report.pbit** in the docker directory
+
+Viewing your test run results in PowerBI provides you with a more advanced reporting dashboard. The data in PowerBI is being retrieved from your SQL Server Database. There may be a few setting configurations you will have to do in order to view your data.
+
+**Configure your Data source settings**
+
+1. File > Options and settings
+2. Click **Data Source Settings**
+3. Change Source
+    +  If you see your database server name then make the correct selection and close the window
+    + If you don't see your database server name :
+        + Click Change Source
+        + Enter your Server name and Database name
+        + Click Ok
+    + Close Window
+4. Click **Apply Changes** at the top of the report
+
+Your report will update with the results stored in your Azure Storage Account. 
+
 
 ## Diagram: Running the pipeline to publishing results
 
