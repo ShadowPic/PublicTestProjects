@@ -22,6 +22,12 @@ The Azure Blob Storage was used because it allows you to storage large amounts o
   - Blob Storage container that you are uploading the results to.
 - -StorageAccountPathTopLevel (optional)
   - If you override your default test name the new name will become the root folder in the target container blob in the Azure Storage Account
+- -SqlServerPresent (optional)
+  - This boolean flag confirms that the user has a SQL Server Database set up to proceed with publishing results to Power BI 
+- -AzureContainerInstance 
+  - The string name of the Azure Container Instance
+- -ResourceGroup 
+  - The string name of the resource group which the Azure Container Instance resides in 
 
 ## Viewing results in Power BI
 **Report: jmeter report.pbit** in the docker directory
