@@ -1,12 +1,12 @@
 # Storage Technologies Used to Publish Results to Power BI
-This document explains the processes taking place when publishing test results to Power Bi.
+This document explains the processes taking place when publishing test results to Power BI.
 
 ## Storage Technologies Used
-When running the pipeline to execute the JMeter test rig, a results artifact gets published. The results of the pipeline run get stored in a file results.jtl. You can view these results and compare results from various runs in Power BI. 
-Various storage technologies publish results to Power BI. The order is listed below:  
+When running the pipeline to execute the JMeter test rig, a results artifact gets published. The results of the pipeline run get stored in a file named **results.jtl**. You can view these results and compare results from various runs in Power BI. 
+Various storage technologies are used to publish results to Power BI. The order is listed below:  
 1.	Contents of results build artifacts are stored in an Azure Blob Storage Account
-2.	Results loaded into a database in SQL Server Management Studio
-3.	Data retrieved from SQL server and displayed in Power BI
+2.	Results are loaded into a database in SQL Server Management Studio
+3.	Data is retrieved from SQL Server database and displayed in Power BI
  
 The Azure Blob Storage was used because it allows you to storage large amounts of unstructured data stored in any file and any size. In addition, this storage account allows access to application data from anywhere, allowing for it to be retrieved from SQL Server and displayed in Power BI. 
 
@@ -19,15 +19,9 @@ The Azure Blob Storage was used because it allows you to storage large amounts o
 - -StorageAccount (required)
   - The string name for the storage account you are uploading 
 - -Container (required)
-  - Blob Storage container that you are uploading the results to.
+  - Blob Storage container that you are uploading the results to
 - -StorageAccountPathTopLevel (optional)
   - If you override your default test name the new name will become the root folder in the target container blob in the Azure Storage Account
-- -SqlServerPresent (optional)
-  - This boolean flag confirms that the user has a SQL Server Database set up to proceed with publishing results to Power BI 
-- -AzureContainerInstance 
-  - The string name of the Azure Container Instance
-- -ResourceGroup 
-  - The string name of the resource group which the Azure Container Instance resides in 
 
 ## Viewing results in Power BI
 **Report: jmeter report.pbit** in the docker directory
