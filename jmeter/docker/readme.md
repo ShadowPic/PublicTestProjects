@@ -103,7 +103,7 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
   - This boolean flag confirms that the user has a SQL Server Database set up to proceed with publishing results to Power BI 
 - -AzureContainerInstance (optional)
   - The string name of the Azure Container Instance
-- -PARAMETER ResourceGroup (optional)
+- -ResourceGroup (optional)
   - The string name of the resource group which the Azure Container Instance resides in 
 - -GlobalJmeterParams (optional): JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves
   - This feature allows for any number of "-G" parameters to be added.
