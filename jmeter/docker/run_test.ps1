@@ -49,6 +49,15 @@
     .PARAMETER StorageAccountPathTopLevel
     This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
 
+    .PARAMETER SqlServerPresent
+    This boolean flag confirms that the user has a SQL Server Database set up to proceed with publishing results to Power BI 
+
+    .PARAMETER AzureContainerInstance
+    The string name of the Azure Container Instance
+
+    .PARAMETER ResourceGroup
+    The string name of the resource group which the Azure Container Instance resides in 
+    
     .PARAMETER GlobalJmeterParams
     JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves.
     * This feature allows for any number of "-G" parameters to be added.
@@ -110,6 +119,15 @@ param(
     [Parameter(Mandatory=$false)]
     [string]
     $StorageAccountPathTopLevel="",
+    [Parameter(Mandatory=$false)]
+    [switch]
+    $SqlServerPresent,
+    [Parameter(Mandatory=$false)]
+    [string]
+    $AzureContainerInstance="",
+    [Parameter(Mandatory=$false)]
+    [string]
+    $ResourceGroup="",
     [parameter(ValueFromRemainingArguments=$true)]
     [string[]]
     $GlobalJmeterParams
@@ -187,6 +205,21 @@ if($PublishResultsToBlobStorage.IsPresent)
         throw "Azure Client is required to publish results to Azure Storage Account."
     }
 
+    # Checking if SQL Server Database is present
+    if(!($SqlServerPresent.IsPresent))
+    {
+        Write-Output "SQLServer Database not found."
+        throw "SQLServer Database is required to publish results to Azure Storage Account."
+    }
+
+
+    # Checking if Azure Container Instance and Resource Group are present
+    if (($AzureContainerInstance -eq "") -and ($ResourceGroup -eq ""))
+    {
+         Write-Output "Both Azure Container Instance and Resource Group must be specified if publishing results to Azure Storage Account."
+        throw "Both Azure Container Instance and Resource Group are required."
+    }
+
     if ($PublishTestToStorageAccount.IsPresent) 
     {
         Copy-Item -Path $TestName -Destination $ReportFolder -Force
@@ -234,6 +267,10 @@ if($PublishResultsToBlobStorage.IsPresent)
     az extension add --name storage-preview
     Write-Output "Attempting to upload to storage account using the current AZ Security context"
     PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolder
+
+    # Starting Azure Instance 
+    Write-Output "Starting Azure Container Instance"
+    StartAzureContainerInstace -azureContainerInstance $AzureContainerInstance -resourceGroup $ResourceGroup
 }
 
 if($DeleteTestRig)

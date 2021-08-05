@@ -131,3 +131,8 @@ function VerifyCommandExists($cmdName)
 {
     return [bool](Get-Command -Name $cmdname -ErrorAction SilentlyContinue)
 }
+
+function StartAzureContainerInstace($azureContainerInstance,$resourceGroup) 
+{
+    az container start --name $azureContainerInstance --resource-group $resourceGroup
+}
