@@ -117,6 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="influxBackendListener" xml:space="preserve">
+    <value>&lt;BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="true"&gt;
+        &lt;elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true"&gt;
+          &lt;collectionProp name="Arguments.arguments"&gt;
+            &lt;elementProp name="influxdbMetricsSender" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;influxdbMetricsSender&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;org.apache.jmeter.visualizers.backend.influxdb.HttpMetricsSender&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+            &lt;elementProp name="influxdbUrl" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;influxdbUrl&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;http://jmetertestrig-influxdb-svc:8086/write?db=jmeter&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+            &lt;elementProp name="application" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;application&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;application name&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+            &lt;elementProp name="measurement" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;measurement&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;jmeter&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+            &lt;elementProp name="summaryOnly" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;summaryOnly&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;false&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+            &lt;elementProp name="samplersRegex" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;samplersRegex&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;.*&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+            &lt;elementProp name="percentiles" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;percentiles&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;90;95;99&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+            &lt;elementProp name="testTitle" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;testTitle&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;Test name&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+            &lt;elementProp name="eventTags" elementType="Argument"&gt;
+              &lt;stringProp name="Argument.name"&gt;eventTags&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.value"&gt;&lt;/stringProp&gt;
+              &lt;stringProp name="Argument.metadata"&gt;=&lt;/stringProp&gt;
+            &lt;/elementProp&gt;
+          &lt;/collectionProp&gt;
+        &lt;/elementProp&gt;
+        &lt;stringProp name="classname"&gt;org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient&lt;/stringProp&gt;
+      &lt;/BackendListener&gt;</value>
+  </data>
   <data name="redisConfigString" xml:space="preserve">
     <value>&lt;kg.apc.jmeter.config.redis.RedisDataSet guiclass="TestBeanGUI" testclass="kg.apc.jmeter.config.redis.RedisDataSet" testname="jp@gc - Redis Data Set" enabled="true"&gt;
 		&lt;stringProp name="database"&gt;0&lt;/stringProp&gt;

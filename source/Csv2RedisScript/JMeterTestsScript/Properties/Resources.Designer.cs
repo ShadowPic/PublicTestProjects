@@ -61,6 +61,20 @@ namespace JMeterTestsScript.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;BackendListener guiclass=&quot;BackendListenerGui&quot; testclass=&quot;BackendListener&quot; testname=&quot;Backend Listener&quot; enabled=&quot;true&quot;&gt;
+        ///        &lt;elementProp name=&quot;arguments&quot; elementType=&quot;Arguments&quot; guiclass=&quot;ArgumentsPanel&quot; testclass=&quot;Arguments&quot; enabled=&quot;true&quot;&gt;
+        ///          &lt;collectionProp name=&quot;Arguments.arguments&quot;&gt;
+        ///            &lt;elementProp name=&quot;influxdbMetricsSender&quot; elementType=&quot;Argument&quot;&gt;
+        ///              &lt;stringProp name=&quot;Argument.name&quot;&gt;influxdbMetricsSender&lt;/stringProp&gt;
+        ///              &lt;stringProp name=&quot;Argument.value&quot;&gt;org.a [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string influxBackendListener {
+            get {
+                return ResourceManager.GetString("influxBackendListener", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;kg.apc.jmeter.config.redis.RedisDataSet guiclass=&quot;TestBeanGUI&quot; testclass=&quot;kg.apc.jmeter.config.redis.RedisDataSet&quot; testname=&quot;jp@gc - Redis Data Set&quot; enabled=&quot;true&quot;&gt;
         ///		&lt;stringProp name=&quot;database&quot;&gt;0&lt;/stringProp&gt;
         ///		&lt;stringProp name=&quot;delimiter&quot;&gt;,&lt;/stringProp&gt;

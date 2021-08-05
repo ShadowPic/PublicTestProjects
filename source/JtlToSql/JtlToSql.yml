@@ -1,0 +1,33 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jtltoosql
+spec:
+  selector:
+    matchLabels:
+      app: jtltoosql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jtltoosql
+    spec:
+      containers:
+      - name: jtltoosql
+        image:  shadowpic/filejtltosql:latest
+        imagePullPolicy: Always
+        env:
+        - name: JtlReportingStorage
+          valueFrom:
+            secretKeyRef:
+              name: jtltosqlsecrets
+              key: JtlReportingStorage
+        - name: JtlReportingDatabase
+          valueFrom:
+            secretKeyRef:
+              name: jtltosqlsecrets
+              key: JtlReportingDatabase
+        resources:
+          limits:
+            memory: "2Gi"
+            cpu: "1"
