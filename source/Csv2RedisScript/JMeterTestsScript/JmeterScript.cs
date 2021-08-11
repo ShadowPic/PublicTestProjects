@@ -14,7 +14,7 @@ namespace JMeterTestsScript
         private string jmeterScriptFileName;
         const string REDIS_SCRIPT_FILE_NAME = "csv2redis.redis";
         XElement jmeterScriptXml;
-        ILog logger=null;
+        ILog logger = null;
         public JmeterScript()
         {
 
@@ -23,10 +23,10 @@ namespace JMeterTestsScript
         public JmeterScript(string jmeterScriptFileName)
         {
             this.jmeterScriptFileName = jmeterScriptFileName;
-            jmeterScriptXml=XElement.Load(jmeterScriptFileName);
+            jmeterScriptXml = XElement.Load(jmeterScriptFileName);
         }
 
-        public JmeterScript(string jmeterScriptFileName,ILog logger)
+        public JmeterScript(string jmeterScriptFileName, ILog logger)
         {
             this.jmeterScriptFileName = jmeterScriptFileName;
             jmeterScriptXml = XElement.Load(jmeterScriptFileName);
@@ -41,11 +41,12 @@ namespace JMeterTestsScript
         {
             var foo = jmeterScriptXml.Descendants("CSVDataSet")
                 .Where(item => (bool)item.Attribute("enabled"));
-            return foo.Count() >0;
+            return foo.Count() > 0;
         }
 
-        public void AddRedisControl()
+        public void AddRedisControl(bool continueOnError=true)
         {
+            File.Delete(REDIS_SCRIPT_FILE_NAME);
             var enabledCsvConfigElements = jmeterScriptXml.Descendants("CSVDataSet")
                 .Where(item => (bool)item.Attribute("enabled"));
             foreach (var csvElement in enabledCsvConfigElements)
@@ -57,29 +58,52 @@ namespace JMeterTestsScript
                 if (String.IsNullOrEmpty(fileNameElement.Value))
                     throw new FileNotFoundException($"There is no csv file name in the {csvElementName} csv configuration.");
                 string csvFileName = fileNameElement.Value;
-                if(logger != null)
+                if (logger != null)
                 {
                     logger.Info($"Adding {csvFileName} to the redis script");
                 };
-                Csv2Redis.ConvertToRedis(csvFileName, REDIS_SCRIPT_FILE_NAME);
-                string redisKey= Path.GetFileNameWithoutExtension(csvFileName);
-                string columnNamesFromCsvFile = Csv2Redis.GetCsvColumnNames(csvFileName);
-                XElement redisConfigElement = XElement.Parse(JMeterTestsScript.Properties.Resources.redisConfigString);
-                csvElement.Attribute("enabled").SetValue(false);
-                redisConfigElement.Attribute("testname").SetValue(csvElementName);
-                redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "variableNames").Value = String.IsNullOrEmpty(columnNamesFromJmeter) ? columnNamesFromCsvFile : columnNamesFromJmeter;
-                redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "host").Value = "jmeter-redis-master";
-                redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "redisKey").Value = redisKey;
-                if (logger != null)
-                    logger.Info($"Adding {csvElementName} redis control and disabling the csv config");
-                csvElement.AddAfterSelf(redisConfigElement);
-                csvElement.AddAfterSelf(new XElement("hashTree"));
+
+                if (!File.Exists(csvFileName))
+                {
+                    if (logger != null)
+                    {
+                        logger.Error($"The '{csvFileName}' can not be found.");
+                        
+                    }
+                    if(!continueOnError)
+                    {
+                        throw new FileNotFoundException();
+                    }
+                    else
+                    {
+                        logger.Warn("Continue on error is true so processing of remaining csv config elements will continue");
+                    }
+                }
+                else
+                {
+                    Csv2Redis.ConvertToRedis(csvFileName, REDIS_SCRIPT_FILE_NAME);
+                    string redisKey = Path.GetFileNameWithoutExtension(csvFileName);
+                    string columnNamesFromCsvFile = Csv2Redis.GetCsvColumnNames(csvFileName);
+                    XElement redisConfigElement = XElement.Parse(JMeterTestsScript.Properties.Resources.redisConfigString);
+                    csvElement.Attribute("enabled").SetValue(false);
+                    redisConfigElement.Attribute("testname").SetValue(csvElementName);
+                    redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "variableNames").Value = String.IsNullOrEmpty(columnNamesFromJmeter) ? columnNamesFromCsvFile : columnNamesFromJmeter;
+                    redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "host").Value = "jmeter-redis-master";
+                    redisConfigElement.Elements(stringPropTag).FirstOrDefault(a => a.Attribute("name").Value == "redisKey").Value = redisKey;
+                    if (logger != null)
+                        logger.Info($"Adding {csvElementName} redis control and disabling the csv config");
+                    csvElement.AddAfterSelf(redisConfigElement);
+                    csvElement.AddAfterSelf(new XElement("hashTree"));
+                }
             }
         }
 
-        public void CustomizeColumnNames()
+        public void AddBackEndListener()
         {
-            throw new NotImplementedException();
+            XElement backendListener = XElement.Parse(JMeterTestsScript.Properties.Resources.influxBackendListener);
+            jmeterScriptXml.Element("hashTree").Element("hashTree").AddFirst(new XElement("hashTree"));
+            jmeterScriptXml.Element("hashTree").Element("hashTree").AddFirst(backendListener);
+
         }
     }
 }

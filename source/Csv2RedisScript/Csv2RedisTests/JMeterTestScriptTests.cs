@@ -65,6 +65,18 @@ namespace Csv2RedisTests
         }
 
         [TestMethod]
+        public void AddBackendListener()
+        {
+            //arrange
+            JmeterScript jmeterScript = new JmeterScript(jmeterScriptFileName);
+            //act
+            jmeterScript.AddBackEndListener();
+            jmeterScript.WriteNewFile("backendlistener.jmx");
+            //assert
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(FileNotFoundException))]
         public void DetectsNoCsvFileNames()
         {

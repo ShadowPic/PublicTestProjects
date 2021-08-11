@@ -7,58 +7,63 @@ using System.Linq;
 using System.Threading.Tasks;
 using JMeterTestsScript;
 using System.IO;
-
+using CommandLine;
 
 namespace Csv2RedisScript
 {
 
     public class DoWork
     {
-        ILog Logger = LoggerHelper.GetXmlLogger(typeof(DoWork));
-        public static string testStatus = "Fail";
+        public class Options
+        {
+            [Option('t', "testscript", Required = true, HelpText = "Your jmeter script containing csv config elements")]
+            public string TestScript { get; set; }
+            [Option("AddBackEndListener", Default = false,HelpText ="Whether or not to add influx db backend listener",Required =false)]
+            public bool AddBackEndListener { get; set; }
+            [Option("ContinueOnError", Default = true, HelpText = "It will attempt to continue even if some of the CSV Configs are missing elements", Required = false)]
+
+            public bool ContinueOnError { get; set; }
+        }
+
+        static ILog Logger = LoggerHelper.GetXmlLogger(typeof(DoWork));
         public static string logFileName;
-        public const string Passed = "Pass";
-        public const string Failed = "Fail";
 
         public static void Run(string[] args)
         {
-            ILog logger = LoggerHelper.GetXmlLogger(typeof(DoWork));
-
-            logger.Info("Csv2Redis Console starting execution");
+            Logger.Info("Csv2Redis Console starting execution");
             while (true)
             {
-                logger.Info("Checking Arguments");
-                if (ArgsNotValid(args))
-                {
-                    logger.Error("Arguments are not valid");
-                    ShowUsage();
-                    testStatus = "Fail";
-                    throw new ArgumentException("invalid arguments");
-                }
-                string combined = null;
+                Logger.Info("Checking Arguments");
 
-                foreach (string arg in args)
-                {
-                    combined += arg.ToLower(CultureInfo.CurrentCulture) + " ";
-                }
-                var argumentGroups = combined.Split("--");
-                string testScript = argumentGroups.FirstOrDefault(a => a.Split(" ")[0] == "testscript").Split(" ")[1];
-                string testScriptNew = Path.GetFileNameWithoutExtension(testScript) + "-modified.jmx";
-                logger.Info($"Opening {testScript}");
-                JmeterScript jmeterScript = new JmeterScript(testScript,logger);
-                logger.Info("Checking for CSV config elements");
-                if(jmeterScript.HasEnabledCsvControl())
-                {
-                    logger.Info("Starting to process the Csv Configs");
-                    jmeterScript.AddRedisControl();
-                    jmeterScript.WriteNewFile(testScriptNew); 
-                }
-                logger.Info("Csv2Redis Console ending execution");
+                CommandLine.Parser.Default.ParseArguments<Options>(args)
+                    .WithParsed(RunOptions)
+                    .WithNotParsed(HandleParseError);
+
+                Logger.Info("Csv2Redis Console ending execution");
                 break;
             }
         }
 
-        private static void ShowUsage()
+        static void RunOptions(Options opts)
+        {
+            string testScript = opts.TestScript;
+            string testScriptNew = Path.GetFileNameWithoutExtension(testScript) + "-modified.jmx";
+            Logger.Info($"Opening {testScript}");
+            JmeterScript jmeterScript = new JmeterScript(testScript, Logger);
+            if (opts.AddBackEndListener)
+            {
+                Logger.Info("Adding Influx DB backend listener.");
+                jmeterScript.AddBackEndListener();
+            }
+            Logger.Info("Checking for CSV config elements");
+            if (jmeterScript.HasEnabledCsvControl())
+            {
+                Logger.Info("Starting to process the Csv Configs");
+                jmeterScript.AddRedisControl(opts.ContinueOnError);
+                jmeterScript.WriteNewFile(testScriptNew);
+            }
+        }
+        static void HandleParseError(IEnumerable<Error> errs)
         {
             string eol = Environment.NewLine;
             string messageFormat = $"This application will analyze a jmeter test file and replace csv configuration " +
@@ -69,16 +74,5 @@ namespace Csv2RedisScript
                 $"- csv2redis.redis";
             Console.WriteLine(messageFormat);
         }
-
-        private static bool ArgsNotValid(string[] args)
-        {
-            if (args == null || args.Length < 2 || !args[0].StartsWith("--"))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
     }
 }
