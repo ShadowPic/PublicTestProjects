@@ -37,6 +37,17 @@ namespace FileJtlToSql
                     {
                         bool runOnceAndStop = false;
                         bool alreadyGotTheResults = false;
+
+                        var commandLineArguments = Environment.GetCommandLineArgs();
+                        Console.WriteLine(commandLineArguments.Length);
+                        if (commandLineArguments.Length == 5 && !commandLineArguments[2].Equals("") && !commandLineArguments[4].Equals(""))
+                        {
+                            ParseParameters(commandLineArguments);
+                            runOnceAndStop = true;
+                        }
+                        else
+                            logger.LogInformation("No commandline args found.");
+
                         while (!cancellationToken.IsCancellationRequested && !runOnceAndStop)
                         {
                             runOnceAndStop = Environment.GetEnvironmentVariable("RunOnceAndStop") != null ? bool.Parse( Environment.GetEnvironmentVariable("RunOnceAndStop")) : false;
@@ -164,6 +175,35 @@ namespace FileJtlToSql
             });
 
             return Task.CompletedTask;
+        }
+
+        private void ParseParameters(String[] parameters)
+        {
+            logger.LogInformation("Command line args found.");
+
+            var testPlan = parameters[2];
+            var testRun = parameters[4];
+            Console.WriteLine("Test Plan: " + testPlan + " Test Run: " + testRun);
+
+            DeleteReportsFromDatabase(testPlan, testRun);
+        }
+
+        private void DeleteReportsFromDatabase(String testPlan, string testRun)
+        {
+            // Making connection to database
+            var sqlConnectionString = Environment.GetEnvironmentVariable("JtlReportingDatabase");
+
+            // Checking if test plan and test run is in database
+            logger.LogInformation("Connecting to the Sql reporting dB");
+            using var jtlCsvToSql = new JtlCsvToSql(sqlConnectionString);
+            if (JtlCsvToSql.ReportAlreadyProcessed(testPlan, testRun, sqlConnectionString))
+            {
+                logger.LogInformation($"Test run {testRun} for test plan {testPlan} found in database.");
+                jtlCsvToSql.DeleteReport(testPlan, testRun);
+                logger.LogInformation($"Removing Test run {testRun} for test plan {testPlan} from the database.");
+            }
+            else
+                logger.LogInformation($"Test run {testRun} for test plan {testPlan} not found in database.");
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

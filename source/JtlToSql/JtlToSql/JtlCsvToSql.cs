@@ -152,6 +152,8 @@ namespace JtlToSql
             spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@StartTime", DbType = DbType.DateTime, Value = testStartTime });
             spAddReport.ExecuteNonQuery();
         }
+
+        // TODO: convert to static method
         public void DeleteReport(string testPlan, string testRun)
         {
             using SqlCommand spAddReport = new SqlCommand()
