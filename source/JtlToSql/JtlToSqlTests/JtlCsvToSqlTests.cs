@@ -3,6 +3,7 @@ using System.IO;
 using JtlToSql;
 using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 namespace JtlToSqlTests
 {
@@ -13,13 +14,16 @@ namespace JtlToSqlTests
         public void SendAllRows()
         {
             //arrange
-            string connectionString = "Server=tcp:jmeterreporting.database.windows.net,1433;Initial Catalog=jmeterreporting;Persist Security Info=False;User ID=jmeteradmin;Password=REDACTED;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            var secrets = new ConfigurationBuilder()
+                .AddUserSecrets<Settings>()
+                .Build();
+            string sqlConnectionString = secrets["JtlReportingDatabase"];
             string pathToJtlFile = "chauncee test/2021/06/14/20210614T1755279470Zresults/results.jtl";
             string demoJtlFileName = "results.jtl";
             string expectedTestName = "chauncee test";
             string expectedTestRun = "20210614T1755279470Zresults";
             using var csvJtl = new CsvJtl(pathToJtlFile);
-            using var jtlCsvToSql = new JtlCsvToSql(connectionString);
+            using var jtlCsvToSql = new JtlCsvToSql(sqlConnectionString);
             //act
             using Stream jtlStream = File.OpenRead(demoJtlFileName);
             using StreamReader jtlStreamReader = new StreamReader(jtlStream);
@@ -51,7 +55,10 @@ namespace JtlToSqlTests
             }
             jtlCsvToSql.AddReport(csvJtl.TestPlan, csvJtl.TestRun, csvJtl.TestStartTime);
             //assert
+            bool reportWasFiled = JtlCsvToSql.ReportAlreadyProcessed(csvJtl.TestPlan, csvJtl.TestRun,sqlConnectionString);
+            jtlCsvToSql.DeleteReport(csvJtl.TestPlan, csvJtl.TestRun);
             Assert.IsTrue(j > 1000);
+            Assert.IsTrue(reportWasFiled);
         }
     }
 }

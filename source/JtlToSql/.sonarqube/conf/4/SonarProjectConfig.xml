@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SonarProjectConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/analyzer/2021/1">
+  <AnalysisConfigPath>C:\src\PublicTestProjects\source\JtlToSql\.sonarqube\conf\SonarQubeAnalysisConfig.xml</AnalysisConfigPath>
+  <ProjectPath>C:\src\PublicTestProjects\source\JtlToSql\JtlToSqlTests\JtlToSqlTests.csproj</ProjectPath>
+  <FilesToAnalyzePath>C:\src\PublicTestProjects\source\JtlToSql\.sonarqube\conf\4\FilesToAnalyze.txt</FilesToAnalyzePath>
+  <OutPath>C:\src\PublicTestProjects\source\JtlToSql\.sonarqube\out\4</OutPath>
+  <ProjectType>Test</ProjectType>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+</SonarProjectConfig>

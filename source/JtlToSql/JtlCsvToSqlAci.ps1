@@ -1,4 +1,3 @@
-# Specifies a path to one or more locations. Wildcards are permitted.
 param(
 
     [Parameter(Mandatory=$true,HelpMessage="SQL Connection string to the reporting database")]
