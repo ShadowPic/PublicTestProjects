@@ -60,10 +60,21 @@ param(
     $Container="",
     [Parameter(Mandatory=$false)]
     [string]
-    $StorageAccountPathTopLevel=""
+    $StorageAccountPathTopLevel="",
+    [Parameter(Mandatory=$false)]
+    [string]
+    $SQLServer="",
+    [Parameter(Mandatory=$false)]
+    [string]
+    $SQLDatabaseName=""
+    
 )
 
 Import-Module ./commenutils.psm1 -force
+
+Install-Module -Name SqlServer -AllowClobber
+Import-Module -Name SqlServer -Force
+Get-Command -Module SqlServer
 
 if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousResultsToStorageAccount -eq "")) 
 {
@@ -125,6 +136,24 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
         $isTestInReport=$PublishTestToStorageAccount.IsPresent
         CreateReportDirectory -reportFolderName $ReportFolderName -resultFile $resultFile -currentWorkingDirectory $currentWorkingDirectory -isTestInReport $isTestInReport -testName $TestName
         Write-Output "Publishing $($ReportFolderName) to $($currentWorkingDirectory)"
+
+        # Checking if container already exists in storage account
+        $accountKey=RetrieveStorageAccountKey -storageAccountName $StorageAccount
+        $blobExistsInStorageAccount=IsResultInStoragAccount -container $Container -StorageAccountName $StorageAccount -blob $blob -accountKey $accountKey
+        if ($blobExistsInStorageAccount)
+        {
+            # Removing row from database 
+            $SqlConnection = New-Object System.Data.SqlClient.SqlConnection
+            $database="jmeterresults"
+            $SqlConnection.ConnectionString = "Server=$SQLServer;Database=$database;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False"; 
+            $query="DELETE FROM dbo.TestRuns WHERE TestRun = $($ReportFolderName);"
+
+            ## Prompt the user for their password.  
+            $pwd = read-host -AsSecureString -Prompt "Password"  
+            $username="jmeteradmin"
+            Invoke-Sqlcmd -Query $query -ServerInstance "MSSQLServer" -Username $username -Password $pwd
+            return
+        }
 
         # Adding result folder to storage account
         Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"

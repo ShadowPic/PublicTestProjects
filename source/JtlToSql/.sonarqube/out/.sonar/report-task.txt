@@ -1,0 +1,6 @@
+projectKey=JtlToSql
+serverUrl=http://localhost:8081
+serverVersion=8.9.2.46101
+dashboardUrl=http://localhost:8081/dashboard?id=JtlToSql
+ceTaskId=AXtLhLdBb2IkftAZXX_7
+ceTaskUrl=http://localhost:8081/api/ce/task?id=AXtLhLdBb2IkftAZXX_7

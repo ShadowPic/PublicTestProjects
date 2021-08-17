@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>JtlToSql</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>e297397d-15c8-42b6-8c0b-014fe73fea56</ProjectGuid>
+  <FullPath>C:\src\PublicTestProjects\source\JtlToSql\JtlToSql\JtlToSql.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\src\PublicTestProjects\source\JtlToSql\.sonarqube\conf\7\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\src\PublicTestProjects\source\JtlToSql\JtlToSql\bin\Debug\netcoreapp3.1\JtlToSql.dll.RoslynCA.json|C:\src\PublicTestProjects\source\JtlToSql\JtlToSql\bin\Debug\netcoreapp3.1\JtlToSql.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\src\PublicTestProjects\source\JtlToSql\.sonarqube\out\7</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+</ProjectInfo>
