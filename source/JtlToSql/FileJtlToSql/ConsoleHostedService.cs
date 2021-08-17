@@ -18,7 +18,7 @@ namespace FileJtlToSql
     {
         public class Options
         {
-            [Option("testplan", Required = false, HelpText = "Test pLan name")]
+            [Option("testplan", Required = false, HelpText = "Test plan name")]
             public string TestPlan { get; set; }
             [Option("testrun", Required = false, HelpText = "Test run to delete")]
             public string TestRun { get; set; }
