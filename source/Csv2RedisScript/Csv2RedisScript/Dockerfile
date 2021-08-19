@@ -6,10 +6,10 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 COPY ["Csv2RedisScript/Csv2RedisScript.csproj", "Csv2RedisScript/"]
-COPY ["JMeterTestsScript/JMeterTestsScript.csproj", "JMeterTestsScript/"]
+COPY ["Csv2RedisScript/Csv2RedisScript.csproj", "Csv2RedisScript/"]
 RUN dotnet restore "Csv2RedisScript/Csv2RedisScript.csproj"
 COPY . .
-WORKDIR "/src/Csv2RedisScript"
+WORKDIR "../../source/Csv2RedisScript"
 RUN dotnet build "Csv2RedisScript.csproj" -c Release -o /app/build
 
 FROM build AS publish
