@@ -1,0 +1,23 @@
+c dapiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csv2redis
+spec:
+  selector:
+    matchLabels:
+      app: csv2redis
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: csv2redis
+    spec:
+      containers:
+      - name: csv2redis
+        image:  shadowpic/csv2redis:latest
+        imagePullPolicy: Always
+        env:
+        resources:
+          limits:
+            memory: "2Gi"
+            cpu: "1"
