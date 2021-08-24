@@ -3,20 +3,20 @@
     Executes Csv2Redis executable on a AKS cluster.
 
     .DESCRIPTION
-    The Csv2Redis.ps1 script provides a highly flexible method to execute convert a CSV to Redis and store in a report folder locally.
+    The Csv2Redis.ps1 script provides a highly flexible method to execute convert a jmeter script containing CSV configuration to Redis configuration and store in a report folder locally.
 
     .PARAMETER Tenant
     Theoretically this allows for multiple concurrent jmeter deployments on a common AKS cluster.  Please note
     that this feature has not been functionally tested yet.
 
     .PARAMETER TestScript
-    JMX test script to convert to Redis
+    JMX test script with CSV configuration to convert to Redis configuration
 
     .PARAMETER ContainerName
     The name of your Azure Container
     
     .INPUTS
-    None.  You cannot pipe objects to Csv_Redis.ps1
+    None. You cannot pipe objects to Csv_Redis.ps1
 
     .EXAMPLE
     PS> .\Csv2Redis.ps1 -tenant jmeter -TestScript redis.jmx -ResourceGroup resource-group -ContainerName container-name
