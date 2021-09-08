@@ -19,6 +19,7 @@ This project is a very lean implementation of a Kubernetes JMeter cluster.  It w
   - Requires that you add the [JMeter Backend Listener](https://jmeter.apache.org/usermanual/component_reference.html#Backend_Listener).  There is an example of how to use this in the [drparts](../drparts.jmx) sample.
 - Combine Azure PAS service metrics side by side with JMeter metrics using Grafana
 - Redis support to feed parameters to your tests
+  - Redis files supported by feeding the direct redis file as a parameter or using csv2redis.ps1 to convert a CSV to Redis file and using generated Redis file
 
 ## Dependencies
 - Docker for Windwos Desktop: https://docs.docker.com/docker-for-windows/install/
@@ -73,6 +74,17 @@ This will create 1 JMeter Master pod and 2 or more JMeter Slave pods.  It also c
   - Will create a K8S NameSpace and use that to create and deploy all services
 - -ScaleSlaves [integer larger than 2]
   - OPTIONAL parameter which allows for a cluster larger than the default of 1 master and 2 slaves
+
+## Convert CSV to Redis
+**File Name:** csv2Redis.ps1
+
+**This script has extended help documentation available.**  ps> get-help .\csv2redis.ps1 -detailed
+
+This script allows you to feed in a CSV file and retrieve a Redis file which you can use when running your test. 
+
+- -tenant (required): K8S NameSpace
+- -TestScript (required): JMX test script to convert to Redis.  Do not include path name just the jmx file name.
+- -CsvAndJmxFilesDir: The folder which contains the test script and the csv files supporting it. This **must** be contained in the docker directory. 
 
 ## Running the Test
 **File Name:** run_test.ps1
