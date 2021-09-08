@@ -10,16 +10,16 @@
     that this feature has not been functionally tested yet.
 
     .PARAMETER TestScript
-    JMX test script with CSV configuration to convert to Redis configuration
+    JMX test script to convert to Redis.  Do not include path name just the jmx file name.
 
-    .PARAMETER ContainerName
-    The name of your Azure Container
+    .PARAMETER CsvAndJmxFilesDir
+    The folder which contains the test script and the csv files supporting it.
     
     .INPUTS
     None. You cannot pipe objects to Csv_Redis.ps1
 
     .EXAMPLE
-    PS> .\Csv2Redis.ps1 -tenant jmeter -TestScript redis.jmx -ResourceGroup resource-group -ContainerName container-name
+    PS> .\Csv2Redis.ps1 -tenant jmeter -TestScript redis.jmx -CsvAndJmxFilesDir ./jmxandcsvfiles
 
 #>
 
@@ -32,40 +32,17 @@ param(
     [Parameter(Mandatory=$true)]
     [string]
     $TestScript,
-    [Parameter(Mandatory=$true,HelpMessage="Resource group for the ACI instance")]
-    [string]$ResourceGroup,
-    [Parameter(Mandatory=$true,HelpMessage="Container name")]
-    [string]$ContainerName
+    [Parameter(Mandatory=$true)]
+    [string]
+    $CsvAndJmxFilesDir
 )
 
 Import-Module ./commenutils.psm1 -force
 
-$ReportFolder="$(get-date -Format FileDateTimeUniversal -AsUTC)results"
-if($null -eq $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name) )
-{
-    Write-Error "Master pod does not exist"
-    exit
-}
-$MasterPod = $(kubectl -n $tenant get pods --selector=jmeter_mode=master --no-headers=true --output=name).Replace("pod/","")
-
-# Kubernetes copy from local to container
-cd ../../source/Csv2RedisScript/Csv2RedisScript/bin/Debug/netcoreapp3.1
-./Csv2RedisScript.exe /u .\Csv2RedisScript.dll --testscript $TestScript
-kubectl cp csv2redis.redis $tenant/${MasterPod}:csv2redis.redis
-
-# Deploy Kubernetes
-cd ../../../
-kubectl apply -f .\csv2redis.yaml
-cd ../../../
-
-# Deploy Azure Container
-cd jmeter/docker
-az container create --resource-group $ResourceGroup --name $ContainerName --image shadowpic/csv2redis:latest --environment-variables RunOnceAndStop="true"
-
-# Execute 
-kubectl exec $MasterPod --container $ContainerName -- /bin/bash
-
-# Kubernetes copy from container to local 
-kubectl cp $tenant/${MasterPod}:csv2redis.redis $ReportFolder/csv2redis.redis
-
- write-output "`n`nRun this command to run test using your redis file: `n`n.\run_test.ps1 -tenant jmeter -TestName <your-test.jmx> -ReportFolder $($ReportFolder) -RedisScript $($ReportFolder)/csv2redis.redis`n`n"
+$PodWorkingDir="working"
+$Csv2redisPod= $(kubectl -n $tenant get pods --selector=app=csv2redis --no-headers=true --output=name).Replace("pod/","")
+kubectl cp $CsvAndJmxFilesDir "$tenant/${Csv2redisPod}:/app/${PodWorkingDir}"
+kubectl -n $tenant exec $Csv2redisPod -- /app/Csv2RedisScript --testscript "./${PodWorkingDir}/${testscript}"
+kubectl cp "$tenant/${Csv2redisPod}:/app/${PodWorkingDir}" ./
+kubectl -n $tenant delete pod $Csv2redisPod 
+write-output "`n`nRun this command to run test using your redis file: `n`n.\run_test.ps1 -tenant jmeter -TestName <your-test.jmx> -RedisScript csv2redis.redis`n`n"

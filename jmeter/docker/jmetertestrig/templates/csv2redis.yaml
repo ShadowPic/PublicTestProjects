@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: csv2redis
+  name: {{ template "fullname" . }}-jmeter-csv2redis
 spec:
   selector:
     matchLabels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: csv2redis
-        image:  shadowpic/csv2redis:latest
+        image:  {{ .Values.csv2RedisImage }}
         imagePullPolicy: Always
         args:
           - while true; do sleep 30; done;

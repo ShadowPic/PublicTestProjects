@@ -46,7 +46,9 @@ namespace Csv2RedisScript
 
         static void RunOptions(Options opts)
         {
-            string testScript = opts.TestScript;
+            string testScript = Path.GetFileName( opts.TestScript);
+            var workingDir = Path.GetDirectoryName(opts.TestScript);
+            Directory.SetCurrentDirectory(workingDir);            
             string testScriptNew = Path.GetFileNameWithoutExtension(testScript) + "-modified.jmx";
             Logger.Info($"Opening {testScript}");
             JmeterScript jmeterScript = new JmeterScript(testScript, Logger);
