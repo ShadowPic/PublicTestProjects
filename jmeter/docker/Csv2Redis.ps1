@@ -41,8 +41,17 @@ Import-Module ./commenutils.psm1 -force
 
 $PodWorkingDir="working"
 $Csv2redisPod= $(kubectl -n $tenant get pods --selector=app=csv2redis --no-headers=true --output=name).Replace("pod/","")
+
+Write-Output "Copying CsvAndJmxDir"
 kubectl cp $CsvAndJmxFilesDir "$tenant/${Csv2redisPod}:/app/${PodWorkingDir}"
+
+Write-Output "Creating Redis version"
 kubectl -n $tenant exec $Csv2redisPod -- /app/Csv2RedisScript --testscript "./${PodWorkingDir}/${testscript}"
+
+Write-Output "Copying contents of CsvAndJmxFilesDir"
 kubectl cp "$tenant/${Csv2redisPod}:/app/${PodWorkingDir}" ./
+
+Write-Output "Resetting csv2redis pod"
 kubectl -n $tenant delete pod $Csv2redisPod 
-write-output "`n`nRun this command to run test using your redis file: `n`n.\run_test.ps1 -tenant jmeter -TestName <your-test.jmx> -RedisScript csv2redis.redis`n`n"
+
+write-output "`n`nRun this command to run test using your redis file: `n`n.\run_test.ps1 -tenant $($tenant) -TestName $($TestScript) -RedisScript csv2redis.redis`n`n"
