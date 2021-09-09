@@ -1,5 +1,4 @@
 FROM azul/zulu-openjdk:11
-MAINTAINER DarrenRich
 		
 ARG JMETER_VERSION=5.3
 ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.4.jar

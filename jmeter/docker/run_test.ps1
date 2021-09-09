@@ -50,9 +50,7 @@
     This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
 
     .PARAMETER GlobalJmeterParams
-    JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves.
-    * This feature allows for any number of "-G" parameters to be added.
-    * This feature also allows you to add any other JMeter option you want to assuming it's not already present.
+    You can add custom JMeter parameters throgh the command line by setting this hashtable and your variable names.
     
     .INPUTS
     None.  You cannot pipe objects to run_test.ps1
@@ -110,9 +108,8 @@ param(
     [Parameter(Mandatory=$false)]
     [string]
     $StorageAccountPathTopLevel="",
-    [parameter(ValueFromRemainingArguments=$true)]
-    [string[]]
-    $GlobalJmeterParams
+    [parameter(Mandatory=$false)]
+    [hashtable]$GlobalJmeterParams=@{}
 )
 #$JmeterVersion=5.2.1
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
@@ -152,21 +149,20 @@ if(!($RedisScript -eq $null -or $RedisScript -eq ""))
 }
 Write-Output "Processing global parameters"
 [string]$GlobalParmsCombined=" "
-foreach($gr in $GlobalJmeterParams)
+foreach($key in $GlobalJmeterParams.Keys)
 {
-    $GlobalParmsCombined += $gr + " "
-
+    $GlobalParmsCombined += " -G$key=""$($GlobalJmeterParams[$key])"""
 }
 Write-Output "Copying test plan to aks"
 kubectl cp $(Split-Path $TestName -NoQualifier) $tenant/${MasterPod}:"/$(Split-Path $TestName -Leaf)"
 if($ExecuteOnceOnMaster.IsPresent)
 {
     Write-Output "Starting optional execution of jmx on the master node"
-    kubectl -n $tenant exec $MasterPod -- jmeter -n -t "/$(Split-Path $TestName -Leaf)" -JMaster=true $GlobalJmeterParams
+    kubectl -n $tenant exec $MasterPod -- jmeter -n -t "/$(Split-Path $TestName -Leaf)" -JMaster=true $GlobalParmsCombined
 }
 Write-Output "Starting test execution on AKS Cluster"
 
-kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -Leaf)" $GlobalJmeterParams
+kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -Leaf)" $GlobalParmsCombined
 Write-Output "Retrieving dashboard, results and Master jmeter.log"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
 kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.jtl
