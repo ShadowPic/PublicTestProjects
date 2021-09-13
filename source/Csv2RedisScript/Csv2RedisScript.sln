@@ -5,9 +5,16 @@ VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csv2RedisScript", "Csv2RedisScript\Csv2RedisScript.csproj", "{5DA4AB78-A971-488A-8F54-358AA813E9D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csv2RedisTests", "Csv2RedisTests\Csv2RedisTests.csproj", "{485DAD01-2204-4077-A2FF-411E6745494E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csv2RedisTests", "Csv2RedisTests\Csv2RedisTests.csproj", "{485DAD01-2204-4077-A2FF-411E6745494E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMeterTestsScript", "JMeterTestsScript\JMeterTestsScript.csproj", "{593581CB-E051-4B0D-A2E6-A6553C9813BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JMeterTestsScript", "JMeterTestsScript\JMeterTestsScript.csproj", "{593581CB-E051-4B0D-A2E6-A6553C9813BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DA2D2C95-7B35-4738-BA5D-FD19C9535A8C}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		BuildDocker.ps1 = BuildDocker.ps1
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

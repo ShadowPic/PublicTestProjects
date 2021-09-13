@@ -10,6 +10,7 @@ jmeterSlaveCpu: 2
 jmeterSlaveImage: shadowpic/jmeter-slave:latest
 jmeterInfluxDbImage: influxdb:1.8
 jmeterInfluxDbStorageClass:  # Allow specifying alternate StorageClass
+csv2RedisImage: shadowpic/csv2redis:latest
 redis:
   usePassword: false
   cluster:

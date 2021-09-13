@@ -45,13 +45,6 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks get-credentials --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --admin --overwrite-existing'
 
-- task: AzureCLI@1
-  displayName: 'Increase nodes to 3'
-  inputs:
-    azureSubscription: 'ms internal v 2'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 3'
-
 - task: PowerShell@2
   displayName: Create test rig
   inputs:
@@ -65,16 +58,9 @@ steps:
   continueOnError: true
   inputs:
     filePath: 'jmeter/docker/run_test.ps1'
-    arguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
+    arguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60
     pwsh: true
     workingDirectory: 'jmeter/docker'
-
-- task: AzureCLI@1
-  displayName: 'Decrease nodes to 1'
-  inputs:
-    azureSubscription: 'ms internal v 2'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az aks scale --resource-group $(AKSClusterResourceGroup) --name $(AKSClusterName) --node-count 1'
 
 - task: CopyFiles@2
   inputs:
