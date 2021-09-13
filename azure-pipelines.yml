@@ -58,7 +58,7 @@ steps:
   continueOnError: true
   inputs:
     filePath: 'jmeter/docker/run_test.ps1'
-    arguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt -GDuration=60'
+    arguments: '-tenant jmeter -TestName ../drparts.jmx -ReportFolder loadtestresults -RedisScript ../redisscript.txt
     pwsh: true
     workingDirectory: 'jmeter/docker'
 
