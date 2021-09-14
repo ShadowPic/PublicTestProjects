@@ -109,10 +109,7 @@ This script allows you to feed in a CSV file and retrieve a Redis file which you
   - The string name for the storage account you are uploading the results folder to
 - -Container (optional)
   - Blob Storage container that you are uploading the results to.
-- -GlobalJmeterParams (optional): JMeter supports global parameters by adding -GParameterName=Some Value which will be set as a parameter on the test rig master and slaves
-  - This feature allows for any number of "-G" parameters to be added.
-  - This feature also allows you to add any other JMeter option you want to assuming it's not already present.  
-  - See: https://jmeter.apache.org/usermanual/remote-test.html
+- -GlobalJmeterParams (optional): You can add custom JMeter parameters throgh the command line by setting this hashtable and your variable names
 
 ## If you want to remove your AKS Cluster
 

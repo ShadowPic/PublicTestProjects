@@ -54,4 +54,5 @@ kubectl cp "$tenant/${Csv2redisPod}:/app/${PodWorkingDir}" ./
 Write-Output "Resetting csv2redis pod"
 kubectl -n $tenant delete pod $Csv2redisPod 
 
-write-output "`n`nRun this command to run test using your redis file: `n`n.\run_test.ps1 -tenant $($tenant) -TestName $($TestScript) -RedisScript csv2redis.redis`n`n"
+$ModifiedTestScript = $TestScript.Substring(0,$TestScript.IndexOf(".")) + "-modified.jmx"
+write-output "`n`nRun this command to run test using your redis file: `n`n.\run_test.ps1 -tenant $($tenant) -TestName $($ModifiedTestScript) -RedisScript csv2redis.redis`n`n"
