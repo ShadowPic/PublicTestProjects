@@ -1,6 +1,7 @@
 #Requires -Version 7
 param(
     [Parameter(Mandatory=$true)]
+    [Alias("namespace")]
     [string]
     $tenant,
     # Add more than 2 instances
