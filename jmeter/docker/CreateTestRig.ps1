@@ -1,14 +1,20 @@
 #Requires -Version 7
 param(
     [Parameter(Mandatory=$true)]
+    [Alias("namespace")]
     [string]$tenant,
     [Parameter(Mandatory=$true)]
     [string]$AksResourceGroup,
     [Parameter(Mandatory=$true)]
     [string]$AksClusterName,
     [Parameter(Mandatory=$false)]
-    [string]$NodeVmSize="Standard_DS2_v2"
-    
+    [string]$NodeVmSize="Standard_DS2_v2",
+    [Parameter(Mandatory=$false)]
+    [switch] $EnableClusterAutoscaler,
+    [Parameter(Mandatory=$false)]
+    [int]$MinimumNodeCount=1,
+    [Parameter(Mandatory=$false)]
+    [int]$MaxNodeCount=5
 )
 
 function log([string] $message)
@@ -18,8 +24,30 @@ function log([string] $message)
 if($(az account list).contains("[]")){
      Exit-PSSession
 }
+if($EnableClusterAutoscaler){
+    az aks create `
+        --resource-group $AksResourceGroup `
+        --name $AksClusterName `
+        --enable-managed-identity `
+        --vm-set-type VirtualMachineScaleSets `
+        --node-vm-size $NodeVmSize  `
+        --generate-ssh-keys `
+        --enable-cluster-autoscaler `
+        --min-count $MinimumNodeCount `
+        --max-count $MaxNodeCount
+
+}
+else {
+    az aks create `
+        --resource-group $AksResourceGroup `
+        --name $AksClusterName `
+        --enable-managed-identity `
+        --vm-set-type VirtualMachineScaleSets `
+        --node-vm-size $NodeVmSize  `
+        --node-count 1 `
+        --generate-ssh-keys 
+}
 log "Creating aks cluster"
-az aks create --resource-group $AksResourceGroup   --name $AksClusterName --enable-managed-identity --vm-set-type VirtualMachineScaleSets --node-vm-size $NodeVmSize  --node-count 1 --generate-ssh-keys 
 
 log "Getting cluster credentials"
 az aks get-credentials --name $AksClusterName --resource-group $AksResourceGroup --admin --overwrite-existing

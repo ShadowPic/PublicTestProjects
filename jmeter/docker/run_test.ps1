@@ -68,6 +68,7 @@
 
 param(
     [Parameter(Mandatory=$true)]
+    [Alias("namespace")]
     [string]
     $tenant,
     # Name of test

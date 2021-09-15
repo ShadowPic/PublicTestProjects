@@ -41,6 +41,7 @@
 
 param(
     [Parameter(Mandatory=$true)]
+    [Alias("namespace")]
     [string]
     $tenant,
     [Parameter(Mandatory=$true)]

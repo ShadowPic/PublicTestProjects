@@ -2,6 +2,7 @@
 [CmdletBinding()]
 param (
     [Parameter(Mandatory=$true)]
+    [Alias("namespace")]
     [String]
     $tenant,
     [Parameter(Mandatory=$false)]
