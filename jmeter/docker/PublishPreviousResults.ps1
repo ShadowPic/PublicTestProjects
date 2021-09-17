@@ -141,7 +141,7 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
         # Checking if container already exists in storage account
         $accountKey=RetrieveStorageAccountKey -storageAccountName $StorageAccount
         $blobExistsInStorageAccount=IsResultInStoragAccount -container $Container -StorageAccountName $StorageAccount -blob $blob -accountKey $accountKey
-        if ($blobExistsInStorageAccount)
+        if ($blobExistsInStorageAccount -eq $true)
         {
             # Removing row from database 
             $SqlConnection = New-Object System.Data.SqlClient.SqlConnection
