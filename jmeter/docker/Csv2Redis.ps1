@@ -35,7 +35,10 @@ param(
     $TestScript,
     [Parameter(Mandatory=$true)]
     [string]
-    $CsvAndJmxFilesDir
+    $CsvAndJmxFilesDir,
+    # Switch to whether or not to add an influx db listener
+    [Parameter(Mandatory=$false)]
+    [switch] $AddInfluxDbListener
 )
 
 Import-Module ./commenutils.psm1 -force
@@ -46,9 +49,14 @@ $Csv2redisPod= $(kubectl -n $tenant get pods --selector=app=csv2redis --no-heade
 Write-Output "Copying CsvAndJmxDir"
 kubectl cp $CsvAndJmxFilesDir "$tenant/${Csv2redisPod}:/app/${PodWorkingDir}"
 
-Write-Output "Creating Redis version"
-kubectl -n $tenant exec $Csv2redisPod -- /app/Csv2RedisScript --testscript "./${PodWorkingDir}/${testscript}"
-
+if(!$AddInfluxDbListener){
+    Write-Output "Creating Redis version"
+    kubectl -n $tenant exec $Csv2redisPod -- /app/Csv2RedisScript --testscript "./${PodWorkingDir}/${testscript}"
+}
+else {
+    Write-Output "Creating Redis version and adding InfluxDb Listener"
+    kubectl -n $tenant exec $Csv2redisPod -- /app/Csv2RedisScript --testscript "./${PodWorkingDir}/${testscript}" --AddBackEndListener true
+}
 Write-Output "Copying contents of CsvAndJmxFilesDir"
 kubectl cp "$tenant/${Csv2redisPod}:/app/${PodWorkingDir}" ./
 
