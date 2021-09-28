@@ -48,6 +48,11 @@ function PublishResultsToStorageAccount($container,$StorageAccountName,$Destinat
     az storage azcopy blob upload --container $container --account-name $StorageAccountName --destination $DestinationPath --source $SourceDirectory --recursive
 }
 
+function RemoveResultsFromStorageAccount($Container, $StorageAccountName, $AccountKey, $DirectoryPath)
+{
+    az storage blob delete-batch -s $Container --account-name $StorageAccountName --account-key $AccountKey --pattern $DirectoryPath
+}
+
 function IsResultInStoragAccount($container,$StorageAccountName,$blob,$accountKey)
 {
     return az storage blob exists --account-key $accountKey --account-name $StorageAccountName --container-name $container --name $blob --query exists

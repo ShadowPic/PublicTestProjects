@@ -7,11 +7,14 @@ param(
     [Parameter(Mandatory=$true,HelpMessage="Resource group for the ACI instance")]
     [string]$ResourceGroup,
     [Parameter(Mandatory=$true,HelpMessage="Container name")]
-    [string]$ContainerName
+    [string]$ContainerName,
+    [Parameter(Mandatory=$false,HelpMessage="Docker image name")]
+    [string]$ImageName="shadowpic/filejtltosql:latest"
+    
 
 )
 
-az container create --resource-group $ResourceGroup --name $ContainerName --image shadowpic/filejtltosql:latest --restart-policy OnFailure `
+az container create --resource-group $ResourceGroup --name $ContainerName --image $ImageName --restart-policy OnFailure `
     --environment-variables RunOnceAndStop="true" JtlReportingDatabase="$JtlReportingDatabase" JtlReportingStorage="$JtlReportingStorage"
     
 
