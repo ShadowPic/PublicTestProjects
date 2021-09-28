@@ -28,6 +28,12 @@
 
     .PARAMETER StorageAccountPathTopLevel
     This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
+
+    .PARAMETER ACIInstance
+    Name of your Azure Container Instance
+
+    .PARAMETER ResourceGroup
+    Name of your resource group where your ACI resides
     
     .INPUTS
     None.  You cannot pipe objects to PublishPreviousResults.ps1
@@ -61,15 +67,17 @@ param(
     $Container="",
     [Parameter(Mandatory=$false)]
     [string]
-    $StorageAccountPathTopLevel=""
+    $StorageAccountPathTopLevel="",
+    [Parameter(Mandatory=$true)]
+    [string]
+    $ACIInstance="",
+    [Parameter(Mandatory=$true)]
+    [string]
+    $ResourceGroup=""
     
 )
 
 Import-Module ./commenutils.psm1 -force
-
-# Install-Module -Name SqlServer -AllowClobber
-# Import-Module -Name SqlServer -Force
-# Get-Command -Module SqlServer
 
 if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousResultsToStorageAccount -eq "")) 
 {
@@ -140,6 +148,7 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
         PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolderName
 
         # starting ACI instance to update the reports in Power BI
+        Write-Output "Starting Azure Container Instance"
         if ($ACIInstance.IsPresent -and $ResourceGroup.IsPresent)
         {
             az container start --name $ACIInstance --resource-group $ResourceGroup

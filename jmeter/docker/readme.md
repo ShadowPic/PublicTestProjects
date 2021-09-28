@@ -130,6 +130,10 @@ To update your Power BI reports, you must start your ACI or specify which report
 
 I have recently updated the deployment model for the test rig to use a helm chart.  All of the supporting PowerShell scripts have been refactored to support this new deployment mechanism.  Among the settings exposed by the Helm chart is the ability to override the docker images used to create the JMeter test rig.  If you want to use a custom container image you will need to update the [values.yaml](./jmetertestrig/values.yaml) to point to your custom jmeter image(s).
 
+## See a diagram of the test rig process
+
+Check out [this](./TestrigProcessDiagram.jpg) diagram which depicts all the functionality supported within the test rig 
+
 # Supporting files
 
 - Docker Files

@@ -22,6 +22,10 @@ The Azure Blob Storage was used because it allows you to storage large amounts o
   - Blob Storage container that you are uploading the results to
 - -StorageAccountPathTopLevel (optional)
   - If you override your default test name the new name will become the root folder in the target container blob in the Azure Storage Account
+- -ACIInstance (optional)
+  - Name of your Azure Container Instance
+- -ResourceGroup (optional)
+  - Name of your resource group where your ACI resides
 
 ## Viewing results in Power BI
 **Report: jmeter report.pbit** in the docker directory
