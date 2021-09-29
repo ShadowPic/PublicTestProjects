@@ -47,6 +47,7 @@ To create a basic load test
 7. At this point if everything has completed successfully you *should* have a working test rig.  Next let's make sure.
 8. When executing performance tests you will ALWAYS be using the [jmeter_cluster_create.ps1](jmeter_cluster_create.ps1) followed by the [run_test.ps1](run_test.ps1) scripts.
     - jmeter_cluster_create.ps1 creates a number of assets that *could* be used by your test script.  The first time it executes it will take a long time because it always creates resources.  If resources already exist, like the influxdb, you will get a warning but the script will continue.  This is an expected behavior.
+      - The "Number of Threads" in Jmeter doesn't represent the overall number of threads (or virtual users) for the test. It only represents the number of threads per slave. E.g. If I put 100 Number of threads in JMeter. I set ScaleSlaves = 3. It means the total number of virtual users in my test overall is 300.  
     - the run_test.ps1 script uploads your jmx test script, executes the test and returns a report.
 9. If everything has gone awesome you are ready to go break my demo site at https://drpartsunlimited.azurewebsites.net/
 
@@ -119,9 +120,19 @@ To delete tbe cluster you run the following PowerShell
 - -AksResourceGroup < Resource Group You already created >
 - -AksClusterName < Name of your AKS Cluster >
 
+## Want to upload your results to an Azure Storage Account?
+For more advanced reporting, you can upload your results to an Azure Storage Account. Access documentation [here](StorageTechnologies.md). 
+
+## Need to update or delete results displayed in Power BI
+To update your Power BI reports, you must start your ACI or specify which report you want to remove in your SQL Server Database. Access documentation [here](SQLReporting.md).
+
 ## Want a more secure test rig?
 
 I have recently updated the deployment model for the test rig to use a helm chart.  All of the supporting PowerShell scripts have been refactored to support this new deployment mechanism.  Among the settings exposed by the Helm chart is the ability to override the docker images used to create the JMeter test rig.  If you want to use a custom container image you will need to update the [values.yaml](./jmetertestrig/values.yaml) to point to your custom jmeter image(s).
+
+## See a diagram of the test rig process
+
+Check out [this](./TestrigProcessDiagram.jpg) diagram which depicts all the functionality supported within the test rig 
 
 # Supporting files
 

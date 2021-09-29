@@ -28,6 +28,12 @@
 
     .PARAMETER StorageAccountPathTopLevel
     This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
+
+    .PARAMETER ACIInstance
+    Name of your Azure Container Instance
+
+    .PARAMETER ResourceGroup
+    Name of your resource group where your ACI resides
     
     .INPUTS
     None.  You cannot pipe objects to PublishPreviousResults.ps1
@@ -62,20 +68,16 @@ param(
     [Parameter(Mandatory=$false)]
     [string]
     $StorageAccountPathTopLevel="",
-    [Parameter(Mandatory=$false)]
+    [Parameter(Mandatory=$true)]
     [string]
-    $SQLServer="",
-    [Parameter(Mandatory=$false)]
+    $ACIInstance="",
+    [Parameter(Mandatory=$true)]
     [string]
-    $SQLDatabaseName=""
+    $ResourceGroup=""
     
 )
 
 Import-Module ./commenutils.psm1 -force
-
-Install-Module -Name SqlServer -AllowClobber
-Import-Module -Name SqlServer -Force
-Get-Command -Module SqlServer
 
 if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousResultsToStorageAccount -eq "")) 
 {
@@ -138,29 +140,18 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
         CreateReportDirectory -reportFolderName $ReportFolderName -resultFile $resultFile -currentWorkingDirectory $currentWorkingDirectory -isTestInReport $isTestInReport -testName $TestName
         Write-Output "Publishing $($ReportFolderName) to $($currentWorkingDirectory)"
 
-        # Checking if container already exists in storage account
-        $accountKey=RetrieveStorageAccountKey -storageAccountName $StorageAccount
-        $blobExistsInStorageAccount=IsResultInStoragAccount -container $Container -StorageAccountName $StorageAccount -blob $blob -accountKey $accountKey
-        if ($blobExistsInStorageAccount)
-        {
-            # Removing row from database 
-            $SqlConnection = New-Object System.Data.SqlClient.SqlConnection
-            $database="jmeterresults"
-            $SqlConnection.ConnectionString = "Server=$SQLServer;Database=$database;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False"; 
-            $query="DELETE FROM dbo.TestRuns WHERE TestRun = $($ReportFolderName);"
-
-            ## Prompt the user for their password.  
-            $pwd = read-host -AsSecureString -Prompt "Password"  
-            $username="jmeteradmin"
-            Invoke-Sqlcmd -Query $query -ServerInstance "MSSQLServer" -Username $username -Password $pwd
-            return
-        }
-
         # Adding result folder to storage account
         Write-Output "Publishing to storage account $StorageAccount to folder $destinationPath"
         Write-Output "Adding the AZ storage-preview extension"
         az extension add --name storage-preview
         Write-Output "Attempting to upload to storage account using the current AZ Security context"
         PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolderName
+
+        # starting ACI instance to update the reports in Power BI
+        Write-Output "Starting Azure Container Instance"
+        if ($ACIInstance.IsPresent -and $ResourceGroup.IsPresent)
+        {
+            az container start --name $ACIInstance --resource-group $ResourceGroup
+        }
     }
 }
