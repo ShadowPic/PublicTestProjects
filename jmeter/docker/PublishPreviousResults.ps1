@@ -68,10 +68,10 @@ param(
     [Parameter(Mandatory=$false)]
     [string]
     $StorageAccountPathTopLevel="",
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$false)]
     [string]
     $ACIInstance="",
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$false)]
     [string]
     $ResourceGroup=""
     
