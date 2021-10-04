@@ -109,6 +109,9 @@ param(
     [Parameter(Mandatory=$false)]
     [string]
     $StorageAccountPathTopLevel="",
+    [Parameter(Mandatory=$false)]
+    [switch]
+    $RemoveLogFile,
     [parameter(Mandatory=$false)]
     [hashtable]$GlobalJmeterParams=@{}
 )
@@ -167,6 +170,8 @@ kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -L
 Write-Output "Retrieving dashboard, results and Master jmeter.log"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
 kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.jtl
+# add switch to remove log file with the default being current behavior
+# IN THE PIPELINE - check if there are any variables that are a secret and if so then don't send the log file
 kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $ReportFolder/jmeter.log
 
 if($PublishResultsToBlobStorage.IsPresent)
