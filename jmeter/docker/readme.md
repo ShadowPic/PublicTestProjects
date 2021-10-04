@@ -110,7 +110,12 @@ This script allows you to feed in a CSV file and retrieve a Redis file which you
   - The string name for the storage account you are uploading the results folder to
 - -Container (optional)
   - Blob Storage container that you are uploading the results to.
-- -GlobalJmeterParams (optional): You can add custom JMeter parameters throgh the command line by setting this hashtable and your variable names
+- -StorageAccountPathTopLevel (optional)
+  - This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
+- -RemoveLogFile (optional)
+  - This feature allows the user to specify whether or not a log file should be saved to the report folder
+- -GlobalJmeterParams (optional)
+  - You can add custom JMeter parameters throgh the command line by setting this hashtable and your variable names. This can be achieved through splatting
 
 ## If you want to remove your AKS Cluster
 
