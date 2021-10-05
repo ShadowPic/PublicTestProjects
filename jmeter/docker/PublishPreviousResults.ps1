@@ -148,9 +148,9 @@ if (!($null -eq $PublishPreviousResultsToStorageAccount) && !($PublishPreviousRe
         PublishResultsToStorageAccount -container $Container -StorageAccountName $StorageAccount -DestinationPath $destinationPath -SourceDirectory $ReportFolderName
 
         # starting ACI instance to update the reports in Power BI
-        Write-Output "Starting Azure Container Instance"
-        if ($ACIInstance.IsPresent -and $ResourceGroup.IsPresent)
+        if(!($ACIInstance -eq "") -and !($ResourceGroup -eq ""))
         {
+            Write-Output "Starting Azure Container Instance"
             az container start --name $ACIInstance --resource-group $ResourceGroup
         }
     }

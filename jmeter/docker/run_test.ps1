@@ -49,6 +49,9 @@
     .PARAMETER StorageAccountPathTopLevel
     This feature allows the user to specify of the name of the test run report. This name is refected in the Azure Storage Account and Power BI report.
 
+    .PARAMETER RemoveLogFile
+    This feature allows the user to specify whether or not a log file should be saved to the report folder
+
     .PARAMETER GlobalJmeterParams
     You can add custom JMeter parameters throgh the command line by setting this hashtable and your variable names.
     
@@ -109,6 +112,9 @@ param(
     [Parameter(Mandatory=$false)]
     [string]
     $StorageAccountPathTopLevel="",
+    [Parameter(Mandatory=$false)]
+    [switch]
+    $RemoveLogFile,
     [parameter(Mandatory=$false)]
     [hashtable]$GlobalJmeterParams=@{}
 )
@@ -167,7 +173,12 @@ kubectl -n $tenant exec $MasterPod -- /load_test_run "/$(Split-Path $TestName -L
 Write-Output "Retrieving dashboard, results and Master jmeter.log"
 kubectl cp $tenant/${MasterPod}:/report $ReportFolder
 kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.jtl
-kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $ReportFolder/jmeter.log
+
+# Removing log file if specified by the user
+if (!$RemoveLogFile.IsPresent)
+{
+    kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $ReportFolder/jmeter.log
+}
 
 if($PublishResultsToBlobStorage.IsPresent)
 {
