@@ -1,9 +1,9 @@
 FROM azul/zulu-openjdk:11
 		
-ARG JMETER_VERSION=5.3
-ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.4.jar
-ARG JMETER_PLUGIN_VERSION=1.4
-ARG JMETER_PLUGIN_ZIP=JMeterPlugins-Standard-1.4.0.zip
+ARG JMETER_VERSION=5.4.1
+ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.6.jar
+ARG JMETER_PLUGIN_VERSION=1.6
+ARG JMETER_PLUGIN_ZIP=JMeterPlugins-Standard-1.6.0.zip
 
 RUN apt-get clean && \
 apt-get update && \
@@ -18,15 +18,24 @@ RUN   mkdir /jmeter \
 && tar -xzf apache-jmeter-$JMETER_VERSION.tgz \
 && rm apache-jmeter-$JMETER_VERSION.tgz
 
+RUN apt-get update && \
+apt-get install wget curl ca-certificates rsync -y
+
+ENV HOME=/root
+
+RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+ENV NVM_DIR=/root/.nvm
+
 ENV JMETER_HOME=/jmeter/apache-jmeter-$JMETER_VERSION
 
-ENV RUN_IN_DOCKER=-XX:+UnlockExperimentalVMOptions\ -XX:+UseCGroupMemoryLimitForHeap
+ENV RUN_IN_DOCKER=-XX:+UnlockExperimentalVMOptions
 
-ENV JVM_ARGS=-d64\ -Xms1g\ -Xmx12g\ -XX:MaxMetaspaceSize=1g
+ENV JVM_ARGS=-Xms1g\ -Xmx12g\ -XX:MaxMetaspaceSize=1g
 
 ENV PATH $JMETER_HOME/bin:$PATH
 
-RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O /tmp/$JMETER_PLUGIN_ZIP https://jmeter-plugins.org/downloads/file/$JMETER_PLUGIN_ZIP && unzip -n /tmp/$JMETER_PLUGIN_ZIP && rm /tmp/$JMETER_PLUGIN_ZIP
+#RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O /tmp/$JMETER_PLUGIN_ZIP https://jmeter-plugins.org/downloads/file/$JMETER_PLUGIN_ZIP && unzip -n /tmp/$JMETER_PLUGIN_ZIP && rm /tmp/$JMETER_PLUGIN_ZIP
 
 RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && wget -q -O ./lib/ext/$JMETER_PLUGIN_MANAGER_JAR  https://jmeter-plugins.org/get/ 
 
@@ -36,4 +45,6 @@ RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/ && java -cp ./lib/ext/$JMETER_PLUG
 
 RUN cd /jmeter/apache-jmeter-$JMETER_VERSION/lib && wget https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
 
-RUN mkdir /stuff && export _JAVA_OPTIONS=-Droot.home=/stuff && PluginsManagerCMD.sh install-all-except jpgc-oauth,ulp-jmeter-autocorrelator-plugin,ulp-jmeter-gwt-plugin,ulp-jmeter-videostreaming-plugin,bzm-jmeter-citrix-plugin  &&  PluginsManagerCMD.sh status && rm -r /stuff
+RUN /jmeter/apache-jmeter-$JMETER_VERSION/bin/PluginsManagerCMD.sh install-all-except jpgc-oauth,ulp-jmeter-autocorrelator-plugin,ulp-jmeter-gwt-plugin,ulp-jmeter-videostreaming-plugin,bzm-jmeter-citrix-plugin  &&  PluginsManagerCMD.sh status
+
+# RUN mkdir /stuff && cd /stuff && PluginsManagerCMD.sh install-all-except jpgc-oauth,ulp-jmeter-autocorrelator-plugin,ulp-jmeter-gwt-plugin,ulp-jmeter-videostreaming-plugin,bzm-jmeter-citrix-plugin  &&  PluginsManagerCMD.sh status
