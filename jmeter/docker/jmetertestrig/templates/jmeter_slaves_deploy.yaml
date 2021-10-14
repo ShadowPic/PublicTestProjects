@@ -39,7 +39,7 @@ items:
                 apiVersion: v1
                 fieldPath: status.podIP
           - name: JMETERVERSION
-            value: "5.3"
+            value: "5.4.1"
           image: {{ .Values.jmeterSlaveImage }}
           imagePullPolicy: Always
           name: jmslave
