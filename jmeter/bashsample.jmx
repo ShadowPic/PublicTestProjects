@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -71,7 +71,50 @@ SampleResult.setResponseData(out, &quot;UTF-8&quot;)
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="windows script" enabled="true">
+        <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="OS Process Sampler" enabled="false">
+          <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
+          <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
+          <stringProp name="SystemSampler.command">/bin/bash</stringProp>
+          <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">-c</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">nvm</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="SystemSampler.environment" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="SystemSampler.directory"></stringProp>
+        </SystemSampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Linux script" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">String out
+//out=&quot;source ~/.bashrc&quot;.exec().text
+//out =&quot;[ -s \&quot;\$NVM_DIR/nvm.sh\&quot; ] &amp;&amp; \\. \&quot;\$NVM_DIR/nvm.sh\&quot; &amp;&amp; [ -s \&quot;\$NVM_DIR/bash_completion\&quot; ] &amp;&amp; \\. \&quot;\$NVM_DIR/bash_completion\&quot;&quot;.execute().text
+out=&quot;nvm&quot;.execute().text
+log.info(out)
+SampleResult.setResponseData(out, &quot;UTF-8&quot;)
+//def sout = new StringBuilder(), serr = new StringBuilder()
+//def proc = &apos;git clone https://github.com/ShadowPic/PublicTestProjects.git&apos;.execute()
+//proc.consumeProcessOutput(sout, serr)
+//proc.waitForOrKill(1000)
+//SampleResult.setResponseData($sout)
+//SampleResult.setSuccesful(true)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="windows script" enabled="false">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -82,7 +125,7 @@ sout += &quot;cmd /c dir&quot;.execute().text
 SampleResult.setResponseData(sout, &quot;UTF-8&quot;)</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Wait until done" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Wait until done" enabled="false">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </LoopController>
@@ -123,7 +166,7 @@ vars.put(&quot;Complete&quot;,result)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
