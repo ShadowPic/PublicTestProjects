@@ -118,7 +118,7 @@ param(
     [parameter(Mandatory=$false)]
     [hashtable]$GlobalJmeterParams=@{}
 )
-#$JmeterVersion=5.2.1
+$JmeterVersion="5.4.1"
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 Set-Location $CurrentPath
@@ -144,7 +144,7 @@ Write-Output "Checking for user properties"
 if(!($UserProperties -eq $null -or $UserProperties -eq "" ))
 {
     Write-Output "Copying user.properties over"
-    kubectl cp $UserProperties $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/user.properties
+    kubectl cp $UserProperties $tenant/${MasterPod}:/jmeter/apache-jmeter-${JmeterVersion}/bin/user.properties
 }
 Write-Output "Checking for Redis script"
 if(!($RedisScript -eq $null -or $RedisScript -eq ""))
@@ -177,7 +177,7 @@ kubectl cp $tenant/${MasterPod}:/results.log $ReportFolder/results.jtl
 # Removing log file if specified by the user
 if (!$RemoveLogFile.IsPresent)
 {
-    kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-5.3/bin/jmeter.log $ReportFolder/jmeter.log
+    kubectl cp $tenant/${MasterPod}:/jmeter/apache-jmeter-${JmeterVersion}/bin/jmeter.log $ReportFolder/jmeter.log
 }
 
 if($PublishResultsToBlobStorage.IsPresent)
