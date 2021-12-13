@@ -1,3 +1,4 @@
+{{ if .Values.influxDBEnabled }}
 apiVersion: v1
 items:
 - apiVersion: v1
@@ -126,3 +127,4 @@ items:
     loadBalancer: {}
 kind: List
 metadata: {}
+{{ end }}
