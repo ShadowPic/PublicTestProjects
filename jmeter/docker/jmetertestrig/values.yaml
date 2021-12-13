@@ -1,6 +1,8 @@
 # Default values for jmetertestrig.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+Globals:
+  RedisEnabled: true
 replicaCount: 2
 jmeterMasterImage: shadowpic/jmeter-master:latest
 jmeterMasterMemory: 4Gi
@@ -10,7 +12,9 @@ jmeterSlaveCpu: 2
 jmeterSlaveImage: shadowpic/jmeter-slave:latest
 jmeterInfluxDbImage: influxdb:1.8
 jmeterInfluxDbStorageClass:  # Allow specifying alternate StorageClass
+csv2RedisEnabled: true
 csv2RedisImage: shadowpic/csv2redis:latest
+influxDBEnabled: true
 redis:
   usePassword: false
   cluster:

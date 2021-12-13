@@ -1,3 +1,4 @@
+{{ if .Values.csv2RedisEnabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -26,3 +27,4 @@ spec:
           limits:
             memory: "2Gi"
             cpu: "1"
+{{ end }}
