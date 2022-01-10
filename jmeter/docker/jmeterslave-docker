@@ -1,12 +1,11 @@
 FROM shadowpic/jmeter-base:latest
-MAINTAINER DarrenRich
 
-ARG JMETER_VERSION=5.4.1
-ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.6.jar
-ARG JMETER_PLUGIN_VERSION=1.6
-ARG JMETER_PLUGIN_ZIP=JMeterPlugins-Standard-1.6.0.zip
+ARG JMETER_VERSION=5.4.3
+ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.7.jar
+ARG JMETER_PLUGIN_VERSION=1.7
+ARG JMETER_PLUGIN_ZIP=JMeterPlugins-Standard-1.7.0.zip
 
-ENV JMETER_VERSION=5.4.1
+ENV JMETER_VERSION=5.4.3
 
 COPY rmi_keystore.jks /jmeter/apache-jmeter-$JMETER_VERSION/bin/
 

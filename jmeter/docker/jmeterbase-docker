@@ -20,10 +20,10 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
 
-ARG JMETER_VERSION=5.4.1
-ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.6.jar
-ARG JMETER_PLUGIN_VERSION=1.6
-ARG JMETER_PLUGIN_ZIP=JMeterPlugins-Standard-1.6.0.zip
+ARG JMETER_VERSION=5.4.3
+ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.7.jar
+ARG JMETER_PLUGIN_VERSION=1.7
+ARG JMETER_PLUGIN_ZIP=JMeterPlugins-Standard-1.7.0.zip
 
 RUN   mkdir /jmeter \
 && cd /jmeter/ \
