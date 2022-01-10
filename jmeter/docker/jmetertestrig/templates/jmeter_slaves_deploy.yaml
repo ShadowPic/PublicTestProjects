@@ -31,15 +31,15 @@ items:
           - -Dserver.rmi.localport=50000
           - -Dserver_port=1099
           command:
-          - /jmeter/apache-jmeter-$(JMETERVERSION)/bin/jmeter-server
+          - /jmeter/apache-jmeter-$(JMETER_VERSION)/bin/jmeter-server
           env:
           - name: MY_POD_IP
             valueFrom:
               fieldRef:
                 apiVersion: v1
                 fieldPath: status.podIP
-          - name: JMETERVERSION
-            value: "5.4.1"
+          - name: JMETER_VERSION
+            value: "5.4.3"
           image: {{ .Values.jmeterSlaveImage }}
           imagePullPolicy: Always
           name: jmslave

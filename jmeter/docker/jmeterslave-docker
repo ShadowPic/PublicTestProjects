@@ -1,5 +1,4 @@
 FROM shadowpic/jmeter-base:latest
-MAINTAINER DarrenRich
 
 ARG JMETER_VERSION=5.4.3
 ARG JMETER_PLUGIN_MANAGER_JAR=jmeter-plugins-manager-1.7.jar
