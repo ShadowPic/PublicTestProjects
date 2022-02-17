@@ -118,7 +118,7 @@ param(
     [parameter(Mandatory=$false)]
     [hashtable]$GlobalJmeterParams=@{}
 )
-$JmeterVersion="5.4.1"
+$JmeterVersion="5.4.3"
 $CurrentPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 Set-Location $CurrentPath
