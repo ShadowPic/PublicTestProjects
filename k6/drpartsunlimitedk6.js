@@ -7,13 +7,13 @@ import { jUnit, textSummary } from 'https://jslib.k6.io/k6-summary/0.0.1/index.j
 
 export const options = {
     scenarios: {
-        drpartsHtml: {
+        DrPartsHtmlScenario: {
           executor: 'constant-vus',
           exec: 'drpartsHtml',
           vus: 5,
           duration: '30s',
         },
-        drpartsUI: {
+        DrPartsUIScenario: {
           executor: 'constant-vus',
           exec: 'drpartsUI',
           vus: 1,
