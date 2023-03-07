@@ -1,0 +1,130 @@
+{{ if .Values.influxDBEnabled }}
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    influxdb.conf: |
+      [meta]
+        dir = "/var/lib/influxdb/meta"
+
+      [data]
+        dir = "/var/lib/influxdb/data"
+        engine = "tsm1"
+        wal-dir = "/var/lib/influxdb/wal"
+
+      # Configure the graphite api
+      [[graphite]]
+      enabled = true
+      bind-address = ":2003" # If not set, is actually set to bind-address.
+      database = "jmeter"  # store graphite data in this database
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: null
+    labels:
+      app: influxdb
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "fullname" . }}-influxdb-config
+- apiVersion: apps/v1
+  kind: StatefulSet
+  metadata:
+    creationTimestamp: null
+    labels:
+      app: influxdb
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "fullname" . }}-influxdb
+  spec:
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: influxdb
+    serviceName: {{ template "fullname" . }}-influxdb-svc
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: influxdb
+          chart: {{ template "name" . }}
+          release: {{ .Release.Name }}
+      spec:
+        containers:
+        - image: {{ .Values.jmeterInfluxDbImage }}
+          imagePullPolicy: IfNotPresent
+          name: influxdb
+          ports:
+          - containerPort: 8083
+            name: influx
+            protocol: TCP
+          - containerPort: 8086
+            name: api
+            protocol: TCP
+          - containerPort: 2003
+            name: graphite
+            protocol: TCP
+          resources:
+            limits:
+              cpu: "4"
+              memory: "8Gi"
+            requests:
+              cpu: ".5"
+              memory: "256Mi"
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /etc/influxdb
+            name: config-volume
+          - mountPath: /var/lib/influxdb
+            name: influx-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - configMap:
+            defaultMode: 420
+            name: {{ template "fullname" . }}-influxdb-config
+          name: config-volume
+    volumeClaimTemplates:
+      - metadata:
+          name: influx-data
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: {{ .Values.jmeterInfluxDbStorageClass }}
+          resources:
+            requests:
+              storage: 10Gi
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: null
+    labels:
+      app: influxdb
+      chart: {{ template "name" . }}
+      release: {{ .Release.Name }}
+    name: {{ template "name" . }}-influxdb-svc
+  spec:
+    ports:
+    - name: http
+      port: 8083
+      protocol: TCP
+      targetPort: 8083
+    - name: api
+      port: 8086
+      protocol: TCP
+      targetPort: 8086
+    - name: graphite
+      port: 2003
+      protocol: TCP
+      targetPort: 2003
+    selector:
+      app: influxdb
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata: {}
+{{ end }}

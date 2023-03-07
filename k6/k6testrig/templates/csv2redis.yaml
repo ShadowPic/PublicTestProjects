@@ -1,0 +1,30 @@
+{{ if .Values.csv2RedisEnabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}-jmeter-csv2redis
+spec:
+  selector:
+    matchLabels:
+      app: csv2redis
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: csv2redis
+    spec:
+      containers:
+      - name: csv2redis
+        image:  {{ .Values.csv2RedisImage }}
+        imagePullPolicy: Always
+        args:
+          - while true; do sleep 30; done;
+        command:
+          - /bin/bash
+          - -c
+          - --
+        resources:
+          limits:
+            memory: "2Gi"
+            cpu: "1"
+{{ end }}

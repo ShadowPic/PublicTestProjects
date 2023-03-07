@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<testsuites tests="3" failures="1">
+<testsuite name="k6 thresholds" tests="3" failures="1"><testcase name="browser_dom_content_loaded - p(90) &lt; 1000" />
+<testcase name="browser_first_contentful_paint - max &lt; 1000" />
+<testcase name="checks - rate==1.0"><failure message="failed" /></testcase>
+</testsuite >
+</testsuites >
