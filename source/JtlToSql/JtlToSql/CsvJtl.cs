@@ -19,9 +19,9 @@ namespace JtlToSql
         }
         string pathToJtlFile;
         string testPlan;
-        public string TestPlan 
-        { 
-            get { return testPlan; } 
+        public string TestPlan
+        {
+            get { return testPlan; }
         }
         string testRun;
         public string TestRun
@@ -37,11 +37,18 @@ namespace JtlToSql
         public static string ExtractTestRun(string pathToJtlFile)
         {
             var splitPath = pathToJtlFile.Split("/");
-            return splitPath[splitPath.Length - 2]; 
+            return splitPath[splitPath.Length - 2];
         }
 
-        public CsvJtl(string pathToJtlFile = null)
+        public CsvJtl(string pathToJtlFile = null, string testPlan = null, string testRun = null)
         {
+            if (!(string.IsNullOrEmpty(testPlan) && string.IsNullOrEmpty(testRun)))
+            {
+                this.testPlan = testPlan;
+                this.testRun = testRun;
+                this.pathToJtlFile = pathToJtlFile;
+                return;
+            }
             if (!string.IsNullOrEmpty(pathToJtlFile))
             {
                 testPlan = ExtractTestPlan(pathToJtlFile);
@@ -75,9 +82,9 @@ namespace JtlToSql
         }
         public void Dispose()
         {
-            if(jtlFileReader!=null)jtlFileReader.Dispose();
+            if (jtlFileReader != null) jtlFileReader.Dispose();
             jtlResultsReader.Dispose();
-            
+
         }
 
         public dynamic GetCsvRow()

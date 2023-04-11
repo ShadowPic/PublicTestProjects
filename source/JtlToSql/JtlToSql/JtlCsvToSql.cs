@@ -15,10 +15,17 @@ namespace JtlToSql
         string batchTableName = "jtlbatchrows";
         public JtlCsvToSql(string connectionString)
         {
-            this.connectionString = connectionString;
-            this.sqlConnection = new SqlConnection(connectionString);
-            this.sqlConnection.Open();
-            InitializeBatchOfRows();
+            try
+            {
+                this.connectionString = connectionString;
+                this.sqlConnection = new SqlConnection(connectionString);
+                this.sqlConnection.Open();
+                InitializeBatchOfRows();
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
         }
 
         private void InitializeBatchOfRows()
