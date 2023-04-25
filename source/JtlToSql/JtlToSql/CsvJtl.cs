@@ -27,6 +27,7 @@ namespace JtlToSql
         public string TestRun
         {
             get { return testRun; }
+            set { testRun = value; }
         }
 
         public static string ExtractTestPlan(string pathToJtlFile)

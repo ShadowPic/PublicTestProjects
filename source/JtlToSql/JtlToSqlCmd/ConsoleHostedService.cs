@@ -13,12 +13,14 @@ namespace JtlToSqlCmd
 {
     public class ConsoleHostedService : IHostedService
     {
+        const string NO_TEST_PLAN = "no test plan";
+        const string NO_TEST_RUN = "no test run";
         CancellationToken commonCancellationToken;
         public class Options
         {
-            [Option("testplan", Required = false, HelpText = "Test plan name", Default = "no test plan")]
+            [Option("testplan", Required = false, HelpText = "Test plan name", Default = NO_TEST_PLAN)]
             public string TestPlan { get; set; }
-            [Option("testrun", Required = false, HelpText = "Test run to delete", Default = "no test run")]
+            [Option("testrun", Required = false, HelpText = "Test run to delete", Default = NO_TEST_RUN)]
             public string TestRun { get; set; }
             [Option("jtlfile", Required = true, HelpText = "name of the jtl file to upload")]
             public string JtlFile { get; set; }
@@ -78,6 +80,7 @@ namespace JtlToSqlCmd
             {
                 // Stop the application once the work is done
                 _appLifetime.StopApplication();
+                
             }
         }
 
