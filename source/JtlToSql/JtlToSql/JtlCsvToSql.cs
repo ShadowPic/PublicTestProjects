@@ -167,5 +167,16 @@ namespace JtlToSql
             spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@TestPlan", DbType = DbType.String, Value = testPlan });
             spAddReport.ExecuteNonQuery();
         }
+        public void PostProcess()
+        {
+            using SqlCommand spPostProcess = new SqlCommand()
+            {
+                Connection = this.sqlConnection,
+                CommandText = "spPostProcess",
+                CommandType = CommandType.StoredProcedure,
+                CommandTimeout = 300
+            };
+            spPostProcess.ExecuteNonQuery();
+        }
     }
 }

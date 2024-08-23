@@ -54,7 +54,13 @@ namespace JtlToSql
             this.pathToJtlFile = pathToJtlFile;
 
         }
+        public CsvJtl(string pathToJtlFile,string testPlan,string testRun)
+        {
+            this.testPlan = testPlan;
+            this.testRun = testRun;
+            this.pathToJtlFile = pathToJtlFile;
 
+        }
         void AddCalculatedColumns(dynamic jtlRow)
         {
             var jtlRowDict = jtlRow as IDictionary<string, object>;
