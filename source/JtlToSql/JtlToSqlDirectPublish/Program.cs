@@ -5,6 +5,7 @@ using System;
 using JtlToSqlDirectPublish;
 using Microsoft.Extensions.Configuration;
 using JtlToSql;
+using System.IO;
 
 using ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
 {
@@ -24,17 +25,22 @@ void RunOptionsAndReturnExitCode(CommandLineOptions opts)
     var testRun = opts.TestRun;
     var processJtlFiles = new ProcessJtlFiles();
     string jtlFilePath = opts.JtlFilePath;
-    IConfigurationRoot configuration = new ConfigurationBuilder()
+    string sqlConnectionString = opts.SqlConnectionString;
+    if (File.Exists("secrets.json"))
+    {
+        IConfigurationRoot configuration = new ConfigurationBuilder()
         .AddJsonFile("secrets.json")
         .Build();
-    var sqlConnectionString = opts.SqlConnectionString == null ? configuration["ConnectionStrings:JtlReportingDatabase"] : opts.SqlConnectionString;
+        sqlConnectionString = configuration["ConnectionStrings:JtlReportingDatabase"];
+    }
+
     processJtlFiles.SendJtlToSQL(jtlFilePath, sqlConnectionString, testPlan, testRun);
     processJtlFiles.PostProcess();
     // Call the stored procedure here
-    
+
 }
 
 void HandleParseError(IEnumerable<Error> errs)
 {
-    // Handle errors here
+    logger.LogError("Error parsing command line arguments");
 }

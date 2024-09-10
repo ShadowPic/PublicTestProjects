@@ -73,5 +73,6 @@
     <Build Include="dbo\Stored Procedures\spDeleteReport.sql" />
     <Build Include="dbo\Stored Procedures\spReportExists.sql" />
     <Build Include="dbo\Stored Procedures\spPostProcess.sql" />
+    <Build Include="dbo\Stored Procedures\spSetRawSTartTime.sql" />
   </ItemGroup>
 </Project>
