@@ -5,7 +5,7 @@ as
     where jmeterrawresults.TestRun = tr.TestRun 
         and UtcStartTime is null
     
-    update TestRuns set DurationInMinutes=(select top 1 DATEDIFF(MINUTE,j.UtcStartTime,j.UtcTimeStamp)
+    update TestRuns set DurationInMinutes=(select DATEDIFF(MINUTE,max(j.UtcStartTime),max(j.UtcTimeStamp))
                                         from jmeterrawresults j
                                         where j.TestRun = TestRuns.TestRun)
-    where testruns.DurationInMinutes is null
+    where testruns.DurationInMinutes is null or testruns.DurationInMinutes = 0
