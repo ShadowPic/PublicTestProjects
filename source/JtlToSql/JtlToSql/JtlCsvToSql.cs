@@ -37,7 +37,7 @@ namespace JtlToSql
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "sentBytes", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "grpThreads", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "allThreads", DataType = Type.GetType("System.Int32") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "URL", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 2048, ColumnName = "URL", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "Latency", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "IdleTime", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "UtcTimeStamp", DataType = Type.GetType("System.DateTime") });
