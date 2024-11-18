@@ -8,13 +8,15 @@ INSERT INTO [dbo].[TestRuns]
            (
            [TestPlan],
            [TestRun],
-           [StartTime]
+           [StartTime],
+           IsTestOfRecord
            )
      VALUES
            (
            @TestPlan,
            @TestRun,
-           @StartTime
+           @StartTime,
+           1
            )
 
 RETURN 0
