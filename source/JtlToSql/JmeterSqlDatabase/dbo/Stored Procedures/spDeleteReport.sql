@@ -4,6 +4,10 @@
     
 AS
 
+declare @TestRunId bigint
+select @TestRunId=TestRunId from TestRuns where TestRun=@TestRun
+delete from SUTMetric where TestRunId = @TestRunId
+
 delete from jmeterrawresults
 where
     TestPlan = @TestPlan and TestRun=@TestRun

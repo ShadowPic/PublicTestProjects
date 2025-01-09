@@ -9,13 +9,15 @@ INSERT INTO [dbo].[TestRuns]
            [TestPlan],
            [TestRun],
            [StartTime],
-           IsTestOfRecord
+           IsTestOfRecord,
+           UsesThinkTimes
            )
      VALUES
            (
            @TestPlan,
            @TestRun,
            @StartTime,
+           1,
            1
            )
 
