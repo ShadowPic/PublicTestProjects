@@ -46,7 +46,7 @@ namespace JtlToSql
             batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "TestPlan", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "LabelPlusTestRun", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "Connect", DataType = Type.GetType("System.Int32") });
-
+            batchOfRows.Columns.Add(new DataColumn() { ColumnName = "IsTransaction", DataType = Type.GetType("System.Boolean") });
         }
 
         public void Dispose()
@@ -83,6 +83,7 @@ namespace JtlToSql
             dataRow["TestPlan"] = csvRow.TestPlan;
             dataRow["LabelPlusTestRun"] = csvRow.LabelPlusTestRun;
             dataRow["Connect"] = Int32.Parse(csvRow.Connect);
+            dataRow["IsTransaction"] = csvRow.IsTransaction;
             batchOfRows.Rows.Add(dataRow);
 
         }
@@ -115,6 +116,7 @@ namespace JtlToSql
             bulkCopy.ColumnMappings.Add("UtcTimeStamp", "UtcTimeStamp");
             bulkCopy.ColumnMappings.Add("ElapsedMS", "ElapsedMS");
             bulkCopy.ColumnMappings.Add("LabelPlusTestRun", "LabelPlusTestRun");
+            bulkCopy.ColumnMappings.Add("IsTransaction", "IsTransaction");
 
             bulkCopy.WriteToServer(batchOfRows);
             batchOfRows.Clear();

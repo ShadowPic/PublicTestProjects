@@ -72,8 +72,17 @@ namespace JtlToSql
             jtlRowDict.Add("TestPlan", this.testPlan);
             jtlRowDict.Add("LabelPlusTestRun", $"{jtlRow.label} ({this.testRun})");
             jtlRowDict.Add("StorageAccountPath", pathToJtlFile);
+            string responseMessage = jtlRow.responseMessage;
+            jtlRowDict.Add("IsTransaction", IsTransaction(responseMessage));
         }
-
+        private bool IsTransaction(string responseMessage)
+        {
+            if(responseMessage == null) return false;
+            //Number of samples in transaction : 9, number of failing samples : 0
+            if (responseMessage.StartsWith("Number of samples in transaction"))
+            { return true; }
+            return false;
+        }
         private DateTime ConvertJsonTimeStamp(long jsonTimeStamp)
         {
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
