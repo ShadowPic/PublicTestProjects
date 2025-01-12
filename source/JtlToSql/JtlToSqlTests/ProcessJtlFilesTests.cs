@@ -19,7 +19,7 @@ namespace JtlToSql.Tests
             var testPlan = "total demo";
             var testRun = "total demo1";
             var processJtlFiles = new ProcessJtlFiles();
-            string jtlFilePath = @"C:\drop\perf results\20240823-015030.jtl";
+            string jtlFilePath = @"C:\drop\perf results\20250109-195813.jtl";
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .AddJsonFile("secrets.json")
                 .Build();

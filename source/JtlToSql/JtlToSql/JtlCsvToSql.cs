@@ -28,7 +28,7 @@ namespace JtlToSql
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "elapsed", DataType = Type.GetType("System.Int32") });
             batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "label", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "responseCode", DataType = Type.GetType("System.Int32") });
-            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 50, ColumnName = "responseMessage", DataType = Type.GetType("System.String") });
+            batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "responseMessage", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { MaxLength = 200, ColumnName = "threadName", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { ColumnName = "dataType", DataType = Type.GetType("System.String") });
             batchOfRows.Columns.Add(new DataColumn() { MaxLength = 500, ColumnName = "failureMessage", DataType = Type.GetType("System.String") });
@@ -65,6 +65,7 @@ namespace JtlToSql
             dataRow["label"] = csvRow.label;
             int toss;
             dataRow["responseCode"] = Int32.TryParse(csvRow.responseCode, out toss) ? Int32.Parse(csvRow.responseCode) : -1;
+            dataRow["responseMessage"] = csvRow.responseMessage;
             dataRow["threadName"] = csvRow.threadName;
             dataRow["dataType"] = csvRow.dataType;
             dataRow["success"] = csvRow.success;

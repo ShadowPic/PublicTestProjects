@@ -3,7 +3,7 @@
     [elapsed]          INT             NULL,
     [label]            NVARCHAR (500)  NOT NULL,
     [responseCode]     INT             NULL,
-    [responseMessage]  NVARCHAR (50)   NULL,
+    [responseMessage]  NVARCHAR (500)  NULL,
     [threadName]       NVARCHAR (200)  NOT NULL,
     [dataType]         NVARCHAR (50)   NULL,
     [success]          NVARCHAR (5)    NULL,
@@ -23,6 +23,8 @@
     [LabelPlusTestRun] NVARCHAR (500)  NULL,
     [UtcStartTime]     DATETIME        NULL
 );
+
+
 
 
 
