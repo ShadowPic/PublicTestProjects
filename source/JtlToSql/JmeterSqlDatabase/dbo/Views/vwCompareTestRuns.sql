@@ -5,6 +5,5 @@ select TestPlan,TestRun,label,avg(elapsed) "AverageResponseTimeMS"
 , sum(TransactionSamples)"TransactionSamplers",sum(TransactionFailedSamples)"TransactionFailedSamplers",avg(bytes) "AvgBytes"
     from jmeterrawresults
         where IsTransaction=1
-            and TestRun='total demo1'
             and threadName not in (select ThreadName from ExcludedThreadNames)
         group by TestPlan,TestRun,label
