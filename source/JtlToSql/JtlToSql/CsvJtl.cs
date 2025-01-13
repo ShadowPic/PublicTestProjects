@@ -74,6 +74,10 @@ namespace JtlToSql
             jtlRowDict.Add("StorageAccountPath", pathToJtlFile);
             string responseMessage = jtlRow.responseMessage;
             jtlRowDict.Add("IsTransaction", IsTransaction(responseMessage));
+            jtlRowDict.Add("TransactionSamples", ExtractTransactionSamples(responseMessage));
+            jtlRowDict.Add("TransactionFailedSamples", ExtractTransactionFailedSamples(responseMessage));
+            
+
         }
         private bool IsTransaction(string responseMessage)
         {
@@ -82,6 +86,26 @@ namespace JtlToSql
             if (responseMessage.StartsWith("Number of samples in transaction"))
             { return true; }
             return false;
+        }
+        private int ExtractTransactionSamples(string responseMessage)
+        {
+            if (responseMessage == null) return 0;
+            //Number of samples in transaction : 9, number of failing samples : 0
+            if (IsTransaction(responseMessage))
+            {
+                return int.Parse(responseMessage.Split(",")[0].Split(":")[1].Trim());
+            }
+            return 0;
+        }
+        private int ExtractTransactionFailedSamples(string responseMessage)
+        {
+            if (responseMessage == null) return 0;
+            //Number of samples in transaction : 9, number of failing samples : 0
+            if (IsTransaction(responseMessage))
+            {
+                return int.Parse(responseMessage.Split(",")[1].Split(":")[1].Trim());
+            }
+            return 0;
         }
         private DateTime ConvertJsonTimeStamp(long jsonTimeStamp)
         {

@@ -27,5 +27,5 @@
     ,DATEDIFF(MINUTE,tr.StartTime,j.UtcTimeStamp) as 'Minutes Index'
     ,CONCAT(tr.TestPlan,tr.TestRun) as 'TestPlanAndTestRun'
     ,case when url = 'null' then 1 else 0 end IsTransaction
-  FROM [JmeterReportingDb].[dbo].[jmeterrawresults] j
+  FROM [dbo].[jmeterrawresults] j
   join TestRuns tr on tr.TestRun = j.TestRun and tr.TestPlan=j.TestPlan
