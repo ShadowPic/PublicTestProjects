@@ -35,7 +35,6 @@ void RunOptionsAndReturnExitCode(CommandLineOptions opts)
     }
 
     processJtlFiles.SendJtlToSQL(jtlFilePath, sqlConnectionString, testPlan, testRun);
-    processJtlFiles.PostProcess();
     // Call the stored procedure here
 
 }

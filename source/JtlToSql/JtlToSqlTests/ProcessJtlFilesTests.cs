@@ -19,14 +19,15 @@ namespace JtlToSql.Tests
             var testPlan = "total demo";
             var testRun = "total demo1";
             var processJtlFiles = new ProcessJtlFiles();
-            string jtlFilePath = @"C:\drop\perf results\20250109-195813.jtl";
+            string jtlFilePath = @"results.jtl";
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .AddJsonFile("secrets.json")
                 .Build();
             var sqlConnectionString = configuration["ConnectionStrings:JtlReportingDatabase"];
             //act
             
-            processJtlFiles.SendJtlToSQL(jtlFilePath, sqlConnectionString,testPlan,testRun);
+            processJtlFiles.SendJtlToSQL(jtlFilePath, sqlConnectionString,testPlan,testRun,testOfRecord:false,usesThinkTimes:true
+                ,runNotes:"run notes",appVersionRef:"v1.2");
             //assert
             Assert.IsTrue(true);
         }

@@ -77,5 +77,6 @@
     <Build Include="dbo\Tables\SUTMetric.sql" />
     <Build Include="dbo\Views\vwCompareTestRuns.sql" />
     <Build Include="dbo\Tables\ExcludedThreadNames.sql" />
+    <Build Include="dbo\Tables\PerformanceTargets.sql" />
   </ItemGroup>
 </Project>

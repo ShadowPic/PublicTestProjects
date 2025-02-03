@@ -10,12 +10,9 @@ namespace JtlToSql
     {
         public ProcessJtlFiles() { }
 
-        public void PostProcess()
-        {
-
-        }
-
-        public void SendJtlToSQL(string jtlFilePath, string sqlConnectionString, string testPlan, string testRun)
+        public void SendJtlToSQL(string jtlFilePath, string sqlConnectionString, 
+            string testPlan, string testRun,bool? testOfRecord=null,bool? usesThinkTimes=null,string runNotes=null
+            ,string appVersionRef=null)
         {
             using ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
             ILogger logger = factory.CreateLogger("Program");
@@ -51,7 +48,8 @@ namespace JtlToSql
                     { logger.LogWarning($"Skipping line {e.ToString()}"); }
                 }
                 logger.LogInformation("Successfully added rows to database.  Now adding test report");
-                jtlCsvToSql.AddReport(csvJtl.TestPlan, csvJtl.TestRun, csvJtl.TestStartTime);
+                jtlCsvToSql.AddReport(csvJtl.TestPlan, csvJtl.TestRun, csvJtl.TestStartTime,testOfRecord:testOfRecord,usesThinkTimes:usesThinkTimes,
+                    runNotes:runNotes,appVersionRef:appVersionRef);
                 logger.LogInformation("Post processing");
                 jtlCsvToSql.PostProcess();
             }

@@ -15,5 +15,17 @@ namespace JtlToSqlDirectPublish
 
         [Option('r', "run", Required = true, HelpText = "Test run name")]
         public string TestRun { get; set; }
+
+        [Option("is_test_of_record", Required = false, HelpText = "Is this the test of record")]
+        public bool? IsTestOfRecord { get; set; }
+
+        [Option("uses_thinktimes", Required = false, HelpText = "Does this test use think times")]
+        public bool? UsesThinkTimes { get; set; }
+
+        [Option("run_notes", Required = false, HelpText = "Notes about the run")]
+        public string? RunNotes { get; set; }
+
+        [Option("app_version_ref", Required = false, HelpText = "Reference to the application version")]
+        public string? AppVersionRef { get; set; }
     }
 }

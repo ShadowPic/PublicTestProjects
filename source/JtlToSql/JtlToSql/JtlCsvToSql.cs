@@ -146,7 +146,8 @@ namespace JtlToSql
             return reportExists > 0;
         }
 
-        public void AddReport(string testPlan, string testRun, DateTime testStartTime)
+        public void AddReport(string testPlan, string testRun, DateTime testStartTime, bool? testOfRecord = null,
+            bool? usesThinkTimes = null, string runNotes = null, string appVersionRef = null)
         {
             CommitBatch();
             using SqlCommand spAddReport = new SqlCommand()
@@ -158,6 +159,10 @@ namespace JtlToSql
             spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@TestRun", DbType = DbType.String, Value = testRun });
             spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@TestPlan", DbType = DbType.String, Value = testPlan });
             spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@StartTime", DbType = DbType.DateTime, Value = testStartTime });
+            spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@TestOfRecord", DbType = DbType.Boolean, Value = testOfRecord });
+            spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@UsesThinkTimes", DbType = DbType.Boolean, Value = usesThinkTimes });
+            spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@RunNotes", DbType = DbType.String, Value = runNotes });
+            spAddReport.Parameters.Add(new SqlParameter() { ParameterName = "@AppVersionRef", DbType = DbType.String, Value = appVersionRef });
             spAddReport.ExecuteNonQuery();
         }
 

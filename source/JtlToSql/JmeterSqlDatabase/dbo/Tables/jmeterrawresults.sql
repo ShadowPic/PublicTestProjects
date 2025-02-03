@@ -8,7 +8,7 @@
     [dataType]                 NVARCHAR (50)   NULL,
     [success]                  NVARCHAR (5)    NULL,
     [failureMessage]           NVARCHAR (500)  NULL,
-    [bytes]                    INT             NULL,
+    [bytes]                    BIGINT          NULL,
     [sentBytes]                INT             NULL,
     [grpThreads]               INT             NOT NULL,
     [allThreads]               INT             NOT NULL,
@@ -26,6 +26,8 @@
     [TransactionSamples]       INT             NULL,
     [TransactionFailedSamples] INT             NULL
 );
+
+
 
 
 
