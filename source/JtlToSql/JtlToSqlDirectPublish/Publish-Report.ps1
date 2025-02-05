@@ -8,6 +8,14 @@ param(
     [string]$TestPlanName="Always have one",
     [Parameter(Mandatory=$false)]
     [string]$TestRunName
+    [Parameter(Mandatory=$false)]
+    [bool]$is_test_of_record=$false,
+    [Parameter(Mandatory=$false)]
+    [bool]$is_test_of_record=$false,
+    [Parameter(Mandatory=$false)]
+    [string]$run_notes="",
+    [Parameter(Mandatory=$false)]
+    [string]$app_version_ref=""
 )
 
 function GetPrettyDateFormat($timestamp)
@@ -42,4 +50,4 @@ if(-not (Test-Path ".\JtlToSqlDirectPublish.exe")){
 	exit 1
 }
 
-.\JtlToSqlDirectPublish.exe --jtl $JtlFile --connectionstring $SQLConnectionString --plan $TestPlanName --run $TestRunName
+.\JtlToSqlDirectPublish.exe --jtl $JtlFile --connectionstring $SQLConnectionString --plan $TestPlanName --run $TestRunName --is_test_of_record $is_test_of_record --run_notes $run_notes --app_version_ref $app_version_ref
