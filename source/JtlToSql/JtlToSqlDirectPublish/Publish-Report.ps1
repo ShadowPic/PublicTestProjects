@@ -7,11 +7,11 @@ param(
     [Parameter(Mandatory=$true)]
     [string]$TestPlanName="Always have one",
     [Parameter(Mandatory=$false)]
-    [string]$TestRunName
+    [string]$TestRunName,
     [Parameter(Mandatory=$false)]
     [bool]$is_test_of_record=$false,
     [Parameter(Mandatory=$false)]
-    [bool]$is_test_of_record=$false,
+    [bool]$uses_thinktimes=$false,
     [Parameter(Mandatory=$false)]
     [string]$run_notes="",
     [Parameter(Mandatory=$false)]
@@ -50,4 +50,4 @@ if(-not (Test-Path ".\JtlToSqlDirectPublish.exe")){
 	exit 1
 }
 
-.\JtlToSqlDirectPublish.exe --jtl $JtlFile --connectionstring $SQLConnectionString --plan $TestPlanName --run $TestRunName --is_test_of_record $is_test_of_record --run_notes $run_notes --app_version_ref $app_version_ref
+.\JtlToSqlDirectPublish.exe --jtl $JtlFile --connectionstring $SQLConnectionString --plan $TestPlanName --run $TestRunName --is_test_of_record $is_test_of_record --run_notes $run_notes --app_version_ref $app_version_ref --uses_thinktimes $uses_thinktimes

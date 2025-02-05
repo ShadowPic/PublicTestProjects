@@ -34,7 +34,8 @@ void RunOptionsAndReturnExitCode(CommandLineOptions opts)
         sqlConnectionString = configuration["ConnectionStrings:JtlReportingDatabase"];
     }
 
-    processJtlFiles.SendJtlToSQL(jtlFilePath, sqlConnectionString, testPlan, testRun);
+    processJtlFiles.SendJtlToSQL(jtlFilePath, sqlConnectionString, testPlan, testRun,testOfRecord:opts.IsTestOfRecord,usesThinkTimes:opts.UsesThinkTimes,
+            runNotes:opts.RunNotes,appVersionRef:opts.AppVersionRef); 
     // Call the stored procedure here
 
 }
