@@ -302,3 +302,4 @@ __pycache__/
 jmeter/docker/rmi_keystore.jks
 .vs/slnx.sqlite
 .vscode/launch.json
+/source/JtlToSql/JtlToSqlTests/secrets.json

@@ -10,6 +10,20 @@ namespace JtlToSqlTests
     public class CsvJtlTests
     {
         [TestMethod]
+        public void SplitOutTransactionMetrics()
+        {
+            //arrange
+            var responseMessage = "Number of samples in transaction : 2, number of failing samples : 0";
+            var expectedSamples = 2;
+            var expectedFailures = 0;
+            //act
+            var samples = int.Parse( responseMessage.Split(",")[0].Split(":")[1].Trim());
+            var failures = int.Parse(responseMessage.Split(",")[1].Split(":")[1].Trim());
+            //assert
+            Assert.AreEqual(expectedSamples, samples);
+            Assert.AreEqual(expectedFailures, failures);
+        }
+        [TestMethod]
         public void ReadJtlFile()
         {
             //arrange

@@ -1,0 +1,251 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect,"var1","var2"
+1743631863093,0,ds1,200,OK,Small Customers 1-1,text,true,,9254,0,1,1,null,0,0,0,ds1,maybe
+1743631863093,1,ds2,200,OK,Small Customers 1-1,text,true,,290,0,1,1,null,0,0,0,ds2,maybe
+1743631863094,0,Shared,200,OK,Small Customers 1-1,text,true,,290,0,1,1,null,0,0,0,ds2,maybe
+1743631863102,0,ds3,200,OK,Big Customers 2-1,text,true,,276,0,1,2,null,0,0,0,ds3,null
+1743631863102,0,ds4,200,OK,Big Customers 2-1,text,true,,277,0,1,2,null,0,0,0,ds4,null
+1743631863103,0,Shared,200,OK,Big Customers 2-1,text,true,,277,0,1,2,null,0,0,0,ds4,null
+1743631863094,14,JSR223 Sampler,200,OK,Small Customers 1-1,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863103,5,JSR223 Sampler,200,OK,Big Customers 2-1,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863103,5,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-1,,true,,277,0,1,2,null,0,1,0,ds4,sasquatch
+1743631863094,14,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-1,,true,,290,0,1,2,null,0,1,0,ds2,sasquatch
+1743631863109,0,ds3,200,OK,Big Customers 2-1,text,true,,291,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863109,0,ds4,200,OK,Big Customers 2-1,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863109,0,Shared,200,OK,Big Customers 2-1,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863109,0,ds1,200,OK,Small Customers 1-1,text,true,,9254,0,1,2,null,0,0,0,ds1,maybe
+1743631863109,0,ds2,200,OK,Small Customers 1-1,text,true,,290,0,1,2,null,0,0,0,ds2,maybe
+1743631863109,0,Shared,200,OK,Small Customers 1-1,text,true,,290,0,1,2,null,0,0,0,ds2,maybe
+1743631863109,1,JSR223 Sampler,200,OK,Big Customers 2-1,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863109,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-1,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863110,0,ds3,200,OK,Big Customers 2-1,text,true,,291,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863110,0,ds4,200,OK,Big Customers 2-1,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863110,0,Shared,200,OK,Big Customers 2-1,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863110,0,JSR223 Sampler,200,OK,Small Customers 1-1,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863109,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-1,,true,,290,0,1,2,null,0,1,0,ds2,sasquatch
+1743631863110,1,JSR223 Sampler,200,OK,Big Customers 2-1,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863110,1,ds1,200,OK,Small Customers 1-1,text,true,,9255,0,1,2,null,0,0,0,ds1,maybe
+1743631863110,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-1,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863111,0,ds2,200,OK,Small Customers 1-1,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863111,0,Shared,200,OK,Small Customers 1-1,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863111,1,ds3,200,OK,Big Customers 2-1,text,true,,291,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863112,0,ds4,200,OK,Big Customers 2-1,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863112,0,Shared,200,OK,Big Customers 2-1,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863111,1,JSR223 Sampler,200,OK,Small Customers 1-1,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863111,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-1,,true,,291,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863112,0,JSR223 Sampler,200,OK,Big Customers 2-1,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863112,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-1,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863113,0,ds3,200,OK,Big Customers 2-1,text,true,,291,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863113,0,ds4,200,OK,Big Customers 2-1,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863113,0,Shared,200,OK,Big Customers 2-1,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863113,1,ds1,200,OK,Small Customers 1-1,text,true,,9254,0,1,2,null,0,0,0,ds1,maybe
+1743631863114,0,ds2,200,OK,Small Customers 1-1,text,true,,290,0,1,2,null,0,0,0,ds2,maybe
+1743631863114,0,Shared,200,OK,Small Customers 1-1,text,true,,290,0,1,2,null,0,0,0,ds2,maybe
+1743631863113,1,JSR223 Sampler,200,OK,Big Customers 2-1,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863113,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-1,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863114,0,JSR223 Sampler,200,OK,Small Customers 1-1,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863114,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-1,,true,,290,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863115,0,ds1,200,OK,Small Customers 1-1,text,true,,9254,0,1,1,null,0,0,0,ds1,maybe
+1743631863115,0,ds2,200,OK,Small Customers 1-1,text,true,,290,0,1,1,null,0,0,0,ds2,maybe
+1743631863115,0,Shared,200,OK,Small Customers 1-1,text,true,,290,0,1,1,null,0,0,0,ds2,maybe
+1743631863115,1,JSR223 Sampler,200,OK,Small Customers 1-1,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863115,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-1,,true,,290,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863299,0,ds3,200,OK,Big Customers 2-2,text,true,,277,0,1,1,null,0,0,0,ds3,null
+1743631863299,0,ds4,200,OK,Big Customers 2-2,text,true,,277,0,1,1,null,0,0,0,ds4,null
+1743631863299,0,Shared,200,OK,Big Customers 2-2,text,true,,277,0,1,1,null,0,0,0,ds4,null
+1743631863299,1,JSR223 Sampler,200,OK,Big Customers 2-2,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863299,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-2,,true,,277,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863301,0,ds3,200,OK,Big Customers 2-2,text,true,,292,0,1,1,null,0,0,0,ds3,sasquatch
+1743631863301,0,ds4,200,OK,Big Customers 2-2,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863301,0,Shared,200,OK,Big Customers 2-2,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863301,1,JSR223 Sampler,200,OK,Big Customers 2-2,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863301,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-2,,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863302,0,ds3,200,OK,Big Customers 2-2,text,true,,292,0,1,1,null,0,0,0,ds3,sasquatch
+1743631863302,0,ds4,200,OK,Big Customers 2-2,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863302,0,Shared,200,OK,Big Customers 2-2,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863302,1,JSR223 Sampler,200,OK,Big Customers 2-2,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863302,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-2,,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863303,0,ds3,200,OK,Big Customers 2-2,text,true,,292,0,1,1,null,0,0,0,ds3,sasquatch
+1743631863303,0,ds4,200,OK,Big Customers 2-2,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863303,0,Shared,200,OK,Big Customers 2-2,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863303,1,ds1,200,OK,Small Customers 1-2,text,true,,9256,0,1,2,null,0,0,0,ds1,maybe
+1743631863304,0,ds2,200,OK,Small Customers 1-2,text,true,,292,0,1,2,null,0,0,0,ds2,maybe
+1743631863304,0,Shared,200,OK,Small Customers 1-2,text,true,,292,0,1,2,null,0,0,0,ds2,maybe
+1743631863303,1,JSR223 Sampler,200,OK,Big Customers 2-2,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863303,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-2,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863305,0,ds3,200,OK,Big Customers 2-2,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863304,1,JSR223 Sampler,200,OK,Small Customers 1-2,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863305,0,ds4,200,OK,Big Customers 2-2,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863304,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-2,,true,,292,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863305,0,Shared,200,OK,Big Customers 2-2,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863306,0,ds1,200,OK,Small Customers 1-2,text,true,,9255,0,1,2,null,0,0,0,ds1,maybe
+1743631863306,0,ds2,200,OK,Small Customers 1-2,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863306,0,Shared,200,OK,Small Customers 1-2,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863306,1,JSR223 Sampler,200,OK,Small Customers 1-2,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863306,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-2,,true,,291,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863305,2,JSR223 Sampler,200,OK,Big Customers 2-2,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863305,3,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-2,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863307,1,ds1,200,OK,Small Customers 1-2,text,true,,9255,0,1,1,null,0,0,0,ds1,maybe
+1743631863308,0,ds2,200,OK,Small Customers 1-2,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863308,0,Shared,200,OK,Small Customers 1-2,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863308,1,JSR223 Sampler,200,OK,Small Customers 1-2,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863308,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-2,,true,,291,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863309,0,ds1,200,OK,Small Customers 1-2,text,true,,9256,0,1,1,null,0,0,0,ds1,maybe
+1743631863310,0,ds2,200,OK,Small Customers 1-2,text,true,,292,0,1,1,null,0,0,0,ds2,maybe
+1743631863310,0,Shared,200,OK,Small Customers 1-2,text,true,,292,0,1,1,null,0,0,0,ds2,maybe
+1743631863310,0,JSR223 Sampler,200,OK,Small Customers 1-2,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863310,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-2,,true,,292,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863311,0,ds1,200,OK,Small Customers 1-2,text,true,,9255,0,1,1,null,0,0,0,ds1,maybe
+1743631863311,0,ds2,200,OK,Small Customers 1-2,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863311,0,Shared,200,OK,Small Customers 1-2,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863311,1,JSR223 Sampler,200,OK,Small Customers 1-2,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863311,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-2,,true,,291,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863492,1,ds1,200,OK,Small Customers 1-3,text,true,,9255,0,1,1,null,0,0,0,ds1,maybe
+1743631863493,0,ds2,200,OK,Small Customers 1-3,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863493,0,Shared,200,OK,Small Customers 1-3,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863493,1,JSR223 Sampler,200,OK,Small Customers 1-3,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863493,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-3,,true,,291,0,1,1,null,0,1,0,ds2,sasquatch
+1743631863495,1,ds1,200,OK,Small Customers 1-3,text,true,,9256,0,1,1,null,0,0,0,ds1,maybe
+1743631863496,0,ds2,200,OK,Small Customers 1-3,text,true,,292,0,1,1,null,0,0,0,ds2,maybe
+1743631863496,0,Shared,200,OK,Small Customers 1-3,text,true,,292,0,1,1,null,0,0,0,ds2,maybe
+1743631863496,1,JSR223 Sampler,200,OK,Small Customers 1-3,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863496,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-3,,true,,292,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863498,0,ds1,200,OK,Small Customers 1-3,text,true,,9255,0,1,1,null,0,0,0,ds1,maybe
+1743631863498,0,ds2,200,OK,Small Customers 1-3,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863498,0,Shared,200,OK,Small Customers 1-3,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863498,1,JSR223 Sampler,200,OK,Small Customers 1-3,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863498,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-3,,true,,291,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863499,0,ds3,200,OK,Big Customers 2-3,text,true,,277,0,1,2,null,0,0,0,ds3,null
+1743631863499,0,ds4,200,OK,Big Customers 2-3,text,true,,277,0,1,2,null,0,0,0,ds4,null
+1743631863499,1,ds1,200,OK,Small Customers 1-3,text,true,,9255,0,1,2,null,0,0,0,ds1,maybe
+1743631863500,0,Shared,200,OK,Big Customers 2-3,text,true,,277,0,1,2,null,0,0,0,ds4,null
+1743631863500,0,ds2,200,OK,Small Customers 1-3,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863500,0,Shared,200,OK,Small Customers 1-3,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863500,0,JSR223 Sampler,200,OK,Big Customers 2-3,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863500,0,JSR223 Sampler,200,OK,Small Customers 1-3,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863500,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-3,,true,,277,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863500,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-3,,true,,291,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863501,0,ds3,200,OK,Big Customers 2-3,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863501,0,ds4,200,OK,Big Customers 2-3,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863501,0,Shared,200,OK,Big Customers 2-3,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863501,0,ds1,200,OK,Small Customers 1-3,text,true,,9256,0,1,2,null,0,0,0,ds1,maybe
+1743631863501,0,JSR223 Sampler,200,OK,Big Customers 2-3,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863501,0,ds2,200,OK,Small Customers 1-3,text,true,,292,0,1,2,null,0,0,0,ds2,maybe
+1743631863501,0,Shared,200,OK,Small Customers 1-3,text,true,,292,0,1,2,null,0,0,0,ds2,maybe
+1743631863501,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-3,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863501,1,JSR223 Sampler,200,OK,Small Customers 1-3,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863502,0,ds3,200,OK,Big Customers 2-3,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863501,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-3,,true,,292,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863502,0,ds4,200,OK,Big Customers 2-3,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863502,0,Shared,200,OK,Big Customers 2-3,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863502,1,JSR223 Sampler,200,OK,Big Customers 2-3,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863502,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-3,,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863503,0,ds3,200,OK,Big Customers 2-3,text,true,,292,0,1,1,null,0,0,0,ds3,sasquatch
+1743631863503,0,ds4,200,OK,Big Customers 2-3,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863503,0,Shared,200,OK,Big Customers 2-3,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863503,0,JSR223 Sampler,200,OK,Big Customers 2-3,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863503,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-3,,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863503,0,ds3,200,OK,Big Customers 2-3,text,true,,292,0,1,1,null,0,0,0,ds3,sasquatch
+1743631863503,0,ds4,200,OK,Big Customers 2-3,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863504,0,Shared,200,OK,Big Customers 2-3,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863504,0,JSR223 Sampler,200,OK,Big Customers 2-3,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863504,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-3,,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863694,1,ds1,200,OK,Small Customers 1-4,text,true,,9255,0,1,1,null,0,0,0,ds1,maybe
+1743631863695,0,ds2,200,OK,Small Customers 1-4,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863695,0,Shared,200,OK,Small Customers 1-4,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863695,1,JSR223 Sampler,200,OK,Small Customers 1-4,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863695,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-4,,true,,291,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863696,0,ds1,200,OK,Small Customers 1-4,text,true,,9255,0,1,1,null,0,0,0,ds1,maybe
+1743631863696,0,ds2,200,OK,Small Customers 1-4,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863696,0,Shared,200,OK,Small Customers 1-4,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863697,0,JSR223 Sampler,200,OK,Small Customers 1-4,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863696,0,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-4,,true,,291,0,1,1,null,0,1,0,ds2,sasquatch
+1743631863697,0,ds1,200,OK,Small Customers 1-4,text,true,,9256,0,1,2,null,0,0,0,ds1,maybe
+1743631863698,0,ds2,200,OK,Small Customers 1-4,text,true,,292,0,1,2,null,0,0,0,ds2,maybe
+1743631863698,0,Shared,200,OK,Small Customers 1-4,text,true,,292,0,1,2,null,0,0,0,ds2,maybe
+1743631863698,0,ds3,200,OK,Big Customers 2-4,text,true,,277,0,1,2,null,0,0,0,ds3,null
+1743631863698,0,ds4,200,OK,Big Customers 2-4,text,true,,277,0,1,2,null,0,0,0,ds4,null
+1743631863698,1,JSR223 Sampler,200,OK,Small Customers 1-4,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863698,1,Shared,200,OK,Big Customers 2-4,text,true,,277,0,1,2,null,0,0,0,ds4,null
+1743631863698,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-4,,true,,292,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863699,0,JSR223 Sampler,200,OK,Big Customers 2-4,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863698,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-4,,true,,277,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863700,0,ds3,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863700,0,ds4,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863700,0,Shared,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863700,1,ds1,200,OK,Small Customers 1-4,text,true,,9255,0,1,2,null,0,0,0,ds1,maybe
+1743631863701,0,ds2,200,OK,Small Customers 1-4,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863701,0,Shared,200,OK,Small Customers 1-4,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863700,1,JSR223 Sampler,200,OK,Big Customers 2-4,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863700,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-4,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863701,0,ds3,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863701,0,ds4,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863701,0,Shared,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863701,1,JSR223 Sampler,200,OK,Small Customers 1-4,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863701,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-4,,true,,291,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863702,0,ds1,200,OK,Small Customers 1-4,text,true,,9255,0,1,2,null,0,0,0,ds1,maybe
+1743631863702,0,ds2,200,OK,Small Customers 1-4,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863702,1,JSR223 Sampler,200,OK,Big Customers 2-4,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863701,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-4,,true,,292,0,1,2,null,0,1,0,ds4,sasquatch
+1743631863703,0,Shared,200,OK,Small Customers 1-4,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863703,0,ds3,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863703,0,ds4,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863703,0,Shared,200,OK,Big Customers 2-4,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863703,1,JSR223 Sampler,200,OK,Small Customers 1-4,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863703,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-4,,true,,291,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863703,1,JSR223 Sampler,200,OK,Big Customers 2-4,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863703,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-4,,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863704,0,ds3,200,OK,Big Customers 2-4,text,true,,292,0,1,1,null,0,0,0,ds3,sasquatch
+1743631863704,0,ds4,200,OK,Big Customers 2-4,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863704,0,Shared,200,OK,Big Customers 2-4,text,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863704,1,JSR223 Sampler,200,OK,Big Customers 2-4,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863704,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-4,,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863893,0,ds1,200,OK,Small Customers 1-5,text,true,,9256,0,1,1,null,0,0,0,ds1,maybe
+1743631863893,0,ds2,200,OK,Small Customers 1-5,text,true,,292,0,1,1,null,0,0,0,ds2,maybe
+1743631863893,1,Shared,200,OK,Small Customers 1-5,text,true,,292,0,1,1,null,0,0,0,ds2,maybe
+1743631863894,1,JSR223 Sampler,200,OK,Small Customers 1-5,text,true,,0,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863893,2,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-5,,true,,292,0,1,1,null,0,0,0,ds2,sasquatch
+1743631863895,1,ds1,200,OK,Small Customers 1-5,text,true,,9255,0,1,1,null,0,0,0,ds1,maybe
+1743631863896,0,ds2,200,OK,Small Customers 1-5,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863896,0,Shared,200,OK,Small Customers 1-5,text,true,,291,0,1,1,null,0,0,0,ds2,maybe
+1743631863897,1,JSR223 Sampler,200,OK,Small Customers 1-5,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863896,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-5,,true,,291,0,1,2,null,0,1,0,ds2,sasquatch
+1743631863898,0,ds3,200,OK,Big Customers 2-5,text,true,,277,0,1,2,null,0,0,0,ds3,null
+1743631863898,0,ds4,200,OK,Big Customers 2-5,text,true,,277,0,1,2,null,0,0,0,ds4,null
+1743631863898,0,Shared,200,OK,Big Customers 2-5,text,true,,277,0,1,2,null,0,0,0,ds4,null
+1743631863898,1,ds1,200,OK,Small Customers 1-5,text,true,,9255,0,1,2,null,0,0,0,ds1,maybe
+1743631863899,0,ds2,200,OK,Small Customers 1-5,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863899,0,Shared,200,OK,Small Customers 1-5,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863898,1,JSR223 Sampler,200,OK,Big Customers 2-5,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863898,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-5,,true,,277,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863900,0,ds3,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863900,0,ds4,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863899,1,JSR223 Sampler,200,OK,Small Customers 1-5,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863900,0,Shared,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863899,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-5,,true,,291,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863900,1,ds1,200,OK,Small Customers 1-5,text,true,,9256,0,1,2,null,0,0,0,ds1,maybe
+1743631863901,0,ds2,200,OK,Small Customers 1-5,text,true,,292,0,1,2,null,0,0,0,ds2,maybe
+1743631863900,1,JSR223 Sampler,200,OK,Big Customers 2-5,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863901,0,Shared,200,OK,Small Customers 1-5,text,true,,292,0,1,2,null,0,0,0,ds2,maybe
+1743631863900,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-5,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863901,0,ds3,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863901,0,ds4,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863901,0,Shared,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863901,1,JSR223 Sampler,200,OK,Small Customers 1-5,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863901,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-5,,true,,292,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863901,2,JSR223 Sampler,200,OK,Big Customers 2-5,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863901,2,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-5,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863903,0,ds3,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863903,0,ds4,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863903,0,Shared,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863902,1,ds1,200,OK,Small Customers 1-5,text,true,,9255,0,1,2,null,0,0,0,ds1,maybe
+1743631863903,0,ds2,200,OK,Small Customers 1-5,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863903,0,Shared,200,OK,Small Customers 1-5,text,true,,291,0,1,2,null,0,0,0,ds2,maybe
+1743631863903,1,JSR223 Sampler,200,OK,Big Customers 2-5,text,true,,0,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863903,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-5,,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863904,0,ds3,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds3,sasquatch
+1743631863904,0,ds4,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863904,0,Shared,200,OK,Big Customers 2-5,text,true,,292,0,1,2,null,0,0,0,ds4,sasquatch
+1743631863903,2,JSR223 Sampler,200,OK,Small Customers 1-5,text,true,,0,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863903,2,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Small Customers 1-5,,true,,291,0,1,2,null,0,0,0,ds2,sasquatch
+1743631863904,1,JSR223 Sampler,200,OK,Big Customers 2-5,text,true,,0,0,1,1,null,0,0,0,ds4,sasquatch
+1743631863904,1,Transaction Controller,200,"Number of samples in transaction : 2, number of failing samples : 0",Big Customers 2-5,,true,,292,0,1,1,null,0,0,0,ds4,sasquatch
